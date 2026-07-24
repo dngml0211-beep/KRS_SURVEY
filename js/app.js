@@ -181,7 +181,7 @@
       skipRow.appendChild(sb);
     }
 
-    $("#prev-btn").style.display = state.idx === 0 ? "none" : "";
+    $("#prev-btn").style.display = "";  // 항상 표시 (첫 문항에선 시작화면으로)
     $("#next-btn").textContent = (state.idx === total - 1) ? "완료" : "다음";
     updateNav();
   }
@@ -197,7 +197,10 @@
     if (state.idx < QUESTIONS.length - 1) { state.idx++; renderQuestion(); }
     else showResult();
   }
-  function goPrev() { if (state.idx > 0) { state.idx--; renderQuestion(); } }
+  function goPrev() {
+    if (state.idx > 0) { state.idx--; renderQuestion(); }
+    else { show("screen-intro"); }  // 첫 문항에서 [이전] → 시작화면
+  }
 
   // ---- result -----------------------------------------------------------
   function showResult() {

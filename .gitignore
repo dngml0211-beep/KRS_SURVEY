@@ -1,0 +1,7 @@
+# OMC / 툴 상태 (커밋 대상 아님)
+.omc/
+.claude/
+
+# System
+.DS_Store
+Thumbs.db
