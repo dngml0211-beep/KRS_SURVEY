@@ -132,7 +132,8 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 11, key: "뷰어미션", section: "디지털", point: "뷰어미션 도움도", type: "single",
-    text: "교과 스키마북 읽을 때 나오는 읽기 미션은 계속 읽는 데 도움이 됐어?", image: null,
+    text: "교과 스키마북 읽을 때 나오는 읽기 미션은 계속 읽는 데 도움이 됐어?",
+    imageByLevel: { K1: "images/k1_mission.jpg", K3: "images/k3_mission.jpg", K7: "images/k7_mission.jpg" },
     options: [
       { label: "도움 됐다", emoji: "😄" },
       { label: "보통이었다", emoji: "😐" },
