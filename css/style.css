@@ -44,6 +44,8 @@ html, body {
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  word-break: keep-all;        /* 한글은 띄어쓰기 단위로만 줄바꿈 (단어 중간 끊김 방지) */
+  overflow-wrap: break-word;   /* 아주 긴 토큰만 예외적으로 줄바꿈 */
 }
 body { overflow: hidden; }
 
@@ -65,7 +67,7 @@ body { overflow: hidden; }
 .pane-right { background: var(--bg); }
 
 /* inner max-width so text doesn't stretch on 12.9" */
-.pane-left > *, .pane-right > * { max-width: 520px; width: 100%; }
+.pane-left > *, .pane-right > * { max-width: 600px; width: 100%; }
 .pane-left { align-items: flex-start; }
 
 /* ── mascot (시작화면 캐릭터) ─────────────────── */
@@ -93,7 +95,7 @@ body { overflow: hidden; }
 .q-title { font-size: 31px; font-weight: 700; line-height: 1.35; letter-spacing: -0.02em; margin: 0; }
 .q-hint { font-size: 15px; color: var(--accent-strong); margin: 16px 0 0; background: var(--accent-tint); padding: 10px 14px; border-radius: var(--r-sm); display: inline-block; }
 .q-image { margin-top: 22px; }
-.q-image img { max-width: 100%; max-height: 40vh; border-radius: var(--r); }
+.q-image img { width: auto; max-width: 100%; max-height: 56vh; height: auto; border-radius: var(--r); display: block; }
 
 /* ── right pane (answers + cta) ─────────────── */
 .pane-right { justify-content: space-between; }
