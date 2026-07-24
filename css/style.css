@@ -71,7 +71,7 @@ body { overflow: hidden; }
 /* ── mascot (시작화면 캐릭터) ─────────────────── */
 .intro-left .mascot-img {
   width: 220px; max-width: 56%; height: auto;
-  margin: 0 0 10px -8px;
+  margin: 22px 0 0 -8px;
   filter: drop-shadow(0 12px 22px rgba(230, 150, 60, 0.20));
   animation: floaty 3.6s ease-in-out infinite;
   pointer-events: none; user-select: none;
