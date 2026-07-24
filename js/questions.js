@@ -1,9 +1,9 @@
 /* =========================================================================
  * KRS 파일럿 설문 - 문항 데이터 (파일럿계획.md §11 기준 + 현장 반영)
  * -------------------------------------------------------------------------
- * · 질문 말투: 존댓말(~요/~나요)로 통일
+ * · 질문·선택지 말투: 존댓말(~요/~어요)로 통일 (도서 제목 선택지는 원문 유지)
  * · '재밌던책'/'어려운이야기'는 레벨(K1/K3/K7)에 따라 선택지·이미지 분기 (branchByLevel/imageByLevel)
- * · '어려운이야기'는 이해도가 '조금 알겠다/잘 모르겠다'일 때만 노출 (showIf)
+ * · '어려운이야기'는 이해도가 '조금 알겠어요/잘 모르겠어요'일 때만 노출 (showIf)
  * · '문장수집'은 K1에서만 노출(showForLevels), 관찰자용 [건너뛰기] 허용(skippable)
  * · 이미지: image / imageByLevel(레벨분기). 경로 없으면 자동 숨김
  * ========================================================================= */
@@ -40,27 +40,27 @@ window.KRS_QUESTIONS = [
     num: 1, key: "전체만족", section: "전체 경험", point: "전체 만족도", type: "single",
     text: "오늘 이야기도 읽고 여러 활동도 해봤는데, 어땠어요?", image: "images/how.webp",
     options: [
-      { label: "재미있었다", emoji: "😄" },
-      { label: "그냥 그랬다", emoji: "😐" },
-      { label: "재미없었다", emoji: "😣" },
+      { label: "재미있었어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "재미없었어요.", emoji: "😣" },
     ],
   },
   {
     num: 2, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
     text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: "images/amount.webp",
     options: [
-      { label: "많았다" },
-      { label: "딱 좋았다" },
-      { label: "적었다" },
+      { label: "많았어요." },
+      { label: "딱 좋았어요." },
+      { label: "적었어요." },
     ],
   },
   {
     num: 3, key: "재방문", section: "전체 경험", point: "재방문 의향", type: "single",
     text: "다음에도 이렇게 이야기 읽고 활동해보고 싶어요?", image: "images/next.webp",
     options: [
-      { label: "하고 싶다", emoji: "😄" },
-      { label: "잘 모르겠다", emoji: "😐" },
-      { label: "하고 싶지 않다", emoji: "😣" },
+      { label: "하고 싶어요.", emoji: "😄" },
+      { label: "잘 모르겠어요.", emoji: "😐" },
+      { label: "하고 싶지 않아요.", emoji: "😣" },
     ],
   },
 
@@ -79,9 +79,9 @@ window.KRS_QUESTIONS = [
     text: "코어 리딩북을 끝까지 다 읽었어요?",
     imageByLevel: CORE_IMAGES,
     options: [
-      { label: "다 읽었다" },
-      { label: "거의 다 읽었다" },
-      { label: "아직 다 못 읽었다" },
+      { label: "다 읽었어요." },
+      { label: "거의 다 읽었어요." },
+      { label: "아직 다 못 읽었어요." },
     ],
   },
   {
@@ -95,16 +95,16 @@ window.KRS_QUESTIONS = [
     num: 7, key: "이해도", section: "코어 리딩북", point: "이해도 및 난이도", type: "single",
     text: "이야기가 무슨 내용인지 “알겠다”는 생각이 들었어요?", image: "images/think.webp",
     options: [
-      { label: "잘 알겠다", emoji: "😄" },
-      { label: "조금 알겠다", emoji: "😐" },
-      { label: "잘 모르겠다", emoji: "😣" },
+      { label: "잘 알겠어요.", emoji: "😄" },
+      { label: "조금 알겠어요.", emoji: "😐" },
+      { label: "잘 모르겠어요.", emoji: "😣" },
     ],
   },
   {
-    // 조건부: 이해도가 '조금 알겠다/잘 모르겠다'일 때만 노출
+    // 조건부: 이해도가 '조금 알겠어요/잘 모르겠어요'일 때만 노출
     num: 8, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기", type: "single",
     text: "어떤 이야기가 이해하기 어려웠어요?",
-    showIf: { key: "이해도", in: ["조금 알겠다", "잘 모르겠다"] },
+    showIf: { key: "이해도", in: ["조금 알겠어요.", "잘 모르겠어요."] },
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
@@ -114,9 +114,9 @@ window.KRS_QUESTIONS = [
     text: "책에 있는 그림(사진)은 마음에 들었어요?",
     imageByLevel: { K1: "images/k1_img.jpg", K3: "images/k3_img.jpg", K7: "images/k7_img.jpg" },
     options: [
-      { label: "좋았다", emoji: "😄" },
-      { label: "그냥 그랬다", emoji: "😐" },
-      { label: "별로였다", emoji: "😣" },
+      { label: "좋았어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "별로였어요.", emoji: "😣" },
     ],
   },
 
@@ -126,9 +126,9 @@ window.KRS_QUESTIONS = [
     text: "책 읽고 푼 퀴즈는 어땠어요?",
     imageByLevel: { K1: "images/k1_quiz.jpg", K3: "images/k3_quiz.jpg", K7: "images/k7_quiz.jpg" },
     options: [
-      { label: "쉬웠다" },
-      { label: "보통이었다" },
-      { label: "어려웠다" },
+      { label: "쉬웠어요." },
+      { label: "보통이었어요." },
+      { label: "어려웠어요." },
     ],
   },
   {
@@ -136,9 +136,9 @@ window.KRS_QUESTIONS = [
     text: "교과 스키마북 읽을 때 나오는 읽기 미션은 계속 읽는 데 도움이 됐어요?",
     imageByLevel: { K1: "images/k1_mission.jpg", K3: "images/k3_mission.jpg", K7: "images/k7_mission.jpg" },
     options: [
-      { label: "도움 됐다", emoji: "😄" },
-      { label: "보통이었다", emoji: "😐" },
-      { label: "도움 안 됐다", emoji: "😣" },
+      { label: "도움 됐어요.", emoji: "😄" },
+      { label: "보통이었어요.", emoji: "😐" },
+      { label: "도움 안 됐어요.", emoji: "😣" },
     ],
   },
   {
@@ -146,9 +146,9 @@ window.KRS_QUESTIONS = [
     text: "어휘 챌린지 게임은 재미있었어요?",
     imageByLevel: { K1: "images/k1_voca.jpg", K3: "images/k3_voca.jpg", K7: "images/k7_voca.jpg" },
     options: [
-      { label: "재미있었다", emoji: "😄" },
-      { label: "그냥 그랬다", emoji: "😐" },
-      { label: "재미없었다", emoji: "😣" },
+      { label: "재미있었어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "재미없었어요.", emoji: "😣" },
     ],
   },
   {
@@ -158,9 +158,9 @@ window.KRS_QUESTIONS = [
     skippable: true,
     hint: "이 활동을 못 한 아이는 [이 문항 건너뛰기]를 눌러주세요",
     options: [
-      { label: "재미있었다", emoji: "😄" },
-      { label: "그냥 그랬다", emoji: "😐" },
-      { label: "어려웠다", emoji: "😣" },
+      { label: "재미있었어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "어려웠어요.", emoji: "😣" },
     ],
   },
 
@@ -170,9 +170,9 @@ window.KRS_QUESTIONS = [
     text: "별을 모아 빙고 게임까지 했는데, 재미있었어요?",
     image: "images/bingo.jpg",
     options: [
-      { label: "재미있었다", emoji: "😄" },
-      { label: "그냥 그랬다", emoji: "😐" },
-      { label: "재미없었다", emoji: "😣" },
+      { label: "재미있었어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "재미없었어요.", emoji: "😣" },
     ],
   },
 
