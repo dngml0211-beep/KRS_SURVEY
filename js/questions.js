@@ -38,7 +38,7 @@ window.KRS_QUESTIONS = [
   // ── 전체 경험 ─────────────────────────────────────────────
   {
     num: 1, key: "전체만족", section: "전체 경험", point: "전체 만족도", type: "single",
-    text: "오늘 이야기도 읽고 여러 활동도 해봤는데, 어땠어요?", image: null,
+    text: "오늘 이야기도 읽고 여러 활동도 해봤는데, 어땠어요?", image: "images/how.webp",
     options: [
       { label: "재미있었다", emoji: "😄" },
       { label: "그냥 그랬다", emoji: "😐" },
@@ -47,7 +47,7 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 2, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
-    text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: null,
+    text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: "images/amount.webp",
     options: [
       { label: "많았다" },
       { label: "딱 좋았다" },
@@ -56,7 +56,7 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 3, key: "재방문", section: "전체 경험", point: "재방문 의향", type: "single",
-    text: "다음에도 이렇게 이야기 읽고 활동해보고 싶어요?", image: null,
+    text: "다음에도 이렇게 이야기 읽고 활동해보고 싶어요?", image: "images/next.webp",
     options: [
       { label: "하고 싶다", emoji: "😄" },
       { label: "잘 모르겠다", emoji: "😐" },
@@ -93,7 +93,7 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 7, key: "이해도", section: "코어 리딩북", point: "이해도 및 난이도", type: "single",
-    text: "이야기가 무슨 내용인지 “알겠다”는 생각이 들었어요?", image: null,
+    text: "이야기가 무슨 내용인지 “알겠다”는 생각이 들었어요?", image: "images/think.webp",
     options: [
       { label: "잘 알겠다", emoji: "😄" },
       { label: "조금 알겠다", emoji: "😐" },
@@ -123,7 +123,8 @@ window.KRS_QUESTIONS = [
   // ── 디지털 ────────────────────────────────────────────────
   {
     num: 10, key: "퀴즈난이도", section: "디지털", point: "독후 퀴즈 난이도", type: "single",
-    text: "책 읽고 푼 퀴즈는 어땠어요?", image: null,
+    text: "책 읽고 푼 퀴즈는 어땠어요?",
+    imageByLevel: { K1: "images/k1_quiz.jpg", K3: "images/k3_quiz.jpg", K7: "images/k7_quiz.jpg" },
     options: [
       { label: "쉬웠다" },
       { label: "보통이었다" },
