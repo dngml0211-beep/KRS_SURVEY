@@ -241,6 +241,7 @@
   // ---- result -----------------------------------------------------------
   function showResult() {
     var r = state.respondent;
+    $("#result-heading").innerHTML = "다 했어요!<br>" + esc(r.이름) + "님 정말 고마워요!";
     $("#result-meta").innerHTML =
       '<span class="tag">이름 <b>' + esc(r.이름) + "</b></span>" +
       '<span class="tag">나이 <b>' + esc(r.나이) + "살</b></span>" +
