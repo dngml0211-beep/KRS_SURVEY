@@ -70,10 +70,12 @@
     if (q.imageByLevel) return q.imageByLevel[state.respondent.레벨] || null;
     return q.image || null;
   }
-  // 조건부 문항: showIf 만족할 때만 노출
+  // 조건부 문항: 레벨(showForLevels) · 이전 답변(showIf) 조건 만족할 때만 노출
   function shouldShow(idx) {
     var q = QUESTIONS[idx];
-    if (!q || !q.showIf) return true;
+    if (!q) return true;
+    if (q.showForLevels && q.showForLevels.indexOf(state.respondent.레벨) === -1) return false;
+    if (!q.showIf) return true;
     var c = q.showIf, ans = state.answers[c.key];
     if (c.in) return c.in.indexOf(ans) !== -1;
     if (c.equals !== undefined) return ans === c.equals;

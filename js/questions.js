@@ -153,6 +153,7 @@ window.KRS_QUESTIONS = [
   {
     num: 13, key: "문장수집", section: "디지털", point: "나만의 문장 수집", type: "single",
     text: "마음에 드는 문장을 골라 생각을 적는 활동은 어땠어요?", image: null,
+    showForLevels: ["K1"],   // K1에서만 노출 (K3/K7은 활동 없음)
     skippable: true,
     hint: "이 활동을 못 한 아이는 [이 문항 건너뛰기]를 눌러주세요",
     options: [
@@ -165,7 +166,8 @@ window.KRS_QUESTIONS = [
   // ── 보상 ──────────────────────────────────────────────────
   {
     num: 14, key: "보상만족", section: "보상", point: "보상 만족도", type: "single",
-    text: "별을 모아 빙고 게임까지 했는데, 재미있었어요?", image: null,
+    text: "별을 모아 빙고 게임까지 했는데, 재미있었어요?",
+    image: "images/bingo.jpg",
     options: [
       { label: "재미있었다", emoji: "😄" },
       { label: "그냥 그랬다", emoji: "😐" },
