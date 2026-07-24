@@ -50,7 +50,12 @@ window.KRS_QUESTIONS = [
   // ── 코어 리딩북 ───────────────────────────────────────────
   {
     num: 5, key: "완독", section: "코어 리딩북", point: "완독 여부", type: "single",
-    text: "코어 리딩북을 끝까지 다 읽었어?", image: null,
+    text: "코어 리딩북을 끝까지 다 읽었어?",
+    imageByLevel: {
+      K1: "images/k1_core.jpg",
+      K3: "images/k3_core.jpg",
+      K7: "images/k7_core.jpg",
+    },
     options: [
       { label: "다 읽었다" },
       { label: "거의 다 읽었다" },

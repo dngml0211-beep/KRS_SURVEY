@@ -66,6 +66,10 @@
     if (q.branchByLevel) return (q.optionsByLevel[state.respondent.레벨] || []);
     return q.options || [];
   }
+  function imageFor(q) {
+    if (q.imageByLevel) return q.imageByLevel[state.respondent.레벨] || null;
+    return q.image || null;
+  }
 
   // ---- intro ------------------------------------------------------------
   function initIntro() {
@@ -90,9 +94,8 @@
 
   function refreshStatusLine() {
     var pend = lsGet(LS_PENDING).length;
-    var mode = FB_READY ? "자동 저장" : (CFG.SUBMIT_URL ? "온라인 저장" : "이 기기 저장(로컬)");
-    $("#intro-foot").innerHTML =
-      "응답 저장: <b>" + mode + "</b>" + (pend ? " · 전송 대기 <b>" + pend + "건</b>" : "");
+    var msg = hasBackend() ? "완료하면 자동으로 저장돼요." : "이 기기에 임시 저장돼요.";
+    $("#intro-foot").innerHTML = msg + (pend ? " · 전송 대기 <b>" + pend + "건</b>" : "");
   }
 
   function startSurvey() {
@@ -132,8 +135,9 @@
 
     var imgWrap = $("#q-image");
     imgWrap.innerHTML = "";
-    if (q.image) {
-      var img = el("img"); img.src = q.image; img.alt = "";
+    var imgSrc = imageFor(q);
+    if (imgSrc) {
+      var img = el("img"); img.src = imgSrc; img.alt = "";
       img.onerror = function () { imgWrap.style.display = "none"; };
       imgWrap.appendChild(img); imgWrap.style.display = "";
     } else { imgWrap.style.display = "none"; }
