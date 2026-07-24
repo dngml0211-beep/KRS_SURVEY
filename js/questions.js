@@ -64,8 +64,13 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
-    text: "책에서 가장 재미있었던 이야기는 뭐야?", image: null,
+    text: "책에서 가장 재미있었던 이야기는 뭐야?",
     hint: "책을 보여주고 그 안에서 고르게 해주세요",
+    imageByLevel: {
+      K1: "images/k1_story.jpg",
+      K3: "images/k3_story.jpg",
+      K7: "images/k7_story.jpg",
+    },
     branchByLevel: true,
     optionsByLevel: {
       K1: [
