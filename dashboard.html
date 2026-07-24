@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRS 설문 대시보드</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root{
+      --bg:#F2F4F6; --card:#fff; --ink:#191F28; --ink-2:#4E5968; --ink-3:#8B95A1; --ink-4:#B0B8C1;
+      --line:#E5E8EB; --line-2:#F2F4F6; --accent:#3B82F6; --accent-strong:#2563EB; --accent-tint:#EFF5FF;
+      --font:"Pretendard",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    h1{font-size:24px;font-weight:800;margin:0;letter-spacing:-0.03em}
+    .sub{color:var(--ink-3);font-size:14px;margin-top:4px}
+    .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .btn{border:1.5px solid var(--line);background:#fff;color:var(--ink-2);border-radius:12px;padding:9px 14px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer}
+    .btn:hover{border-color:var(--ink-4)}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent-strong)}
+
+    /* filter */
+    .filter{display:flex;gap:6px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:4px}
+    .filter button{border:none;background:none;padding:7px 14px;border-radius:9px;font-size:14px;font-weight:700;color:var(--ink-3);cursor:pointer;font-family:var(--font)}
+    .filter button.on{background:var(--accent-tint);color:var(--accent-strong)}
+
+    /* kpi */
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+    .kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+    .kpi .label{color:var(--ink-3);font-size:13px;font-weight:600;margin-bottom:6px}
+    .kpi .value{font-size:28px;font-weight:800;letter-spacing:-0.03em}
+    .kpi .value small{font-size:15px;color:var(--ink-3);font-weight:600;margin-left:2px}
+
+    /* charts grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+    .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .qcard .sec{display:inline-block;background:var(--accent-tint);color:var(--accent-strong);font-size:11px;font-weight:700;border-radius:6px;padding:3px 8px;margin-bottom:8px}
+    .qcard h3{font-size:15px;font-weight:700;margin:0 0 14px;line-height:1.4}
+    .qcard h3 b{color:var(--ink-3);font-weight:700;margin-right:4px}
+
+    .bar-row{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:10px;margin-bottom:9px}
+    .bar-row .blabel{font-size:13px;color:var(--ink-2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .bar-track{background:var(--line-2);border-radius:999px;height:22px;overflow:hidden}
+    .bar-fill{height:100%;background:var(--accent);border-radius:999px;min-width:2px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+    .bar-fill.muted{background:var(--ink-4)}
+    .bar-val{font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap}
+    .bar-val small{color:var(--ink-3);font-weight:600;margin-left:3px}
+
+    /* subjective */
+    .subj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+    .subj h3{font-size:15px;font-weight:700;margin:0 0 12px}
+    .subj-item{border-bottom:1px solid var(--line-2);padding:9px 0;font-size:14px}
+    .subj-item .who{color:var(--ink-3);font-size:12px;margin-right:8px}
+    .subj-empty{color:var(--ink-4);font-size:14px}
+
+    .notice{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--ink-2);line-height:1.7}
+    .notice code{background:var(--line-2);padding:2px 6px;border-radius:6px;font-size:13px}
+    .muted{color:var(--ink-3)}
+    .live{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#12B886;font-weight:600}
+    .live .dot{width:8px;height:8px;border-radius:50%;background:#12B886;animation:pulse 1.6s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    @media(max-width:640px){.bar-row{grid-template-columns:88px 1fr auto}}
+
+    /* login overlay */
+    .overlay{position:fixed;inset:0;background:rgba(25,31,40,.45);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .login-card{background:#fff;border-radius:20px;padding:32px;width:340px;max-width:100%;box-shadow:0 20px 50px rgba(0,0,0,.22)}
+    .login-card h2{font-size:20px;font-weight:800;margin:0 0 6px}
+    .login-card p{color:var(--ink-3);font-size:14px;margin:0 0 20px}
+    .login-card input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-size:16px;font-family:var(--font);margin-bottom:10px}
+    .login-card input:focus{outline:none;border-color:var(--accent)}
+    .login-card .err{color:#E5484D;font-size:13px;min-height:18px;margin-bottom:6px}
+    .login-card button{width:100%;border:none;background:var(--accent);color:#fff;border-radius:12px;padding:13px;font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer}
+    .login-card button:hover{background:var(--accent-strong)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>KRS 설문 대시보드</h1>
+        <div class="sub">파일럿 아이 설문 응답 실시간 집계 · <span id="live" class="live"><span class="dot"></span>실시간</span></div>
+      </div>
+      <div class="actions">
+        <div class="filter" id="filter">
+          <button data-lv="ALL" class="on">전체</button>
+          <button data-lv="K1">K1</button>
+          <button data-lv="K3">K3</button>
+          <button data-lv="K7">K7</button>
+        </div>
+        <button class="btn btn-primary" id="export">CSV 내보내기</button>
+      </div>
+    </header>
+
+    <div id="content"><div class="notice">불러오는 중…</div></div>
+  </div>
+
+  <div class="overlay" id="login">
+    <div class="login-card">
+      <h2>대시보드 로그인</h2>
+      <p>공통 비밀번호를 입력하세요.</p>
+      <div class="err" id="login-err"></div>
+      <input type="password" id="login-pw" placeholder="비밀번호" autocomplete="off" />
+      <button id="login-btn">들어가기</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/questions.js"></script>
+  <script>
+  (function(){
+    "use strict";
+    var CFG = window.KRS_CONFIG || {};
+    var QUESTIONS = window.KRS_QUESTIONS || [];
+    var SINGLE = QUESTIONS.filter(function(q){return q.type==="single";});
+    var TEXTQS = QUESTIONS.filter(function(q){return q.type==="text";});
+    var META_COLS = ["타임스탬프","이름","나이","레벨"];
+    var ALL_COLS = META_COLS.concat(QUESTIONS.map(function(q){return q.key;}));
+
+    var ALL = [];        // 전체 응답
+    var level = "ALL";   // 현재 필터
+
+    function $(s){return document.querySelector(s);}
+    function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+    function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+    // ---- Firebase ----
+    function initFB(){
+      try{
+        var fc=CFG.FIREBASE;
+        if(window.firebase && fc && fc.apiKey && fc.projectId){
+          if(!firebase.apps.length) firebase.initializeApp(fc);
+          return firebase.firestore();
+        }
+      }catch(e){}
+      return null;
+    }
+
+    var DB=null;
+    function boot(){
+      DB=initFB();
+      if(!DB){ notice("Firebase 설정이 없습니다. <code>js/config.js</code>의 FIREBASE 값을 확인하세요."); return; }
+      subscribe(); // 공개 읽기(비번 없음): 로그인 없이 바로 구독
+    }
+    function subscribe(){
+      DB.collection(CFG.FIREBASE_COLLECTION||"responses").onSnapshot(function(snap){
+        ALL=[]; snap.forEach(function(d){ ALL.push(d.data()); });
+        render();
+      }, function(err){
+        if(err && err.code==="permission-denied"){
+          notice("<b>읽기가 아직 막혀 있어요.</b><br><br>Firestore 규칙을 아래로 바꾸고 <b>게시</b> → 이 페이지를 <b>새로고침</b> 하세요:<br><br><code>allow read, create: if true;</code>");
+        } else {
+          notice("불러오기 오류: "+esc(err&&err.message));
+        }
+      });
+    }
+    function showLogin(){ var l=document.getElementById("login"); if(l) l.style.display="flex"; var p=document.getElementById("login-pw"); if(p) p.focus(); }
+    function hideLogin(){ var l=document.getElementById("login"); if(l) l.style.display="none"; }
+
+    function notice(html){ $("#content").innerHTML='<div class="notice">'+html+'</div>'; }
+
+    function filtered(){ return level==="ALL"?ALL:ALL.filter(function(r){return r["레벨"]===level;}); }
+
+    function render(){
+      var rows=filtered();
+      var c=$("#content"); c.innerHTML="";
+      if(!ALL.length){ notice("아직 응답이 없습니다. 설문이 저장되면 여기에 실시간으로 표시됩니다."); return; }
+
+      // KPI
+      var byLevel={K1:0,K3:0,K7:0};
+      ALL.forEach(function(r){ if(byLevel[r["레벨"]]!=null) byLevel[r["레벨"]]++; });
+      var kpis=el("div","kpis");
+      kpis.appendChild(kpi("전체 응답", ALL.length+"<small>명</small>"));
+      kpis.appendChild(kpi("현재 필터", (level==="ALL"?"전체":level)+" · "+rows.length+"<small>명</small>"));
+      kpis.appendChild(kpi("K1 / K3 / K7", byLevel.K1+" / "+byLevel.K3+" / "+byLevel.K7));
+      c.appendChild(kpis);
+
+      // 객관식 차트 그리드
+      var grid=el("div","grid");
+      SINGLE.forEach(function(q){
+        var counts={}, order=[];
+        rows.forEach(function(r){
+          var v=r[q.key]; if(v==null||v==="") v="(무응답)";
+          if(counts[v]==null){counts[v]=0;order.push(v);} counts[v]++;
+        });
+        order.sort(function(a,b){return counts[b]-counts[a];});
+        var max=order.length?counts[order[0]]:0;
+        var n=rows.length||1;
+
+        var card=el("div","qcard");
+        card.appendChild(el("span","sec",esc(q.section)));
+        card.appendChild(el("h3","<b>"+q.num+".</b>"+esc(q.point)));
+        order.forEach(function(v){
+          var cnt=counts[v], pct=Math.round(cnt/n*100);
+          var row=el("div","bar-row");
+          row.appendChild(el("div","blabel",esc(v)));
+          var track=el("div","bar-track");
+          var muted=(v==="(무응답)"||v==="(건너뜀)")?" muted":"";
+          var fill=el("div","bar-fill"+muted);
+          fill.style.width=(max?Math.round(cnt/max*100):0)+"%";
+          track.appendChild(fill);
+          row.appendChild(track);
+          row.appendChild(el("div","bar-val",cnt+"<small>· "+pct+"%</small>"));
+          card.appendChild(row);
+        });
+        grid.appendChild(card);
+      });
+      c.appendChild(grid);
+
+      // 주관식
+      TEXTQS.forEach(function(q){
+        var box=el("div","subj");
+        box.appendChild(el("h3","<b style='color:var(--ink-3)'>"+q.num+".</b> "+esc(q.point)+" <span class='muted' style='font-weight:500'>(주관식)</span>"));
+        var items=rows.map(function(r){return {name:r["이름"],lv:r["레벨"],txt:r[q.key]};}).filter(function(x){return x.txt&&x.txt.trim();});
+        if(!items.length){ box.appendChild(el("div","subj-empty","응답 없음")); }
+        else items.forEach(function(x){
+          box.appendChild(el("div","subj-item","<span class='who'>"+esc(x.name)+"·"+esc(x.lv)+"</span>"+esc(x.txt)));
+        });
+        c.appendChild(box);
+      });
+    }
+
+    function kpi(label,val){ var k=el("div","kpi"); k.appendChild(el("div","label",label)); k.appendChild(el("div","value",val)); return k; }
+
+    // ---- CSV 내보내기 (전체) ----
+    function csvCell(v){v=String(v==null?"":v);if(/[",\n]/.test(v))v='"'+v.replace(/"/g,'""')+'"';return v;}
+    function exportCSV(){
+      if(!ALL.length){ alert("내보낼 응답이 없습니다."); return; }
+      var lines=[ALL_COLS.map(csvCell).join(",")];
+      ALL.forEach(function(r){ lines.push(ALL_COLS.map(function(c){return csvCell(r[c]);}).join(",")); });
+      var blob=new Blob(["﻿"+lines.join("\r\n")],{type:"text/csv;charset=utf-8;"});
+      var a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+      a.download="KRS설문_전체_"+ALL.length+"건.csv"; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    }
+
+    // ---- events ----
+    document.getElementById("filter").addEventListener("click",function(e){
+      var b=e.target.closest("button[data-lv]"); if(!b) return;
+      level=b.getAttribute("data-lv");
+      [].forEach.call(this.querySelectorAll("button"),function(x){x.classList.toggle("on",x===b);});
+      render();
+    });
+    document.getElementById("export").addEventListener("click",exportCSV);
+
+    // 로그인 (공통 비밀번호)
+    function doLogin(){
+      var pw=document.getElementById("login-pw").value;
+      var err=document.getElementById("login-err"); err.textContent="";
+      if(!pw){ err.textContent="비밀번호를 입력하세요."; return; }
+      if(!(window.firebase && firebase.auth)){ err.textContent="인증 모듈 로드 실패(인터넷 확인)."; return; }
+      firebase.auth().signInWithEmailAndPassword(CFG.DASHBOARD_EMAIL||"", pw)
+        .catch(function(e){ err.textContent = (e&&e.code==="auth/too-many-requests") ? "시도가 많습니다. 잠시 후 다시." : "비밀번호가 올바르지 않습니다."; });
+    }
+    var lb=document.getElementById("login-btn"); if(lb) lb.addEventListener("click",doLogin);
+    var lp=document.getElementById("login-pw"); if(lp) lp.addEventListener("keydown",function(e){ if(e.key==="Enter") doLogin(); });
+    var lo=document.getElementById("logout"); if(lo) lo.addEventListener("click",function(){ if(window.firebase&&firebase.auth) firebase.auth().signOut(); });
+
+    boot();
+  })();
+  </script>
+</body>
+</html>

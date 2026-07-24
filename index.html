@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>KRS 파일럿 설문</title>
+
+  <!-- 폰트: Pretendard (차단/오프라인 시 시스템 폰트로 자동 폴백) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- 상단 진행바 (설문 화면 전용) -->
+    <div id="topbar"><div class="bar"><i id="bar-fill" style="width:0%"></i></div></div>
+
+    <!-- ① 시작 -->
+    <section id="screen-intro" class="screen active">
+      <div class="pane-wrap">
+        <div class="pane pane-left intro-left">
+          <div class="brand">KRS 독서 파일럿</div>
+          <h1 class="display">오늘 활동,<br />어땠는지 들려줄래?</h1>
+          <p class="lead">아이와 함께 천천히 답해보세요.<br />관찰자가 대신 체크해도 좋아요.</p>
+        </div>
+        <div class="pane pane-right intro-right">
+          <div class="form">
+            <div class="field">
+              <label for="in-name">아이 이름</label>
+              <input id="in-name" class="input" type="text" placeholder="이름을 입력하세요" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label for="in-age">나이</label>
+              <input id="in-age" class="input" type="number" inputmode="numeric" min="4" max="15" placeholder="숫자만 (살)" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label>진행한 레벨</label>
+              <div id="level-group" class="level-group"></div>
+            </div>
+          </div>
+          <button id="start-btn" class="cta" type="button">시작하기</button>
+          <p id="intro-foot" class="foot"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ② 설문 -->
+    <section id="screen-survey" class="screen">
+      <div class="pane-wrap">
+        <div class="pane pane-left q-left">
+          <span id="sec-chip" class="chip">섹션</span>
+          <span id="q-count" class="stepnum">1 / 14</span>
+          <h2 id="q-title" class="q-title"></h2>
+          <p id="q-hint" class="q-hint" style="display:none"></p>
+          <div id="q-image" class="q-image" style="display:none"></div>
+        </div>
+        <div class="pane pane-right q-right">
+          <div id="q-answer" class="answer"></div>
+          <div id="skip-row" class="skip-row"></div>
+          <div class="nav">
+            <button id="prev-btn" class="btn-back" type="button">이전</button>
+            <button id="next-btn" class="cta" type="button">다음</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ③ 결과 -->
+    <section id="screen-result" class="screen">
+      <div class="pane-wrap">
+        <div class="pane pane-left res-left">
+          <div class="brand">설문 완료</div>
+          <h1 class="display">다 했어요!<br />고마워요 🙂</h1>
+          <div id="result-meta" class="result-meta"></div>
+          <div id="save-status" class="status"></div>
+        </div>
+        <div class="pane pane-right res-right">
+          <div id="summary" class="summary"></div>
+          <div class="res-actions">
+            <button id="save-btn" class="cta" type="button">저장하기</button>
+            <div class="row">
+              <button id="edit-btn" class="btn-ghost" type="button">수정하기</button>
+              <button id="new-btn" class="btn-ghost" type="button">새 설문</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- Firebase (Firestore) — config.js 의 FIREBASE 값이 채워지면 자동 사용. 오프라인/차단 시 로드 실패해도 앱은 localStorage 로 동작 -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* =========================================================================
+ * KRS 파일럿 설문 - 디자인 시스템 (v2)
+ * 컨셉: 토스/말해보카처럼 심플·깔끔. 화이트 기반 + 단일 블루 액센트,
+ *        Pretendard 타이포, 그림자·이모지 최소화, 넉넉한 여백.
+ * 레이아웃: 패드 가로형(landscape) 2-pane. 좁은 화면은 단일 컬럼으로 폴백.
+ * ========================================================================= */
+
+:root {
+  /* neutral (Toss 계열 그레이스케일) */
+  --bg: #FFFFFF;
+  --panel: #F7F8FA;
+  --ink: #191F28;
+  --ink-2: #4E5968;
+  --ink-3: #8B95A1;
+  --ink-4: #B0B8C1;
+  --line: #E5E8EB;
+  --line-2: #F2F4F6;
+
+  /* accent (여기 한 줄만 바꾸면 전체 톤 변경) */
+  --accent: #3B82F6;
+  --accent-strong: #2563EB;
+  --accent-tint: #EFF5FF;
+
+  --danger: #E5484D;
+  --ok: #12B886;
+
+  --r: 16px;
+  --r-sm: 12px;
+
+  --font: "Pretendard", system-ui, -apple-system, "Apple SD Gothic Neo",
+          "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0; padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { overflow: hidden; }
+
+.app { height: 100vh; display: flex; flex-direction: column; }
+
+/* top progress (survey 전용) */
+#topbar { display: none; height: 4px; background: var(--line-2); flex: 0 0 auto; }
+#topbar .bar { height: 100%; }
+#topbar .bar > i { display: block; height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; transition: width .35s cubic-bezier(.4,0,.2,1); }
+
+/* screens */
+.screen { display: none; flex: 1 1 auto; min-height: 0; }
+.screen.active { display: block; }
+
+/* 2-pane wrapper */
+.pane-wrap { height: 100%; display: flex; }
+.pane { flex: 1 1 50%; min-width: 0; padding: 56px 60px; display: flex; flex-direction: column; }
+.pane-left { background: var(--panel); justify-content: center; }
+.pane-right { background: var(--bg); }
+
+/* inner max-width so text doesn't stretch on 12.9" */
+.pane-left > *, .pane-right > * { max-width: 520px; width: 100%; }
+.pane-left { align-items: flex-start; }
+
+/* ── typography ─────────────────────────────── */
+.brand { font-size: 15px; font-weight: 700; color: var(--ink-3); margin-bottom: 22px; letter-spacing: 0; }
+.display { font-size: 38px; font-weight: 800; line-height: 1.28; letter-spacing: -0.03em; margin: 0 0 16px; }
+.lead { font-size: 17px; color: var(--ink-3); margin: 0; line-height: 1.6; }
+
+.chip {
+  display: inline-block; align-self: flex-start; width: auto !important;
+  background: var(--accent-tint); color: var(--accent-strong);
+  font-size: 13px; font-weight: 700; border-radius: 8px; padding: 5px 11px; margin-bottom: 18px;
+}
+.stepnum { font-size: 15px; font-weight: 600; color: var(--ink-4); margin-bottom: 12px; }
+.q-title { font-size: 31px; font-weight: 700; line-height: 1.35; letter-spacing: -0.02em; margin: 0; }
+.q-hint { font-size: 15px; color: var(--accent-strong); margin: 16px 0 0; background: var(--accent-tint); padding: 10px 14px; border-radius: var(--r-sm); display: inline-block; }
+.q-image { margin-top: 22px; }
+.q-image img { max-width: 100%; max-height: 40vh; border-radius: var(--r); }
+
+/* ── right pane (answers + cta) ─────────────── */
+.pane-right { justify-content: space-between; }
+.answer { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 10px; overflow-y: auto; padding: 4px 0; }
+
+/* option rows */
+.opt {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; text-align: left;
+  border: 1.5px solid var(--line); border-radius: var(--r);
+  background: #fff; color: var(--ink);
+  padding: 20px 22px; font-size: 19px; font-weight: 600; font-family: var(--font);
+  cursor: pointer; transition: border-color .12s, background .12s;
+}
+.opt:hover { border-color: var(--ink-4); }
+.opt.selected { border-color: var(--accent); background: var(--accent-tint); color: var(--accent-strong); }
+.opt .emoji { font-size: 28px; line-height: 1; flex: 0 0 auto; }
+.opt .opt-img { width: 44px; height: 44px; object-fit: cover; border-radius: 10px; flex: 0 0 auto; }
+.opt .opt-label { flex: 1 1 auto; }
+.opt .check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); flex: 0 0 auto; position: relative; transition: all .12s; }
+.opt.selected .check { border-color: var(--accent); background: var(--accent); }
+.opt.selected .check::after { content: "✓"; color: #fff; font-size: 13px; font-weight: 800; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* textarea (주관식) */
+.answer .textarea {
+  width: 100%; min-height: 180px; resize: none;
+  border: 1.5px solid var(--line); border-radius: var(--r);
+  padding: 18px 20px; font-size: 18px; font-family: var(--font); color: var(--ink);
+  line-height: 1.6;
+}
+.answer .textarea:focus { outline: none; border-color: var(--accent); }
+.answer .textarea::placeholder { color: var(--ink-4); }
+
+/* skip */
+.skip-row { text-align: center; min-height: 0; margin-top: 10px; }
+.btn-text { background: none; border: none; color: var(--ink-3); font-size: 15px; font-weight: 500; cursor: pointer; padding: 8px; font-family: var(--font); }
+.btn-text:hover { color: var(--ink-2); }
+
+/* nav */
+.nav { display: flex; gap: 12px; margin-top: 22px; flex: 0 0 auto; }
+
+/* ── buttons ────────────────────────────────── */
+.cta {
+  width: 100%; flex: 0 0 auto; border: none; border-radius: var(--r);
+  background: var(--accent); color: #fff;
+  height: 58px; font-size: 18px; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background .15s, transform .05s;
+}
+.nav .cta { flex: 1 1 auto; width: auto; }
+.cta:hover:not(:disabled) { background: var(--accent-strong); }
+.cta:active:not(:disabled) { transform: translateY(1px); }
+.cta:disabled { background: var(--line); color: var(--ink-4); cursor: not-allowed; }
+.btn-back { flex: 0 0 auto; padding: 0 26px; height: 58px; border: 1.5px solid var(--line); border-radius: var(--r); background: #fff; color: var(--ink-2); font-size: 17px; font-weight: 600; font-family: var(--font); cursor: pointer; }
+.btn-back:hover { border-color: var(--ink-4); }
+.btn-ghost { flex: 1 1 auto; height: 52px; border: 1.5px solid var(--line); border-radius: var(--r); background: #fff; color: var(--ink-2); font-size: 16px; font-weight: 600; font-family: var(--font); cursor: pointer; }
+.btn-ghost:hover { border-color: var(--ink-4); }
+
+/* ── intro form ─────────────────────────────── */
+.intro-right { justify-content: center; }
+.form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 24px; }
+.field label { display: block; font-size: 14px; font-weight: 600; color: var(--ink-2); margin-bottom: 8px; }
+.field label span { font-weight: 400; color: var(--ink-4); }
+.input {
+  width: 100%; border: 1.5px solid var(--line); border-radius: var(--r);
+  padding: 15px 16px; font-size: 17px; font-family: var(--font); color: var(--ink); background: #fff;
+  transition: border-color .12s;
+}
+.input:focus { outline: none; border-color: var(--accent); }
+.input::placeholder { color: var(--ink-4); }
+.level-group { display: flex; gap: 10px; }
+.level-btn {
+  flex: 1 1 0; height: 54px; border: 1.5px solid var(--line); border-radius: var(--r);
+  background: #fff; color: var(--ink-2); font-size: 18px; font-weight: 700; font-family: var(--font); cursor: pointer;
+  transition: all .12s;
+}
+.level-btn:hover { border-color: var(--ink-4); }
+.level-btn.selected { border-color: var(--accent); background: var(--accent-tint); color: var(--accent-strong); }
+
+.foot { margin-top: 18px; font-size: 13px; color: var(--ink-4); text-align: center; }
+.foot b { color: var(--ink-2); font-weight: 600; }
+.foot-link { display: block; text-align: center; margin-top: 6px; }
+
+/* ── result ─────────────────────────────────── */
+.res-left { justify-content: center; }
+.result-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tag { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; color: var(--ink-2); }
+.tag b { color: var(--accent-strong); font-weight: 700; }
+
+.res-right { justify-content: space-between; }
+.summary { flex: 1 1 auto; overflow-y: auto; margin-bottom: 18px; padding-right: 8px; }
+.summary-item { display: flex; justify-content: space-between; gap: 14px; padding: 13px 2px; border-bottom: 1px solid var(--line-2); }
+.summary-item .s-q { color: var(--ink-3); font-size: 14px; flex: 1 1 auto; }
+.summary-item .s-a { font-weight: 700; font-size: 15px; text-align: right; flex: 0 0 auto; max-width: 55%; }
+.summary-item .s-a.empty { color: var(--ink-4); font-weight: 400; }
+
+.res-actions { flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.res-actions .row { display: flex; gap: 10px; }
+
+/* status */
+.status { border-radius: var(--r-sm); padding: 12px 15px; font-size: 14px; margin-top: 16px; display: none; }
+.status.show { display: block; }
+.status.ok { background: #E7F8F1; color: #0C7C5E; }
+.status.warn { background: #FDECEC; color: #C13B40; }
+
+/* toast */
+.toast {
+  position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%) translateY(16px);
+  background: var(--ink); color: #fff; padding: 13px 22px; border-radius: 12px;
+  font-size: 15px; font-weight: 500; opacity: 0; pointer-events: none; transition: all .22s; z-index: 60;
+}
+.toast.show { opacity: .96; transform: translateX(-50%) translateY(0); }
+
+/* ── custom scrollbar (시스템 기본 스크롤 대체) ── */
+.answer, .summary { scrollbar-width: thin; scrollbar-color: var(--line) transparent; scroll-behavior: smooth; overscroll-behavior: contain; }
+.answer::-webkit-scrollbar, .summary::-webkit-scrollbar { width: 8px; }
+.answer::-webkit-scrollbar-track, .summary::-webkit-scrollbar-track { background: transparent; margin: 4px 0; }
+.answer::-webkit-scrollbar-thumb, .summary::-webkit-scrollbar-thumb {
+  background: var(--line); border-radius: 999px; border: 2px solid transparent; background-clip: content-box;
+  transition: background .15s;
+}
+.answer:hover::-webkit-scrollbar-thumb, .summary:hover::-webkit-scrollbar-thumb { background: var(--ink-4); background-clip: content-box; }
+.answer::-webkit-scrollbar-thumb:active, .summary::-webkit-scrollbar-thumb:active { background: var(--ink-3); background-clip: content-box; }
+
+/* 스크롤 가능 힌트: 넘칠 때만 상·하단 페이드 (--fade-top/bottom 을 JS가 토글) */
+.summary {
+  --fade-top: 0px; --fade-bottom: 0px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade-top), #000 calc(100% - var(--fade-bottom)), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade-top), #000 calc(100% - var(--fade-bottom)), transparent 100%);
+}
+
+/* ── responsive: 좁은 화면(세로/폰)은 단일 컬럼 ── */
+@media (max-width: 900px), (orientation: portrait) {
+  body { overflow: auto; }
+  .app { height: auto; min-height: 100vh; }
+  .pane-wrap { flex-direction: column; height: auto; }
+  .pane { flex: 0 0 auto; padding: 32px 24px; }
+  .pane-left { align-items: stretch; }
+  .pane-left > *, .pane-right > * { max-width: 620px; margin-left: auto; margin-right: auto; }
+  .pane-right { min-height: 0; }
+  .answer { justify-content: flex-start; }
+  .display { font-size: 30px; }
+  .q-title { font-size: 25px; }
+}
