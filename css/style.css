@@ -68,6 +68,17 @@ body { overflow: hidden; }
 .pane-left > *, .pane-right > * { max-width: 520px; width: 100%; }
 .pane-left { align-items: flex-start; }
 
+/* ── mascot (시작화면 캐릭터) ─────────────────── */
+.intro-left .mascot-img {
+  width: 220px; max-width: 56%; height: auto;
+  margin: 0 0 10px -8px;
+  filter: drop-shadow(0 12px 22px rgba(230, 150, 60, 0.20));
+  animation: floaty 3.6s ease-in-out infinite;
+  pointer-events: none; user-select: none;
+}
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@media (prefers-reduced-motion: reduce) { .intro-left .mascot-img { animation: none; } }
+
 /* ── typography ─────────────────────────────── */
 .brand { font-size: 15px; font-weight: 700; color: var(--ink-3); margin-bottom: 22px; letter-spacing: 0; }
 .display { font-size: 38px; font-weight: 800; line-height: 1.28; letter-spacing: -0.03em; margin: 0 0 16px; }
