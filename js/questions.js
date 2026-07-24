@@ -2,10 +2,9 @@
  * KRS 파일럿 설문 - 문항 데이터 (파일럿계획.md §11 기준 + 현장 반영)
  * -------------------------------------------------------------------------
  * · 질문 말투: 존댓말(~요/~나요)로 통일
- * · 맨 앞 문항: 코어 리딩북 읽은 시점(사전 독서 여부)
  * · '재밌던책'/'어려운이야기'는 레벨(K1/K3/K7)에 따라 선택지·이미지 분기 (branchByLevel/imageByLevel)
  * · '어려운이야기'는 이해도가 '조금 알겠다/잘 모르겠다'일 때만 노출 (showIf)
- * · '문장수집'은 관찰자용 [이 문항 건너뛰기] 허용 (skippable)
+ * · '문장수집'은 K1에서만 노출(showForLevels), 관찰자용 [건너뛰기] 허용(skippable)
  * · 이미지: image / imageByLevel(레벨분기). 경로 없으면 자동 숨김
  * ========================================================================= */
 
@@ -33,21 +32,12 @@ var STORY_OPTIONS = {
   ],
 };
 var STORY_IMAGES = { K1: "images/k1_story.jpg", K3: "images/k3_story.jpg", K7: "images/k7_story.jpg" };
+var CORE_IMAGES = { K1: "images/k1_core.jpg", K3: "images/k3_core.jpg", K7: "images/k7_core.jpg" };
 
 window.KRS_QUESTIONS = [
-  // ── 도입: 읽은 시점 ───────────────────────────────────────
-  {
-    num: 1, key: "읽은시점", section: "코어 리딩북", point: "읽은 시점", type: "single",
-    text: "코어 리딩북을 언제 읽었나요?", image: null,
-    options: [
-      { label: "책을 미리 받아서 읽었어요." },
-      { label: "오늘 여기서 처음 읽었어요." },
-    ],
-  },
-
   // ── 전체 경험 ─────────────────────────────────────────────
   {
-    num: 2, key: "전체만족", section: "전체 경험", point: "전체 만족도", type: "single",
+    num: 1, key: "전체만족", section: "전체 경험", point: "전체 만족도", type: "single",
     text: "오늘 이야기도 읽고 여러 활동도 해봤는데, 어땠어요?", image: null,
     options: [
       { label: "재미있었다", emoji: "😄" },
@@ -56,7 +46,7 @@ window.KRS_QUESTIONS = [
     ],
   },
   {
-    num: 3, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
+    num: 2, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
     text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: null,
     options: [
       { label: "많았다" },
@@ -65,7 +55,7 @@ window.KRS_QUESTIONS = [
     ],
   },
   {
-    num: 4, key: "재방문", section: "전체 경험", point: "재방문 의향", type: "single",
+    num: 3, key: "재방문", section: "전체 경험", point: "재방문 의향", type: "single",
     text: "다음에도 이렇게 이야기 읽고 활동해보고 싶어요?", image: null,
     options: [
       { label: "하고 싶다", emoji: "😄" },
@@ -76,9 +66,18 @@ window.KRS_QUESTIONS = [
 
   // ── 코어 리딩북 ───────────────────────────────────────────
   {
+    num: 4, key: "읽은시점", section: "코어 리딩북", point: "읽은 시점", type: "single",
+    text: "코어 리딩북을 언제 읽었나요?",
+    imageByLevel: CORE_IMAGES,
+    options: [
+      { label: "책을 미리 받아서 읽었어요." },
+      { label: "오늘 여기서 처음 읽었어요." },
+    ],
+  },
+  {
     num: 5, key: "완독", section: "코어 리딩북", point: "완독 여부", type: "single",
     text: "코어 리딩북을 끝까지 다 읽었어요?",
-    imageByLevel: { K1: "images/k1_core.jpg", K3: "images/k3_core.jpg", K7: "images/k7_core.jpg" },
+    imageByLevel: CORE_IMAGES,
     options: [
       { label: "다 읽었다" },
       { label: "거의 다 읽었다" },
