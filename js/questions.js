@@ -65,7 +65,6 @@ window.KRS_QUESTIONS = [
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
     text: "책에서 가장 재미있었던 이야기는 뭐야?",
-    hint: "책을 보여주고 그 안에서 고르게 해주세요",
     imageByLevel: {
       K1: "images/k1_story.jpg",
       K3: "images/k3_story.jpg",
@@ -106,7 +105,12 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 8, key: "삽화", section: "코어 리딩북", point: "삽화 선호", type: "single",
-    text: "책에 있는 그림(사진)은 마음에 들었어?", image: null,
+    text: "책에 있는 그림(사진)은 마음에 들었어?",
+    imageByLevel: {
+      K1: "images/k1_img.jpg",
+      K3: "images/k3_img.jpg",
+      K7: "images/k7_img.jpg",
+    },
     options: [
       { label: "좋았다", emoji: "😄" },
       { label: "그냥 그랬다", emoji: "😐" },
