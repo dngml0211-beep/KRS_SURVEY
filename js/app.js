@@ -70,6 +70,29 @@
     if (q.imageByLevel) return q.imageByLevel[state.respondent.레벨] || null;
     return q.image || null;
   }
+  // 조건부 문항: showIf 만족할 때만 노출
+  function shouldShow(idx) {
+    var q = QUESTIONS[idx];
+    if (!q || !q.showIf) return true;
+    var c = q.showIf, ans = state.answers[c.key];
+    if (c.in) return c.in.indexOf(ans) !== -1;
+    if (c.equals !== undefined) return ans === c.equals;
+    if (c.notEquals !== undefined) return ans != null && ans !== "" && ans !== c.notEquals;
+    return true;
+  }
+  function visibleIndices() {
+    var arr = [];
+    for (var i = 0; i < QUESTIONS.length; i++) if (shouldShow(i)) arr.push(i);
+    return arr;
+  }
+  function nextVisible(from) {
+    for (var i = from + 1; i < QUESTIONS.length; i++) if (shouldShow(i)) return i;
+    return -1;
+  }
+  function prevVisible(from) {
+    for (var i = from - 1; i >= 0; i--) if (shouldShow(i)) return i;
+    return -1;
+  }
 
   // ---- intro ------------------------------------------------------------
   function initIntro() {
@@ -121,12 +144,17 @@
   // ---- survey render ----------------------------------------------------
   function renderQuestion() {
     var q = QUESTIONS[state.idx];
-    var total = QUESTIONS.length;
+
+    // 진행률: 노출되는 문항 기준 (조건부 문항 반영)
+    var vis = visibleIndices();
+    var pos = vis.indexOf(state.idx);
+    if (pos < 0) pos = 0;
+    var vtotal = vis.length;
 
     // 왼쪽 pane: 섹션 · 진행 · 질문 · 힌트 · 이미지
     $("#sec-chip").textContent = q.section;
-    $("#q-count").textContent = (state.idx + 1) + " / " + total;
-    $("#bar-fill").style.width = ((state.idx + 1) / total * 100) + "%";
+    $("#q-count").textContent = (pos + 1) + " / " + vtotal;
+    $("#bar-fill").style.width = ((pos + 1) / vtotal * 100) + "%";
     $("#q-title").textContent = q.text;
 
     var hint = $("#q-hint");
@@ -186,7 +214,7 @@
     }
 
     $("#prev-btn").style.display = "";  // 항상 표시 (첫 문항에선 시작화면으로)
-    $("#next-btn").textContent = (state.idx === total - 1) ? "완료" : "다음";
+    $("#next-btn").textContent = (nextVisible(state.idx) === -1) ? "완료" : "다음";
     updateNav();
   }
 
@@ -198,12 +226,14 @@
   function updateNav() { $("#next-btn").disabled = !isAnswered(); }
 
   function goNext() {
-    if (state.idx < QUESTIONS.length - 1) { state.idx++; renderQuestion(); }
-    else showResult();
+    var n = nextVisible(state.idx);
+    if (n === -1) showResult();
+    else { state.idx = n; renderQuestion(); }
   }
   function goPrev() {
-    if (state.idx > 0) { state.idx--; renderQuestion(); }
-    else { show("screen-intro"); }  // 첫 문항에서 [이전] → 시작화면
+    var p = prevVisible(state.idx);
+    if (p === -1) show("screen-intro");  // 첫 문항에서 [이전] → 시작화면
+    else { state.idx = p; renderQuestion(); }
   }
 
   // ---- result -----------------------------------------------------------
@@ -215,7 +245,8 @@
       '<span class="tag">레벨 <b>' + esc(r.레벨) + "</b></span>";
 
     var sum = $("#summary"); sum.innerHTML = "";
-    QUESTIONS.forEach(function (q) {
+    QUESTIONS.forEach(function (q, i) {
+      if (!shouldShow(i)) return;  // 조건부로 안 뜬 문항은 요약에서도 제외
       var v = state.answers[q.key];
       var item = el("div", "summary-item");
       item.appendChild(el("span", "s-q", q.num + ". " + esc(q.point)));
@@ -247,7 +278,7 @@
       "나이": r.나이,
       "레벨": r.레벨,
     };
-    QUESTIONS.forEach(function (q) { row[q.key] = state.answers[q.key] || ""; });
+    QUESTIONS.forEach(function (q, i) { row[q.key] = shouldShow(i) ? (state.answers[q.key] || "") : ""; });
     return row;
   }
 
