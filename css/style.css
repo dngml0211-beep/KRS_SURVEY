@@ -109,7 +109,7 @@ body { overflow: hidden; }
   width: 100%; text-align: left;
   border: 1.5px solid var(--line); border-radius: var(--r);
   background: #fff; color: var(--ink);
-  padding: 20px 22px; font-size: 19px; font-weight: 600; font-family: var(--font);
+  padding: 21px 24px; font-size: 22px; font-weight: 600; font-family: var(--font);
   cursor: pointer; transition: border-color .12s, background .12s;
 }
 .opt:hover { border-color: var(--ink-4); }
