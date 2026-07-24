@@ -143,7 +143,8 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 12, key: "어휘챌린지", section: "디지털", point: "어휘 챌린지 흥미", type: "single",
-    text: "어휘 챌린지 게임은 재미있었어요?", image: null,
+    text: "어휘 챌린지 게임은 재미있었어요?",
+    imageByLevel: { K1: "images/k1_voca.jpg", K3: "images/k3_voca.jpg", K7: "images/k7_voca.jpg" },
     options: [
       { label: "재미있었다", emoji: "😄" },
       { label: "그냥 그랬다", emoji: "😐" },
