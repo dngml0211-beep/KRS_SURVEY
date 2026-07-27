@@ -87,8 +87,8 @@ window.KRS_QUESTIONS = [
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
     text: "책에서 가장 재미있던 이야기는 뭐예요? 😄",
-    hint: "3개까지 고를 수 있어요",
-    multi: true, maxSelect: 3,
+    hint: "2개까지 고를 수 있어요",
+    multi: true, maxSelect: 2,
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
