@@ -49,9 +49,9 @@ window.KRS_QUESTIONS = [
     num: 2, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
     text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: "images/amount.webp",
     options: [
-      { label: "많았어요." },
-      { label: "딱 좋았어요." },
-      { label: "적었어요." },
+      { label: "딱 좋았어요.", emoji: "😄" },
+      { label: "많았어요.", emoji: "😵" },
+      { label: "적었어요.", emoji: "🤤" },
     ],
   },
   {
