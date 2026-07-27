@@ -49,9 +49,9 @@ window.KRS_QUESTIONS = [
     num: 2, key: "분량", section: "전체 경험", point: "분량(전체)", type: "single",
     text: "오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?", image: "images/amount.webp",
     options: [
-      { label: "딱 좋았어요.", emoji: "😄" },
-      { label: "많았어요.", emoji: "😵" },
-      { label: "적었어요.", emoji: "🤤" },
+      { label: "딱 좋았어요." },
+      { label: "너무 많았어요." },
+      { label: "조금 부족했어요." },
     ],
   },
   {
@@ -79,14 +79,14 @@ window.KRS_QUESTIONS = [
     text: "책을 혼자서 읽을 수 있었어요?",
     imageByLevel: CORE_IMAGES,
     options: [
-      { label: "혼자 읽었어요." },
-      { label: "조금 도움받았어요." },
-      { label: "많이 어려웠어요." },
+      { label: "혼자서도 충분했어요!", emoji: "😄" },
+      { label: "조금 도움 받았어요.", emoji: "😅" },
+      { label: "많이 어려웠어요.", emoji: "😣" },
     ],
   },
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
-    text: "책에서 가장 재미있었던 이야기는 뭐예요?",
+    text: "책에서 가장 재미있었던 이야기는 뭐예요? 😄",
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
