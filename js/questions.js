@@ -75,13 +75,13 @@ window.KRS_QUESTIONS = [
     ],
   },
   {
-    num: 5, key: "완독", section: "코어 리딩북", point: "완독 여부", type: "single",
-    text: "코어 리딩북을 끝까지 다 읽었어요?",
+    num: 5, key: "혼자읽기", section: "코어 리딩북", point: "혼자 읽기 (자립)", type: "single",
+    text: "책을 혼자서 읽을 수 있었어요?",
     imageByLevel: CORE_IMAGES,
     options: [
-      { label: "다 읽었어요." },
-      { label: "거의 다 읽었어요." },
-      { label: "아직 다 못 읽었어요." },
+      { label: "혼자 읽었어요." },
+      { label: "조금 도움받았어요." },
+      { label: "많이 어려웠어요." },
     ],
   },
   {
