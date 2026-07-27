@@ -103,7 +103,7 @@ window.KRS_QUESTIONS = [
   },
   {
     // 조건부: 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출 · 복수선택
-    num: 8, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기", type: "single",
+    num: 8, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기 (레벨 분기)", type: "single",
     text: "어떤 이야기가 이해하기 어려웠어요? 😥",
     hint: "여러 개 고를 수 있어요",
     multi: true,
