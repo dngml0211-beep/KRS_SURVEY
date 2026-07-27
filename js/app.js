@@ -183,8 +183,9 @@
       ta.addEventListener("input", function () { state.answers[q.key] = ta.value; updateNav(); });
       ans.appendChild(ta);
     } else {
+      var multi = !!q.multi;
       optionsFor(q).forEach(function (o) {
-        var btn = el("button", "opt"); btn.type = "button";
+        var btn = el("button", "opt" + (multi ? " multi" : "")); btn.type = "button";
         if (o.emoji) btn.appendChild(el("span", "emoji", esc(o.emoji)));
         if (o.img) {
           var im = el("img", "opt-img"); im.src = o.img; im.alt = "";
@@ -193,12 +194,25 @@
         }
         btn.appendChild(el("span", "opt-label", esc(o.label)));
         btn.appendChild(el("span", "check"));
-        if (state.answers[q.key] === o.label) btn.classList.add("selected");
+        var cur = state.answers[q.key];
+        var isSel = multi ? (Array.isArray(cur) && cur.indexOf(o.label) !== -1) : (cur === o.label);
+        if (isSel) btn.classList.add("selected");
         btn.addEventListener("click", function () {
-          state.answers[q.key] = o.label;
-          var all = ans.querySelectorAll(".opt");
-          for (var i = 0; i < all.length; i++) all[i].classList.remove("selected");
-          btn.classList.add("selected");
+          if (multi) {
+            var arr = Array.isArray(state.answers[q.key]) ? state.answers[q.key].slice() : [];
+            var idx = arr.indexOf(o.label);
+            if (idx !== -1) { arr.splice(idx, 1); btn.classList.remove("selected"); }
+            else {
+              if (q.maxSelect && arr.length >= q.maxSelect) { toast(q.maxSelect + "개까지 고를 수 있어요"); return; }
+              arr.push(o.label); btn.classList.add("selected");
+            }
+            state.answers[q.key] = arr;
+          } else {
+            state.answers[q.key] = o.label;
+            var all = ans.querySelectorAll(".opt");
+            for (var i = 0; i < all.length; i++) all[i].classList.remove("selected");
+            btn.classList.add("selected");
+          }
           updateNav();
         });
         ans.appendChild(btn);
@@ -223,7 +237,9 @@
   function isAnswered() {
     var q = QUESTIONS[state.idx];
     if (q.type === "text") return true;              // 주관식은 비워도 진행 허용
-    return state.answers[q.key] != null && state.answers[q.key] !== "";
+    var v = state.answers[q.key];
+    if (q.multi) return Array.isArray(v) && v.length > 0;
+    return v != null && v !== "";
   }
   function updateNav() { $("#next-btn").disabled = !isAnswered(); }
 
@@ -251,6 +267,7 @@
     QUESTIONS.forEach(function (q, i) {
       if (!shouldShow(i)) return;  // 조건부로 안 뜬 문항은 요약에서도 제외
       var v = state.answers[q.key];
+      if (Array.isArray(v)) v = v.join(", ");   // 복수선택 표시
       var item = el("div", "summary-item");
       item.appendChild(el("span", "s-q", q.num + ". " + esc(q.point)));
       var a = el("span", "s-a" + (v ? "" : " empty"), esc(v || "미응답"));
@@ -281,7 +298,11 @@
       "나이": r.나이,
       "레벨": r.레벨,
     };
-    QUESTIONS.forEach(function (q, i) { row[q.key] = shouldShow(i) ? (state.answers[q.key] || "") : ""; });
+    QUESTIONS.forEach(function (q, i) {
+      var v = shouldShow(i) ? state.answers[q.key] : "";
+      if (Array.isArray(v)) v = v.join(", ");   // 복수선택 → 콤마 결합
+      row[q.key] = v || "";
+    });
     return row;
   }
 

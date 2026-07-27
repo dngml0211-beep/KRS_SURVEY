@@ -118,6 +118,7 @@ body { overflow: hidden; }
 .opt .opt-img { width: 44px; height: 44px; object-fit: cover; border-radius: 10px; flex: 0 0 auto; }
 .opt .opt-label { flex: 1 1 auto; }
 .opt .check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); flex: 0 0 auto; position: relative; transition: all .12s; }
+.opt.multi .check { border-radius: 7px; }  /* 복수선택은 체크박스(사각형) */
 .opt.selected .check { border-color: var(--accent); background: var(--accent); }
 .opt.selected .check::after { content: "✓"; color: #fff; font-size: 13px; font-weight: 800; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 

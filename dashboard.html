@@ -195,9 +195,12 @@
       SINGLE.forEach(function(q){
         var cond=!!(q.showIf||q.showForLevels);
         var counts={}, order=[];
+        function tally(v){ if(counts[v]==null){counts[v]=0;order.push(v);} counts[v]++; }
         rows.forEach(function(r){
-          var v=r[q.key]; if(v==null||v==="") v=cond?"해당 없음":"(무응답)";
-          if(counts[v]==null){counts[v]=0;order.push(v);} counts[v]++;
+          var raw=r[q.key];
+          if(raw==null||raw===""){ tally(cond?"해당 없음":"(무응답)"); return; }
+          if(q.multi){ String(raw).split(",").map(function(s){return s.trim();}).filter(Boolean).forEach(tally); }
+          else { tally(raw); }
         });
         order.sort(function(a,b){return counts[b]-counts[a];});
         var max=order.length?counts[order[0]]:0;
@@ -207,6 +210,7 @@
         card.appendChild(el("span","sec",esc(q.section)));
         card.appendChild(el("h3",null,"<b>"+q.num+".</b>"+esc(q.point)));
         if(q.text) card.appendChild(el("p","qtext",esc(q.text)));
+        if(q.multi) card.appendChild(el("p","qnote","※ 복수 선택 (합계가 인원수보다 많을 수 있어요)"));
         var cnote=conditionNote(q); if(cnote) card.appendChild(el("p","qnote",cnote));
         order.forEach(function(v){
           var cnt=counts[v], pct=Math.round(cnt/n*100);

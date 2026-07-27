@@ -3,7 +3,7 @@
  * -------------------------------------------------------------------------
  * · 질문·선택지 말투: 존댓말(~요/~어요)로 통일 (도서 제목 선택지는 원문 유지)
  * · '재밌던책'/'어려운이야기'는 레벨(K1/K3/K7)에 따라 선택지·이미지 분기 (branchByLevel/imageByLevel)
- * · '어려운이야기'는 이해도가 '잘 모르겠어요.'일 때만 노출 (showIf)
+ * · '재밌던책'(최대 3개)·'어려운이야기'는 복수선택(multi). '어려운이야기'는 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출(showIf)
  * · '문장수집'은 K1에서만 노출(showForLevels), 관찰자용 [건너뛰기] 허용(skippable)
  * · 이미지: image / imageByLevel(레벨분기). 경로 없으면 자동 숨김
  * ========================================================================= */
@@ -86,25 +86,28 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
-    text: "책에서 가장 재미있었던 이야기는 뭐예요? 😄",
+    text: "책에서 가장 재미있던 이야기는 뭐예요? 😄",
+    hint: "3개까지 고를 수 있어요",
+    multi: true, maxSelect: 3,
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
   },
   {
-    num: 7, key: "이해도", section: "코어 리딩북", point: "이해도 및 난이도", type: "single",
-    text: "이야기가 무슨 내용인지 “알겠다”는 생각이 들었어요?", image: "images/think.webp",
+    num: 7, key: "어려움여부", section: "코어 리딩북", point: "어려운 이야기 유무", type: "single",
+    text: "혹시 어려웠던 이야기도 있었어요?", image: "images/think.webp",
     options: [
-      { label: "잘 알겠어요.", emoji: "😄" },
-      { label: "조금 알겠어요.", emoji: "😐" },
-      { label: "잘 모르겠어요.", emoji: "😣" },
+      { label: "다 재밌었어요.", emoji: "😄" },
+      { label: "어려운 이야기도 있었어요.", emoji: "😥" },
     ],
   },
   {
-    // 조건부: 이해도가 '잘 모르겠어요.'일 때만 노출
+    // 조건부: 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출 · 복수선택
     num: 8, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기", type: "single",
     text: "어떤 이야기가 이해하기 어려웠어요? 😥",
-    showIf: { key: "이해도", in: ["잘 모르겠어요."] },
+    hint: "여러 개 고를 수 있어요",
+    multi: true,
+    showIf: { key: "어려움여부", in: ["어려운 이야기도 있었어요."] },
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
