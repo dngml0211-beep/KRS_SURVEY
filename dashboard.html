@@ -39,8 +39,10 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
     .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
     .qcard .sec{display:inline-block;background:var(--accent-tint);color:var(--accent-strong);font-size:11px;font-weight:700;border-radius:6px;padding:3px 8px;margin-bottom:8px}
-    .qcard h3{font-size:15px;font-weight:700;margin:0 0 14px;line-height:1.4}
+    .qcard h3{font-size:15px;font-weight:700;margin:0 0 4px;line-height:1.4}
     .qcard h3 b{color:var(--ink-3);font-weight:700;margin-right:4px}
+    .qtext{font-size:13px;color:var(--ink-3);margin:0 0 10px;line-height:1.45}
+    .qnote{font-size:12px;color:#8A6D00;background:#FFF6DA;border:1px solid #F1E4AE;border-radius:7px;padding:5px 9px;display:inline-block;margin:0 0 14px;line-height:1.4}
 
     .bar-row{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:10px;margin-bottom:9px}
     .bar-row .blabel{font-size:13px;color:var(--ink-2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -52,7 +54,7 @@
 
     /* subjective */
     .subj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
-    .subj h3{font-size:15px;font-weight:700;margin:0 0 12px}
+    .subj h3{font-size:15px;font-weight:700;margin:0 0 4px}
     .subj-item{border-bottom:1px solid var(--line-2);padding:9px 0;font-size:14px}
     .subj-item .who{color:var(--ink-3);font-size:12px;margin-right:8px}
     .subj-empty{color:var(--ink-4);font-size:14px}
@@ -167,6 +169,13 @@
 
     function filtered(){ return level==="ALL"?ALL:ALL.filter(function(r){return r["레벨"]===level;}); }
 
+    // 조건부 문항 안내 문구 (특정 레벨/응답에서만 질문됨)
+    function conditionNote(q){
+      if(q.showForLevels) return "※ "+q.showForLevels.join("·")+" 레벨에서만 질문돼요";
+      if(q.showIf){ var c=q.showIf; var vals=(c.in||(c.equals!=null?[c.equals]:[])).map(function(x){return String(x).replace(/[.]$/,"");}); return "※ ‘"+vals.join("’·‘")+"’ 응답 시에만 질문돼요"; }
+      return null;
+    }
+
     function render(){
       var rows=filtered();
       var c=$("#content"); c.innerHTML="";
@@ -184,9 +193,10 @@
       // 객관식 차트 그리드
       var grid=el("div","grid");
       SINGLE.forEach(function(q){
+        var cond=!!(q.showIf||q.showForLevels);
         var counts={}, order=[];
         rows.forEach(function(r){
-          var v=r[q.key]; if(v==null||v==="") v="(무응답)";
+          var v=r[q.key]; if(v==null||v==="") v=cond?"해당 없음":"(무응답)";
           if(counts[v]==null){counts[v]=0;order.push(v);} counts[v]++;
         });
         order.sort(function(a,b){return counts[b]-counts[a];});
@@ -195,13 +205,15 @@
 
         var card=el("div","qcard");
         card.appendChild(el("span","sec",esc(q.section)));
-        card.appendChild(el("h3","<b>"+q.num+".</b>"+esc(q.point)));
+        card.appendChild(el("h3",null,"<b>"+q.num+".</b>"+esc(q.point)));
+        if(q.text) card.appendChild(el("p","qtext",esc(q.text)));
+        var cnote=conditionNote(q); if(cnote) card.appendChild(el("p","qnote",cnote));
         order.forEach(function(v){
           var cnt=counts[v], pct=Math.round(cnt/n*100);
           var row=el("div","bar-row");
           row.appendChild(el("div","blabel",esc(v)));
           var track=el("div","bar-track");
-          var muted=(v==="(무응답)"||v==="(건너뜀)")?" muted":"";
+          var muted=(v==="(무응답)"||v==="(건너뜀)"||v==="해당 없음")?" muted":"";
           var fill=el("div","bar-fill"+muted);
           fill.style.width=(max?Math.round(cnt/max*100):0)+"%";
           track.appendChild(fill);
@@ -216,7 +228,8 @@
       // 주관식
       TEXTQS.forEach(function(q){
         var box=el("div","subj");
-        box.appendChild(el("h3","<b style='color:var(--ink-3)'>"+q.num+".</b> "+esc(q.point)+" <span class='muted' style='font-weight:500'>(주관식)</span>"));
+        box.appendChild(el("h3",null,"<b style='color:var(--ink-3)'>"+q.num+".</b> "+esc(q.point)+" <span class='muted' style='font-weight:500'>(주관식)</span>"));
+        if(q.text) box.appendChild(el("p","qtext",esc(q.text)));
         var items=rows.map(function(r){return {name:r["이름"],lv:r["레벨"],txt:r[q.key]};}).filter(function(x){return x.txt&&x.txt.trim();});
         if(!items.length){ box.appendChild(el("div","subj-empty","응답 없음")); }
         else items.forEach(function(x){
