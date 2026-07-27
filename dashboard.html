@@ -226,7 +226,6 @@
           var row=el("div","bar-row");
           var lv=lvMap?lvMap[v]:null;
           var blabel=el("div","blabel", lv ? ("<span class='lvtag'>"+esc(lv)+"</span>"+esc(v)) : esc(v));
-          if(lv) blabel.title="["+lv+"] "+v;
           row.appendChild(blabel);
           var track=el("div","bar-track");
           var muted=(v==="(무응답)"||v==="(건너뜀)"||v==="해당 없음")?" muted":"";
