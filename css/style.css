@@ -134,13 +134,19 @@ body { overflow: hidden; }
 .opt-text .textarea { min-height: 84px; }
 
 /* 이미지 중심 그리드(타일 카드): 큰 이미지가 선택의 주(主)가 되도록 */
-.answer.img-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-content: start; }
+.answer.img-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; align-content: start; }
 .answer.img-grid .opt { flex-direction: column; align-items: stretch; padding: 0; gap: 0; overflow: hidden; position: relative; }
-.answer.img-grid .opt .opt-img { width: 100%; height: 140px; border-radius: 0; }
-.answer.img-grid .opt .opt-label { padding: 11px 10px; text-align: center; font-size: 16px; font-weight: 600; line-height: 1.35; }
-.answer.img-grid .opt .check { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,.92); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
-.answer.img-grid .opt-text { grid-column: 1 / -1; margin-top: 4px; }
-.answer.img-grid .opt-text .textarea { min-height: 58px; }
+/* 이미지 안 잘리게: contain + 배경(레터박스). 비율 그대로 전체 표시 */
+.answer.img-grid .opt .opt-img { width: 100%; height: 168px; object-fit: contain; background: var(--line-2); border-radius: 0; padding: 6px; }
+.answer.img-grid .opt .opt-label { padding: 12px 10px; text-align: center; font-size: 16px; font-weight: 600; line-height: 1.35; }
+/* 선택 강조: 두꺼운 액센트 링 + 라벨 반전 + 그림자 */
+.answer.img-grid .opt.selected { border-color: var(--accent); box-shadow: inset 0 0 0 3px var(--accent), 0 6px 18px rgba(59,130,246,.28); }
+.answer.img-grid .opt.selected .opt-label { background: var(--accent); color: #fff; }
+.answer.img-grid .opt .check { position: absolute; top: 9px; right: 9px; width: 26px; height: 26px; background: rgba(255,255,255,.94); box-shadow: 0 1px 4px rgba(0,0,0,.22); }
+.answer.img-grid .opt.selected .check { background: var(--accent); }
+.answer.img-grid .opt-text { grid-column: 1 / -1; margin-top: 6px; }
+.answer.img-grid .opt-text-label { font-size: 12px; white-space: nowrap; margin-bottom: 5px; }
+.answer.img-grid .opt-text .textarea { min-height: 52px; }
 
 /* textarea (주관식) */
 .answer .textarea {
