@@ -196,12 +196,17 @@
       SINGLE.forEach(function(q){
         var cond=!!(q.showIf||q.showForLevels);
         // 레벨분기 문항: 선택지 → 레벨 매핑 (라벨 앞 [K7] 태그용)
+        // '없었어요'처럼 여러 레벨에 공통인 선택지는 태그 제외(한 레벨 전용 책만 태그)
         var lvMap=null;
         if(q.branchByLevel && q.optionsByLevel){
-          lvMap={};
+          var seen={};
           Object.keys(q.optionsByLevel).forEach(function(lv){
-            (q.optionsByLevel[lv]||[]).forEach(function(o){ lvMap[o.label]=lv; });
+            (q.optionsByLevel[lv]||[]).forEach(function(o){
+              seen[o.label]=(seen[o.label]==null)?lv:"__DUP__";
+            });
           });
+          lvMap={};
+          Object.keys(seen).forEach(function(lb){ if(seen[lb]!=="__DUP__") lvMap[lb]=seen[lb]; });
         }
         var counts={}, order=[];
         function tally(v){ if(counts[v]==null){counts[v]=0;order.push(v);} counts[v]++; }

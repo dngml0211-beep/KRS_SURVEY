@@ -3,7 +3,7 @@
  * -------------------------------------------------------------------------
  * · 질문·선택지 말투: 존댓말(~요/~어요)로 통일 (도서 제목 선택지는 원문 유지)
  * · '재밌던책'/'어려운이야기'는 레벨(K1/K3/K7)에 따라 선택지·이미지 분기 (branchByLevel/imageByLevel)
- * · '재밌던책'(최대 3개)·'어려운이야기'는 복수선택(multi). '어려운이야기'는 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출(showIf)
+ * · '재밌던책'(6번)은 단일선택(1개, '없었어요' 포함). '어려운이야기'(8번)는 복수선택(multi)이며 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출(showIf)
  * · '문장수집'은 K1에서만 노출(showForLevels), 관찰자용 [건너뛰기] 허용(skippable)
  * · 이미지: image / imageByLevel(레벨분기). 경로 없으면 자동 숨김
  * ========================================================================= */
@@ -33,6 +33,14 @@ var STORY_OPTIONS = {
 };
 var STORY_IMAGES = { K1: "images/k1_story.jpg", K3: "images/k3_story.jpg", K7: "images/k7_story.jpg" };
 var CORE_IMAGES = { K1: "images/k1_core.jpg", K3: "images/k3_core.jpg", K7: "images/k7_core.jpg" };
+
+// '재밌던책'(6번) 전용: 레벨별 도서 목록 뒤에 공통 '없었어요' 추가
+// (STORY_OPTIONS 원본은 8번 '어려운이야기'와 공유하므로 건드리지 않고 concat으로 복제)
+var FUN_STORY_OPTIONS = {
+  K1: STORY_OPTIONS.K1.concat([{ label: "없었어요" }]),
+  K3: STORY_OPTIONS.K3.concat([{ label: "없었어요" }]),
+  K7: STORY_OPTIONS.K7.concat([{ label: "없었어요" }]),
+};
 
 window.KRS_QUESTIONS = [
   // ── 전체 경험 ─────────────────────────────────────────────
@@ -87,11 +95,9 @@ window.KRS_QUESTIONS = [
   {
     num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
     text: "책에서 가장 재미있던 이야기는 뭐예요? 😄",
-    hint: "2개까지 고를 수 있어요",
-    multi: true, maxSelect: 2,
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
-    optionsByLevel: STORY_OPTIONS,
+    optionsByLevel: FUN_STORY_OPTIONS,
   },
   {
     num: 7, key: "어려움여부", section: "코어 리딩북", point: "어려운 이야기 유무", type: "single",
