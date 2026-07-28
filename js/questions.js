@@ -150,15 +150,15 @@ window.KRS_QUESTIONS = [
     ],
   },
 
-  // ── 보상 ──────────────────────────────────────────────────
+  // ── 동기부여 ──────────────────────────────────────────────
   {
-    num: 12, key: "보상만족", section: "보상", point: "보상 만족도", type: "single",
-    text: "별을 모아 빙고 게임까지 했는데, 재미있었어요?",
+    num: 12, key: "보상만족", section: "동기부여", point: "재독 동기부여", type: "single",
+    text: "빙고를 완성하기 위해 책을 더 읽고 싶을 것 같아요?",
     image: "images/bingo.jpg",
     options: [
-      { label: "재미있었어요.", emoji: "😄" },
-      { label: "그냥 그랬어요.", emoji: "😐" },
-      { label: "재미없었어요.", emoji: "😣" },
+      { label: "열심히 할 것 같아요.", emoji: "😄" },
+      { label: "잘 모르겠어요.", emoji: "😐" },
+      { label: "안할 것 같아요.", emoji: "😣" },
     ],
   },
 
