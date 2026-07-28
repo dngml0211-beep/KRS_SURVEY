@@ -185,7 +185,7 @@
     } else {
       var multi = !!q.multi;
       optionsFor(q).forEach(function (o) {
-        var btn = el("button", "opt" + (multi ? " multi" : "")); btn.type = "button";
+        var btn = el("button", "opt" + (multi ? " multi" : "") + (o.variant ? " opt-" + o.variant : "")); btn.type = "button";
         if (o.emoji) btn.appendChild(el("span", "emoji", esc(o.emoji)));
         if (o.img) {
           var im = el("img", "opt-img"); im.src = o.img; im.alt = "";

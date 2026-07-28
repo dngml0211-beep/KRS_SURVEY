@@ -121,6 +121,9 @@ body { overflow: hidden; }
 .opt.multi .check { border-radius: 7px; }  /* 복수선택은 체크박스(사각형) */
 .opt.selected .check { border-color: var(--accent); background: var(--accent); }
 .opt.selected .check::after { content: "✓"; color: #fff; font-size: 13px; font-weight: 800; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+/* '없었어요' 등 '해당 없음'류 선택지: 책 목록과 시각적으로 구분(점선·톤다운·간격) */
+.opt-none { margin-top: 14px; border-style: dashed; color: var(--ink-3); font-weight: 500; font-size: 20px; }
+.opt-none.selected { border-style: solid; }
 
 /* textarea (주관식) */
 .answer .textarea {
