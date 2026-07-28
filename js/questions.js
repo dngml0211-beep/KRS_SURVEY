@@ -162,11 +162,39 @@ window.KRS_QUESTIONS = [
     ],
   },
 
-  // ── 주관식 ────────────────────────────────────────────────
+  // ── 마무리 ────────────────────────────────────────────────
+  // 13번: 레벨분기 객관식(복수 최대 2, 옵션별 이미지) + 주관식 입력 결합
   {
-    num: 13, key: "최고활동", section: "주관식", point: "전체 경험·선호", type: "text",
-    text: "오늘 한 것 중에 가장 재미있었던 건 뭐예요?",
-    image: "images/joy.webp", placeholder: "생각한 내용을 적어주세요",
+    num: 13, key: "최고활동", section: "전체 경험", point: "가장 재밌던 활동", type: "single",
+    text: "오늘 한 것 중에 재밌었던 건 뭐예요?",
+    hint: "2개까지 고를 수 있어요",
+    multi: true, maxSelect: 2,
+    branchByLevel: true,
+    optionsByLevel: {
+      K1: [
+        { label: "코어 리딩북 읽기", img: "images/k1_core.jpg" },
+        { label: "나만의 문장 수집 활동", img: "images/k1_my.jpg" },
+        { label: "독후 퀴즈 풀기", img: "images/k1_quiz.jpg" },
+        { label: "교과 스키마북 읽기", img: "images/k1_sch.jpg" },
+        { label: "어휘 챌린지 활동", img: "images/k1_voca.jpg" },
+        { label: "별빙고 도전", img: "images/bingo.jpg" },
+      ],
+      K3: [
+        { label: "코어 리딩북 읽기", img: "images/k3_core.jpg" },
+        { label: "독후 퀴즈 풀기", img: "images/k3_quiz.jpg" },
+        { label: "교과 스키마북 읽기", img: "images/k3_sch.jpg" },
+        { label: "어휘 챌린지 활동", img: "images/k3_voca.jpg" },
+        { label: "별빙고 도전", img: "images/bingo.jpg" },
+      ],
+      K7: [
+        { label: "코어 리딩북 읽기", img: "images/k7_core.jpg" },
+        { label: "독후 퀴즈 풀기", img: "images/k7_quiz.jpg" },
+        { label: "교과 스키마북 읽기", img: "images/k7_sch.jpg" },
+        { label: "어휘 챌린지 활동", img: "images/k7_voca.jpg" },
+        { label: "별빙고 도전", img: "images/bingo.jpg" },
+      ],
+    },
+    textAppend: { key: "최고활동_메모", placeholder: "생각한 내용을 적어주세요", label: "직접 적어도 돼요 (선택)" },
   },
   {
     num: 14, key: "막힌곳", section: "주관식", point: "어려웠던 점", type: "text",

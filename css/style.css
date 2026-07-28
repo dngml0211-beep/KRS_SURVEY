@@ -125,6 +125,14 @@ body { overflow: hidden; }
 .opt-none { margin-top: 14px; border-style: dashed; color: var(--ink-3); font-weight: 500; font-size: 20px; }
 .opt-none.selected { border-style: solid; }
 
+/* 결합형(객관식+주관식): 옵션이 많아 조밀하게 + 옵션 이미지 크게 + 하단 자유 입력 */
+.answer.has-text { overflow-y: auto; }
+.answer.has-text .opt { padding: 12px 16px; font-size: 18px; gap: 12px; }
+.answer.has-text .opt .opt-img { width: 54px; height: 54px; border-radius: 12px; }
+.opt-text { margin-top: 16px; }
+.opt-text-label { font-size: 14px; color: var(--ink-3); font-weight: 600; margin-bottom: 8px; }
+.opt-text .textarea { min-height: 84px; }
+
 /* textarea (주관식) */
 .answer .textarea {
   width: 100%; min-height: 180px; resize: none;

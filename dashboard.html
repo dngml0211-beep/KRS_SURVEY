@@ -124,7 +124,9 @@
     var SINGLE = QUESTIONS.filter(function(q){return q.type==="single";});
     var TEXTQS = QUESTIONS.filter(function(q){return q.type==="text";});
     var META_COLS = ["타임스탬프","이름","나이","레벨"];
-    var ALL_COLS = META_COLS.concat(QUESTIONS.map(function(q){return q.key;}));
+    var Q_KEYS = [];
+    QUESTIONS.forEach(function(q){ Q_KEYS.push(q.key); if(q.textAppend) Q_KEYS.push(q.textAppend.key); });
+    var ALL_COLS = META_COLS.concat(Q_KEYS);
 
     var ALL = [];        // 전체 응답
     var level = "ALL";   // 현재 필터
@@ -251,6 +253,19 @@
         box.appendChild(el("h3",null,"<b style='color:var(--ink-3)'>"+q.num+".</b> "+esc(q.point)+" <span class='muted' style='font-weight:500'>(주관식)</span>"));
         if(q.text) box.appendChild(el("p","qtext",esc(q.text)));
         var items=rows.map(function(r){return {name:r["이름"],lv:r["레벨"],txt:r[q.key]};}).filter(function(x){return x.txt&&x.txt.trim();});
+        if(!items.length){ box.appendChild(el("div","subj-empty","응답 없음")); }
+        else items.forEach(function(x){
+          box.appendChild(el("div","subj-item","<span class='who'>"+esc(x.name)+"·"+esc(x.lv)+"</span>"+esc(x.txt)));
+        });
+        c.appendChild(box);
+      });
+
+      // 결합형(객관식+주관식) 문항의 자유 입력 메모 → 주관식 목록으로 표시
+      QUESTIONS.forEach(function(q){
+        if(!q.textAppend) return;
+        var box=el("div","subj");
+        box.appendChild(el("h3",null,"<b style='color:var(--ink-3)'>"+q.num+".</b> "+esc(q.point)+" <span class='muted' style='font-weight:500'>(직접 입력)</span>"));
+        var items=rows.map(function(r){return {name:r["이름"],lv:r["레벨"],txt:r[q.textAppend.key]};}).filter(function(x){return x.txt&&x.txt.trim();});
         if(!items.length){ box.appendChild(el("div","subj-empty","응답 없음")); }
         else items.forEach(function(x){
           box.appendChild(el("div","subj-item","<span class='who'>"+esc(x.name)+"·"+esc(x.lv)+"</span>"+esc(x.txt)));

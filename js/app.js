@@ -175,6 +175,7 @@
     // 오른쪽 pane: 선택지 / 주관식
     var ans = $("#q-answer");
     ans.innerHTML = "";
+    ans.className = "answer" + (q.textAppend ? " has-text" : "");
 
     if (q.type === "text") {
       var ta = el("textarea", "textarea");
@@ -219,6 +220,18 @@
       });
     }
 
+    // 객관식 + 주관식 결합: 선택지 아래 자유 입력란(선택)
+    if (q.textAppend) {
+      var tw = el("div", "opt-text");
+      if (q.textAppend.label) tw.appendChild(el("div", "opt-text-label", esc(q.textAppend.label)));
+      var ta2 = el("textarea", "textarea");
+      ta2.placeholder = q.textAppend.placeholder || "";
+      ta2.value = state.answers[q.textAppend.key] || "";
+      ta2.addEventListener("input", function () { state.answers[q.textAppend.key] = ta2.value; updateNav(); });
+      tw.appendChild(ta2);
+      ans.appendChild(tw);
+    }
+
     // 건너뛰기 (skippable)
     var skipRow = $("#skip-row");
     skipRow.innerHTML = "";
@@ -238,8 +251,12 @@
     var q = QUESTIONS[state.idx];
     if (q.type === "text") return true;              // 주관식은 비워도 진행 허용
     var v = state.answers[q.key];
-    if (q.multi) return Array.isArray(v) && v.length > 0;
-    return v != null && v !== "";
+    var ok = q.multi ? (Array.isArray(v) && v.length > 0) : (v != null && v !== "");
+    if (!ok && q.textAppend) {                       // 결합형: 자유 입력만 해도 진행 허용
+      var tv = state.answers[q.textAppend.key];
+      ok = !!(tv && tv.trim());
+    }
+    return ok;
   }
   function updateNav() { $("#next-btn").disabled = !isAnswered(); }
 
@@ -273,6 +290,16 @@
       var a = el("span", "s-a" + (v ? "" : " empty"), esc(v || "미응답"));
       item.appendChild(a);
       sum.appendChild(item);
+
+      if (q.textAppend) {
+        var tv = state.answers[q.textAppend.key];
+        if (tv && tv.trim()) {
+          var item2 = el("div", "summary-item");
+          item2.appendChild(el("span", "s-q", q.num + ". " + esc(q.point) + " (메모)"));
+          item2.appendChild(el("span", "s-a", esc(tv)));
+          sum.appendChild(item2);
+        }
+      }
     });
 
     setStatus("", "");
@@ -299,9 +326,11 @@
       "레벨": r.레벨,
     };
     QUESTIONS.forEach(function (q, i) {
-      var v = shouldShow(i) ? state.answers[q.key] : "";
+      var shown = shouldShow(i);
+      var v = shown ? state.answers[q.key] : "";
       if (Array.isArray(v)) v = v.join(", ");   // 복수선택 → 콤마 결합
       row[q.key] = v || "";
+      if (q.textAppend) row[q.textAppend.key] = shown ? (state.answers[q.textAppend.key] || "") : "";
     });
     return row;
   }
