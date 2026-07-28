@@ -167,6 +167,7 @@ window.KRS_QUESTIONS = [
   {
     num: 13, key: "최고활동", section: "전체 경험", point: "가장 재밌던 활동", type: "single",
     text: "오늘 한 것 중에 재밌었던 건 뭐예요?",
+    image: "images/joy.webp",
     hint: "2개까지 고를 수 있어요",
     multi: true, maxSelect: 2,
     branchByLevel: true,
