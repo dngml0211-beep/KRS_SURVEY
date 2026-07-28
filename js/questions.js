@@ -164,13 +164,13 @@ window.KRS_QUESTIONS = [
 
   // ── 주관식 ────────────────────────────────────────────────
   {
-    num: 13, key: "막힌곳", section: "주관식", point: "흐름·자립", type: "text",
-    text: "오늘 하다가 “이거 어떻게 하는 거지?” 하고 멈칫하거나 막힌 데 있었어요? 어디였어요?",
-    image: "images/stop.webp", placeholder: "생각한 내용을 적어주세요",
-  },
-  {
-    num: 14, key: "최고활동", section: "주관식", point: "전체 경험·선호", type: "text",
+    num: 13, key: "최고활동", section: "주관식", point: "전체 경험·선호", type: "text",
     text: "오늘 한 것 중에 가장 재미있었던 건 뭐예요?",
     image: "images/joy.webp", placeholder: "생각한 내용을 적어주세요",
+  },
+  {
+    num: 14, key: "막힌곳", section: "주관식", point: "어려웠던 점", type: "text",
+    text: "오늘 활동하면서 어려웠던 게 있었어요?",
+    image: "images/stop.webp", placeholder: "생각한 내용을 적어주세요",
   },
 ];
