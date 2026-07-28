@@ -133,6 +133,15 @@ body { overflow: hidden; }
 .opt-text-label { font-size: 14px; color: var(--ink-3); font-weight: 600; margin-bottom: 8px; }
 .opt-text .textarea { min-height: 84px; }
 
+/* 이미지 중심 그리드(타일 카드): 큰 이미지가 선택의 주(主)가 되도록 */
+.answer.img-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-content: start; }
+.answer.img-grid .opt { flex-direction: column; align-items: stretch; padding: 0; gap: 0; overflow: hidden; position: relative; }
+.answer.img-grid .opt .opt-img { width: 100%; height: 140px; border-radius: 0; }
+.answer.img-grid .opt .opt-label { padding: 11px 10px; text-align: center; font-size: 16px; font-weight: 600; line-height: 1.35; }
+.answer.img-grid .opt .check { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,.92); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+.answer.img-grid .opt-text { grid-column: 1 / -1; margin-top: 4px; }
+.answer.img-grid .opt-text .textarea { min-height: 58px; }
+
 /* textarea (주관식) */
 .answer .textarea {
   width: 100%; min-height: 180px; resize: none;

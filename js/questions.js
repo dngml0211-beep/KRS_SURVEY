@@ -3,7 +3,7 @@
  * -------------------------------------------------------------------------
  * · 질문·선택지 말투: 존댓말(~요/~어요)로 통일 (도서 제목 선택지는 원문 유지)
  * · '재밌던책'/'어려운이야기'는 레벨(K1/K3/K7)에 따라 선택지·이미지 분기 (branchByLevel/imageByLevel)
- * · '재밌던책'(6번)은 단일선택(1개, '없었어요' 포함). '어려운이야기'(8번)는 복수선택(multi)이며 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출(showIf)
+ * · '재밌던책'(7번)은 단일선택(1개, '없었어요' 포함). '어려운이야기'(9번)는 복수선택(multi)이며 8번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출(showIf)
  * · 이미지: image / imageByLevel(레벨분기). 경로 없으면 자동 숨김
  * ========================================================================= */
 
@@ -92,14 +92,25 @@ window.KRS_QUESTIONS = [
     ],
   },
   {
-    num: 6, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
+    // 표지 이미지 연관 질문 → 표지(코어) 이미지 사용, 코어 읽기 흐름에 배치
+    num: 6, key: "삽화", section: "코어 리딩북", point: "삽화 선호", type: "single",
+    text: "책에 있는 그림(사진)은 마음에 들었어요?",
+    imageByLevel: CORE_IMAGES,
+    options: [
+      { label: "좋았어요.", emoji: "😄" },
+      { label: "그냥 그랬어요.", emoji: "😐" },
+      { label: "별로였어요.", emoji: "😣" },
+    ],
+  },
+  {
+    num: 7, key: "재밌던책", section: "코어 리딩북", point: "이야기 흥미 (레벨 분기)", type: "single",
     text: "책에서 가장 재미있던 이야기는 뭐예요? 😄",
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: FUN_STORY_OPTIONS,
   },
   {
-    num: 7, key: "어려움여부", section: "코어 리딩북", point: "어려운 이야기 유무", type: "single",
+    num: 8, key: "어려움여부", section: "코어 리딩북", point: "어려운 이야기 유무", type: "single",
     text: "혹시 어려웠던 이야기도 있었어요?", image: "images/think.webp",
     options: [
       { label: "다 재밌었어요.", emoji: "😄" },
@@ -107,8 +118,8 @@ window.KRS_QUESTIONS = [
     ],
   },
   {
-    // 조건부: 7번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출 · 복수선택
-    num: 8, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기 (레벨 분기)", type: "single",
+    // 조건부: 8번에서 '어려운 이야기도 있었어요.' 선택 시에만 노출 · 복수선택
+    num: 9, key: "어려운이야기", section: "코어 리딩북", point: "어려웠던 이야기 (레벨 분기)", type: "single",
     text: "어떤 이야기가 이해하기 어려웠어요? 😥",
     hint: "여러 개 고를 수 있어요",
     multi: true,
@@ -116,16 +127,6 @@ window.KRS_QUESTIONS = [
     imageByLevel: STORY_IMAGES,
     branchByLevel: true,
     optionsByLevel: STORY_OPTIONS,
-  },
-  {
-    num: 9, key: "삽화", section: "코어 리딩북", point: "삽화 선호", type: "single",
-    text: "책에 있는 그림(사진)은 마음에 들었어요?",
-    imageByLevel: { K1: "images/k1_img.jpg", K3: "images/k3_img.jpg", K7: "images/k7_img.jpg" },
-    options: [
-      { label: "좋았어요.", emoji: "😄" },
-      { label: "그냥 그랬어요.", emoji: "😐" },
-      { label: "별로였어요.", emoji: "😣" },
-    ],
   },
 
   // ── 디지털 ────────────────────────────────────────────────
@@ -170,6 +171,7 @@ window.KRS_QUESTIONS = [
     image: "images/joy.webp",
     hint: "2개까지 고를 수 있어요",
     multi: true, maxSelect: 2,
+    imageGrid: true,
     branchByLevel: true,
     optionsByLevel: {
       K1: [

@@ -175,7 +175,7 @@
     // 오른쪽 pane: 선택지 / 주관식
     var ans = $("#q-answer");
     ans.innerHTML = "";
-    ans.className = "answer" + (q.textAppend ? " has-text" : "");
+    ans.className = "answer" + (q.textAppend ? " has-text" : "") + (q.imageGrid ? " img-grid" : "");
 
     if (q.type === "text") {
       var ta = el("textarea", "textarea");
