@@ -176,9 +176,6 @@
     var ans = $("#q-answer");
     ans.innerHTML = "";
     ans.className = "answer" + (q.textAppend ? " has-text" : "") + (q.imageGrid ? " img-grid" : "");
-    // 이미지 그리드 문항만 좌우 비율 3:7 (그리드에 더 넓은 공간)
-    var paneWrap = document.querySelector("#screen-survey .pane-wrap");
-    if (paneWrap) paneWrap.classList.toggle("wide-answer", !!q.imageGrid);
 
     if (q.type === "text") {
       var ta = el("textarea", "textarea");
