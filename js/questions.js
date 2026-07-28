@@ -36,9 +36,9 @@ var CORE_IMAGES = { K1: "images/k1_core.jpg", K3: "images/k3_core.jpg", K7: "ima
 // '재밌던책'(6번) 전용: 레벨별 도서 목록 뒤에 공통 '없었어요' 추가
 // (STORY_OPTIONS 원본은 8번 '어려운이야기'와 공유하므로 건드리지 않고 concat으로 복제)
 var FUN_STORY_OPTIONS = {
-  K1: STORY_OPTIONS.K1.concat([{ label: "없었어요", variant: "none" }]),
-  K3: STORY_OPTIONS.K3.concat([{ label: "없었어요", variant: "none" }]),
-  K7: STORY_OPTIONS.K7.concat([{ label: "없었어요", variant: "none" }]),
+  K1: STORY_OPTIONS.K1.concat([{ label: "하나도 없었어요", variant: "none" }]),
+  K3: STORY_OPTIONS.K3.concat([{ label: "하나도 없었어요", variant: "none" }]),
+  K7: STORY_OPTIONS.K7.concat([{ label: "하나도 없었어요", variant: "none" }]),
 };
 
 window.KRS_QUESTIONS = [
