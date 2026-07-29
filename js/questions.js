@@ -63,7 +63,7 @@ window.KRS_QUESTIONS = [
   },
   {
     num: 3, key: "재방문", section: "전체 경험", point: "재방문 의향", type: "single",
-    text: "다음에도 이렇게 이야기 읽고 활동해보고 싶어요?", image: "images/next.webp",
+    text: "오늘 한 활동처럼 또 해보고 싶나요?", image: "images/next.webp",
     options: [
       { label: "하고 싶어요.", emoji: "😄" },
       { label: "잘 모르겠어요.", emoji: "😐" },
@@ -154,7 +154,7 @@ window.KRS_QUESTIONS = [
   // ── 동기부여 ──────────────────────────────────────────────
   {
     num: 12, key: "보상만족", section: "동기부여", point: "재독 동기부여", type: "single",
-    text: "빙고를 완성하기 위해 책을 더 읽고 싶을 것 같아요?",
+    text: "책을 읽고 빙고 게임을 더 해보고 싶나요?",
     image: "images/bingo.jpg",
     options: [
       { label: "열심히 할 것 같아요.", emoji: "😄" },
