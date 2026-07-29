@@ -176,6 +176,9 @@
     var ans = $("#q-answer");
     ans.innerHTML = "";
     ans.className = "answer" + (q.textAppend ? " has-text" : "") + (q.imageGrid ? " img-grid" : "");
+    // 이미지 그리드 문항: 위/아래 스택 레이아웃(질문 위, 선택지 아래 전체 너비)
+    var paneWrap = document.querySelector("#screen-survey .pane-wrap");
+    if (paneWrap) paneWrap.classList.toggle("stacked", !!q.imageGrid);
 
     if (q.type === "text") {
       var ta = el("textarea", "textarea");

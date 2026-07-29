@@ -66,6 +66,21 @@ body { overflow: hidden; }
 .pane-left { background: var(--panel); justify-content: center; }
 .pane-right { background: var(--bg); }
 
+/* 이미지 그리드 문항: 위/아래 스택 (질문 상단 슬림 헤더 + 선택지 전체 너비) */
+.pane-wrap.stacked { flex-direction: column; }
+.pane-wrap.stacked .pane-left { flex: 0 0 auto; justify-content: flex-start; padding: 22px 48px 14px; }
+.pane-wrap.stacked .pane-left .q-image { display: none; }        /* 마스코트 숨겨 헤더 슬림 */
+.pane-wrap.stacked .pane-right { flex: 1 1 auto; border-top: 1px solid var(--line); min-height: 0; padding: 18px 48px 18px; }
+.pane-wrap.stacked .pane-left > *, .pane-wrap.stacked .pane-right > * { max-width: none; }
+/* 스택 헤더 슬림 + 입력란 컴팩트 (무스크롤) */
+.pane-wrap.stacked .pane-left { padding: 16px 48px 10px; }
+.pane-wrap.stacked .q-title { font-size: 24px; line-height: 1.25; margin: 2px 0 0; }
+.pane-wrap.stacked .stepnum { margin-bottom: 6px; }
+.pane-wrap.stacked .q-hint { margin-top: 10px; padding: 7px 12px; }
+.pane-wrap.stacked .opt-text { margin-top: 8px; }
+.pane-wrap.stacked .opt-text-label { margin-bottom: 4px; }
+.pane-wrap.stacked .opt-text .textarea { min-height: 38px; }
+
 /* inner max-width so text doesn't stretch on 12.9" */
 .pane-left > *, .pane-right > * { max-width: 600px; width: 100%; }
 .pane-left { align-items: flex-start; }
@@ -134,10 +149,10 @@ body { overflow: hidden; }
 .opt-text .textarea { min-height: 84px; }
 
 /* 이미지 중심 그리드(타일 카드): 큰 이미지가 선택의 주(主)가 되도록 */
-.answer.img-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: start; grid-auto-rows: max-content; }
+.answer.img-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-content: start; grid-auto-rows: max-content; }
 .answer.img-grid .opt { flex-direction: column; align-items: stretch; padding: 0; gap: 0; overflow: hidden; position: relative; }
 /* 이미지 안 잘리게: contain + 배경(레터박스). 비율 그대로 전체 표시 */
-.answer.img-grid .opt .opt-img { width: 100%; height: 150px; object-fit: contain; background: var(--line-2); border-radius: 0; padding: 6px; }
+.answer.img-grid .opt .opt-img { width: 100%; height: 160px; object-fit: contain; background: var(--line-2); border-radius: 0; padding: 6px; }
 .answer.img-grid .opt .opt-label { padding: 8px 10px; text-align: center; font-size: 16px; font-weight: 600; line-height: 1.3; }
 /* 선택 강조: 두꺼운 액센트 링 + 라벨 반전 + 그림자 */
 .answer.img-grid .opt.selected { border-color: var(--accent); box-shadow: inset 0 0 0 3px var(--accent), 0 6px 18px rgba(59,130,246,.28); }
