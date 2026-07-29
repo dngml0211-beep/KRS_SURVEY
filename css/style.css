@@ -122,7 +122,8 @@ body { overflow: hidden; }
 
 /* ── right pane (answers + cta) ─────────────── */
 .pane-right { justify-content: space-between; }
-.answer { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 10px; overflow-y: auto; padding: 4px 0; }
+/* justify-content: safe center — 선택지가 적으면 세로 가운데, 넘치면 위쪽 정렬로 자동 전환(상단 잘림 방지 + 스크롤 가능) */
+.answer { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: safe center; gap: 10px; overflow-y: auto; padding: 4px 0; }
 
 /* option rows */
 .opt {
