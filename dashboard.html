@@ -35,6 +35,16 @@
     .kpi .value{font-size:28px;font-weight:800;letter-spacing:-0.03em}
     .kpi .value small{font-size:15px;color:var(--ink-3);font-weight:600;margin-left:2px}
 
+    /* roster */
+    .roster{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+    .roster h3{font-size:15px;font-weight:700;margin:0 0 12px}
+    .roster h3 small{color:var(--ink-3);font-weight:600;margin-left:6px}
+    .rgroup{margin-bottom:14px}
+    .rgroup:last-child{margin-bottom:0}
+    .rgroup .glabel{display:inline-block;font-size:11px;font-weight:800;color:var(--accent-strong);background:var(--accent-tint);border-radius:6px;padding:3px 8px;margin-bottom:8px;letter-spacing:0}
+    .names{display:flex;flex-wrap:wrap;gap:6px}
+    .name-chip{border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:13px;font-weight:600;color:var(--ink-2);background:#fff}
+
     /* charts grid */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
     .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
@@ -193,6 +203,9 @@
       kpis.appendChild(kpi("K1 / K3 / K7", byLevel.K1+" / "+byLevel.K3+" / "+byLevel.K7));
       c.appendChild(kpis);
 
+      // 응답자 명단 (누가 제출했는지 확인용)
+      c.appendChild(roster(rows));
+
       // 객관식 차트 그리드
       var grid=el("div","grid");
       SINGLE.forEach(function(q){
@@ -275,6 +288,31 @@
     }
 
     function kpi(label,val){ var k=el("div","kpi"); k.appendChild(el("div","label",label)); k.appendChild(el("div","value",val)); return k; }
+
+    // ---- 응답자 명단 (이름만) ----
+    function nameGroup(label,list){
+      var names=list.map(function(r){ return r["이름"]||"(이름 없음)"; })
+        .sort(function(a,b){ return a.localeCompare(b,"ko"); });
+      var g=el("div","rgroup");
+      g.appendChild(el("span","glabel",esc(label)+" · "+names.length+"명"));
+      var box=el("div","names");
+      names.forEach(function(nm){ box.appendChild(el("span","name-chip",esc(nm))); });
+      g.appendChild(box);
+      return g;
+    }
+    function roster(rows){
+      var box=el("div","roster");
+      box.appendChild(el("h3",null,"응답자 명단 <small>제출 "+rows.length+"명</small>"));
+      if(!rows.length){ box.appendChild(el("div","subj-empty","해당 조건의 응답이 없습니다.")); return box; }
+      var levels=(level==="ALL")?(CFG.LEVELS||["K1","K3","K7"]):[level];
+      levels.forEach(function(lv){
+        var list=rows.filter(function(r){return r["레벨"]===lv;});
+        if(list.length) box.appendChild(nameGroup(lv,list));
+      });
+      var etc=rows.filter(function(r){return levels.indexOf(r["레벨"])<0;});
+      if(etc.length) box.appendChild(nameGroup("레벨 미지정",etc));
+      return box;
+    }
 
     // ---- CSV 내보내기 (전체) ----
     function csvCell(v){v=String(v==null?"":v);if(/[",\n]/.test(v))v='"'+v.replace(/"/g,'""')+'"';return v;}
