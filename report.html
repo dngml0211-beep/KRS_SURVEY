@@ -147,6 +147,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .bar-row.sub .bar-val{font-size:.86em;color:var(--ink-2)}
 /* 별개 그룹 — 점선으로 구분해 합산 항목이 아님을 표시 */
 .bar-row.grp{margin-top:.9em;padding-top:.9em;border-top:1px dashed var(--ink-4)}
+/* 표 안 빈도 막대 — 인원 숫자 대신 경중만 표시 (다른 집계의 숫자와 혼동 방지) */
+.freq{display:block;height:.6em;background:var(--todo);border-radius:99px;min-width:.55em}
 
 /* ---------- table ---------- */
 table{width:100%;border-collapse:collapse;font-size:.88em}
@@ -495,14 +497,14 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 중단 발생 지점과 원인</div>
+          <div class="colhead"><span class="ctag ev">근거</span> 중단 경험 11명 — 발생 지점</div>
           <table class="vmid">
-            <tr><th>지점</th><th style="width:3.5em">인원</th><th>원인</th></tr>
-            <tr><td>코어 리딩북</td><td class="num">4</td><td>문해 수준 — 대독 필요</td></tr>
-            <tr><td>교과 스키마북</td><td class="num">3</td><td>분량 부담</td></tr>
-            <tr><td>말하기 미션</td><td class="num">2</td><td>발화 부담</td></tr>
-            <tr><td>독후 퀴즈</td><td class="num">1</td><td>'다시 풀기' 버튼 위치</td></tr>
-            <tr><td>전반</td><td class="num">1</td><td>흥미 유지</td></tr>
+            <tr><th>지점</th><th style="width:5.5em">빈도</th><th style="width:8.5em">원인</th></tr>
+            <tr><td>코어 리딩북</td><td><i class="freq" style="width:100%"></i></td><td>문해 수준 — 대독</td></tr>
+            <tr><td>교과 스키마북</td><td><i class="freq" style="width:75%"></i></td><td>분량 부담</td></tr>
+            <tr><td>말하기 미션</td><td><i class="freq" style="width:50%"></i></td><td>발화 부담</td></tr>
+            <tr><td>독후 퀴즈</td><td><i class="freq" style="width:25%"></i></td><td>'다시 풀기' 버튼 위치</td></tr>
+            <tr><td>전반</td><td><i class="freq" style="width:25%"></i></td><td>흥미 유지</td></tr>
           </table>
         </div>
         <div>
