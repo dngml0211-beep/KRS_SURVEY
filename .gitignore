@@ -2,6 +2,9 @@
 .omc/
 .claude/
 
+# 원본 UT 데이터 (아이 실명 포함 — 공개 저장소에 올리지 않는다)
+data/
+
 # System
 .DS_Store
 Thumbs.db
