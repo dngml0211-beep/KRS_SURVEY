@@ -147,8 +147,6 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .bar-row.sub .bar-val{font-size:.86em;color:var(--ink-2)}
 /* 별개 그룹 — 점선으로 구분해 합산 항목이 아님을 표시 */
 .bar-row.grp{margin-top:.9em;padding-top:.9em;border-top:1px dashed var(--ink-4)}
-/* 표 안 빈도 막대 — 인원 숫자 대신 경중만 표시 (다른 집계의 숫자와 혼동 방지) */
-.freq{display:block;height:.6em;background:var(--todo);border-radius:99px;min-width:.55em}
 
 /* ---------- table ---------- */
 table{width:100%;border-collapse:collapse;font-size:.88em}
@@ -497,14 +495,13 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 중단 경험 11명 — 발생 지점</div>
+          <div class="colhead"><span class="ctag ev">근거</span> 중단 발생 지점</div>
           <table class="vmid">
-            <tr><th>지점</th><th style="width:5.5em">빈도</th><th style="width:8.5em">원인</th></tr>
-            <tr><td>코어 리딩북</td><td><i class="freq" style="width:100%"></i></td><td>문해 수준 — 대독</td></tr>
-            <tr><td>교과 스키마북</td><td><i class="freq" style="width:75%"></i></td><td>분량 부담</td></tr>
-            <tr><td>말하기 미션</td><td><i class="freq" style="width:50%"></i></td><td>발화 부담</td></tr>
-            <tr><td>독후 퀴즈</td><td><i class="freq" style="width:25%"></i></td><td>'다시 풀기' 버튼 위치</td></tr>
-            <tr><td>전반</td><td><i class="freq" style="width:25%"></i></td><td>흥미 유지</td></tr>
+            <tr><th style="width:9em">지점</th><th>원인</th></tr>
+            <tr><td>코어 리딩북</td><td>문해 수준 — 대독 필요</td></tr>
+            <tr><td>교과 스키마북</td><td>분량 부담</td></tr>
+            <tr><td>말하기 미션</td><td>발화 부담</td></tr>
+            <tr><td>독후 퀴즈</td><td>'다시 풀기' 버튼 위치</td></tr>
           </table>
         </div>
         <div>
@@ -536,8 +533,6 @@ ul.clean li::marker{color:var(--ink-4)}
         <div class="bars big">
           <div class="bar-row has-goal"><div class="blabel">도움 없이 진행</div><div class="bar-track"><div class="bar-fill ok" style="width:84%"></div><div class="bar-goal" style="left:80%" data-t="기준 80%"></div></div><div class="bar-val">21<small>명 · 84%</small></div></div>
           <div class="bar-row"><div class="blabel">도움 필요</div><div class="bar-track"><div class="bar-fill todo" style="width:16%"></div></div><div class="bar-val">4<small>명 · 16%</small></div></div>
-          <div class="bar-row grp"><div class="blabel">콘텐츠 자력 완주</div><div class="bar-track"><div class="bar-fill ok" style="width:72%"></div></div><div class="bar-val">18<small>명 · 72%</small></div></div>
-          <div class="bar-row"><div class="blabel">대독·미완주</div><div class="bar-track"><div class="bar-fill todo" style="width:28%"></div></div><div class="bar-val">7<small>명 · 28%</small></div></div>
         </div>
       </div>
       <div class="grid2">
@@ -703,7 +698,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <tr><th style="width:15%">구분</th><th style="width:41%">가설</th><th style="width:10%">성공 기준</th><th style="width:17%">결과</th><th style="width:17%">판정</th></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H1</span> 자발적 시작</div></td><td>별도 설명 없이 KRS 홈에서 스스로 학습을 시작할 수 있다</td><td>80%</td><td class="num">92% <span class="small">23/25</span></td><td><span class="pill ok">충족</span></td></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H2</span> 흐름 유지</div></td><td>코어북 → 퀴즈 → 스키마북 → 게임으로 자연스럽게 이어서 수행한다</td><td>80%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
-        <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H3</span> 기능 목적 이해</div></td><td>주요 기능과 콘텐츠의 목적을 이해하고 자연스럽게 이용할 수 있다<br /><span class="small">도움 없이 진행 21명 · 도움 필요 4명 · 콘텐츠 자력 완주 18명</span></td><td>80%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
+        <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H3</span> 기능 목적 이해</div></td><td>주요 기능과 콘텐츠의 목적을 이해하고 자연스럽게 이용할 수 있다<br /><span class="small">도움 없이 진행 21명 · 도움 필요 4명</span></td><td>80%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
         <tr class="row-todo"><td><div class="hcell"><span class="hno todo">H4</span> AI 추천 탐색</div></td><td>AI 추천은 아이들이 쉽게 이해하고 신뢰한다<br /><span class="small">추천 도서 클릭 11명(44%) · 추천 의미 인지 12명(48%)</span></td><td>50%</td><td class="num">46% <span class="small">두 지표 평균</span></td><td><span class="pill todo">보완 필요</span></td></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H5</span> 별빙고 동기</div></td><td>별빙고 보상은 학습 동기를 높여 커리큘럼 참여를 지속시킬 수 있다</td><td>50%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H6</span> 도서관 이해</div></td><td>KRS 도서관이 자신이 좋아하는 흥미로운 책을 제공하는 공간임을 이해할 수 있다</td><td>50%</td><td class="num">52% <span class="small">13/25</span></td><td><span class="pill ok">충족</span></td></tr>
