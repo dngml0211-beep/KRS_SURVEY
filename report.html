@@ -175,6 +175,8 @@ td.num{text-align:right;font-weight:800;white-space:nowrap}
 td.mid{vertical-align:middle}
 table.vmid td{vertical-align:middle}
 table.roomy th,table.roomy td{padding:1.25em .8em}   /* 행이 적은 표는 여백을 넉넉히 */
+/* 성공 기준·결과·판정 열 가운데 정렬 */
+table.ctr th:nth-child(n+3),table.ctr td:nth-child(n+3){text-align:center}
 tr.row-ok td{background:#FAFEFC} tr.row-todo td{background:#FFFCF5}
 .na{color:var(--ink-4);font-weight:700}
 
@@ -701,7 +703,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow">종합 판정</span>
     <h2>가설 6건 검증 결과 <span class="small" style="font-weight:700">— 전체 25명 기준</span></h2>
     <div class="body">
-      <table class="vmid fixed">
+      <table class="vmid fixed ctr">
         <tr><th style="width:15%">구분</th><th style="width:41%">가설</th><th style="width:10%">성공 기준</th><th style="width:17%">결과</th><th style="width:17%">판정</th></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H1</span> 자발적 시작</div></td><td>별도 설명 없이 KRS 홈에서 스스로 학습을 시작할 수 있다</td><td>80%</td><td class="num">92% <span class="small">23/25</span></td><td><span class="pill ok">충족</span></td></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H2</span> 흐름 유지</div></td><td>코어북 → 퀴즈 → 스키마북 → 게임으로 자연스럽게 이어서 수행한다</td><td>80%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
@@ -712,12 +714,12 @@ ul.clean li::marker{color:var(--ink-4)}
       </table>
       <div class="grid2" style="margin-top:.3em">
         <div class="panel ok">
-          <h3>검증 결과 — 자기주도 학습이 성립한다</h3>
-          <p style="margin:0;font-size:.9em;line-height:1.5;color:var(--ink-2)">설명 없이 시작하고(H1), 정해진 순서를 수행하며(H2), 도움 없이 기능을 이용하고(H3), 보상 체계에 반응한다(H5). 파일럿의 핵심 질문인 <strong>"스스로 완주할 수 있는가"에 대해 긍정적으로 판단</strong>할 수 있다.</p>
+          <h3>검증 결과</h3>
+          <p style="margin:0;font-size:.92em;line-height:1.55;color:var(--ink-2)">핵심 질문 <strong>"스스로 완주할 수 있는가"에 그렇다고 답할 수 있다.</strong> 시작·순서·기능 이용·보상 반응 네 축이 모두 기준을 넘었다.</p>
         </div>
         <div class="panel todo">
-          <h3>보완 과제 — AI 추천 하나로 좁혀진다</h3>
-          <p style="margin:0;font-size:.9em;line-height:1.5;color:var(--ink-2)">보완 1건(H4)은 <strong>추천 근거를 설명하는 요소가 없다</strong>는 원인이며, 두 지표 모두 기준에 근소하게 못 미친다. 이와 별개로 <strong>저연령 읽기 지원</strong>이 관찰 지표에서 확인되었다.</p>
+          <h3>보완 과제</h3>
+          <p style="margin:0;font-size:.92em;line-height:1.55;color:var(--ink-2)"><strong>AI 추천 한 건.</strong> 추천 근거를 보여주는 요소가 없어 두 지표 모두 기준에 근소하게 못 미친다.</p>
         </div>
       </div>
     </div>
@@ -725,91 +727,109 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">11 / 16</div>
 </section>
 
-<!-- 12. 검증 지표 상세 -->
+<!-- 12. 인사이트 총괄 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">검증 지표 상세</span>
-    <h2>사전 정의된 검증 방법별 측정 결과</h2>
-    <p class="lead">3페이지에서 정의한 <strong>검증 방법의 지표만으로</strong> 산출한 결과이다. 설계되었으나 정형 항목이 없어 수집되지 않은 지표는 별도로 표기하였다.</p>
+    <span class="eyebrow">인사이트</span>
+    <h2>데이터에서 도출된 시사점</h2>
+    <p class="lead">우선 검토가 필요한 <strong>3건</strong>과, 그 판단의 바탕이 된 <strong>관찰 사실 4건</strong>이다. 3건은 이어지는 13~15페이지에서 근거와 함께 상세히 다룬다.</p>
     <div class="body">
-      <table class="vmid fixed">
-        <tr><th style="width:14%">가설</th><th style="width:26%">검증 방법 (사전 정의)</th><th style="width:60%">측정 결과</th></tr>
-        <tr class="row-ok">
-          <td><div class="hcell"><span class="hno ok">H1</span></div></td>
-          <td>첫 행동 · 스크롤 여부 · 도움 요청 횟수</td>
-          <td>첫 행동 — 콘텐츠 실행 12명 / 스크롤 탐색 11명 / 메뉴 이동 2명 · 스스로 스크롤 <strong>17명(68%)</strong> · 자발적 시작 <strong>23명(92%)</strong> · 시작 단계 도움 필요 2명 → <strong>도움 없이 진행 23명(92%)</strong></td>
-        </tr>
-        <tr class="row-ok">
-          <td><div class="hcell"><span class="hno ok">H2</span></div></td>
-          <td>단계별 완료율 · 중도 이탈률</td>
-          <td>단계별 완료율 — 코어북 96% / 코어북 퀴즈 96% / 스키마북 84% / 스키마북 퀴즈 88% / 어휘챌린지 100%, <strong>평균 93%</strong> · 중도 이탈 <strong>11명(44%)</strong> · 순서대로 완료 <strong>21명(84%)</strong></td>
-        </tr>
-        <tr class="row-ok">
-          <td><div class="hcell"><span class="hno ok">H3</span></div></td>
-          <td>도움 요청 · 관찰</td>
-          <td>도움 요청 — 도움 없이 진행 <strong>21명(84%)</strong> / 도움 필요 <strong>4명(16%)</strong> · 관찰(콘텐츠 자력 완주) — 완주 <strong>18명(72%)</strong> / 대독·미완주 <strong>7명(28%)</strong> · 판정은 <strong>도움 요청</strong> 기준</td>
-        </tr>
-        <tr class="row-todo">
-          <td><div class="hcell"><span class="hno todo">H4</span></div></td>
-          <td>AI 추천 의미 이해 · 추천 콘텐츠 클릭률</td>
-          <td>추천 도서 클릭 — 클릭 <strong>11명(44%)</strong> / 미클릭 <strong>14명(56%)</strong> · 추천 의미 인지 — 인지 <strong>12명(48%)</strong> / 미인지 <strong>13명(52%)</strong> · <strong>두 지표 평균 46%</strong> · 참고 : 화면 도달 22명(88%)</td>
-        </tr>
-        <tr class="row-ok">
-          <td><div class="hcell"><span class="hno ok">H5</span></div></td>
-          <td>보상 획득 후 반응 관찰 · 인터뷰 · 학습 지속 의향</td>
-          <td>학습 지속 의향 <strong>21명(84%)</strong> · 인터뷰(공간 목적 인지) <strong>21명(84%)</strong> · 반응 관찰(획득 방법 이해) <strong>16명(64%)</strong></td>
-        </tr>
-        <tr class="row-ok">
-          <td><div class="hcell"><span class="hno ok">H6</span></div></td>
-          <td>공간 인식 질문 · 탐색 행동</td>
-          <td>공간 인식 질문 <strong>13명(52%)</strong> — 부분·다른 해석 5명 / 미이해·미확인 7명 · 탐색 행동 <span class="na">정형 항목 미수집</span></td>
-        </tr>
-      </table>
-      <p class="note" style="margin:0"><strong>'도움 요청 횟수'</strong>는 정형 항목이 설계되지 않아 서술형 기록에서 추출하였다. 각 가설의 검증 대상에 해당하는 사례만 집계하였으며, <strong>독후 퀴즈 버튼 탐색 1건은 목적 이해가 아닌 UI 문제</strong>이므로 H3 지표에서 제외하고 개선 과제로 분류하였다. <strong>'탐색 행동'</strong>(H6)은 대응 기록이 없어 수치화하지 못하였다.</p>
+      <div class="grid2">
+        <div>
+          <div class="colhead"><span class="ctag rd">제안</span> 우선 검토 3건</div>
+          <div style="display:flex;flex-direction:column;gap:.55em">
+            <div class="ins star">
+              <div class="n">1</div>
+              <div>
+                <h3>초저학년 STT 기능과 오디오북 추가 <span class="small">→ 13p</span></h3>
+                <p>글을 읽지 못해 <strong>대독이 필요한 4명</strong>, 부끄러워 <strong>발화를 못한 2명</strong>. 읽기와 말하기 양쪽에 지원이 필요하다.</p>
+              </div>
+            </div>
+            <div class="ins star">
+              <div class="n">2</div>
+              <div>
+                <h3>AI 추천픽 기질카드에 연결 페이지 제공 <span class="small">→ 14p</span></h3>
+                <p><strong>12명(48%)</strong>이 기질카드에 관심을 보이고 누르려 했으나 이후 연결되는 화면이 없다.</p>
+              </div>
+            </div>
+            <div class="ins star">
+              <div class="n">3</div>
+              <div>
+                <h3>코어북 연계 활동을 목차로 편입 <span class="small">→ 15p</span></h3>
+                <p>1주 분량 커리큘럼이 <strong>20분에 소진</strong>된다. 오프라인 코어북 활동을 온라인 목차로 끌어와 분량을 채운다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="colhead"><span class="ctag ev">발견</span> 데이터에서 확인된 사실 4건</div>
+          <div style="display:flex;flex-direction:column;gap:.55em">
+            <div class="ins">
+              <div class="n">4</div>
+              <div>
+                <h3>사전 독서가 학습 시간을 3.7배 줄인다</h3>
+                <p>사전 독서 그룹 <strong>2.5분</strong> vs 현장 독서 그룹 <strong>9.2분</strong>. 세션 운영과 가정 안내 설계에 활용 가능하다.</p>
+              </div>
+            </div>
+            <div class="ins">
+              <div class="n">5</div>
+              <div>
+                <h3>AI 추천은 '노출'이 아니라 '설명'의 문제이다</h3>
+                <p>22명(88%)이 화면까지 도달했으나 공간의 목적을 이해한 아동은 2명(8%)이다.</p>
+              </div>
+            </div>
+            <div class="ins">
+              <div class="n">6</div>
+              <div>
+                <h3>보상은 설명 없이도 즉시 작동한다</h3>
+                <p>별빙고는 목적 인지 84%로 4개 공간 중 최고였고, 다수가 질문 이전에 판을 뒤집었다.</p>
+              </div>
+            </div>
+            <div class="ins">
+              <div class="n">7</div>
+              <div>
+                <h3>읽기를 뺀 활동은 모두 2분 내외로 짧다</h3>
+                <p>퀴즈·어휘챌린지·문장수집이 <strong>1.0~2.5분</strong> 구간에 균질하게 모여 있다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="pageno">12 / 16</div>
 </section>
 
-<!-- 13. 활동별 진행 시간 -->
+<!-- 13. 인사이트 1 - 읽기·발화 지원 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">활동별 진행 시간</span>
-    <h2>코어북 사전 독서 여부가 소요 시간을 크게 좌우하였다</h2>
-    <p class="lead">사전에 코어 리딩북을 읽고 온 아동은 <strong>평균 2.5분</strong>, 현장에서 처음 읽은 아동은 <strong>평균 9.2분</strong>으로 <strong>약 3.7배</strong> 차이를 보였다.</p>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 인사이트 · 저연령 지원</span>
+    <h2>문해 수준이 자기주도 학습의 실질적 전제 조건이다</h2>
+    <div class="hcard"><span class="pill plain">제안</span> 초저학년 대상 <strong>오디오북(TTS 읽어주기)</strong>과 <strong>STT 말하기 입력</strong>을 기본 기능으로 제공</div>
     <div class="body">
       <div class="hero plain">
         <div>
-          <div class="vnum">3.7<span style="font-size:.45em">배</span></div>
-          <div class="vsub">코어북 읽기 소요<br />사전 독서 대비 차이</div>
+          <div class="vnum">6<span style="font-size:.45em">명</span></div>
+          <div class="vsub">읽기 또는 말하기에서<br />지원이 필요했던 아동</div>
         </div>
         <div class="bars big">
-          <div class="bar-row"><div class="blabel">사전 독서<br /><span class="small">5명</span></div><div class="bar-track"><div class="bar-fill ok" style="width:25%"></div></div><div class="bar-val">2.5<small>분</small></div></div>
-          <div class="bar-row"><div class="blabel">현장 독서<br /><span class="small">18명</span></div><div class="bar-track"><div class="bar-fill todo" style="width:92%"></div></div><div class="bar-val">9.2<small>분</small></div></div>
+          <div class="bar-row"><div class="blabel">읽기 — 대독 필요</div><div class="bar-track"><div class="bar-fill todo" style="width:16%"></div></div><div class="bar-val">4<small>명 · 16%</small></div></div>
+          <div class="bar-row"><div class="blabel">말하기 — 발화 거부</div><div class="bar-track"><div class="bar-fill todo" style="width:8%"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
         </div>
       </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 활동별 평균 소요 시간 <span class="small">— 최대 10분 기준</span></div>
-          <div class="bars wide">
-            <div class="bar-row"><div class="blabel">코어북 읽기 <span class="small">(현장)</span></div><div class="bar-track"><div class="bar-fill todo" style="width:92%"></div></div><div class="bar-val">9.2<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">교과 스키마북 읽기</div><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><div class="bar-val">4.5<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">어휘챌린지</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="bar-val">2.5<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">코어북 읽기 <span class="small">(사전)</span></div><div class="bar-track"><div class="bar-fill ok" style="width:25%"></div></div><div class="bar-val">2.5<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">코어북 독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><div class="bar-val">2.3<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">스키마북 독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:19%"></div></div><div class="bar-val">1.9<small>분</small></div></div>
-            <div class="bar-row"><div class="blabel">문장 수집 <span class="small">(K1)</span></div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div><div class="bar-val">1.0<small>분</small></div></div>
+          <div class="colhead"><span class="ctag ev">근거</span> 관찰 기록</div>
+          <div class="quotes">
+            <div class="quote todo"><span class="who">허*율 K3</span>아이 스스로 읽기 포기(글자를 잘 몰라서, 관찰자가 읽어줌)</div>
+            <div class="quote todo"><span class="who">김*담 K3</span>글을 잘 못읽어서 한 챕터에 10분 이상 걸려서 읽어줌</div>
+            <div class="quote todo"><span class="who">조*현 K3</span>스키마북 미션 떴을 때 말하는 게 부끄러워서 못하겠다고 중간에 잠시 멈춤</div>
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 세션 시간의 대부분은 도서 읽기</div>
-          <table class="vmid">
-            <tr><th>구분</th><th style="width:6.5em">핵심 활동 합계</th><th style="width:5em">중앙값</th></tr>
-            <tr class="row-ok"><td>사전 독서 그룹</td><td class="num">약 13.7분</td><td class="num">2.0분</td></tr>
-            <tr class="row-todo"><td>현장 독서 그룹</td><td class="num">약 20.4분</td><td class="num">8.5분</td></tr>
-          </table>
-          <p style="margin:.8em 0 0;font-size:.9em;line-height:1.5;color:var(--ink-2)"><strong>읽기를 제외한 활동은 모두 2분 내외</strong>로 짧고 균질하다. 퀴즈·어휘챌린지·문장수집이 1~2.5분 구간에 모여 있어, <strong>분량 조정의 효과가 가장 큰 지점은 도서 읽기</strong>이다.</p>
-          <p class="note" style="margin-top:.7em">평균은 중도 포기·미수행 건을 제외하고 산출하였다. 코어북 2명, 스키마북 3명, 스키마북 퀴즈 3명이 제외되었다. 코어북 현장 그룹에는 <strong>30분·20분 사례</strong>가 포함되어 중앙값을 함께 표기한다.</p>
+          <div class="colhead"><span class="ctag rd">해석</span> 능력이 아니라 접근 수단의 문제다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">대독이 필요했던 4명은 <strong>콘텐츠를 이해하지 못한 것이 아니라 글자를 읽지 못한 것</strong>이고, 발화를 거부한 2명은 <strong>말할 줄 몰라서가 아니라 부끄러워서</strong> 멈췄다. 둘 다 <strong>입력·출력 수단을 바꾸면 해소</strong>되는 유형이며, 콘텐츠 난이도를 낮출 문제가 아니다.</p>
+          <p class="note" style="margin:0">대독 사례는 코어북 소요 시간이 <strong>10분 이상</strong>으로 늘어나 세션 운영에도 영향을 주었다. H3의 콘텐츠 자력 완주 미달 7명 중 4명이 이 유형이다.</p>
         </div>
       </div>
     </div>
@@ -817,58 +837,79 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">13 / 16</div>
 </section>
 
-<!-- 14. 개선 과제 -->
+<!-- 14. 인사이트 2 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">개선 과제</span>
-    <h2>관찰을 통해 확인된 보강 지점</h2>
-    <p class="lead">전 항목이 <strong>구조 변경 없이 안내·표현 개선 수준</strong>에서 대응 가능한 과제이다.</p>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 인사이트 · AI 추천픽</span>
+    <h2>도달은 되었으나 의미가 전달되지 않았다</h2>
+    <div class="hcard"><span class="pill plain">제안</span> <strong>기질카드 선택 시 별도 페이지 연결</strong> · 추천 근거를 화면에 노출</div>
     <div class="body">
-      <table class="vmid fixed">
-        <tr><th style="width:9%">우선</th><th style="width:14%">영역</th><th style="width:65%">보강 지점</th><th style="width:12%">관찰 근거</th></tr>
-        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>AI 추천픽</td><td><strong>공간의 역할 안내 문구 제공</strong> — 도달은 22명이나 공간의 목적을 설명하는 요소가 부재</td><td class="num">2/25</td></tr>
-        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>코어북 · 스키마북</td><td><strong>음성 지원 기본 제공 검토</strong> — 문해 수준에 따라 대독 없이 진행 가능하도록 지원</td><td class="num">4명</td></tr>
-        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>AI 추천픽</td><td><strong>기질카드 선택 시 연결 페이지 제공</strong> — 카드에는 관심을 보이나 이후 연결 동선이 없음</td><td class="num">12/25</td></tr>
-        <tr><td><span class="pill plain">2순위</span></td><td>KRS 도서관</td><td><strong>레벨 의미의 노출</strong> — 'K7' 등 레벨 표기에 대한 아동 눈높이 설명 필요</td><td class="num">2/25</td></tr>
-        <tr><td><span class="pill plain">2순위</span></td><td>교과 스키마북</td><td><strong>분량 분할 또는 중간 저장 지원</strong> — 15~20분 구간이 집중 한계선으로 관찰됨</td><td class="num">3명</td></tr>
-        <tr><td><span class="pill plain">2순위</span></td><td>독후 퀴즈</td><td><strong>'다시 풀기' 버튼 위치 상향</strong> — 스크롤 하단에 배치되어 탐색 실패 사례 발생</td><td class="num">곽*이 K7</td></tr>
-        <tr><td><span class="pill plain">2순위</span></td><td>말하기 미션</td><td><strong>건너뛰기·음성 대체 입력 제공</strong> — 발화에 부담을 느끼는 아동을 위한 우회 수단</td><td class="num">2명</td></tr>
-        <tr><td><span class="pill plain">2순위</span></td><td>KRS 홈</td><td><strong>최초 진입 스크롤 안내</strong> — 하단 영역의 존재를 인지시키는 최소 장치</td><td class="num">다수</td></tr>
-      </table>
+      <div class="hero todo">
+        <div>
+          <div class="vnum">88<span style="font-size:.45em">%</span></div>
+          <div class="vsub">화면까지 도달<br />이후 단계에서 급락</div>
+        </div>
+        <div class="bars big">
+          <div class="bar-row"><div class="blabel">화면까지 도달</div><div class="bar-track"><div class="bar-fill ok" style="width:88%"></div></div><div class="bar-val">22<small>명 · 88%</small></div></div>
+          <div class="bar-row"><div class="blabel">기질카드에 관심</div><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><div class="bar-val">12<small>명 · 48%</small></div></div>
+          <div class="bar-row"><div class="blabel">추천 도서 클릭</div><div class="bar-track"><div class="bar-fill todo" style="width:44%"></div></div><div class="bar-val">11<small>명 · 44%</small></div></div>
+          <div class="bar-row"><div class="blabel">공간 목적 이해</div><div class="bar-track"><div class="bar-fill todo" style="width:8%"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div>
+          <div class="colhead"><span class="ctag ev">근거</span> 관찰 기록</div>
+          <div class="quotes">
+            <div class="quote good"><span class="who">이*영 K3</span>기질카드가 가장 궁금하다고 함 → <strong>기질카드를 눌러서 어떤 활동을 하는 거라고 인지</strong>했음</div>
+            <div class="quote todo"><span class="who">강*서 K1</span>기질카드에 대해서는 흥미로워 했지만, <strong>기질공간은 아예 관심이 없었음</strong></div>
+            <div class="quote todo"><span class="who">정*진 K3</span>(좋아요는) 총 책의 쪽수</div>
+          </div>
+        </div>
+        <div>
+          <div class="colhead"><span class="ctag rd">해석</span> 흥미는 카드에서 끊긴다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">도달률 88%에서 공간 목적 이해 8%까지 <strong>단계마다 급격히 떨어진다.</strong> 특히 기질카드는 <strong>12명이 관심을 보이고 누르려 했는데 연결되는 화면이 없다.</strong> 흥미가 가장 높은 지점에서 동선이 끊기는 것이다.</p>
+          <p class="note" style="margin:0">'좋아요'를 인기순·쪽수로 읽은 사례가 5명이다. 설명이 없어 비어 있는 것이 아니라 <strong>아이가 이미 아는 개념으로 채운 것</strong>이므로, 문구 추가보다 <strong>오해를 대체할 표현</strong>이 필요하다.</p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="pageno">14 / 16</div>
 </section>
 
-<!-- 15. 부록 -->
+<!-- 15. 인사이트 3 - 학습 분량 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">부록</span>
-    <h2>측정 범위와 차기 파일럿 보완 사항</h2>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 인사이트 · 학습 분량</span>
+    <h2>1주 분량 커리큘럼이 20분에 소진된다</h2>
+    <div class="hcard"><span class="pill plain">제안</span> 활동을 길게 늘이는 대신 <strong>코어북 연계 활동을 목차로 편입</strong>해 개수를 늘린다</div>
     <div class="body">
+      <div class="hero todo">
+        <div>
+          <div class="vnum">20<span style="font-size:.45em">분</span></div>
+          <div class="vsub">핵심 활동 총 소요<br />사전 독서 시 13.7분</div>
+        </div>
+        <div class="bars big">
+          <div class="bar-row"><div class="blabel">코어북 읽기<br /><span class="small">현장 · 18명</span></div><div class="bar-track"><div class="bar-fill todo" style="width:92%"></div></div><div class="bar-val">9.2<small>분</small></div></div>
+          <div class="bar-row"><div class="blabel">교과 스키마북</div><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><div class="bar-val">4.5<small>분</small></div></div>
+          <div class="bar-row"><div class="blabel">어휘챌린지</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="bar-val">2.5<small>분</small></div></div>
+          <div class="bar-row"><div class="blabel">코어북 독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><div class="bar-val">2.3<small>분</small></div></div>
+          <div class="bar-row"><div class="blabel">스키마북 독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:19%"></div></div><div class="bar-val">1.9<small>분</small></div></div>
+        </div>
+      </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">범위</span> 본 조사의 측정 범위</div>
-          <ul class="clean">
-            <li><strong>목적 이해 판정</strong> — 해당 공간의 기능 목적을 진술한 경우 <strong>이해</strong>로, 다른 기능으로 인식한 경우 <strong>미이해</strong>로 분류하였다.</li>
-            <li><strong>자발적 시작 판정</strong> — 안내 없이 스스로 화면을 탐색하였거나 활동을 실행한 경우로 정의하였다.</li>
-            <li><strong>도움 요청 횟수 · 탐색 행동</strong> — 정형 항목이 없어 서술형 기록에서 추출하였다. 횟수가 아닌 <strong>발생 여부</strong> 기준이며, 탐색 행동은 대응 기록이 없어 공간 인식 질문만으로 판정하였다.</li>
-            <li><strong>코어리딩북·교과스키마북의 목적 이해 문항</strong> — 설계되지 않아 자력 완주율을 관찰 지표로 함께 제시하였다.</li>
-            <li><strong>소요 시간</strong> — 자유 입력 방식으로 수집되어 분 단위 환산 후 평균·중앙값을 함께 제시하였다.</li>
-            <li><strong>코어북 만족도 문항 12개</strong> — 설문에 포함되었으나 응답이 수집되지 않았다.</li>
-          </ul>
+          <div class="colhead"><span class="ctag ev">근거</span> 사전 독서 여부에 따른 총 소요</div>
+          <table class="vmid">
+            <tr><th>구분</th><th style="width:6.5em">핵심 활동 합계</th><th style="width:5em">중앙값</th></tr>
+            <tr class="row-ok"><td>사전 독서 <span class="small">5명</span></td><td class="num">13.7분</td><td class="num">2.0분</td></tr>
+            <tr class="row-todo"><td>현장 독서 <span class="small">18명</span></td><td class="num">20.4분</td><td class="num">8.5분</td></tr>
+          </table>
+          <p class="small" style="margin-top:.5em;line-height:1.4;color:var(--ink-2)">평균은 중도 포기·미수행 건을 제외하고 산출하였다. K1 전용 활동인 <strong>나만의 문장 수집(1.0분)</strong>은 대상이 달라 그래프에서 제외하였다.</p>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">보완</span> 차기 파일럿 보완 사항</div>
-          <ul class="clean">
-            <li><strong>도움 요청 횟수와 탐색 행동을 정형 항목으로</strong> 설계하여 검증 방법 전 지표를 수치화한다.</li>
-            <li>코어리딩북·교과스키마북에도 <strong>목적 인식 문항을 추가</strong>하여 직접 측정이 가능하도록 한다.</li>
-            <li>소요 시간은 <strong>수치 입력 항목으로 분리</strong>하고, 중도 포기 여부를 별도 선택 항목으로 설계한다.</li>
-            <li><strong>사전 독서 여부를 필수 항목으로</strong> 수집한다. 이번 조사에서는 서술형 기록에서 추출하였다.</li>
-            <li>목적 이해 판정 기준을 <strong>사전에 문서화</strong>하여 관찰자 간 기록 편차를 줄인다.</li>
-          </ul>
-          <p class="small" style="margin-top:1.1em;line-height:1.55;color:var(--ink-2)"><strong>기록 품질</strong> — 전체 25명 중 <strong>1명(K7)</strong>은 세션 진행이 어려워 대부분 항목이 달성하지 못한 것으로 집계되었고, <strong>1명</strong>은 항목 간 응답이 교차 기입되어 해당 항목에서만 보정하였다.</p>
-          <p class="small" style="margin-top:.7em;color:var(--ink-4)">참여 아동의 이름은 개인정보 보호를 위해 마스킹 처리하였다.</p>
+          <div class="colhead"><span class="ctag rd">해석</span> 늘릴 것은 길이가 아니라 개수다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)"><strong>1주 분량으로 설계된 1단계가 20분에 끝난다.</strong> 그렇다고 개별 활동을 늘리면 안 된다 — 스키마북은 <strong>15~20분 지점에서 3명이 이탈</strong>했다. 즉 <strong>한 활동의 한계는 이미 도달</strong>했고, 짧고 균질한 활동(1~2.5분)을 <strong>더 많이 배치</strong>하는 방향이 맞다.</p>
+          <p class="note" style="margin:0">오프라인 실물 코어북과 온라인을 오가는 사용이 반복 확인되었다. 퀴즈를 풀려고 실물 도서를 다시 보거나, 패드로 읽으며 코어북 활동 이미지를 함께 본 사례가 있다. <strong>코어북 연계 활동이 분량을 채울 1순위 후보</strong>이다.</p>
         </div>
       </div>
     </div>
@@ -876,77 +917,29 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">15 / 16</div>
 </section>
 
-<!-- 16. 인사이트 -->
+<!-- 16. 개선 과제 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">인사이트</span>
-    <h2>데이터에서 도출된 시사점과 제안</h2>
+    <span class="eyebrow">개선 과제</span>
+    <h2>인사이트에서 도출된 실행 항목</h2>
+    <p class="lead">전 항목이 <strong>구조 변경 없이 안내·표현 개선 또는 기능 추가</strong> 수준에서 대응 가능하다.</p>
     <div class="body">
-      <div class="grid2">
-        <div>
-          <div class="colhead"><span class="ctag rd">제안</span> 우선 검토가 필요한 3가지</div>
-          <div style="display:flex;flex-direction:column;gap:.5em">
-            <div class="ins star">
-              <div class="n">1</div>
-              <div>
-                <h3>초저학년 대상 STT 기능과 오디오북 추가</h3>
-                <p>25명 중 <strong>4명은 관찰자가 읽어주어야</strong> 진행되었고, 2명은 말하기 미션을 <strong>"부끄러워서"</strong> 수행하지 못하였다. 읽기와 발화 양쪽에 지원이 필요하다.<br /><strong>→ 오디오북(읽어주기)과 STT(말하기 입력)를 저연령 대상 기본 기능으로 제안한다.</strong></p>
-              </div>
-            </div>
-            <div class="ins star">
-              <div class="n">2</div>
-              <div>
-                <h3>AI 추천픽 기질카드에 연결 페이지 제공</h3>
-                <p><strong>12명(48%)</strong>이 기질카드에 관심을 보였고 <strong>카드를 선택하려는 행동</strong>이 관찰되었으나, 이후 연결되는 화면이 없다. 카드에는 흥미를 보이면서 기질공간에는 관심이 없다는 기록도 확인된다.<br /><strong>→ 카드 선택 시 별도 페이지로 연결하여 흥미를 학습 동선으로 잇는다.</strong></p>
-              </div>
-            </div>
-            <div class="ins star">
-              <div class="n">3</div>
-              <div>
-                <h3>코어북 연계 활동을 목차에서 바로 연결</h3>
-                <p>오프라인 실물 코어북과 온라인 화면을 <strong>오가며 사용하는 행동</strong>이 반복 확인되었다. 퀴즈를 풀기 위해 실물 도서를 다시 보거나, 패드로 읽으며 코어북 활동 이미지를 함께 보는 사례가 있었다.<br /><strong>→ 코어리딩북 연계 활동을 목차에 편성하여 온·오프라인 동선을 연결한다.</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">발견</span> 데이터에서 확인된 사실</div>
-          <div style="display:flex;flex-direction:column;gap:.5em">
-            <div class="ins">
-              <div class="n">4</div>
-              <div>
-                <h3>사전 독서가 학습 시간을 3.7배 줄인다</h3>
-                <p>사전 독서 그룹 <strong>2.5분</strong> vs 현장 독서 그룹 <strong>9.2분</strong>. 세션 운영과 가정 안내 설계에 활용할 수 있는 수치이다.</p>
-              </div>
-            </div>
-            <div class="ins">
-              <div class="n">5</div>
-              <div>
-                <h3>AI 추천은 '노출'이 아니라 '설명'의 문제이다</h3>
-                <p>22명(88%)이 화면까지 도달했으나 공간의 목적을 이해한 아동은 2명(8%)이다. 동선은 이미 확보되었으므로 <strong>추천 근거 한 줄</strong>이 핵심 레버이다.</p>
-              </div>
-            </div>
-            <div class="ins">
-              <div class="n">6</div>
-              <div>
-                <h3>보상은 설명 없이도 즉시 작동한다</h3>
-                <p>별빙고는 목적 인지 84%로 4개 공간 중 최고였고, 다수가 질문 이전에 판을 뒤집었다. <strong>"재밌어서 책 더 읽을 것 같아요"</strong>라는 발화가 직접 확인되었다.</p>
-              </div>
-            </div>
-            <div class="ins">
-              <div class="n">7</div>
-              <div>
-                <h3>읽기를 뺀 활동은 모두 2분 내외로 짧다</h3>
-                <p>퀴즈·어휘챌린지·문장수집이 <strong>1.0~2.5분</strong> 구간에 모여 있다. 세션 시간의 대부분을 도서 읽기가 차지하므로 <strong>분량 조정의 효과가 가장 크다.</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <table class="vmid fixed">
+        <tr><th style="width:9%">우선</th><th style="width:14%">영역</th><th style="width:65%">실행 항목</th><th style="width:12%">근거</th></tr>
+        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>코어북 · 스키마북</td><td><strong>오디오북(TTS) · STT 말하기 입력 기본 제공</strong> — 문해 수준에 따라 대독 없이 진행 가능하도록 지원</td><td class="num">13p</td></tr>
+        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>AI 추천픽</td><td><strong>기질카드 선택 시 연결 페이지 제공</strong> — 카드에는 관심을 보이나 이후 동선이 없음</td><td class="num">14p</td></tr>
+        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>AI 추천픽</td><td><strong>공간의 역할과 추천 근거 노출</strong> — 도달은 22명이나 목적을 설명하는 요소가 부재</td><td class="num">14p</td></tr>
+        <tr class="row-todo"><td><span class="pill todo">1순위</span></td><td>커리큘럼 분량</td><td><strong>코어북 연계 활동을 목차로 편입</strong> — 1주 분량이 20분에 소진, 짧은 활동을 추가 배치</td><td class="num">15p</td></tr>
+        <tr><td><span class="pill plain">2순위</span></td><td>교과 스키마북</td><td><strong>분량 분할 또는 중간 저장 지원</strong> — 15~20분 구간이 집중 한계선</td><td class="num">15p</td></tr>
+        <tr><td><span class="pill plain">2순위</span></td><td>독후 퀴즈</td><td><strong>'다시 풀기' 버튼 위치 상향</strong> — 스크롤 하단에 배치되어 탐색 실패</td><td class="num">H2</td></tr>
+        <tr><td><span class="pill plain">2순위</span></td><td>KRS 도서관</td><td><strong>레벨 의미의 노출</strong> — 'K7' 등 레벨 표기에 대한 아동 눈높이 설명 필요</td><td class="num">H6</td></tr>
+        <tr><td><span class="pill plain">2순위</span></td><td>KRS 홈</td><td><strong>최초 진입 스크롤 안내</strong> — 하단 영역의 존재를 인지시키는 최소 장치</td><td class="num">H1</td></tr>
+      </table>
     </div>
   </div>
   <div class="pageno">16 / 16</div>
 </section>
+
 
 </div>
 <div id="hint">↑ ↓ 또는 PageUp/PageDown으로 이동 · Ctrl+P로 PDF 저장</div>
