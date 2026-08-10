@@ -80,30 +80,44 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .kpit .s{font-size:.75em;color:var(--ink-3);font-weight:600;line-height:1.35}
 .kpit.hl{background:var(--accent-tint)} .kpit.hl .v{color:var(--accent-strong)} .kpit.hl .k{color:var(--accent-strong)}
 
-/* 분포 칩 */
-.dist{display:flex;gap:.45em;flex-wrap:wrap}
-.chip{display:flex;align-items:baseline;gap:.3em;background:var(--line-2);border-radius:.5em;padding:.45em .7em;
-  font-size:.84em;font-weight:700;color:var(--ink-2)}
-.chip b{font-size:1.15em;font-weight:800;color:var(--ink);letter-spacing:-0.03em}
-.stack{display:flex;height:1.6em;border-radius:99px;overflow:hidden;background:var(--line-2)}
-.stack i{display:block;height:100%}
-.legend{display:flex;gap:1em;flex-wrap:wrap;font-size:.8em;font-weight:700;color:var(--ink-2);margin-top:.5em}
-.legend span{display:flex;align-items:center;gap:.35em}
-.legend i{width:.65em;height:.65em;border-radius:50%;display:block}
+/* 분포 — 항목마다 다른 형식으로 구분 */
+.distset{display:grid;grid-template-columns:1.1fr 1.5fr 1.4fr;gap:1.5em;align-items:end}
+.dlabel{font-size:.8em;font-weight:800;color:var(--ink-3);margin-bottom:.55em;letter-spacing:0}
+
+/* ① 세로 막대 */
+.vbars{display:flex;align-items:flex-end;gap:.55em;height:14em}
+.vbar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.3em;height:100%}
+.vbar b{font-size:.88em;font-weight:800;color:var(--ink);letter-spacing:-0.02em}
+.vbar i{display:block;width:100%;border-radius:.3em .3em 0 0;background:var(--accent);min-height:.4em}
+.vbar i.l2{background:#7DAEFB} .vbar i.l3{background:#B9D4FD}
+.vbar span{font-size:.76em;font-weight:700;color:var(--ink-3)}
+
+/* ② 좌우 분할 바 */
+.splits{display:flex;flex-direction:column;gap:.7em}
+.split{display:flex;height:1.9em;border-radius:.4em;overflow:hidden}
+.split i{display:flex;align-items:center;justify-content:center;height:100%;
+  font-size:.78em;font-weight:800;color:#fff;white-space:nowrap}
+.split i.b{background:var(--accent)} .split i.g{background:var(--ink-4)}
+.splitname{font-size:.76em;font-weight:700;color:var(--ink-3);margin-bottom:.3em}
+
+/* 하단 한 줄 요약 */
+.oneline{display:flex;align-items:flex-start;gap:.6em;background:var(--line-2);border-radius:.5em;
+  padding:.6em .85em;font-size:.85em;line-height:1.5;color:var(--ink-2)}
+.oneline + .oneline{margin-top:.5em}
 
 /* ---------- 스코어카드 ---------- */
-.score{display:grid;grid-template-columns:repeat(3,1fr);gap:.65em}
-.sc{border-radius:.7em;padding:.8em .95em;border:1.5px solid var(--line);display:flex;flex-direction:column;gap:.3em}
+.score{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:.9em;flex:1;min-height:0}
+.sc{border-radius:.8em;padding:1.05em 1.15em;border:1.5px solid var(--line);display:flex;flex-direction:column;gap:.45em}
 .sc.ok{border-color:#B9EBD8;background:linear-gradient(180deg,#F4FDF9,#fff)}
 .sc.todo{border-color:#F7DFAE;background:linear-gradient(180deg,#FFFBF2,#fff)}
 .sc .top{display:flex;align-items:center;justify-content:space-between;gap:.5em}
-.sc .name{display:flex;align-items:center;gap:.4em;font-size:.85em;font-weight:800;color:var(--ink);line-height:1.2}
-.sc .hyp{font-size:.76em;color:var(--ink-3);font-weight:600;line-height:1.4;min-height:2.8em}
-.sc .num{display:flex;align-items:baseline;gap:.4em}
-.sc .v{font-size:1.85em;font-weight:800;letter-spacing:-0.045em;line-height:1}
+.sc .name{display:flex;align-items:center;gap:.45em;font-size:.95em;font-weight:800;color:var(--ink);line-height:1.2}
+.sc .hyp{font-size:.82em;color:var(--ink-3);font-weight:600;line-height:1.45;flex:1}
+.sc .num{display:flex;align-items:baseline;gap:.5em}
+.sc .v{font-size:2.4em;font-weight:800;letter-spacing:-0.05em;line-height:1}
 .sc.ok .v{color:var(--ok-deep)} .sc.todo .v{color:var(--todo-deep)}
-.sc .goal{font-size:.76em;font-weight:700;color:var(--ink-3)}
-.sc .mini{height:.4em;background:var(--line-2);border-radius:99px;overflow:hidden;margin-top:.15em}
+.sc .goal{font-size:.8em;font-weight:700;color:var(--ink-3)}
+.sc .mini{height:.45em;background:var(--line-2);border-radius:99px;overflow:hidden;margin-top:.2em}
 .sc .mini i{display:block;height:100%;border-radius:99px}
 .sc.ok .mini i{background:var(--ok)} .sc.todo .mini i{background:var(--todo)}
 
@@ -122,23 +136,26 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .bars{display:flex;flex-direction:column;gap:.5em}
 .bar-row{display:grid;grid-template-columns:9.6em 1fr 5.6em;align-items:center;gap:.75em}
 /* 기준선 라벨이 붙는 행은 아래 여백을 확보해 잘리거나 겹치지 않게 한다 */
-.bar-row.has-goal{margin-bottom:1.35em}
+.bar-row.has-goal{margin-top:1.5em}
 .blabel{font-size:.88em;color:var(--ink-2);text-align:right;font-weight:600;line-height:1.25}
 .bar-track{position:relative;background:var(--line-2);border-radius:99px;height:1.5em}
 .bar-fill{height:100%;background:var(--accent);border-radius:99px;min-width:.2em}
 .bar-fill.ok{background:var(--ok)} .bar-fill.todo{background:var(--todo)} .bar-fill.mute{background:var(--ink-4)}
-.bar-goal{position:absolute;top:-.25em;bottom:-.25em;width:.16em;background:var(--ink);border-radius:99px;opacity:.5}
-.bar-goal::after{content:attr(data-t);position:absolute;left:50%;transform:translateX(-50%);bottom:-1.4em;
-  font-size:.62em;font-weight:800;color:var(--ink-3);white-space:nowrap;letter-spacing:0}
+/* 성공 기준선 — 막대 위에 어두운 칩으로 강조 */
+.bar-goal{position:absolute;top:-.3em;bottom:-.3em;width:.18em;background:var(--ink);border-radius:99px;opacity:.85}
+.bar-goal::after{content:attr(data-t);position:absolute;left:50%;transform:translateX(-50%);
+  bottom:calc(100% + .3em);
+  font-size:.62em;font-weight:800;letter-spacing:0;white-space:nowrap;
+  color:#fff;background:var(--ink);padding:.22em .55em;border-radius:.38em}
 .bar-val{font-size:.9em;font-weight:800;white-space:nowrap}
 .bar-val small{font-weight:600;color:var(--ink-3);margin-left:.2em;font-size:.78em}
 .bars.big{gap:.7em}
 .bars.big .bar-row{grid-template-columns:10.5em 1fr 7.4em;gap:.95em}
-.bars.big .bar-row.has-goal{margin-bottom:1.55em}
+.bars.big .bar-row.has-goal{margin-top:1.7em}
 .bars.big .bar-track{height:2.2em;background:rgba(255,255,255,.72)}
 .bars.big .blabel{font-size:.94em}
 .bars.big .bar-val{font-size:1.06em}
-.bars.big .bar-goal::after{font-size:.58em;bottom:-1.5em}
+.bars.big .bar-goal::after{font-size:.6em;bottom:calc(100% + .35em)}
 .bars.wide .bar-row{grid-template-columns:11.5em 1fr 6.6em}
 /* 하위 내역 — 상위 막대를 구성하는 항목임을 얇고 연한 막대로 표시 */
 .bar-row.sub .blabel{font-size:.82em;color:var(--ink-3);font-weight:600}
@@ -157,6 +174,7 @@ th:first-child{border-radius:.4em 0 0 .4em} th:last-child{border-radius:0 .4em .
 td.num{text-align:right;font-weight:800;white-space:nowrap}
 td.mid{vertical-align:middle}
 table.vmid td{vertical-align:middle}
+table.roomy th,table.roomy td{padding:1.25em .8em}   /* 행이 적은 표는 여백을 넉넉히 */
 tr.row-ok td{background:#FAFEFC} tr.row-todo td{background:#FFFCF5}
 .na{color:var(--ink-4);font-weight:700}
 
@@ -232,7 +250,7 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner cover">
     <div class="rule"></div>
     <h1>KRS 플랫폼<br />파일럿 결과보고서</h1>
-    <div class="sig">북클럽 3.0 플랫폼 · 2026년 8월</div>
+    <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
   <div class="pageno">1 / 16</div>
 </section>
@@ -251,13 +269,13 @@ ul.clean li::marker{color:var(--ink-4)}
         </div>
         <div class="kpit">
           <div class="k">진행 기간</div>
-          <div class="v">2<small>일</small></div>
-          <div class="s">8월 7일 ~ 8일</div>
+          <div class="v">3<small>일</small></div>
+          <div class="s">8월 6일(목) ~ 8일(토)</div>
         </div>
         <div class="kpit">
           <div class="k">진행 방식</div>
           <div class="v">1 : 1</div>
-          <div class="s">관찰자 개입 없음</div>
+          <div class="s">관찰자 최소 개입</div>
         </div>
         <div class="kpit">
           <div class="k">관찰 문항</div>
@@ -270,42 +288,45 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="s">H1 ~ H6</div>
         </div>
       </div>
-      <div class="grid2">
-        <div>
-          <div class="colhead"><span class="ctag ev">구성</span> 참여 아동 분포</div>
-          <div class="stack" style="margin-bottom:.15em">
-            <i style="width:44%;background:var(--accent)"></i>
-            <i style="width:28%;background:#7DAEFB"></i>
-            <i style="width:28%;background:#B9D4FD"></i>
+      <div>
+        <div class="colhead"><span class="ctag ev">구성</span> 참여 아동 분포 <span class="small">전체 25명</span></div>
+        <div class="distset">
+          <div>
+            <div class="dlabel">코어북 레벨</div>
+            <div class="vbars">
+              <div class="vbar"><b>7</b><i class="l2" style="height:64%"></i><span>K1</span></div>
+              <div class="vbar"><b>11</b><i style="height:100%"></i><span>K3</span></div>
+              <div class="vbar"><b>7</b><i class="l3" style="height:64%"></i><span>K7</span></div>
+            </div>
           </div>
-          <div class="legend">
-            <span><i style="background:var(--accent)"></i>K3 11명</span>
-            <span><i style="background:#7DAEFB"></i>K1 7명</span>
-            <span><i style="background:#B9D4FD"></i>K7 7명</span>
+          <div>
+            <div class="dlabel">연령</div>
+            <div class="vbars">
+              <div class="vbar"><b>6</b><i style="height:67%"></i><span>7세</span></div>
+              <div class="vbar"><b>9</b><i style="height:100%"></i><span>8세</span></div>
+              <div class="vbar"><b>4</b><i style="height:44%"></i><span>9세</span></div>
+              <div class="vbar"><b>6</b><i style="height:67%"></i><span>10세</span></div>
+            </div>
           </div>
-          <div class="dist" style="margin-top:.9em">
-            <div class="chip">8세 <b>9</b>명</div>
-            <div class="chip">7세 <b>6</b>명</div>
-            <div class="chip">10세 <b>6</b>명</div>
-            <div class="chip">9세 <b>4</b>명</div>
-          </div>
-          <div class="dist" style="margin-top:.45em">
-            <div class="chip">여아 <b>16</b>명</div>
-            <div class="chip">남아 <b>9</b>명</div>
-            <div class="chip">북패드 이용 <b>20</b>명</div>
+          <div class="splits">
+            <div>
+              <div class="splitname">성별</div>
+              <div class="split">
+                <i class="b" style="width:64%">여아 16</i><i class="g" style="width:36%">남아 9</i>
+              </div>
+            </div>
+            <div>
+              <div class="splitname">북패드 이용 경험</div>
+              <div class="split">
+                <i class="b" style="width:80%">있음 20</i><i class="g" style="width:20%">없음 5</i>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag rd">방식</span> 세션 진행과 데이터 수집</div>
-          <ul class="clean">
-            <li>아동 <strong>1명당 1개 세션</strong>으로 커리큘럼 1단계 전 과정을 수행하였다.</li>
-            <li>관찰자는 <strong>개입 없이</strong> 아동의 행동과 발화를 기록하였다. 스스로 진행하지 못할 때에만 최소한으로 안내하고, 그 사실을 함께 기록하였다.</li>
-            <li>수집 항목은 <strong>행동 관찰</strong>(스크롤·클릭·소요 시간·완주 여부)과 <strong>직접 질문</strong>(공간 인식·의미 이해)으로 구성하였다.</li>
-            <li>관찰 기록 <strong>25건</strong>이 확보되었으며, 참여자 정보 6항목과 시스템 자동 기록 2항목은 분석 대상에서 제외하였다.</li>
-            <li>데이터는 <strong>실시간 대시보드</strong>(아이가 직접 선택)와 <strong>관찰 기록 시트</strong>(관찰자 기록) 두 가지이며 응답 주체가 다르다. 본 보고서의 모든 판정은 <strong>관찰 기록만을 근거로</strong> 산출하였고, 두 출처를 합산한 지표는 사용하지 않았다.</li>
-          </ul>
-          <p class="note" style="margin-top:.9em">모든 판정은 <strong>전체 25명을 분모</strong>로 산출하였다. 세션을 완료하지 못하였거나 해당 문항의 응답이 확인되지 않은 경우는 달성하지 못한 것으로 처리하여 보수적으로 집계하였다.</p>
-        </div>
+      </div>
+      <div>
+        <div class="oneline"><span class="ctag ev" style="flex:0 0 auto">방식</span> <span>아동 1명당 1개 세션으로 커리큘럼 1단계 전 과정을 수행하였다. 관찰자는 <strong>최소한으로만 개입</strong>하며 행동과 발화를 기록하고, 개입한 사실도 함께 남겼다.</span></div>
+        <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">집계</span> <span>판정은 <strong>관찰 기록 시트</strong>(관찰자 작성)만을 근거로 하며, <strong>전체 25명을 분모</strong>로 응답이 확인되지 않은 경우는 달성하지 못한 것으로 보수적으로 처리하였다.</span></div>
       </div>
     </div>
   </div>
@@ -319,7 +340,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h2>파일럿에 앞서 6개 가설과 성공 기준을 수립하였다</h2>
     <p class="lead">아이가 <strong>스스로 시작하고 · 이어서 수행하고 · 의미를 이해하는가</strong>를 6개 가설로 구분하고, 각 가설별 <strong>검증 방법과 성공 기준</strong>을 사전에 정의한 뒤 그대로 측정하였다.</p>
     <div class="body">
-      <table class="vmid fixed">
+      <table class="vmid fixed roomy">
         <tr>
           <th style="width:15%">구분</th>
           <th style="width:38%">검증 가설</th>
@@ -412,20 +433,6 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="hyp">KRS 도서관이 책을 만나는 공간임을 이해한다</div>
           <div class="num"><div class="v">52%</div><div class="goal">13/25명 · 기준 50%</div></div>
           <div class="mini"><i style="width:52%"></i></div>
-        </div>
-      </div>
-      <div class="grid3" style="margin-top:.1em">
-        <div class="panel ok">
-          <h3>자기주도 학습이 성립하였다</h3>
-          <p class="small" style="margin:0;line-height:1.5;color:var(--ink-2)">25명 중 23명이 안내 없이 첫 활동에 진입하였고, 21명이 학습 순서를 그대로 수행하였으며, 21명이 도움 없이 기능을 이용하였다.</p>
-        </div>
-        <div class="panel todo">
-          <h3>보완 — AI 추천 근거 안내</h3>
-          <p class="small" style="margin:0;line-height:1.5;color:var(--ink-2)">화면 도달은 22명인데 <strong>추천 도서를 누른 아이는 11명, 의미를 인지한 아이는 12명</strong>에 그친다. 추천 근거를 보여주는 안내가 필요하다.</p>
-        </div>
-        <div class="panel todo">
-          <h3>함께 확인된 과제 — 읽기 지원</h3>
-          <p class="small" style="margin:0;line-height:1.5;color:var(--ink-2)">4명은 아직 글을 읽지 못해 <strong>관찰자가 대신 읽어주어야</strong> 진행되었다. 콘텐츠 완주율을 좌우한 요인이다.</p>
         </div>
       </div>
     </div>
