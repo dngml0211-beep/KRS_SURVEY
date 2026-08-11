@@ -334,15 +334,13 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .fdrop{font-size:.72em;font-weight:800;color:var(--ink-4);padding-left:.5em}
 
 /* 시즌 테마 스트립 */
-.seasons{display:flex;gap:.5em;margin-top:.6em}
-.seasons i{flex:1;font-style:normal;display:flex;align-items:center;justify-content:center;gap:.42em;
-  font-size:.82em;font-weight:800;color:var(--ink-2);background:#fff;
-  border:1.5px solid var(--line);border-radius:.5em;padding:.48em .5em}
-.seasons i span{font-size:1.3em;line-height:1}
-.seasons i.sp{background:#FFF4F8;border-color:#F8CFE0}
-.seasons i.su{background:#F0FAFF;border-color:#B6E3FB}
-.seasons i.au{background:#FFF7ED;border-color:#FBD6A6}
-.seasons i.wi{background:#F5F8FF;border-color:#C7D8F5}
+.seasons{display:flex;gap:.28em;margin-top:.42em;flex-wrap:wrap}
+.seasons i{flex:0 0 auto;font-style:normal;display:inline-flex;align-items:center;gap:.22em;
+  font-size:.72em;font-weight:800;border-radius:99px;padding:.26em .62em;white-space:nowrap}
+.seasons i.sp{background:#FDEEF5;color:#A63A70}
+.seasons i.su{background:#E8F6FE;color:#0B6E99}
+.seasons i.au{background:#FEF1E2;color:#9A5B12}
+.seasons i.wi{background:#EEF2FB;color:#33518C}
 /* 문구 변경 전/후 */
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:.5em;margin-top:.6em}
 .ba>div{background:#fff;border:1.5px solid var(--line);border-radius:.5em;padding:.55em .7em}
@@ -1171,7 +1169,7 @@ ul.clean li::marker{color:var(--ink-4)}
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
-    <h2>별빙고 — 좋아하는 것을 더 좋아하게</h2>
+    <h2>별빙고는 규칙을 몰라도 가장 다시 하고 싶어 한 공간이다</h2>
     <div class="body">
       <div class="grid2 fill">
         <div>
@@ -1183,7 +1181,7 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 재참여 의향과 규칙 이해 <span class="small">전체 25명</span></div>
+          <div class="colhead"><span class="ctag rd">지표 · 해석</span> 규칙은 몰라도, 일단 누르고 본다 <span class="small">전체 25명</span></div>
           <div class="donuts xl" style="justify-content:space-around;margin-top:2.3em">
             <div class="donut">
               <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>다시 하고 싶다</em></div></div>
@@ -1202,21 +1200,16 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
             </div>
           </div>
-          <div class="colhead" style="margin-top:2.1em"><span class="ctag rd">해석</span> 좋아하는 이유가 규칙이 아니었다</div>
-          <p style="margin:0;font-size:.9em;line-height:1.55;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20% 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
+          <p class="note blue" style="margin:2em 0 0;font-size:.9em;line-height:1.55"><strong>좋아하는 이유가 규칙이 아니었다.</strong> 규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20% 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
         </div>
       </div>
       <div class="impbox tight">
         <h3><em>개선 방향</em> 규칙 설명을 늘리는 대신, 누를 때의 반응을 키운다</h3>
         <div class="impitems c2">
           <div class="impitem"><span class="ico">🔊✨</span><div><b>효과음 · 이펙트 추가</b><span>별 획득·빙고 완성 순간에 <strong>소리와 움직임</strong>을 넣는다</span></div></div>
-          <div class="impitem"><span class="ico">🗓️</span><div><b>시즌성 운영</b><span>월별 <strong>빙고판 배경 교체</strong>로 다시 올 이유를 만든다</span></div></div>
-        </div>
-        <div class="seasons">
-          <i class="sp"><span>🌸</span>봄 테마</i>
-          <i class="su"><span>🏖️</span>여름 테마</i>
-          <i class="au"><span>🍁</span>가을 테마</i>
-          <i class="wi"><span>⛄</span>겨울 테마</i>
+          <div class="impitem"><span class="ico">🗓️</span><div><b>시즌성 운영</b><span>월별 <strong>빙고판 배경 교체</strong>로 다시 올 이유를 만든다</span>
+            <div class="seasons"><i class="sp">🌸 봄</i><i class="su">🏖️ 여름</i><i class="au">🍁 가을</i><i class="wi">⛄ 겨울</i></div>
+          </div></div>
         </div>
       </div>
     </div>
@@ -1299,7 +1292,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch">
         <div class="mid">
           <div class="colhead"><span class="ctag rd">도구안</span> 읽기 지원 도구 <span class="small">단어 단위 하이라이팅 · 예시</span></div>
-          <div class="reader">
+          <div class="reader" style="font-size:1.16em">
             <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
             <div class="rbody">
               <p class="rtext" style="margin:0">
@@ -1319,34 +1312,22 @@ ul.clean li::marker{color:var(--ink-4)}
         </div>
         <div class="mid">
           <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
-          <div class="vbars even" style="height:10.4em;margin-top:.9em">
+          <div class="vbars even" style="height:15.5em;margin-top:1.2em">
             <div class="vbar">
               <div class="vtrack"><div class="stackwrap" style="height:37.5%"><b>3명</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
-              <span>걸림</span></div>
+              <span>못 읽음</span></div>
             <div class="vbar">
               <div class="vtrack"><div class="stackwrap" style="height:50%"><b>4명</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-              <span>자력</span></div>
+              <span>스스로 읽음</span></div>
             <div class="vbar gapl">
               <div class="vtrack"><div class="stackwrap" style="height:37.5%"><b>3명</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
-              <span>걸림</span></div>
+              <span>못 읽음</span></div>
             <div class="vbar">
               <div class="vtrack"><div class="stackwrap" style="height:100%"><b>8명</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-              <span>자력</span></div>
+              <span>스스로 읽음</span></div>
           </div>
           <div class="lvrow"><span>K1 7명 중 3명 · 43%</span><span>K3 11명 중 3명 · 27%</span></div>
-          <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:1.1em">
-            <div class="tile"><div class="k">어른이 대신 읽어줌</div><div class="v">4<small>명</small></div><div class="s">K1 2 · K3 2</div></div>
-            <div class="tile" style="background:#FEECEC"><div class="k" style="color:#B42318">아이가 먼저 도움 요청</div><div class="v" style="color:#B42318">0<small>명</small></div><div class="s">전원 어른이 먼저 개입</div></div>
-          </div>
-          <p class="note blue" style="margin:1em 0 0">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 이번엔 관찰자가 메웠지만 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되고, 그때 <strong>리텐션이 먼저 무너진다.</strong></p>
-        </div>
-      </div>
-      <div class="impbox tight">
-        <h3><em>개선 방향</em> 대신 읽어주는 사람이 아니라, 혼자 넘어갈 수 있는 도구를 준다</h3>
-        <div class="impitems c3">
-          <div class="impitem"><span class="ico">🔊</span><div><b>읽어주세요</b><span>단어 단위로 <strong>따라 읽어주며 하이라이팅</strong></span></div></div>
-          <div class="impitem"><span class="ico">❓</span><div><b>이 단어를 잘 모르겠어요</b><span>막힌 <strong>단어만 짚어</strong> 물어볼 수 있게</span></div></div>
-          <div class="impitem"><span class="ico">🎧</span><div><b>오디오북으로 듣기</b><span>읽기가 어려운 날도 <strong>진도가 멈추지 않게</strong></span></div></div>
+          <p class="note blue" style="margin:1.3em 0 0">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 이번엔 관찰자가 메웠지만 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되고, 그때 <strong>리텐션이 먼저 무너진다.</strong></p>
         </div>
       </div>
     </div>
@@ -1358,7 +1339,7 @@ ul.clean li::marker{color:var(--ink-4)}
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
-    <h2>캐릭터는 아이를 화면 맨 아래까지 데려왔다</h2>
+    <h2>캐릭터는 아이가 가장 먼저 알아본 요소다</h2>
     <div class="body">
       <div class="grid2 fill stretch">
         <div class="mid">
@@ -1370,16 +1351,15 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="shotcap key"><b class="red">1</b><span>진단평가 결과로 만들어지는 <strong>기질카드</strong>다. 아이들이 <strong>가장 먼저 알아본 요소</strong>다.</span></div>
         </div>
         <div class="mid">
-          <div class="colhead"><span class="ctag ev">지표</span> 아이는 어디까지 왔나 <span class="small">전체 25명</span></div>
-          <div class="funnel" style="margin-top:1.1em">
-            <div class="fstep"><div class="fbar" style="width:88%;background:#1D4ED8">AI 추천픽 영역까지 스스로 도달</div><div class="fval">22<small>명 · 88%</small></div></div>
-            <div class="fstep"><div class="fbar" style="width:68%;background:#2563EB">기질카드·캐릭터에 반응</div><div class="fval">17<small>명 · 68%</small></div></div>
-            <div class="fstep"><div class="fbar" style="width:52%;background:#4B8DF8">캐릭터가 예쁘다·귀엽다고 말함</div><div class="fval">13<small>명 · 52%</small></div></div>
-            <div class="fstep"><div class="fbar" style="width:28%;background:#7DAEFB">진단평가에서 본 <b>자기 카드</b>를 알아봄</div><div class="fval">7<small>명 · 28%</small></div></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 아이는 캐릭터를 좋아한다고 말했다 <span class="small">전체 25명</span></div>
+          <div class="funnel" style="margin-top:1.2em">
+            <div class="fstep"><div class="fbar" style="width:68%;background:#1D4ED8">기질카드·캐릭터에 반응</div><div class="fval">17<small>명 · 68%</small></div></div>
+            <div class="fstep"><div class="fbar" style="width:52%;background:#2563EB">캐릭터가 예쁘다·귀엽다고 직접 말함</div><div class="fval">13<small>명 · 52%</small></div></div>
+            <div class="fstep"><div class="fbar" style="width:28%;background:#4B8DF8">진단평가에서 본 <b>자기 카드</b>를 기억함</div><div class="fval">7<small>명 · 28%</small></div></div>
           </div>
-          <p class="note plain" style="margin:.9em 0 0">화면 맨 아래까지 스스로 내려온 <strong>22명</strong> 중 <strong>17명이 기질카드에서 멈춰 반응</strong>했다. 캐릭터를 언급한 <strong>13명은 전원 긍정</strong>이었다.</p>
-          <div class="colhead" style="margin-top:1.1em"><span class="ctag rd">해석</span> 말은 못 알아들어도 캐릭터는 알아본다</div>
-          <p style="margin:0 0 .6em;font-size:.89em;line-height:1.55;color:var(--ink-2)">아이는 <strong>'기질'이나 'K7' 같은 말은 알아듣지 못했다.</strong> 그런데 <strong>진단평가에서 본 캐릭터는 알아봤다.</strong> 기질카드에 시큰둥했던 아이도 캐릭터만큼은 좋아했다. <strong>캐릭터가 진단 결과와 화면을 잇는 고리</strong>다.</p>
+          <p class="note plain" style="margin:1em 0 0">캐릭터를 직접 언급한 <strong>13명은 전원 긍정</strong>이었다. <strong>부정적으로 말한 아이는 한 명도 없다.</strong></p>
+          <div class="colhead" style="margin-top:1.2em"><span class="ctag rd">해석</span> 진단평가에서 본 캐릭터를 기억한다</div>
+          <p style="margin:0 0 .6em;font-size:.89em;line-height:1.55;color:var(--ink-2)">진단평가를 받고 온 아이는 화면에서 <strong>자기 캐릭터를 바로 알아보고 반가워했다.</strong> 기질카드에 크게 관심이 없던 아이도 <strong>캐릭터만큼은 좋아했다.</strong> <strong>캐릭터가 진단 결과와 학습 화면을 잇는 고리</strong>로 이미 작동하고 있다.</p>
           <div class="quotes">
             <div class="quote blue"><span class="who">조서* K3</span><strong>흥미는 크지 않았지만, 캐릭터 좋아함</strong></div>
             <div class="quote blue"><span class="who">김가* K1</span><strong>진단검사를 하지 않아서 큰 흥미가 없음</strong> — 다만 캐릭터는 좋아함</div>
@@ -1399,8 +1379,8 @@ ul.clean li::marker{color:var(--ink-4)}
     <h2>누르면 열리는 콘텐츠를 붙인다</h2>
     <div class="body">
       <div class="grid2 fill stretch">
-        <div class="mid">
-          <div class="colhead"><span class="ctag rd">콘텐츠안</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
+        <div>
+          <div class="colhead"><span class="ctag rd">기획안</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
           <div class="mock">
             <div class="mockbar"><s></s><s></s><s></s><b>기질카드 · 나만의 공간</b></div>
             <div class="mockhero">
@@ -1419,7 +1399,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="rcap"><strong>1화는 지금 열고</strong>, 다음 화는 <strong>공개 예정으로 남겨</strong> 다시 올 이유를 만든다.</p>
         </div>
-        <div class="mid">
+        <div>
           <div class="colhead"><span class="ctag rd">해석</span> 맞는 기대를 해놓고 아무 일도 일어나지 않았다</div>
           <div class="actlist" style="margin-top:.3em">
             <div class="act later"><div class="n">1</div><div>
@@ -1456,40 +1436,33 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 학습 분량 · 활동 다양화</span>
     <h2>목차 활동 — 길이가 아니라 주차별 다양성으로</h2>
     <div class="body">
-      <div>
-        <div class="colhead"><span class="ctag ev">지표</span> 활동별 소요 시간 <span class="small">책 읽기 제외 · 1주 분량 · 분</span></div>
-        <div class="hero plain" style="margin-top:.7em">
-          <div>
-            <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
-            <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
-          </div>
-          <div class="vbars even" style="height:7.4em">
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:100%"><b>2.5분</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
-              <span>어휘 챌린지</span></div>
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:96%"><b>2.4분</b><div class="stackbar"><div class="seg b2" style="height:100%"></div></div></div></div>
-              <span>독후퀴즈<br />코어 리딩북</span></div>
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:84%"><b>2.1분</b><div class="stackbar"><div class="seg b3" style="height:100%"></div></div></div></div>
-              <span>독후퀴즈<br />교과 스키마북</span></div>
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:52%"><b>1.3분</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-              <span>나만의 문장 수집<br />K1 전용</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="grid2">
+      <div class="grid2 fill">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 활동은 보상으로 작동하고 있다</div>
-          <div class="tiles" style="grid-template-columns:1fr 1fr">
-            <div class="tile" style="background:var(--ok-tint)"><div class="k" style="color:var(--ok-deep)">책을 읽어서 활동을<br />더 하고 싶다</div><div class="v" style="color:var(--ok-deep)">21<small>명 · 84%</small></div><div class="s">책 읽기 → 활동 개방을 보상으로 인지</div></div>
-            <div class="tile"><div class="k">활동 형식 종류<br /><span class="small">독후퀴즈 2개는 같은 형식</span></div><div class="v">3<small>종</small></div><div class="s">K3·K7은 2종</div></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 활동별 소요 시간 <span class="small">책 읽기 제외 · 1주 분량</span></div>
+          <div class="hero plain" style="margin-top:.5em">
+            <div>
+              <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
+              <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
+            </div>
+            <div class="vbars even" style="height:8.6em">
+              <div class="vbar">
+                <div class="vtrack"><div class="stackwrap" style="height:100%"><b>2.5분</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
+                <span>어휘<br />챌린지</span></div>
+              <div class="vbar">
+                <div class="vtrack"><div class="stackwrap" style="height:96%"><b>2.4분</b><div class="stackbar"><div class="seg b2" style="height:100%"></div></div></div></div>
+                <span>독후퀴즈<br />코어북</span></div>
+              <div class="vbar">
+                <div class="vtrack"><div class="stackwrap" style="height:84%"><b>2.1분</b><div class="stackbar"><div class="seg b3" style="height:100%"></div></div></div></div>
+                <span>독후퀴즈<br />스키마북</span></div>
+              <div class="vbar">
+                <div class="vtrack"><div class="stackwrap" style="height:52%"><b>1.3분</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
+                <span>문장 수집<br />K1 전용</span></div>
+            </div>
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 아이가 직접 꼽은 재미있어 보이는 활동 <span class="small">전체 25명</span></div>
-          <div class="bars onwhite" style="margin-top:.2em">
+          <div class="colhead"><span class="ctag ev">지표</span> 아이가 직접 꼽은 재미있는 활동 <span class="small">전체 25명</span></div>
+          <div class="bars onwhite" style="margin-top:.9em">
             <div class="bar-row"><div class="blabel">별빙고</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:#1D4ED8"></div></div><div class="bar-val">8<small>명</small></div></div>
             <div class="bar-row"><div class="blabel">책 읽기</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#4B8DF8"></div></div><div class="bar-val">7<small>명</small></div></div>
             <div class="bar-row"><div class="blabel">어휘 챌린지 ·<br />나만의 문장 수집</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#7DAEFB"></div></div><div class="bar-val">4<small>명</small></div></div>
@@ -1497,6 +1470,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
       </div>
+      <div class="oneline"><span class="ctag ev" style="flex:0 0 auto">근거</span> <span>책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다</strong> — <strong>21명(84%)</strong>이 책을 읽어서 활동을 더 하고 싶다고 답했다. 다만 활동은 <strong>2분 남짓 3종</strong>뿐이고 그중 둘은 <strong>같은 형식의 독후퀴즈</strong>다.</span></div>
       <div class="impbox tight">
         <h3><em>개선 방향</em> 하나를 길게 만들지 않고, 주차별로 종류를 늘린다</h3>
         <div class="weekflow">
@@ -1520,33 +1494,33 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner">
     <span class="eyebrow">종합</span>
     <h2>아이들이 스스로 끝까지 해냈습니다</h2>
-    <p class="lead">3일 동안 <strong>25명의 아이</strong>가 KRS를 처음 만났고, <strong>가설 6건 중 5건이 충족</strong>되었습니다. 설명 없이 시작해 순서대로 완주했고, 무엇보다 <strong>다시 하고 싶다고 말했습니다.</strong> 남은 과제도 무엇을 해야 할지 분명해졌습니다.</p>
+    <p class="lead">3일 동안 <strong>25명</strong>의 아이가 KRS를 처음 만났고, <strong>가설 6건 중 5건이 충족</strong>되었습니다.</p>
     <div class="body">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(9.6em,auto);gap:.9em;margin:.5em 0 .8em">
-        <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">1</div><div>
-          <h3>커리큘럼 구조는 손댈 필요가 없다</h3>
-          <p>자발적 시작 <strong>92%</strong> · 순서 완주 <strong>84%</strong> · 스스로 스크롤 <strong>88%</strong>. 길 모양 화면을 아이가 그대로 따라 내려갔다.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:1em;margin:.6em 0 1em">
+        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">1</div><div>
+          <h3>구조는 손댈 필요가 없다</h3>
+          <p>자발적 시작 <strong>92%</strong> · 순서 완주 <strong>84%</strong></p>
         </div></div>
-        <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">2</div><div>
-          <h3>아이가 좋아하는 지점을 찾았다</h3>
-          <p>별빙고 재참여 의향 <strong>84%</strong>, 기질카드 반응 <strong>17명</strong>. 무엇을 키워야 하는지가 분명해졌다.</p>
+        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">2</div><div>
+          <h3>좋아하는 지점을 찾았다</h3>
+          <p>별빙고 재참여 <strong>84%</strong> · 캐릭터 반응 <strong>17명</strong></p>
         </div></div>
-        <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">3</div><div>
-          <h3>고쳐야 할 곳도 분명해졌다</h3>
-          <p><strong>읽기</strong>와 <strong>의미 전달</strong> 두 지점이다. 실행 항목 <strong>6건</strong>이 모두 여기를 향한다.</p>
+        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">3</div><div>
+          <h3>고칠 곳도 분명해졌다</h3>
+          <p><strong>읽기</strong>와 <strong>의미 전달</strong> — 실행 항목 <strong>6건</strong></p>
         </div></div>
       </div>
       <div class="grid2 eq">
         <div class="panel hl">
-          <h3>오픈 전까지 이렇게 하겠습니다</h3>
-          <p style="margin:0;font-size:.88em;line-height:1.6;color:var(--ink-2)">화면 표현만 조정하면 되는 <strong>3건</strong>(추천 표시·별빙고 이펙트·도서관 스크롤)은 <strong>이번 개발 회차에 반영</strong>합니다. 오픈 후 <strong>3건</strong> 중에서는 <strong>읽기 지원이 1순위</strong>입니다. 막히면 진도 전체가 멈추고 부모를 불러야 하는, <strong>리텐션에 직접 걸린 유일한 항목</strong>이기 때문입니다.</p>
+          <h3>오픈 전까지</h3>
+          <p style="margin:0;font-size:.92em;line-height:1.6;color:var(--ink-2)">화면 표현만 바꾸면 되는 <strong>3건</strong>을 이번 개발 회차에 반영합니다.</p>
         </div>
         <div class="panel">
-          <h3>다음 파일럿에서 이어서 보겠습니다</h3>
-          <p style="margin:0;font-size:.88em;line-height:1.6;color:var(--ink-2)">추천 클릭률 <strong>44%</strong>는 하루 2권을 끝낸 자리에서 잰 값이라, <strong>다음 날 다시 들어와 누르는지</strong>로 다시 재야 합니다. 주차별 활동 다양화의 효과도 <strong>1회차 관찰로는 알 수 없어</strong> 다회차 추적이 필요합니다.</p>
+          <h3>오픈 후에는</h3>
+          <p style="margin:0;font-size:.92em;line-height:1.6;color:var(--ink-2)"><strong>읽기 지원이 1순위</strong>입니다. 리텐션에 직접 걸린 유일한 항목입니다.</p>
         </div>
       </div>
-      <div class="impbar" style="margin-top:.7em"><b>마무리</b><span>파일럿은 <strong>구조가 맞다</strong>는 확인과 <strong>무엇을 고칠지</strong>를 함께 남겼습니다. 남은 기간 동안 <strong>오픈 전 3건을 확실히 반영</strong>하고, 아이가 <strong>혼자서도 끝까지 갈 수 있는 KRS</strong>로 오픈까지 잘 마무리하겠습니다.</span></div>
+      <p style="margin:1.4em 0 0;text-align:center;font-size:1.28em;font-weight:800;line-height:1.5;color:var(--accent-strong);letter-spacing:-.02em">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br />오픈까지 잘 마무리하겠습니다.</p>
     </div>
   </div>
   <div class="pageno">22 / 22</div>
