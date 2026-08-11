@@ -152,6 +152,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 @media print{.hilite{animation:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.hilite{animation:none;opacity:1}}
 .shotcap b.red{background:#EF4444}
+.shotcap.key{margin-top:.7em;padding:.6em .75em;border-radius:.5em;background:var(--accent-tint);color:var(--ink-2)}
 /* 적용 전 ⇄ 적용 후 교차 페이드 */
 .xfade{position:relative;line-height:0}
 .xf{position:relative;animation:xfA 8s ease-in-out infinite}
@@ -173,6 +174,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .actlist.spread .act{align-content:center}
 .donuts.lg .ring{width:9.6em;height:9.6em}
 .donuts.lg .hole b{font-size:1.25em}
+.donuts.xl .ring{width:11.4em;height:11.4em}
+.donuts.xl .hole b{font-size:1.45em}
+.donuts.xl .dname{font-size:.84em}
+.donuts.xl .dleg{font-size:.8em}
 .funnel.lg{gap:.75em}
 .funnel.lg .fbar{height:3.3em;font-size:.9em}
 .funnel.lg .flab{font-size:.95em}
@@ -691,7 +696,7 @@ ul.clean li::marker{color:var(--ink-4)}
 <section class="slide">
   <div class="inner">
     <span class="eyebrow todo"><span class="hno todo" style="width:1.6em;height:1.6em;font-size:.85em">H4</span> AI 추천 탐색 · 보완 필요</span>
-    <h2>화면 도달은 확보되었으며, 추가 독서로의 연결이 과제이다</h2>
+    <h2>오늘 몫을 끝낸 아이는 더 읽고 싶어 하지 않는다</h2>
     <div class="hcard"><span class="pill plain">가설</span> AI 추천은 아이들이 쉽게 이해하고 신뢰한다 <span class="small">· 검증 방법 : 추천 의미 이해 · 클릭률 · 기준 50%</span></div>
     <div class="body">
       <div class="hero todo">
@@ -716,9 +721,9 @@ ul.clean li::marker{color:var(--ink-4)}
           <p class="small" style="margin-top:.5em;line-height:1.45;color:var(--ink-2)">클릭한 11명이 연 책은 <strong>총 14권</strong>이다. 이 수치는 아이들이 <strong>코어 리딩북·교과 스키마북 2권을 모두 끝낸 직후</strong>에 측정하였다.</p>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 오늘 몫을 끝낸 아이는 더 읽고 싶어 하지 않는다</div>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">클릭하지 않은 <strong>14명은 추천을 거부한 것이 아니다.</strong> 하루 분량인 <strong>2권을 막 끝낸 상태</strong>였고, 그 자리에서 세 번째 책을 열 힘이 남아 있지 않았다. 실제로 교과 스키마북에서 <strong>15~20분에 힘들다고 멈춘 아이가 2명</strong>이고, 반대로 <strong>힘이 남은 아이는 추천 도서를 끝까지 읽었다.</strong></p>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">즉 이 수치를 가르는 것은 <strong>추천의 설득력이 아니라 남은 체력</strong>이다. AI 추천픽은 본래 <strong>매일 다시 들어와 읽도록</strong> 만든 공간이므로, 한자리에서 더 읽히려 할수록 불리해진다.</p>
+          <div class="colhead"><span class="ctag rd">해석</span> 거부가 아니라 체력의 문제였다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">클릭하지 않은 <strong>14명은 추천을 거부한 것이 아니다.</strong> 하루 분량인 <strong>2권을 막 끝낸 직후</strong>였고, 그 자리에서 세 번째 책을 열 <strong>체력이 남아 있지 않았다.</strong></p>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">읽는 단계에서 이미 힘을 다 쓴 흔적이 있다. 교과 스키마북에서 <strong>15~20분에 힘들다고 멈춘 아이가 2명</strong>이고, 반대로 <strong>힘이 남은 아이는 세션이 끝난 뒤에도 남아서 추천 도서를 계속 읽었다.</strong> 이 수치를 가르는 것은 <strong>추천의 설득력이 아니라 남은 체력</strong>이다.</p>
           <div class="quotes">
             <div class="quote good"><span class="who">곽*이 K7</span>추천책을 읽고 싶어서 <strong>테스트가 끝났는데에도 남아서 계속 책을 읽음</strong></div>
             <div class="quote todo"><span class="who">김*린 K7</span>(교과 스키마북) <strong>15분 읽다가 힘들다고 포기함</strong></div>
@@ -971,11 +976,11 @@ ul.clean li::marker{color:var(--ink-4)}
           <img class="shot" src="images/bingo.jpg" alt="별빙고 화면 — 3×3 빙고판에서 칸을 누르면 별이 나오고 세 칸이 이어지면 빙고가 완성된다" />
           <div class="shotcap"><b>1</b><span>빙고판 한 칸을 누르면 <strong>별이 나온다.</strong> 세 칸이 이어지면 빙고 완성.</span></div>
           <div class="shotcap"><b>2</b><span>티켓 1장으로 1회 참여하며, 판을 모두 완성하면 <strong>별 20개</strong>를 추가로 받는다.</span></div>
-          <div class="shotcap"><b>3</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. 이 순간에 소리와 움직임이 없다.</span></div>
+          <div class="shotcap key"><b>3</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
         <div>
           <div class="colhead"><span class="ctag ev">지표</span> 재참여 의향과 규칙 이해 <span class="small">전체 25명</span></div>
-          <div class="donuts" style="justify-content:space-around;margin-top:.5em">
+          <div class="donuts xl" style="justify-content:space-around;margin-top:2.3em">
             <div class="donut">
               <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>다시 하고 싶다</em></div></div>
               <div class="dname">재참여 의향</div>
@@ -993,13 +998,8 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
             </div>
           </div>
-          <div class="colhead" style="margin-top:.85em"><span class="ctag rd">해석</span> 좋아하는 이유가 규칙이 아니었다</div>
-          <p style="margin:0 0 .5em;font-size:.87em;line-height:1.5;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20%p 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
-          <div class="quotes">
-            <div class="quote blue"><span class="who">오*현 K7</span>별 더 받아서 좋아요. <strong>재밌어서 책 더 읽을 것 같아요.</strong></div>
-            <div class="quote blue"><span class="who">강*서 K1</span>빙고게임을 잘 모르고 <strong>짝맞추기 퍼즐 게임으로 인식</strong>함</div>
-          </div>
-          <p class="note blue" style="margin:.7em 0 0">그래서 <strong>규칙 안내보다 이펙트가 먼저</strong>다. 화면 로직 변경 없이 오픈 전 반영이 가능하다.</p>
+          <div class="colhead" style="margin-top:2.1em"><span class="ctag rd">해석</span> 좋아하는 이유가 규칙이 아니었다</div>
+          <p style="margin:0;font-size:.9em;line-height:1.55;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20%p 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
         </div>
       </div>
     </div>
