@@ -137,6 +137,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .b1{background:#1D4ED8} .b2{background:#2563EB} .b3{background:#4B8DF8} .b4{background:#7DAEFB} .b5{background:#A6C8FC}
 .quote.blue{background:var(--accent-tint);border-left-color:var(--accent)}
 .note.blue{color:var(--accent-strong);background:var(--accent-tint)}
+.note.plain{color:var(--ink-2);background:var(--line-2)}
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
 .grid2.fill{flex:1;min-height:0}
@@ -588,22 +589,28 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 중단 발생 지점</div>
-          <table class="vmid">
-            <tr><th style="width:9em">지점</th><th>원인</th></tr>
-            <tr><td>코어 리딩북</td><td>문해 수준 — 대독 필요</td></tr>
-            <tr><td>교과 스키마북</td><td>분량 부담</td></tr>
-            <tr><td>말하기 미션</td><td>발화 부담</td></tr>
-            <tr><td>독후 퀴즈</td><td>'다시 풀기' 버튼 위치</td></tr>
-          </table>
+          <div class="colhead"><span class="ctag ev">근거</span> 중단 원인 분포 <span class="small">중단 경험 11명</span></div>
+          <div class="tstack" style="width:100%;height:3.2em;margin-top:.4em">
+            <i class="b1" style="width:54.5%">소리내어 읽기 6</i>
+            <i class="b3" style="width:18.2%">말하기 2</i>
+            <i class="b4" style="width:18.2%">분량 2</i>
+            <i class="b5" style="width:9.1%">1</i>
+          </div>
+          <div class="agelegend" style="margin-top:.6em">
+            <span><i style="background:#1D4ED8"></i>소리내어 읽기 — 글자·문단 읽기 부담 6명</span>
+            <span><i style="background:#4B8DF8"></i>말하기 미션 — 소리내어 말하는 부담 2명</span>
+            <span><i style="background:#7DAEFB"></i>분량 부담 — 스키마북 15~20분 2명</span>
+            <span><i style="background:#A6C8FC"></i>집중·흥미 1명</span>
+          </div>
+          <p class="note plain" style="margin:.7em 0 0">앞의 두 항목을 합치면 <strong>8명(73%)</strong>이다. 중단은 <strong>소리 내어 읽고 말하는 지점</strong>에 몰려 있다.</p>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 순서는 잘 따라했으나 소리내어 읽기에서 멈췄다</div>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)"><strong>순서를 헷갈린 아이는 없었다.</strong> 멈춘 곳은 정해져 있다 — 중간에 멈춘 11명 중 <strong>7명이 코어북과 스키마북</strong>, 곧 <strong>책을 읽는 구간</strong>이다. 코어북은 <strong>글자를 읽지 못해서</strong>, 스키마북은 <strong>분량이 많아서</strong> 멈췄다. 순서를 손볼 게 아니라 <strong>읽는 부담만 덜어주면</strong> 되는 문제다.</p>
-          <p class="note" style="margin:0 0 .6em">활동별 완료율 — 어휘챌린지 100% · 코어북 96% · 코어북 퀴즈 96% · 스키마북 퀴즈 88% · 스키마북 84%</p>
+          <div class="colhead"><span class="ctag rd">해석</span> 순서가 아니라 소리 내어 읽는 게 부담이었다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)"><strong>순서를 헷갈린 아이는 없었다.</strong> 멈춘 이유는 한 곳으로 모인다 — 중단 경험 11명 중 <strong>8명이 읽거나 말하는 지점</strong>에서 멈췄다. 글자를 몰라 못 읽은 아이도 있지만, <strong>읽을 수 있는데 소리 내어 읽기가 부담스러워 안 읽은</strong> 쪽이 더 크다. 코어북 질문지에서도 <strong>K1 7명 전원</strong>이 소리 내어 읽기에 부담을 표시했다.</p>
           <div class="quotes">
             <div class="quote good"><span class="who">강*서 K1</span>없음. 코어북부터 스키마북 추천까지 <strong>자연스럽게 흐름 이어짐</strong></div>
-            <div class="quote todo"><span class="who">정*현 K7</span>스키마북 20분 보다가 힘들다고 해서 건너뜀</div>
+            <div class="quote todo"><span class="who">조*현 K3</span>스키마북 미션 떴을 때 <strong>말하는 게 부끄러워서 못하겠다</strong>고 중간에 잠시 멈춤</div>
+            <div class="quote todo"><span class="who">김*담 K3</span>(스키마북) <strong>너무 오래 걸릴 거 같아서 안 읽음</strong></div>
           </div>
         </div>
       </div>
@@ -638,11 +645,11 @@ ul.clean li::marker{color:var(--ink-4)}
             <tr><td>다음 학습으로 넘어가지 못해 유도</td><td class="num">1</td></tr>
             <tr><td>코어북을 미리 읽어서 스키마북부터 시도함</td><td class="num">1</td></tr>
           </table>
+          <p class="note plain" style="margin:.7em 0 0">네 명 모두 <strong>기능을 못 다룬 것이 아니라 어디부터 시작할지</strong>에서 멈췄다. <strong>진입 시점의 안내</strong>만 보완하면 되는 범위다.</p>
         </div>
         <div>
           <div class="colhead"><span class="ctag rd">해석</span> 화면에 그려진 길을 그대로 따라 내려갔다</div>
           <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">코어 리딩북을 마친 아이들은 <strong>알려주지 않아도 화면을 아래로 내려</strong> 교과 스키마북, 어휘챌린지, 별빙고로 이어갔다. <strong>22명(88%)이 스스로 스크롤해 하단 영역까지 도달</strong>했고 <strong>21명(84%)이 정해진 순서를 그대로 완주</strong>했다. 길 모양으로 그려진 화면을 <strong>다음에 갈 곳으로 읽어낸 것</strong>이다.</p>
-          <p class="note" style="margin:0 0 .6em">도움이 필요했던 4명도 기능을 못 다룬 것이 아니라 <strong>어디부터 시작할지</strong>에서 멈췄다. 진입 시점의 안내만 보완하면 되는 범위다.</p>
           <div class="quotes">
             <div class="quote good"><span class="who">곽*이 K7</span>독후 퀴즈를 맞추기 위해 <strong>코어 리딩북을 다시 읽는</strong> 사용성을 보임</div>
             <div class="quote todo"><span class="who">조*현 K3</span>뭘 해야 할지 모르겠다고 해서 순서대로 실행시켜줌</div>
@@ -683,15 +690,16 @@ ul.clean li::marker{color:var(--ink-4)}
           <p class="small" style="margin-top:.5em;line-height:1.45;color:var(--ink-2)">클릭한 11명이 연 책은 <strong>총 14권</strong>이다. 이 수치는 아이들이 <strong>코어 리딩북·교과 스키마북 2권을 모두 끝낸 직후</strong>에 측정하였다.</p>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 오늘 몫을 끝낸 자리에서 세 번째 책을 물었다</div>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">커리큘럼은 <strong>코어 리딩북 1권과 교과 스키마북 1권, 하루 2권</strong>을 마치면 끝난다. AI 추천픽은 그것을 마친 아이가 <strong>다음 날 다시 들어와</strong> 읽도록 만든 공간이다. 그런데 이번 클릭률은 <strong>2권을 막 끝낸 자리</strong>에서 측정되었다. 추천을 이해하지 못해서가 아니라 <strong>오늘 할 일을 다 했고 더 읽을 힘이 남지 않은</strong> 상태에서 나온 값이다.</p>
-          <p class="note" style="margin:0 0 .6em">실제로 교과 스키마북에서 <strong>15~20분에 힘들다고 멈춘 아이가 2명</strong>이다. 반대로 힘이 남은 아이는 추천 도서를 <strong>끝까지 읽었다.</strong> 이 지표는 한 자리에서 몇 권을 더 읽느냐가 아니라 <strong>내일 다시 들어와 누르느냐</strong>로 보아야 한다(15p).</p>
+          <div class="colhead"><span class="ctag rd">해석</span> 오늘 몫을 끝낸 아이는 더 읽고 싶어 하지 않는다</div>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">클릭하지 않은 <strong>14명은 추천을 거부한 것이 아니다.</strong> 하루 분량인 <strong>2권을 막 끝낸 상태</strong>였고, 그 자리에서 세 번째 책을 열 힘이 남아 있지 않았다. 실제로 교과 스키마북에서 <strong>15~20분에 힘들다고 멈춘 아이가 2명</strong>이고, 반대로 <strong>힘이 남은 아이는 추천 도서를 끝까지 읽었다.</strong></p>
+          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.5;color:var(--ink-2)">즉 이 수치를 가르는 것은 <strong>추천의 설득력이 아니라 남은 체력</strong>이다. AI 추천픽은 본래 <strong>매일 다시 들어와 읽도록</strong> 만든 공간이므로, 한자리에서 더 읽히려 할수록 불리해진다.</p>
           <div class="quotes">
             <div class="quote good"><span class="who">곽*이 K7</span>추천책을 읽고 싶어서 <strong>테스트가 끝났는데에도 남아서 계속 책을 읽음</strong></div>
             <div class="quote todo"><span class="who">김*린 K7</span>(교과 스키마북) <strong>15분 읽다가 힘들다고 포기함</strong></div>
           </div>
         </div>
       </div>
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">지표 해석 기준</span> <span>이 지표는 <strong>한자리에서 몇 권을 더 읽느냐</strong>가 아니라 <strong>다음 날 다시 들어와 누르느냐</strong>로 보아야 한다. 재방문 기준의 측정 설계는 <strong>17페이지</strong>에서 다룬다.</span></div>
     </div>
   </div>
   <div class="pageno">8 / 19</div>
@@ -872,7 +880,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
       </div>
-      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">공통 판단 근거</span> <span>6건 모두 <strong>구조 변경 없이</strong> 대응 가능하다. 커리큘럼 흐름 자체는 <strong>84%가 순서대로 완주</strong>하여 재설계 대상이 아니다.</span></div>
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">구분 기준</span> <span><strong>오픈 전 3건</strong>은 화면의 표현·배치 조정이므로 이번 개발 회차에 반영 가능하다. <strong>오픈 후 3건</strong>은 기능 신설과 커리큘럼 재편이 따르므로 <strong>별도 일정과 리소스 검토</strong>가 필요하다.</span></div>
     </div>
   </div>
   <div class="pageno">12 / 19</div>
@@ -1175,7 +1183,7 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner">
     <span class="eyebrow">종합</span>
     <h2>실행 항목 6건 요약</h2>
-    <p class="lead">가설 <strong>6건 중 5건 충족</strong>, 1건 보완 필요. 도출된 실행 항목은 <strong>오픈 전 3건 · 오픈 후 3건</strong>이며 전 항목이 구조 변경 없이 대응 가능하다.</p>
+    <p class="lead">가설 <strong>6건 중 5건 충족</strong>, 1건 보완 필요. 도출된 실행 항목은 <strong>오픈 전 3건 · 오픈 후 3건</strong>이다. 오픈 전 3건은 화면 표현 조정으로 이번 회차 반영이 가능하고, 오픈 후 3건은 <strong>기능 신설·커리큘럼 재편</strong>이 따른다.</p>
     <div class="body">
       <table class="vmid fixed roomy ctr">
         <tr><th style="width:13%">구분</th><th style="width:15%">영역</th><th style="width:44%">실행 항목</th><th style="width:17%">근거 지표</th><th style="width:11%">상세</th></tr>
