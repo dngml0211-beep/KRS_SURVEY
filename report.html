@@ -305,9 +305,11 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 }
 .rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
   padding-top:.85em;border-top:1.5px dashed var(--line)}
-.rtool{display:inline-flex;align-items:center;gap:.38em;font-size:.78em;font-weight:800;
+.rtools{flex-wrap:nowrap}
+.rtool{display:inline-flex;align-items:center;justify-content:center;gap:.28em;
+  font-size:.66em;font-weight:800;white-space:nowrap;
   color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;
-  border-radius:99px;padding:.45em .85em;box-shadow:0 .18em 0 #C9DDFB}
+  border-radius:99px;padding:.42em .62em;box-shadow:0 .16em 0 #C9DDFB}
 .rtool em{font-style:normal;font-size:1.15em;line-height:1}
 .rtool.b1{animation:rp1 13s linear infinite}
 .rtool.b2{animation:rp2 13s linear infinite}
@@ -457,6 +459,16 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   width:1.6em;height:1.6em;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .divider.late .dvchips i b{background:var(--ink-3)}
 
+/* 활동 슬롯 흐름 — 가운데 한 칸만 교체 */
+.slotflow{display:flex;align-items:center;gap:.4em;margin-bottom:.7em}
+.sf{flex:1;text-align:center;font-size:.78em;font-weight:800;color:var(--ink-2);
+  background:var(--line-2);border:1.5px solid var(--line);border-radius:.5em;padding:.6em .3em;
+  word-break:keep-all;line-height:1.3}
+.sf.swap{position:relative;color:var(--accent-strong);background:#fff;
+  border:2px dashed var(--accent);box-shadow:0 0 0 .18em rgba(59,130,246,.12)}
+.sf.swap i{display:block;font-style:normal;font-size:.78em;font-weight:800;
+  color:var(--accent);margin-top:.15em}
+.sfar{flex:0 0 auto;font-size:1em;font-weight:800;color:var(--ink-4)}
 /* 주차별 활동 카드 */
 .wkroll{display:grid;grid-template-columns:repeat(2,1fr);gap:.55em}
 .wkc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18em;
@@ -883,10 +895,10 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag ev">근거</span> 진입 후 첫 행동 유형 <span class="small">전체 25명</span></div>
           <table class="vmid">
             <tr><th>첫 행동</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:5.4em">비율</th></tr>
-            <tr><td>도서 등 콘텐츠 즉시 실행</td><td class="num">12</td><td class="num">48%</td></tr>
-            <tr><td>스크롤 탐색</td><td class="num">11</td><td class="num">44%</td></tr>
-            <tr><td>GNB 메뉴 이동</td><td class="num">2</td><td class="num">8%</td></tr>
-            <tr class="row-sum"><td><strong>합계</strong></td><td class="num"><strong>25</strong></td><td class="num"><strong>100%</strong></td></tr>
+            <tr><td>도서 등 콘텐츠 즉시 실행</td><td class="num">12명</td><td class="num">48%</td></tr>
+            <tr><td>스크롤 탐색</td><td class="num">11명</td><td class="num">44%</td></tr>
+            <tr><td>GNB 메뉴 이동</td><td class="num">2명</td><td class="num">8%</td></tr>
+            <tr class="row-sum"><td><strong>합계</strong></td><td class="num"><strong>25명</strong></td><td class="num"><strong>100%</strong></td></tr>
           </table>
           <p class="note plain" style="margin:.55em 0 0">질문한 <strong>2명도 곧바로 콘텐츠를 실행</strong>해 위 <strong>12명에 포함</strong>된다.</p>
         </div>
@@ -926,9 +938,9 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag ev">근거</span> 잠시 중단 원인 <span class="small">잠시 중단 경험 11명</span></div>
           <table class="vmid fixed">
             <tr><th style="width:26%">구분</th><th>원인</th><th class="num" style="width:15%">인원</th></tr>
-            <tr><td><strong>소리 내어<br />읽고 말하기</strong><br /><span class="small">8명 · 73%</span></td><td><strong>말하기 녹음 미션</strong> — 글자·문단을 소리 내어 읽고 말하는 부담</td><td class="num">8</td></tr>
-            <tr><td rowspan="2">그 외<br /><span class="small">3명 · 27%</span></td><td>분량 부담 — 스키마북 15~20분</td><td class="num">2</td></tr>
-            <tr><td>집중·흥미 저하</td><td class="num">1</td></tr>
+            <tr><td><strong>소리 내어<br />읽고 말하기</strong><br /><span class="small">8명 · 73%</span></td><td><strong>말하기 녹음 미션</strong> — 글자·문단을 소리 내어 읽고 말하는 부담</td><td class="num">8명</td></tr>
+            <tr><td rowspan="2">그 외<br /><span class="small">3명 · 27%</span></td><td>분량 부담 — 스키마북 15~20분</td><td class="num">2명</td></tr>
+            <tr><td>집중·흥미 저하</td><td class="num">1명</td></tr>
           </table>
           <p class="note plain" style="margin:.7em 0 0">잠시 멈춘 지점은 <strong>말하기 녹음 미션</strong>에 몰려 있다. 11명 중 <strong>8명(73%)</strong>이 이 구간에서 멈췄다.</p>
         </div>
@@ -968,8 +980,8 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag ev">근거</span> 질문 및 도움이 필요했던 3명</div>
           <table class="vmid">
             <tr><th>상황</th><th class="num" style="width:4.6em">인원</th></tr>
-            <tr><td>무엇을 해야 할지 몰라 관찰자가 순서를 안내</td><td class="num">2</td></tr>
-            <tr><td>활동 종료 후 나가기 버튼을 인지 못함</td><td class="num">1</td></tr>
+            <tr><td>무엇을 해야 할지 몰라 관찰자가 순서를 안내</td><td class="num">2명</td></tr>
+            <tr><td>활동 종료 후 나가기 버튼을 인지 못함</td><td class="num">1명</td></tr>
           </table>
           <p class="note plain" style="margin:.7em 0 0">세 명 모두 <strong>기능을 못 다룬 것이 아니라 어디부터 시작할지 · 어디로 나갈지</strong>에서 멈췄다. <strong>진입과 종료 시점의 안내</strong>만 보완하면 되는 범위다.</p>
         </div>
@@ -1048,14 +1060,16 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
       <div class="grid2">
         <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 보조 지표</div>
+          <div class="colhead"><span class="ctag ev">근거</span> 별 획득 방법을 이해했는가 <span class="small">전체 25명</span></div>
           <table class="vmid">
-            <tr><th>지표</th><th class="num" style="width:7.6em">인원</th></tr>
-            <tr class="row-ok"><td>공간 목적 인지 <span class="small">인터뷰</span></td><td class="num">21명 · 84%</td></tr>
-            <tr class="row-todo"><td>획득 방법 자력 이해 <span class="small">반응 관찰</span></td><td class="num">16명 · 64%</td></tr>
-            <tr><td>설명을 들은 뒤 이해</td><td class="num">3명 · 12%</td></tr>
+            <tr><th>이해 수준</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:4.6em">비율</th></tr>
+            <tr class="row-ok"><td>스스로 이해</td><td class="num">16명</td><td class="num">64%</td></tr>
+            <tr><td>설명을 들은 뒤 이해</td><td class="num">3명</td><td class="num">12%</td></tr>
+            <tr><td>부분 이해 <span class="small">"책 많이 읽으면 되는 것 같아요"</span></td><td class="num">1명</td><td class="num">4%</td></tr>
+            <tr class="row-todo"><td>이해하지 못함 · 미확인</td><td class="num">5명</td><td class="num">20%</td></tr>
+            <tr class="row-sum"><td><strong>합계</strong></td><td class="num"><strong>25명</strong></td><td class="num"><strong>100%</strong></td></tr>
           </table>
-          <p class="small" style="margin-top:.5em;line-height:1.4;color:var(--ink-2)">다수가 질문 이전에 자발적으로 판을 뒤집었다. 4개 공간 중 목적 인지율이 가장 높다.</p>
+          <p class="note plain" style="margin:.55em 0 0">한편 <strong>공간 목적 인지는 21명(84%)</strong>으로 4개 공간 중 가장 높다. 다수가 질문 이전에 <strong>스스로 판을 뒤집었다.</strong></p>
         </div>
         <div>
           <div class="colhead"><span class="ctag rd">해석</span> 규칙을 몰라도 동기가 먼저 생겼다</div>
@@ -1094,10 +1108,10 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag ev">근거</span> 응답 유형 분포</div>
           <table class="vmid">
             <tr><th>응답 유형</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:5.2em">비율</th></tr>
-            <tr class="row-ok"><td>"내게 맞는 책이 있는 곳" <span class="small">큐레이션 인식</span></td><td class="num">3</td><td class="num">12%</td></tr>
-            <tr class="row-ok"><td>"책을 읽는 곳" <span class="small">일반 도서관 개념</span></td><td class="num">10</td><td class="num">40%</td></tr>
-            <tr><td>다른 기능으로 해석 <span class="small">"내가 읽은 책이 나온다" · "잠긴 책을 읽어야 풀린다"</span></td><td class="num">5</td><td class="num">20%</td></tr>
-            <tr class="row-todo"><td>"잘 모르겠어요"</td><td class="num">7</td><td class="num">28%</td></tr>
+            <tr class="row-ok"><td>"내게 맞는 책이 있는 곳" <span class="small">큐레이션 인식</span></td><td class="num">3명</td><td class="num">12%</td></tr>
+            <tr class="row-ok"><td>"책을 읽는 곳" <span class="small">일반 도서관 개념</span></td><td class="num">10명</td><td class="num">40%</td></tr>
+            <tr><td>다른 기능으로 해석 <span class="small">"내가 읽은 책이 나온다" · "잠긴 책을 읽어야 풀린다"</span></td><td class="num">5명</td><td class="num">20%</td></tr>
+            <tr class="row-todo"><td>"잘 모르겠어요"</td><td class="num">7명</td><td class="num">28%</td></tr>
           </table>
         </div>
         <div>
@@ -1500,8 +1514,8 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill stretch">
         <div>
-          <div class="colhead"><span class="ctag rd">기획안</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
-          <div class="mock">
+          <div class="colhead"><span class="ctag rd">예시</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
+          <div class="mock" style="font-size:1.4em">
             <div class="mockbar"><s></s><s></s><s></s><b>기질카드 · 나만의 공간</b></div>
             <div class="mockhero">
               <div class="mockchar">🐯</div>
@@ -1537,7 +1551,6 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="impitems c1">
             <div class="impitem"><span class="ico">🎬</span><div><b>1화 즉시 공개</b><span>누르면 <strong>바로 볼 수 있는 콘텐츠</strong>를 하나 둔다</span></div></div>
             <div class="impitem"><span class="ico">🗓️</span><div><b>다음 화 공개 예정</b><span>월 단위 공개 일정으로 <strong>다시 올 이유</strong>를 만든다</span></div></div>
-            <div class="impitem"><span class="ico">🧭</span><div><b>기질별 활동·추천 근거</b><span>왜 이 카드인지 <strong>진단 결과와 연결</strong>해 제시</span></div></div>
           </div>
         </div>
       </div>
@@ -1578,14 +1591,21 @@ ul.clean li::marker{color:var(--ink-4)}
           <p class="note plain" style="margin:.7em 0 0">네 활동 모두 <strong>2분 남짓</strong>이고 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>3종</strong>뿐이다.</p>
         </div>
         <div class="flow">
-          <div class="colhead"><span class="ctag rd">개선 방향</span> 하나를 길게 만들지 않고, 주차별로 종류를 늘린다</div>
-          <div class="wkroll">
-            <div class="wkc w1"><u>1주차</u><span>✍️</span><b>어휘 챌린지</b></div>
-            <div class="wkc w2"><u>2주차</u><span>🔎</span><b>문장 보물찾기</b></div>
-            <div class="wkc w3"><u>3주차</u><span>🎭</span><b>인물 카드 만들기</b></div>
-            <div class="wkc w4"><u>4주차</u><span>🏆</span><b>독서 골든벨</b></div>
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 고정된 한 칸을 주차별로 바꿔 끼운다</div>
+          <div class="slotflow">
+            <span class="sf">코어 리딩북</span>
+            <span class="sfar">›</span>
+            <span class="sf swap">나만의 문장 수집<i>이 자리를 교체</i></span>
+            <span class="sfar">›</span>
+            <span class="sf">독후 퀴즈</span>
           </div>
-          <p class="impnote" style="margin-top:.8em"><strong>26주 반복</strong>을 피해 주차 단위로 돌리고, 아이가 직접 꼽은 <strong>어휘 챌린지·나만의 문장 수집</strong> 계열부터 늘린다.</p>
+          <div class="wkroll">
+            <div class="wkc w1"><u>1주차</u><span>📓</span><b>나만의 문장 수집</b></div>
+            <div class="wkc w2"><u>2주차</u><span>🔎</span><b>문장 보물찾기</b></div>
+            <div class="wkc w3"><u>3주차</u><span>🏆</span><b>독서 골든벨</b></div>
+            <div class="wkc w4"><u>4주차</u><span>✍️</span><b>어휘 챌린지</b></div>
+          </div>
+          <p class="impnote"><strong>26주 반복</strong>을 피해 <strong>가운데 한 칸만 주차별로 교체</strong>한다. 앞뒤 흐름은 그대로 두므로 개발 부담이 작다.</p>
         </div>
       </div>
       <div>
