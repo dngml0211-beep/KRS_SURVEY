@@ -1073,15 +1073,24 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill stretch">
         <div class="mid">
-          <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
-          <div class="donuts xl" style="justify-content:center;margin-top:1.2em">
-            <div class="donut">
-              <div class="ring" style="--p:33%"><div class="hole"><b>33%</b><em>읽기에서<br />걸림</em></div></div>
-              <div class="dleg">
-                <span><i style="background:var(--accent)"></i>대독 4명 · 건너뜀 2명</span>
-                <span><i style="background:var(--ink-4)"></i>자력 진행 12명</span>
-              </div>
-            </div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 읽기에서 걸린 아동 <span class="small">막대 높이 = 레벨 인원</span></div>
+          <div class="vbars even" style="height:12.6em;margin-top:1.1em">
+            <div class="vbar"><b>7명 중 3명</b>
+              <div class="vtrack"><div class="stackbar" style="height:64%">
+                <div class="seg b1" style="height:42.9%">걸림 3</div>
+                <div class="seg b5" style="height:57.1%">자력 4</div>
+              </div></div>
+              <span>K1<br />43%</span></div>
+            <div class="vbar"><b>11명 중 3명</b>
+              <div class="vtrack"><div class="stackbar" style="height:100%">
+                <div class="seg b1" style="height:27.3%">걸림 3</div>
+                <div class="seg b5" style="height:72.7%">자력 8</div>
+              </div></div>
+              <span>K3<br />27%</span></div>
+          </div>
+          <div class="agelegend" style="margin-top:.6em">
+            <span><i style="background:#1D4ED8"></i>읽기에서 걸림 (대독 4 · 건너뜀 2)</span>
+            <span><i style="background:#A6C8FC"></i>자력 진행 12명</span>
           </div>
           <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:1.3em">
             <div class="tile"><div class="k">어른이 대신 읽어줌</div><div class="v">4<small>명</small></div><div class="s">K1 2 · K3 2</div></div>
