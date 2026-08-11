@@ -804,17 +804,17 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner">
     <span class="eyebrow">인사이트</span>
     <h2>관찰 결과에서 도출된 실행 항목 7건</h2>
-    <p class="lead">화면 수정만으로 대응 가능한 <strong>바로 적용 4건</strong>과, 별도 설계·개발이 필요한 <strong>추후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 13~16페이지에 정리하였다.</p>
+    <p class="lead">화면 수정만으로 대응 가능한 <strong>오픈 전 적용 4건</strong>과, 별도 설계·개발이 필요한 <strong>오픈 후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 13~16페이지에 정리하였다.</p>
     <div class="body">
       <div class="grid2 fill">
         <div>
-          <div class="colhead"><span class="ctag rd">바로 적용</span> 화면 수정 범위 4건 <span class="small">→ 13p</span></div>
+          <div class="colhead"><span class="ctag rd">오픈 전 적용</span> 화면 수정 범위 4건 <span class="small">→ 13p</span></div>
           <div class="actlist">
             <div class="act">
               <div class="n">1</div>
               <div>
-                <h3>AI 추천픽 — 추천 이유를 카드에 명시</h3>
-                <p>왜 이 책을 추천했는지 알려주는 요소가 화면에 없다. <strong>'좋아요'를 인기순·쪽수로 이해한 아동이 5명</strong>이다.</p>
+                <h3>AI 추천픽 — 추천 표시와 문구를 '내 취향' 중심으로</h3>
+                <p><strong>👍99%</strong>를 인기순·쪽수로 이해한 아동이 5명이다. 표시에 <strong>'내 취향'</strong> 워딩을 붙이고 추천 문구를 <strong>추천 이유 중심</strong>으로 바꾼다.</p>
               </div>
             </div>
             <div class="act">
@@ -841,7 +841,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">추후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 14~16p</span></div>
+          <div class="colhead"><span class="ctag ev">오픈 후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 14~16p</span></div>
           <div class="actlist">
             <div class="act later">
               <div class="n">1</div>
@@ -864,25 +864,19 @@ ul.clean li::marker{color:var(--ink-4)}
                 <p>1주 분량 커리큘럼이 <strong>20분에 소진</strong>된다. 오프라인 코어북 활동을 온라인 목차로 끌어와 분량을 채운다.</p>
               </div>
             </div>
-            <div class="act later" style="background:#fff;border-style:dashed">
-              <div class="n" style="background:var(--accent)">✓</div>
-              <div>
-                <h3>공통 판단 근거</h3>
-                <p>7건 모두 <strong>구조 변경 없이</strong> 대응 가능하다. 커리큘럼 흐름 자체는 84%가 순서대로 완주하여 재설계 대상이 아니다.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">공통 판단 근거</span> <span>7건 모두 <strong>구조 변경 없이</strong> 대응 가능하다. 커리큘럼 흐름 자체는 <strong>84%가 순서대로 완주</strong>하여 재설계 대상이 아니다.</span></div>
     </div>
   </div>
   <div class="pageno">12 / 16</div>
 </section>
 
-<!-- 13. 바로 적용 4건 -->
+<!-- 13. 오픈 전 적용 4건 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow">바로 적용</span>
+    <span class="eyebrow">오픈 전 적용</span>
     <h2>화면 수정만으로 대응 가능한 4건</h2>
     <div class="hcard"><span class="pill plain">범위</span> 신규 설계 없이 <strong>이번 개발 회차에 반영 가능</strong>한 표현·배치 수준의 조정</div>
     <div class="body">
@@ -893,7 +887,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="tile">
               <div class="k">① AI 추천픽</div>
               <div class="v">5<small>명</small></div>
-              <div class="s">'좋아요'를 인기순·쪽수 등<br />다른 뜻으로 이해</div>
+              <div class="s">👍99% 표시를 인기순·쪽수 등<br />다른 뜻으로 이해</div>
             </div>
             <div class="tile">
               <div class="k">② 별빙고</div>
@@ -911,18 +905,25 @@ ul.clean li::marker{color:var(--ink-4)}
               <div class="s">관찰자가 'UX 수정 필요'로<br />직접 기록한 유일 사례</div>
             </div>
           </div>
-          <div class="colhead" style="margin-top:.9em"><span class="ctag rd">해석</span> 고쳐야 할 것은 기능이 아니라 화면이다</div>
-          <p style="margin:0;font-size:.88em;line-height:1.5;color:var(--ink-2)">네 건 모두 <strong>기능은 이미 있고 화면에서 보이지 않을 뿐</strong>이다. 추천 이유는 계산되어 있으나 표시되지 않고, 다시 풀기 버튼은 있으나 스크롤 아래에 있다. <strong>없는 것을 만드는 일이 아니라 있는 것을 보이게 하는 일</strong>이므로 즉시 착수할 수 있다.</p>
+          <div class="colhead" style="margin-top:.65em"><span class="ctag rd">개선안</span> ① AI 추천픽 — 표시와 문구</div>
+          <table class="vmid fixed" style="font-size:.9em">
+            <tr><th style="width:22%">구분</th><th style="width:34%">기존</th><th>변경</th></tr>
+            <tr><td>확률 표시</td><td>👍99%</td><td>👍99% <strong>내 취향</strong></td></tr>
+            <tr><td>70% 미만</td><td>미노출</td><td><strong>👍추천</strong></td></tr>
+            <tr><td>추천 문구</td><td><span class="small">책 중심</span><br />"극한 환경에서 동물들의 생존 전략을 따라가면 호기심이 자극받아요."</td><td><span class="small">추천 이유 중심</span><br />"오늘은 <strong>○○○ 님이 좋아하는</strong> 동물과 자연에 관한 책을 추천해요."</td></tr>
+          </table>
         </div>
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 관찰 기록</div>
           <div class="quotes">
-            <div class="quote blue"><span class="who">정*진 K3</span>(좋아요가 뭐냐는 질문에) <strong>총 책의 쪽수</strong></div>
+            <div class="quote blue"><span class="who">정*진 K3</span>(👍 표시가 뭐냐는 질문에) <strong>총 책의 쪽수</strong></div>
             <div class="quote blue"><span class="who">곽*이 K7</span>선긋기 활동을 '다시 풀기' 하고 싶은데, <strong>스크롤 아래에 다시 풀기 버튼이 있어서 찾지 못해</strong> 도와달라고 함 (UX 수정 필요한 부분으로 보임)</div>
-            <div class="quote blue"><span class="who">오*현 K7</span>들어가자마자 스크롤 안 하고 바로 "도서읽기"부터 선택함. 어떻게 아래 화면 있는지 아냐고 문의하니 <strong>왼쪽 하단의 책 머리 튀어나온 것</strong>을 보고 인지했다고 함</div>
+            <div class="quote blue"><span class="who">오*현 K7</span>들어가자마자 스크롤 안 하고 바로 "도서읽기"부터 선택함. <strong>왼쪽 하단의 책 머리 튀어나온 것</strong>을 보고 아래가 있다는 것을 인지했다고 함</div>
             <div class="quote blue"><span class="who">강*서 K1</span>(별빙고를) 빙고게임을 잘 모르고 <strong>짝맞추기 퍼즐 게임으로 인식</strong>함 — 설명 후 이해함</div>
           </div>
-          <p class="note blue" style="margin:.7em 0 0">별빙고는 <strong>규칙을 몰라도 재참여 의향이 가장 높았던</strong> 공간이다. 규칙 설명보다 <strong>누를 때의 반응을 키우는 편</strong>이 이미 확보된 호감을 회차 복귀로 잇는 데 유리하다.</p>
+          <div class="colhead" style="margin-top:.85em"><span class="ctag rd">해석</span> 고쳐야 할 것은 기능이 아니라 화면이다</div>
+          <p style="margin:0 0 .55em;font-size:.87em;line-height:1.5;color:var(--ink-2)">네 건 모두 <strong>기능은 이미 있고 화면에서 보이지 않을 뿐</strong>이다. 추천 확률은 계산되어 있으나 그것이 <strong>'내 취향'이라는 뜻으로 읽히지 않고</strong>, 다시 풀기 버튼은 있으나 스크롤 아래에 있다. <strong>없는 것을 만드는 일이 아니라 있는 것을 보이게 하는 일</strong>이다.</p>
+          <p class="note blue" style="margin:0">별빙고는 <strong>규칙을 몰라도 재참여 의향이 가장 높았던</strong> 공간이다. 규칙 설명보다 <strong>누를 때의 반응을 키우는 편</strong>이 이미 확보된 호감을 회차 복귀로 잇는 데 유리하다.</p>
         </div>
       </div>
     </div>
@@ -930,10 +931,10 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">13 / 16</div>
 </section>
 
-<!-- 14. 추후 고도화 1 - 저연령 읽기 지원 -->
+<!-- 14. 오픈 후 고도화 1 - 저연령 읽기 지원 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 추후 고도화 · 저연령 지원</span>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 후 고도화 · 저연령 지원</span>
     <h2>문해 수준이 자기주도 학습의 실질적 전제 조건이다</h2>
     <div class="hcard"><span class="pill plain">제안</span> 초저학년 대상 <strong>TTS 읽어주기(오디오북)</strong>와 <strong>읽기 지원 도구</strong>를 기본 기능으로 제공</div>
     <div class="body">
@@ -996,10 +997,10 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">14 / 16</div>
 </section>
 
-<!-- 15. 추후 고도화 2 - AI 추천픽 -->
+<!-- 15. 오픈 후 고도화 2 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 추후 고도화 · AI 추천픽</span>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 후 고도화 · AI 추천픽</span>
     <h2>도달은 되었으나 의미가 전달되지 않았다</h2>
     <div class="hcard"><span class="pill plain">제안</span> <strong>기질카드 선택 시 별도 페이지 연결</strong> · 공간의 역할과 추천 근거를 화면에 노출</div>
     <div class="body">
@@ -1029,7 +1030,7 @@ ul.clean li::marker{color:var(--ink-4)}
             </div>
           </div>
           <p class="small" style="margin:.5em 0 .8em;line-height:1.45;color:var(--ink-3)">각 단계는 전체 25명을 분모로 한 도달 인원이다. 가장 큰 감소는 <strong>도달 → 관심 구간(−40%p)</strong>과 <strong>클릭 → 목적 이해 구간(−36%p)</strong>에서 발생하였다.</p>
-          <div class="colhead"><span class="ctag ev">인식</span> '좋아요' 의미에 대한 인식 분포 <span class="small">전체 25명</span></div>
+          <div class="colhead"><span class="ctag ev">인식</span> 👍99% 표시에 대한 인식 분포 <span class="small">전체 25명</span></div>
           <table class="vmid">
             <tr><th>인식 수준</th><th style="width:3.5em">인원</th><th>대표 응답</th></tr>
             <tr class="row-ok"><td><span class="pill plain">정확</span></td><td class="num">5</td><td>"나한테 몇 % 맞는 책인지"</td></tr>
@@ -1040,16 +1041,16 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 관찰 기록</div>
           <div class="quotes">
+            <div class="quote blue"><span class="who">송*안 K3</span><strong>미리 진단검사 한 내용을 기반으로 구성된 공간</strong>이라는 걸 인지함</div>
+            <div class="quote blue"><span class="who">김*음 K1</span>(이 공간은 뭐하는 곳 같냐는 질문에) <strong>숲속 같다고 좋아함</strong></div>
             <div class="quote blue"><span class="who">오*현 K7</span>나한테 몇 % 맞는 책인지 알려주는 것이라고 <strong>명확히 인지함</strong></div>
-            <div class="quote blue"><span class="who">김*음 K1</span>(좋아요를) <strong>인기순이라고 생각함</strong></div>
             <div class="quote blue"><span class="who">이*영 K3</span><strong>기질카드가 가장 궁금하다</strong>고 함 → 눌러서 어떤 활동을 하는 거라고 인지했음</div>
-            <div class="quote blue"><span class="who">강*서 K1</span>기질카드는 흥미로워 했지만, <strong>기질공간은 아예 관심이 없었음</strong></div>
           </div>
-          <div class="colhead" style="margin-top:.8em"><span class="ctag rd">해석 ①</span> '좋아요'를 다른 뜻으로 알고 있었다</div>
-          <p style="margin:0 0 .5em;font-size:.86em;line-height:1.5;color:var(--ink-2)"><strong>인기순이나 쪽수로 알고 있던 아이가 5명</strong>이다. 몰라서 비어 있는 게 아니라 <strong>이미 다른 뜻으로 채워져 있는</strong> 상태다. 설명을 덧붙이는 것보다 <strong>"너에게 맞는 정도"라는 뜻이 먼저 읽히도록</strong> 표시를 바꾸는 편이 낫다.</p>
+          <div class="colhead" style="margin-top:.8em"><span class="ctag rd">해석 ①</span> '나를 위한 곳'이 아니라 '예쁜 곳'으로 봤다</div>
+          <p style="margin:0 0 .5em;font-size:.86em;line-height:1.5;color:var(--ink-2)">이 공간이 뭐하는 곳이냐고 묻자 대부분 <strong>"책 읽는 곳"</strong>이라고만 답했고, 한 아이는 <strong>"숲속 같다"</strong>며 좋아했다. <strong>👍99%</strong>도 인기순·쪽수로 읽혔다. <strong>진단 결과로 나에게 맞춘 공간이라는 사실이 화면 어디에도 쓰여 있지 않기</strong> 때문이다. 나만의 공간이어야 할 곳이 <strong>예쁜 공간에 머물렀다.</strong></p>
           <div class="colhead" style="margin-top:.55em"><span class="ctag rd">해석 ②</span> 가장 관심 있어 한 곳에서 길이 끊긴다</div>
           <p style="margin:0 0 .5em;font-size:.86em;line-height:1.5;color:var(--ink-2)">기질카드는 <strong>12명이 궁금해하며 눌러보려 했지만 눌러도 아무 데도 가지 않는다.</strong> 카드를 누르면 열리는 화면 하나만 만들어도 <strong>이미 확보된 관심을 학습으로 이어붙일 수 있다.</strong></p>
-          <p class="note blue" style="margin:0">두 가지는 같은 곳에서 만난다. <strong>연결 화면에서 추천 근거를 함께 보여주면</strong> 뜻도 바로잡고 끊긴 길도 이어진다. 클릭률 자체는 <strong>2권을 끝낸 직후에 측정된 값</strong>이므로 <strong>내일 다시 들어오느냐</strong>로 보아야 한다(8p).</p>
+          <p class="note blue" style="margin:0">표시와 문구를 <strong>'내 취향' 중심으로 바꾸는 일은 오픈 전에 반영</strong>한다(13p). 기질카드 연결 화면은 그 위에 <strong>다시 올 이유를 얹는 장치</strong>이다. 클릭률 자체는 2권을 끝낸 직후 측정된 값이므로 <strong>내일 다시 들어오느냐</strong>로 보아야 한다(8p).</p>
         </div>
       </div>
     </div>
@@ -1057,10 +1058,10 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">15 / 16</div>
 </section>
 
-<!-- 16. 추후 고도화 3 - 학습 분량 -->
+<!-- 16. 오픈 후 고도화 3 - 학습 분량 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 추후 고도화 · 학습 분량</span>
+    <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 오픈 후 고도화 · 학습 분량</span>
     <h2>1주 분량 커리큘럼이 20분에 소진된다</h2>
     <div class="hcard"><span class="pill plain">제안</span> 활동을 길게 늘이는 대신 <strong>코어북 연계 활동을 목차로 편입</strong>해 개수를 늘린다</div>
     <div class="body">
