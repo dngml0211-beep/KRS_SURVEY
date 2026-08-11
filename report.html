@@ -289,13 +289,18 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .rbar b{margin-left:.35em;font-size:.76em;font-weight:800;color:var(--ink-3)}
 .rbar s{width:.5em;height:.5em;border-radius:50%;background:var(--ink-4);display:block}
 .rbody{padding:1em 1.1em 1.1em}
+.rart{display:flex;align-items:center;justify-content:center;gap:.6em;
+  background:#FFF9E8;border:1.5px dashed #F0D384;border-radius:.6em;
+  padding:.55em;margin-bottom:.85em}
+.rart span{font-size:3em;line-height:1.15;display:block}
+.rart span:last-child{font-size:2.1em}
 .rtext{font-size:1.12em;font-weight:700;line-height:2;color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
 .rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em;
-  animation:rhl 18s linear infinite;animation-delay:calc(var(--i) * .6s)}
+  animation:rhl 13s linear infinite;animation-delay:calc(var(--i) * .6s)}
 @keyframes rhl{
   0%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  3.33%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  3.34%{background:transparent;box-shadow:none}
+  4.6%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  4.61%{background:transparent;box-shadow:none}
   100%{background:transparent;box-shadow:none}
 }
 .rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
@@ -304,19 +309,19 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;
   border-radius:99px;padding:.45em .85em;box-shadow:0 .18em 0 #C9DDFB}
 .rtool em{font-style:normal;font-size:1.15em;line-height:1}
-.rtool.b1{animation:rp1 18s linear infinite}
-.rtool.b2{animation:rp2 18s linear infinite}
-.rtool.b3{animation:rp3 18s linear infinite}
+.rtool.b1{animation:rp1 13s linear infinite}
+.rtool.b2{animation:rp2 13s linear infinite}
+.rtool.b3{animation:rp3 13s linear infinite}
 @keyframes rp1{
-  0%,64.9%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
-  65%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
+  0%,53%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
+  54%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
 @keyframes rp2{
-  0%,64.9%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
-  65%,82.9%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
-  83%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
+  0%,53%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
+  54%,76%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
+  77%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
 @keyframes rp3{
-  0%,82.9%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
-  83%,100%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}}
+  0%,76%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
+  77%,100%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}}
 /* 버튼을 누르면 나타나는 동작 결과 */
 .rout{position:relative;height:2.5em;margin-top:.55em}
 .ro{position:absolute;inset:0;display:flex;align-items:center;gap:.45em;opacity:0;
@@ -324,12 +329,12 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   background:#F5F9FF;border:1.5px solid #DCE9FC;border-radius:.5em;padding:0 .75em}
 .ro em{font-style:normal;font-size:1.15em;line-height:1}
 .ro b{color:var(--accent-strong)}
-.ro.o1{animation:ro1 18s linear infinite}
-.ro.o2{animation:ro2 18s linear infinite}
-.ro.o3{animation:ro3 18s linear infinite}
-@keyframes ro1{0%,63%{opacity:1} 65%,100%{opacity:0}}
-@keyframes ro2{0%,63%{opacity:0} 65%,81%{opacity:1} 83%,100%{opacity:0}}
-@keyframes ro3{0%,81%{opacity:0} 83%,100%{opacity:1}}
+.ro.o1{animation:ro1 13s linear infinite}
+.ro.o2{animation:ro2 13s linear infinite}
+.ro.o3{animation:ro3 13s linear infinite}
+@keyframes ro1{0%,52%{opacity:1} 54%,100%{opacity:0}}
+@keyframes ro2{0%,52%{opacity:0} 54%,75%{opacity:1} 77%,100%{opacity:0}}
+@keyframes ro3{0%,75%{opacity:0} 77%,100%{opacity:1}}
 .wave{display:flex;align-items:center;gap:.16em;margin-left:.1em}
 .wave s{width:.22em;height:.5em;border-radius:99px;background:var(--accent);display:block;
   animation:wv .9s ease-in-out infinite}
@@ -392,6 +397,32 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .ba>div.after u{color:var(--accent-strong)}
 .ba p{margin:0;font-size:.79em;line-height:1.45;color:var(--ink-2)}
 
+/* 종합(마무리) */
+.closing{justify-content:center;
+  background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 45%,#E3EDFF 100%)}
+.closing .dvtitle{font-size:2.6em;margin-bottom:1.1em}
+.clstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em;margin-bottom:1.1em}
+.cs{display:flex;flex-direction:column;align-items:flex-start;gap:.1em;
+  background:#fff;border:1.5px solid #CFE0FA;border-radius:.7em;padding:.85em 1em}
+.cs.hl{background:var(--accent);border-color:var(--accent)}
+.cs b{font-size:2.1em;font-weight:800;letter-spacing:-.045em;line-height:1;color:var(--accent-strong)}
+.cs.hl b{color:#fff}
+.cs em{font-style:normal;font-size:.82em;font-weight:800;color:var(--ink-3);margin-top:-.15em}
+.cs.hl em{color:#DBEAFE}
+.cs span{margin-top:.35em;font-size:.78em;font-weight:700;color:var(--ink-2);word-break:keep-all}
+.cs.hl span{color:#fff}
+.clnext{display:grid;grid-template-columns:1fr 1fr;gap:.7em}
+.cn{background:rgba(255,255,255,.75);border:1.5px solid #CFE0FA;border-radius:.7em;padding:.8em 1em}
+.cn.late{background:rgba(255,255,255,.55);border-color:var(--line)}
+.cn u{display:block;text-decoration:none;font-size:.74em;font-weight:800;letter-spacing:.03em;
+  color:var(--accent-strong);margin-bottom:.25em}
+.cn.late u{color:var(--ink-3)}
+.cn p{margin:0;font-size:.86em;line-height:1.5;color:var(--ink-2)}
+.clsign{margin:1.5em 0 0;text-align:center;font-size:1.24em;font-weight:700;line-height:1.55;
+  color:var(--ink-2);letter-spacing:-.02em}
+.clsign strong{color:var(--accent-strong)}
+.clfoot{margin-top:1.6em;text-align:center;font-size:.85em;font-weight:700;color:var(--ink-3)}
+
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
 .divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
@@ -409,6 +440,14 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   width:1.6em;height:1.6em;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .divider.late .dvchips i b{background:var(--ink-3)}
 
+/* 주차별 활동 카드 */
+.wkroll{display:grid;grid-template-columns:repeat(2,1fr);gap:.55em}
+.wkc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18em;
+  background:#fff;border:1.5px solid #BBD5FF;border-radius:.6em;padding:.7em .5em;text-align:center}
+.wkc u{text-decoration:none;font-size:.7em;font-weight:800;letter-spacing:.03em;color:var(--accent-strong)}
+.wkc span{font-size:1.7em;line-height:1.15}
+.wkc b{font-size:.82em;font-weight:800;color:var(--ink);word-break:keep-all;line-height:1.3}
+.wkc.w2{background:#F7FBFF} .wkc.w3{background:#F4F9FF} .wkc.w4{background:#EFF6FF}
 /* 주차별 활동 롤링 */
 .weekflow{display:flex;align-items:stretch;gap:.5em}
 .wk{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3em;
@@ -1301,7 +1340,6 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="impitems c1">
             <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지가 첫 화면에 걸치도록</strong> 배치</span></div></div>
             <div class="impitem"><span class="ico">⬇️</span><div><b>스크롤 어포던스 추가</b><span>아래가 더 있다는 <strong>시각적 신호</strong>를 남긴다</span></div></div>
-            <div class="impitem"><span class="ico">🔁</span><div><b>상단까지 일관 적용</b><span><strong>상단 걸쳐 보이는 UI</strong>까지 같은 방식으로 확대</span></div></div>
           </div>
         </div>
       </div>
@@ -1338,14 +1376,12 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="reader" style="font-size:1.3em">
             <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
             <div class="rbody">
+              <div class="rart"><span>🐻</span><span>💩</span></div>
               <p class="rtext" style="margin:0">
                 <i style="--i:0" class="pk">꼬불꼬불</i> <i style="--i:1">숲길에</i> <i style="--i:2">수북수북</i>
                 <i style="--i:3">누구</i> <i style="--i:4">똥?</i><br />
                 <i style="--i:5">뿌지직</i> <i style="--i:6">큰</i> <i style="--i:7">똥</i>
-                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i><br />
-                <i style="--i:11">꾸불꾸불</i> <i style="--i:12">숲길에</i> <i style="--i:13">큼직큼직</i>
-                <i style="--i:14">누구</i> <i style="--i:15">똥?</i><br />
-                <i style="--i:16">앗,</i> <i style="--i:17">사자다!</i> <i style="--i:18">도망가자!</i>
+                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
               </p>
               <div class="rtools">
                 <span class="rtool b1"><em>🔊</em>읽어주세요</span>
@@ -1361,24 +1397,25 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="rcap">세 버튼 모두 <strong>아이가 직접 눌러 쓰는 도구</strong>다.</p>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
-          <div class="vbars even" style="height:15.5em;margin-top:1.2em">
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:37.5%"><b>3명</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
-              <span>못 읽음</span></div>
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:50%"><b>4명</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-              <span>스스로 읽음</span></div>
-            <div class="vbar gapl">
-              <div class="vtrack"><div class="stackwrap" style="height:37.5%"><b>3명</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
-              <span>못 읽음</span></div>
-            <div class="vbar">
-              <div class="vtrack"><div class="stackwrap" style="height:100%"><b>8명</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-              <span>스스로 읽음</span></div>
+        <div class="flow">
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 읽기 성공 비율 <span class="small">K1 · K3 18명</span></div>
+          <div class="trow" style="margin-top:.2em">
+            <div class="tlab">K1 <span class="small">7명</span></div>
+            <div class="tstack"><i style="width:43%;background:#EF4444">못 읽음 3명</i><i style="width:57%;background:#DCE9FC;color:var(--ink-2)">스스로 읽음 4명</i></div>
+            <div class="tval" style="color:#B42318">43%</div>
           </div>
-          <div class="lvrow"><span>K1 7명 중 3명 · 43%</span><span>K3 11명 중 3명 · 27%</span></div>
-          <p class="note blue" style="margin:1.3em 0 0">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 이번엔 관찰자가 메웠지만 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되고, 그때 <strong>리텐션이 먼저 무너진다.</strong></p>
+          <div class="trow">
+            <div class="tlab">K3 <span class="small">11명</span></div>
+            <div class="tstack"><i style="width:27%;background:#EF4444">못 읽음 3명</i><i style="width:73%;background:#DCE9FC;color:var(--ink-2)">스스로 읽음 8명</i></div>
+            <div class="tval" style="color:#B42318">27%</div>
+          </div>
+          <p class="note plain" style="margin:.2em 0 0">막힌 인원은 <strong>둘 다 3명</strong>이지만 <strong>K1은 10명 중 4명꼴</strong>이다. 어릴수록 읽기에서 멈춘다.</p>
+          <div class="leadsto"><b>▼ 여기서 막히면 그 뒤 활동이 전부 열리지 않는다</b></div>
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 막힌 그 자리에서 스스로 넘어가게 한다</div>
+          <div class="impitems c1">
+            <div class="impitem"><span class="ico">🛠️</span><div><b>읽기 지원 도구 3종을 코어 리딩북에 배치</b><span>왼쪽 도구로 <strong>K1·K3 6명</strong>이 어른을 부르지 않고 다음 활동까지 간다</span></div></div>
+          </div>
+          <p class="note blue" style="margin:.6em 0 0">이번엔 관찰자가 메웠지만 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되고, 그때 <strong>리텐션이 먼저 무너진다.</strong></p>
         </div>
       </div>
     </div>
@@ -1461,30 +1498,25 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="rcap"><strong>1화는 지금 열고</strong>, 다음 화는 <strong>공개 예정으로 남겨</strong> 다시 올 이유를 만든다.</p>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 맞는 기대를 해놓고 아무 일도 일어나지 않았다</div>
-          <div class="actlist" style="margin-top:.3em">
+        <div class="flow">
+          <div class="colhead"><span class="ctag rd">해석</span> 기대는 맞았지만, 아직 아무 일도 일어나지 않는다</div>
+          <div class="actlist">
             <div class="act later"><div class="n">1</div><div>
               <h3>아이는 이미 정확히 기대했다</h3>
               <p>카드를 좋아한 이유는 <strong>예뻐서</strong>, 그리고 <strong>누르면 활동이 시작될 것 같아서</strong>였다. 뒤쪽은 <strong>맞는 기대</strong>다.</p>
             </div></div>
             <div class="act later"><div class="n">2</div><div>
-              <h3>그런데 눌러도 열리는 것이 없다</h3>
-              <p><strong>17명의 관심</strong>이 카드 앞에서 그대로 멈췄다. 관심을 만드는 단계는 이미 통과했다.</p>
-            </div></div>
-            <div class="act later"><div class="n">3</div><div>
-              <h3>진단을 받고 온 아이만 자기 카드를 알아봤다</h3>
-              <p><strong>7명</strong>이 진단평가 캐릭터를 알아봤고, 받지 않은 아이는 흥미가 없었다. <strong>진단과 학습을 잇는 고리</strong>다.</p>
+              <h3>다만 아직 열릴 화면이 준비되지 않았다</h3>
+              <p><strong>17명의 관심</strong>이 카드 앞에서 멈춰 있다. 관심을 만드는 단계는 이미 통과했다.</p>
             </div></div>
           </div>
-        </div>
-      </div>
-      <div class="impbox tight">
-        <h3><em>개선 방향</em> 이미 확보된 관심을 학습으로 넘긴다</h3>
-        <div class="impitems c3">
-          <div class="impitem"><span class="ico">🎬</span><div><b>1화 즉시 공개</b><span>누르면 <strong>바로 볼 수 있는 콘텐츠</strong>를 하나</span></div></div>
-          <div class="impitem"><span class="ico">🗓️</span><div><b>다음 화 공개 예정</b><span>월 단위 공개 일정으로 <strong>다시 올 이유</strong>를</span></div></div>
-          <div class="impitem"><span class="ico">🧭</span><div><b>기질별 활동·추천 근거</b><span>왜 이 카드인지 <strong>진단 결과와 연결</strong>해 제시</span></div></div>
+          <div class="leadsto"><b>▼ 남은 일은 열릴 것을 채우는 것뿐이다</b></div>
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 이미 확보된 관심을 학습으로 넘긴다</div>
+          <div class="impitems c1">
+            <div class="impitem"><span class="ico">🎬</span><div><b>1화 즉시 공개</b><span>누르면 <strong>바로 볼 수 있는 콘텐츠</strong>를 하나 둔다</span></div></div>
+            <div class="impitem"><span class="ico">🗓️</span><div><b>다음 화 공개 예정</b><span>월 단위 공개 일정으로 <strong>다시 올 이유</strong>를 만든다</span></div></div>
+            <div class="impitem"><span class="ico">🧭</span><div><b>기질별 활동·추천 근거</b><span>왜 이 카드인지 <strong>진단 결과와 연결</strong>해 제시</span></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1506,7 +1538,7 @@ ul.clean li::marker{color:var(--ink-4)}
               <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
               <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
             </div>
-            <div class="vbars even" style="height:8.6em">
+            <div class="vbars even" style="height:9.2em">
               <div class="vbar">
                 <div class="vtrack"><div class="stackwrap" style="height:100%"><b>2.5분</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
                 <span>어휘<br />챌린지</span></div>
@@ -1521,69 +1553,51 @@ ul.clean li::marker{color:var(--ink-4)}
                 <span>문장 수집<br />K1 전용</span></div>
             </div>
           </div>
+          <p class="note plain" style="margin:.7em 0 0">네 활동 모두 <strong>2분 남짓</strong>이고 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>3종</strong>뿐이다.</p>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 아이가 직접 꼽은 재미있는 활동 <span class="small">전체 25명</span></div>
-          <div class="bars onwhite" style="margin-top:.9em">
-            <div class="bar-row"><div class="blabel">별빙고</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:#1D4ED8"></div></div><div class="bar-val">8<small>명</small></div></div>
-            <div class="bar-row"><div class="blabel">책 읽기</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#4B8DF8"></div></div><div class="bar-val">7<small>명</small></div></div>
-            <div class="bar-row"><div class="blabel">어휘 챌린지 ·<br />나만의 문장 수집</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#7DAEFB"></div></div><div class="bar-val">4<small>명</small></div></div>
-            <div class="bar-row"><div class="blabel">독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명</small></div></div>
+        <div class="flow">
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 하나를 길게 만들지 않고, 주차별로 종류를 늘린다</div>
+          <div class="wkroll">
+            <div class="wkc w1"><u>1주차</u><span>✍️</span><b>어휘 챌린지</b></div>
+            <div class="wkc w2"><u>2주차</u><span>🔎</span><b>문장 보물찾기</b></div>
+            <div class="wkc w3"><u>3주차</u><span>🎭</span><b>인물 카드 만들기</b></div>
+            <div class="wkc w4"><u>4주차</u><span>🏆</span><b>독서 골든벨</b></div>
           </div>
+          <p class="impnote" style="margin-top:.8em"><strong>26주 반복</strong>을 피해 주차 단위로 돌리고, 아이가 직접 꼽은 <strong>어휘 챌린지·나만의 문장 수집</strong> 계열부터 늘린다.</p>
         </div>
       </div>
-      <div class="oneline"><span class="ctag ev" style="flex:0 0 auto">근거</span> <span>책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다</strong> — <strong>21명(84%)</strong>이 책을 읽어서 활동을 더 하고 싶다고 답했다. 다만 활동은 <strong>2분 남짓 3종</strong>뿐이고 그중 둘은 <strong>같은 형식의 독후퀴즈</strong>다.</span></div>
-      <div class="impbox tight">
-        <h3><em>개선 방향</em> 하나를 길게 만들지 않고, 주차별로 종류를 늘린다</h3>
-        <div class="weekflow">
-          <div class="wk"><b>1주차</b><span>어휘 챌린지</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>2주차</b><span>나만의 문장 수집</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>3주차</b><span>신규 활동</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>4주차</b><span>신규 활동</span></div>
+      <div>
+        <div class="colhead"><span class="ctag ev">지표</span> 아이가 직접 꼽은 재미있는 활동 <span class="small">전체 25명</span></div>
+        <div class="bars onwhite">
+          <div class="bar-row"><div class="blabel">별빙고</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:#1D4ED8"></div></div><div class="bar-val">8<small>명</small></div></div>
+          <div class="bar-row"><div class="blabel">책 읽기</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#4B8DF8"></div></div><div class="bar-val">7<small>명</small></div></div>
+          <div class="bar-row"><div class="blabel">어휘 챌린지 · 나만의 문장 수집</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#7DAEFB"></div></div><div class="bar-val">4<small>명</small></div></div>
+          <div class="bar-row"><div class="blabel">독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명</small></div></div>
         </div>
-        <p class="impnote"><strong>26주 반복</strong>을 피해 주차 단위로 돌리고, 아이가 직접 꼽은 <strong>어휘 챌린지·나만의 문장 수집</strong> 계열부터 늘린다.</p>
+        <div class="oneline" style="margin-top:.7em"><span class="ctag ev" style="flex:0 0 auto">근거</span> <span>책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다</strong> — <strong>21명(84%)</strong>이 책을 읽어서 활동을 더 하고 싶다고 답했다.</span></div>
       </div>
     </div>
   </div>
   <div class="pageno">21 / 22</div>
 </section>
 
-<!-- 22. 실행 항목 종합 -->
+<!-- 22. 종합 -->
 <section class="slide">
-  <div class="inner">
-    <span class="eyebrow">종합</span>
-    <h2>아이들이 스스로 끝까지 해냈습니다</h2>
-    <p class="lead">3일 동안 <strong>25명</strong>의 아이가 KRS를 처음 만났고, <strong>가설 6건 중 5건이 충족</strong>되었습니다.</p>
-    <div class="body">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:1em;margin:.6em 0 1em">
-        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">1</div><div>
-          <h3>구조는 손댈 필요가 없다</h3>
-          <p>자발적 시작 <strong>92%</strong> · 순서 완주 <strong>84%</strong></p>
-        </div></div>
-        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">2</div><div>
-          <h3>좋아하는 지점을 찾았다</h3>
-          <p>별빙고 재참여 <strong>84%</strong> · 캐릭터 반응 <strong>17명</strong></p>
-        </div></div>
-        <div class="act" style="align-content:center;padding:1.4em 1.15em"><div class="n">3</div><div>
-          <h3>고칠 곳도 분명해졌다</h3>
-          <p><strong>읽기</strong>와 <strong>의미 전달</strong> — 실행 항목 <strong>6건</strong></p>
-        </div></div>
-      </div>
-      <div class="grid2 eq">
-        <div class="panel hl">
-          <h3>오픈 전까지</h3>
-          <p style="margin:0;font-size:.92em;line-height:1.6;color:var(--ink-2)">화면 표현만 바꾸면 되는 <strong>3건</strong>을 이번 개발 회차에 반영합니다.</p>
-        </div>
-        <div class="panel">
-          <h3>오픈 후에는</h3>
-          <p style="margin:0;font-size:.92em;line-height:1.6;color:var(--ink-2)"><strong>읽기 지원이 1순위</strong>입니다. 리텐션에 직접 걸린 유일한 항목입니다.</p>
-        </div>
-      </div>
-      <p style="margin:1.4em 0 0;text-align:center;font-size:1.28em;font-weight:800;line-height:1.5;color:var(--accent-strong);letter-spacing:-.02em">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br />오픈까지 잘 마무리하겠습니다.</p>
+  <div class="inner closing">
+    <span class="dvkicker">KRS 플랫폼 2차 파일럿 · 마무리</span>
+    <h2 class="dvtitle">아이들이 스스로<br />끝까지 해냈습니다</h2>
+    <div class="clstats">
+      <div class="cs"><b>25</b><em>명</em><span>3일간 만난 아이</span></div>
+      <div class="cs hl"><b>5</b><em>/ 6건</em><span>가설 충족</span></div>
+      <div class="cs"><b>92</b><em>%</em><span>설명 없이 스스로 시작</span></div>
+      <div class="cs"><b>84</b><em>%</em><span>다시 하고 싶다</span></div>
     </div>
+    <div class="clnext">
+      <div class="cn"><u>오픈 전</u><p>화면 표현만 바꾸면 되는 <strong>3건</strong>을 이번 개발 회차에 반영합니다.</p></div>
+      <div class="cn late"><u>오픈 후</u><p><strong>읽기 지원이 1순위</strong>입니다. 리텐션에 직접 걸린 유일한 항목입니다.</p></div>
+    </div>
+    <p class="clsign">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br /><strong>오픈까지 잘 마무리하겠습니다.</strong></p>
+    <div class="clfoot">IT혁신본부 · 2026년 8월</div>
   </div>
   <div class="pageno">22 / 22</div>
 </section>
