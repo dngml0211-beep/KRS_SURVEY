@@ -291,6 +291,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .bars.wideplot .bar-fill{min-width:.9em}
 .bars.wideplot .blabel{font-size:.9em}
 .bars.wideplot .bar-val{font-size:1em}
+/* 라벨이 3줄인 항목이 섞여도 막대 축(vtrack)이 같은 높이를 유지하도록 라벨 영역을 고정한다 */
+.vbars.lab3 .vbar span{min-height:4.5em}
 /* 문구 변경 전 → 후 (한 줄 흐름) */
 .baline{display:flex;align-items:stretch;gap:.7em;margin-top:.48em;
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.55em;padding:.5em .75em}
@@ -1579,7 +1581,7 @@ ul.clean li::marker{color:var(--ink-4)}
               <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
               <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
             </div>
-            <div class="vbars even" style="height:8.6em">
+            <div class="vbars even lab3" style="height:9.4em">
               <div class="vbar">
                 <div class="vtrack"><div class="stackwrap" style="height:100%"><b>2.5분</b><div class="stackbar"><div class="seg b1" style="height:100%"></div></div></div></div>
                 <span>어휘<br />챌린지</span></div>
@@ -1591,7 +1593,7 @@ ul.clean li::marker{color:var(--ink-4)}
                 <span>독후퀴즈<br />스키마북</span></div>
               <div class="vbar">
                 <div class="vtrack"><div class="stackwrap" style="height:52%"><b>1.3분</b><div class="stackbar"><div class="seg b5" style="height:100%"></div></div></div></div>
-                <span>문장 수집<br />K1 전용</span></div>
+                <span>나만의 문장 수집<br />(K1만 진행)</span></div>
             </div>
           </div>
           <p class="note plain" style="margin:.6em 0 0">네 활동 모두 <strong>2분 남짓</strong>이고 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>3종</strong>뿐이다.</p>
@@ -1599,7 +1601,8 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="bars onwhite">
             <div class="bar-row"><div class="blabel">별빙고</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:#1D4ED8"></div></div><div class="bar-val">8<small>명</small></div></div>
             <div class="bar-row"><div class="blabel">책 읽기</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#4B8DF8"></div></div><div class="bar-val">7<small>명</small></div></div>
-            <div class="bar-row"><div class="blabel">어휘 챌린지 ·<br />나만의 문장 수집</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#7DAEFB"></div></div><div class="bar-val">4<small>명</small></div></div>
+            <div class="bar-row"><div class="blabel">어휘 챌린지</div><div class="bar-track"><div class="bar-fill" style="width:12%;background:#7DAEFB"></div></div><div class="bar-val">3<small>명</small></div></div>
+            <div class="bar-row"><div class="blabel">나만의 문장 수집<br /><span class="small">K1만 진행</span></div><div class="bar-track"><div class="bar-fill" style="width:12%;background:#7DAEFB"></div></div><div class="bar-val">3<small>명</small></div></div>
             <div class="bar-row"><div class="blabel">독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명</small></div></div>
           </div>
           <div class="oneline" style="margin-top:.7em"><span class="ctag ev" style="flex:0 0 auto">근거</span> <span>책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다</strong> — <strong>21명(84%)</strong>이 그렇다고 답했다.</span></div>
