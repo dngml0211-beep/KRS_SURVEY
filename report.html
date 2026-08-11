@@ -168,15 +168,9 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 @media (prefers-reduced-motion:reduce){.hilite{animation:none;opacity:1}}
 .shotcap b.red{background:#EF4444}
 .shotcap.key{margin-top:.7em;padding:.6em .75em;border-radius:.5em;background:var(--accent-tint);color:var(--ink-2)}
-/* 적용 전 ⇄ 적용 후 교차 페이드 */
+/* 적용 전 / 적용 후 이미지 영역 */
 .xfade{position:relative;line-height:0}
-.xf{position:relative;animation:xfA 8s ease-in-out infinite}
-.xf+.xf{position:absolute;inset:0;animation-name:xfB}
-.xf-tag{position:absolute;left:.6em;top:.6em;font-size:.78em;font-weight:800;line-height:1;
-  padding:.42em .7em;border-radius:.4em;color:#fff;background:var(--ink-2);letter-spacing:-0.01em}
-.xf-tag.after{background:var(--accent)}
-@keyframes xfA{0%,43%{opacity:1}50%,93%{opacity:0}100%{opacity:1}}
-@keyframes xfB{0%,43%{opacity:0}50%,93%{opacity:1}100%{opacity:0}}
+.xf{position:relative}
 
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
