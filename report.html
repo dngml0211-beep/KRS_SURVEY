@@ -293,6 +293,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .bars.wideplot .bar-val{font-size:1em}
 /* 라벨이 3줄인 항목이 섞여도 막대 축(vtrack)이 같은 높이를 유지하도록 라벨 영역을 고정한다 */
 .vbars.lab3 .vbar span{min-height:4.5em}
+/* 막대 위에 붙는 수치가 상자 밖으로 나가지 않도록 축 위쪽을 비워둔다 (막대 높이 약 34% 축소) */
+.vbars.lab3 .vtrack{padding-top:1.9em}
 /* 문구 변경 전 → 후 (한 줄 흐름) */
 .baline{display:flex;align-items:stretch;gap:.7em;margin-top:.48em;
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.55em;padding:.5em .75em}
