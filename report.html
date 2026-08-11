@@ -142,6 +142,16 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .shotcap{display:flex;gap:.5em;align-items:flex-start;margin-top:.55em;font-size:.82em;line-height:1.45;color:var(--ink-2)}
 .shotcap b{flex:0 0 auto;display:flex;align-items:center;justify-content:center;min-width:1.5em;height:1.5em;
   border-radius:.35em;background:var(--accent);color:#fff;font-size:.8em;font-weight:800}
+.shotwrap{position:relative;display:block;line-height:0}
+.hilite{position:absolute;border:.22em solid #EF4444;border-radius:.6em;pointer-events:none;
+  box-shadow:0 0 0 .16em rgba(239,68,68,.22);animation:hiblink 1.3s ease-in-out infinite}
+.hilite::after{content:attr(data-t);position:absolute;left:50%;bottom:calc(100% + .35em);transform:translateX(-50%);
+  background:#EF4444;color:#fff;font-size:.72em;font-weight:800;line-height:1.3;letter-spacing:-0.01em;
+  padding:.22em .55em;border-radius:.35em;white-space:nowrap}
+@keyframes hiblink{0%,100%{opacity:1}50%{opacity:.2}}
+@media print{.hilite{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.hilite{animation:none;opacity:1}}
+.shotcap b.red{background:#EF4444}
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
 .grid2.fill{flex:1;min-height:0}
@@ -1053,8 +1063,18 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill">
         <div>
+          <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 — 기질카드 위치</div>
+          <div class="shotwrap">
+            <img class="shot" src="images/ai_pick.jpg" alt="AI 추천픽 화면 — 왼쪽 기질카드(직관적 행동파) 영역을 빨간 테두리로 강조 표시" />
+            <span class="hilite" style="left:5.7%;top:24.4%;width:29.6%;height:57.6%" data-t="기질카드"></span>
+          </div>
+          <div class="shotcap"><b class="red">1</b><span>빨간 표시가 <strong>기질카드</strong>다. 진단 결과로 만들어지며 아이들이 <strong>가장 궁금해한 요소</strong>다.</span></div>
+          <div class="shotcap"><b class="red">2</b><span><strong>12명</strong>이 눌러보려 했지만 <strong>눌러도 아무 화면도 열리지 않는다.</strong></span></div>
+          <div class="shotcap"><b class="red">3</b><span>여기에 <strong>연결 페이지</strong>를 붙이면 이미 생긴 관심이 그대로 학습으로 이어진다.</span></div>
+        </div>
+        <div>
           <div class="colhead"><span class="ctag ev">지표</span> 단계별 도달 인원 <span class="small">전체 25명</span></div>
-          <div class="funnel lg">
+          <div class="funnel">
             <div class="fstep">
               <div class="flab">화면까지 도달</div>
               <div class="fwrap"><div class="fbar b1" style="width:88%">22명</div></div>
@@ -1076,18 +1096,13 @@ ul.clean li::marker{color:var(--ink-4)}
               <div class="fval">8%<small>−36%p</small></div>
             </div>
           </div>
-          <p class="note blue" style="margin:.8em 0 0">가장 큰 감소는 <strong>도달 → 관심 구간(−40%p)</strong>이다. 화면까지는 왔으나 <strong>카드에서 더 나아갈 곳이 없다.</strong></p>
-        </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">근거</span> "어떤 활동이 가장 재미있어 보여요?"</div>
-          <div class="quotes">
-            <div class="quote blue"><span class="who">김*음 K1</span><strong>AI추천픽이요, 호랑이가 귀여워서</strong></div>
-            <div class="quote blue"><span class="who">이*영 K3</span>호기심모험가 — <strong>기질카드에 가장 호기심</strong>을 가짐 → <strong>눌러서 어떤 활동을 하는 거라고 인지</strong>했음</div>
-            <div class="quote blue"><span class="who">김*린 K7</span>진단평가 후 받은 카드로 인지 잘 했음 <strong>캐릭터 귀여워함</strong></div>
-          </div>
-          <div class="colhead" style="margin-top:.85em"><span class="ctag rd">해석</span> 누르면 뭔가 시작될 줄 알았다</div>
+          <p class="note plain" style="margin:.7em 0 0">가장 큰 감소는 <strong>도달 → 관심 구간(−40%p)</strong>이다. 화면까지는 왔으나 <strong>카드에서 더 나아갈 곳이 없다.</strong></p>
+          <div class="colhead" style="margin-top:.8em"><span class="ctag rd">해석</span> 누르면 뭔가 시작될 줄 알았다</div>
           <p style="margin:0 0 .5em;font-size:.87em;line-height:1.5;color:var(--ink-2)">아이들이 카드를 좋아한 이유는 두 가지였다. <strong>캐릭터가 예뻐서</strong>, 그리고 <strong>누르면 활동이 시작될 것 같아서</strong>다. 뒤쪽은 <strong>정확히 맞는 기대</strong>인데 실제로는 눌러도 아무 일도 일어나지 않는다.</p>
-          <p class="note blue" style="margin:0">기대가 이미 만들어져 있으므로 <strong>새로 흥미를 끌 필요가 없다.</strong> 카드를 누르면 <strong>연결되는 활동 하나만 열어주면</strong> 이미 확보된 12명의 관심이 그대로 학습으로 이어진다.</p>
+          <div class="quotes">
+            <div class="quote blue"><span class="who">이*영 K3</span><strong>기질카드에 가장 호기심</strong>을 가짐 → <strong>눌러서 어떤 활동을 하는 거라고 인지</strong>했음</div>
+            <div class="quote blue"><span class="who">김*음 K1</span>(가장 재미있어 보이는 활동) <strong>AI추천픽이요, 호랑이가 귀여워서</strong></div>
+          </div>
         </div>
       </div>
     </div>
