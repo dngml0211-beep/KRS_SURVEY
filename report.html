@@ -456,7 +456,10 @@ table.fixed{table-layout:fixed}
 th,td{padding:.55em .7em;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:.85em;font-weight:800;color:var(--ink-3);background:var(--line-2);border-bottom:none}
 th:first-child{border-radius:.4em 0 0 .4em} th:last-child{border-radius:0 .4em .4em 0}
-td.num{text-align:right;font-weight:800;white-space:nowrap}
+/* 숫자 열은 머리글과 값을 같은 기준(가운데)으로 맞추고 좌우 여백을 확보 */
+td.num{text-align:center;font-weight:800;white-space:nowrap}
+th.num{text-align:center}
+th.num,td.num{padding-left:.55em;padding-right:.55em}
 td.mid{vertical-align:middle}
 table.vmid td{vertical-align:middle}
 table.roomy th,table.roomy td{padding:1.25em .8em}   /* 행이 적은 표는 여백을 넉넉히 */
@@ -770,7 +773,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 진입 후 첫 행동 유형 <span class="small">전체 25명</span></div>
           <table class="vmid">
-            <tr><th>첫 행동</th><th style="width:4em">인원</th><th style="width:5em">비율</th></tr>
+            <tr><th>첫 행동</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:5.4em">비율</th></tr>
             <tr><td>도서 등 콘텐츠 즉시 실행</td><td class="num">12</td><td class="num">48%</td></tr>
             <tr><td>스크롤 탐색</td><td class="num">11</td><td class="num">44%</td></tr>
             <tr><td>GNB 메뉴 이동</td><td class="num">2</td><td class="num">8%</td></tr>
@@ -813,7 +816,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 잠시 중단 원인 <span class="small">잠시 중단 경험 11명</span></div>
           <table class="vmid fixed">
-            <tr><th style="width:26%">구분</th><th>원인</th><th style="width:14%">인원</th></tr>
+            <tr><th style="width:26%">구분</th><th>원인</th><th class="num" style="width:15%">인원</th></tr>
             <tr><td><strong>소리 내어<br />읽고 말하기</strong><br /><span class="small">8명 · 73%</span></td><td><strong>말하기 녹음 미션</strong> — 글자·문단을 소리 내어 읽고 말하는 부담</td><td class="num">8</td></tr>
             <tr><td rowspan="2">그 외<br /><span class="small">3명 · 27%</span></td><td>분량 부담 — 스키마북 15~20분</td><td class="num">2</td></tr>
             <tr><td>집중·흥미 저하</td><td class="num">1</td></tr>
@@ -855,7 +858,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 질문 및 도움이 필요했던 3명</div>
           <table class="vmid">
-            <tr><th>상황</th><th style="width:3.5em">인원</th></tr>
+            <tr><th>상황</th><th class="num" style="width:4.6em">인원</th></tr>
             <tr><td>무엇을 해야 할지 몰라 관찰자가 순서를 안내</td><td class="num">2</td></tr>
             <tr><td>활동 종료 후 나가기 버튼을 인지 못함</td><td class="num">1</td></tr>
           </table>
@@ -896,7 +899,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 코어북을 언제 읽었는가 × 추천 도서 클릭</div>
           <table class="vmid">
-            <tr><th>코어북 독서 시점</th><th style="width:3.5em">인원</th><th style="width:6.2em">추천 도서 클릭</th></tr>
+            <tr><th>코어북 독서 시점</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:7em">추천 도서 클릭</th></tr>
             <tr class="row-ok"><td>미리 읽고 옴<br /><span class="small">현장에서는 1권만 읽음</span></td><td class="num">5</td><td class="num">4명<br /><strong>80%</strong></td></tr>
             <tr class="row-todo"><td>현장에서 처음 읽음<br /><span class="small">2권을 연달아 읽음</span></td><td class="num">20</td><td class="num">7명<br /><strong>35%</strong></td></tr>
           </table>
@@ -938,7 +941,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 보조 지표</div>
           <table class="vmid">
-            <tr><th>지표</th><th style="width:7em">인원</th></tr>
+            <tr><th>지표</th><th class="num" style="width:7.6em">인원</th></tr>
             <tr class="row-ok"><td>공간 목적 인지 <span class="small">인터뷰</span></td><td class="num">21명 · 84%</td></tr>
             <tr class="row-todo"><td>획득 방법 자력 이해 <span class="small">반응 관찰</span></td><td class="num">16명 · 64%</td></tr>
             <tr><td>설명을 들은 뒤 이해</td><td class="num">3명 · 12%</td></tr>
@@ -981,7 +984,7 @@ ul.clean li::marker{color:var(--ink-4)}
         <div>
           <div class="colhead"><span class="ctag ev">근거</span> 응답 유형 분포</div>
           <table class="vmid">
-            <tr><th>응답 유형</th><th style="width:3.8em">인원</th><th style="width:4.2em">비율</th></tr>
+            <tr><th>응답 유형</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:5.2em">비율</th></tr>
             <tr class="row-ok"><td>"내게 맞는 책이 있는 곳" <span class="small">큐레이션 인식</span></td><td class="num">3</td><td class="num">12%</td></tr>
             <tr class="row-ok"><td>"책을 읽는 곳" <span class="small">일반 도서관 개념</span></td><td class="num">10</td><td class="num">40%</td></tr>
             <tr><td>다른 기능으로 해석 <span class="small">"내가 읽은 책이 나온다" · "잠긴 책을 읽어야 풀린다"</span></td><td class="num">5</td><td class="num">20%</td></tr>
