@@ -273,7 +273,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 /* 오른쪽 카드 바닥선을 왼쪽 이미지 아래선에 맞춘다 (--fh는 슬라이드별로 지정) */
 .flow.fitimg{align-self:start;height:var(--fh);max-height:100%}
 /* 내부 여백을 줄여 벙벙한 느낌을 없앤다 */
-.flow.tight{padding:.75em .95em}
+.flow.tight{padding:.9em 1em}
 .flow.tight .leadsto{margin:.5em 0 .45em}
 .flow.tight .impitems{gap:.45em}
 .flow.tight .impitem{padding:.55em .65em}
@@ -284,6 +284,13 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 /* 항목이 적은 카드 — 빈 공간을 벌리는 대신 항목 자체를 키운다 */
 .impitems.tall{gap:.7em}
 .impitems.tall .impitem{padding:1.05em .8em}
+/* 카드 폭이 좁은 열 — 라벨·수치 열을 줄여 막대(색상) 영역을 넓힌다 */
+.bars.wideplot{gap:.9em}
+.bars.wideplot .bar-row{grid-template-columns:8.6em 1fr 4.6em;gap:.65em}
+.bars.wideplot .bar-track{height:2.2em}
+.bars.wideplot .bar-fill{min-width:.9em}
+.bars.wideplot .blabel{font-size:.9em}
+.bars.wideplot .bar-val{font-size:1em}
 /* 문구 변경 전 → 후 (한 줄 흐름) */
 .baline{display:flex;align-items:stretch;gap:.7em;margin-top:.48em;
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.55em;padding:.5em .75em}
@@ -1311,7 +1318,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
-        <div class="flow fitimg tight" style="--fh:28.7em">
+        <div class="flow fitimg tight" style="--fh:31.4em">
           <div class="colhead"><span class="ctag ev">지표</span> 규칙은 몰라도, 일단 누르고 본다 <span class="small">전체 25명</span></div>
           <div class="donuts md" style="justify-content:space-around">
             <div class="donut">
@@ -1370,9 +1377,9 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>표지가 <strong>조금이라도 걸쳐 보이면</strong> 아이는 <strong>아래가 있다는 것을 스스로 알아챈다.</strong></span></div>
         </div>
-        <div class="flow fitimg tight" style="--fh:28.6em">
+        <div class="flow fitimg tight" style="--fh:33.2em">
           <div class="colhead"><span class="ctag ev">지표</span> 아이는 무엇으로 이 공간을 이해했나 <span class="small">전체 25명</span></div>
-          <div class="bars big onwhite">
+          <div class="bars onwhite wideplot">
             <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
             <div class="bar-row"><div class="blabel">화면 아래쪽<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
