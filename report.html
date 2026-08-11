@@ -210,6 +210,15 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .act p{margin:0;font-size:.8em;line-height:1.45;color:var(--ink-2)}
 .act.later{background:var(--line-2);border-color:var(--line)}
 .act.later .n{background:var(--ink-3)} .act.later h3{color:var(--ink)}
+/* 하단 개선 방향 띠 */
+.impbar{display:flex;align-items:center;gap:.9em;background:var(--accent-tint);
+  border:1.5px solid #BBD5FF;border-radius:.6em;padding:.7em 1em}
+.impbar>b{flex:0 0 auto;font-size:.76em;font-weight:800;color:#fff;background:var(--accent);
+  padding:.38em .72em;border-radius:.4em;letter-spacing:.01em}
+.impbar>span{font-size:.88em;line-height:1.5;color:var(--ink-2)}
+.impchips{display:flex;gap:.5em;flex-wrap:wrap;flex:1}
+.impchips i{font-style:normal;font-size:.85em;font-weight:800;color:var(--accent-strong);
+  background:#fff;border:1.5px solid #BBD5FF;border-radius:.45em;padding:.42em .72em;white-space:nowrap}
 /* 주차별 활동 롤링 */
 .weekflow{display:flex;align-items:stretch;gap:.5em}
 .wk{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3em;
@@ -981,6 +990,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </table>
         </div>
       </div>
+      <div class="impbar"><b>개선 방향</b><div class="impchips"><i>👍99% <strong>내 취향</strong> 워딩 부여</i><i>70% 미만도 <strong>👍추천</strong>으로 노출</i><i>추천 문구를 <strong>추천 이유 중심</strong>으로</i></div></div>
     </div>
   </div>
   <div class="pageno">13 / 19</div>
@@ -1025,6 +1035,7 @@ ul.clean li::marker{color:var(--ink-4)}
           <p style="margin:0;font-size:.9em;line-height:1.55;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20% 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
         </div>
       </div>
+      <div class="impbar"><b>개선 방향</b><span><strong>별 획득·빙고 완성 시점에 효과음 등 이펙트를 추가</strong>한다. 규칙 안내를 늘리는 것보다 <strong>누를 때의 반응을 키우는 편</strong>이 이미 확보된 호감을 다음 회차 복귀로 잇는 데 유리하며, 화면 로직 변경 없이 오픈 전 반영이 가능하다.</span></div>
     </div>
   </div>
   <div class="pageno">14 / 19</div>
@@ -1067,6 +1078,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
       </div>
+      <div class="impbar"><b>개선 방향</b><span><strong>하단 추천도서 표지가 화면에 걸쳐 보이도록</strong> 배치한다. 안내 문구를 넣는 대신 <strong>이미 작동한 단서(걸쳐 보이는 책)</strong>를 모든 화면에 일관되게 적용하는 수준의 조정이다.</span></div>
     </div>
   </div>
   <div class="pageno">15 / 19</div>
@@ -1107,15 +1119,10 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag rd">해석</span> 읽어주는 사람이 없으면 부모가 그 자리를 대신한다</div>
           <p style="margin:0 0 .6em;font-size:.9em;line-height:1.55;color:var(--ink-2)">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 진도 전체가 멈추는 문제다.</p>
           <p style="margin:0 0 .6em;font-size:.9em;line-height:1.55;color:var(--ink-2)">이번엔 그 자리를 <strong>관찰자</strong>가 메웠다. 집에서는 <strong>부모</strong>다. 매 회차 부모를 불러야 학습이 굴러가면, <strong>리텐션이 먼저 무너진다.</strong></p>
-          <div class="colhead" style="margin-top:.9em"><span class="ctag ev">제안</span> 읽는 힘을 기르는 독서 도구</div>
-          <div class="actlist">
-            <div class="act"><div class="n">1</div><div><h3>이 단어를 읽어주세요</h3></div></div>
-            <div class="act"><div class="n">2</div><div><h3>이 단어를 잘 모르겠어요</h3></div></div>
-            <div class="act"><div class="n">3</div><div><h3>오디오북으로 듣기</h3></div></div>
-          </div>
-          <p class="note blue" style="margin:.8em 0 0">대신 읽어주는 사람이 아니라 <strong>막힌 단어만 짚어 물을 수 있는 장치</strong>가 필요하다.</p>
+          <p class="note blue" style="margin:.2em 0 0">필요한 것은 대신 읽어주는 사람이 아니라 <strong>막힌 단어만 짚어 물을 수 있는 장치</strong>다. 그래야 아이가 <strong>혼자 다음 활동까지</strong> 간다.</p>
         </div>
       </div>
+      <div class="impbar"><b>개선 방향</b><div class="impchips"><i>「이 단어를 <strong>읽어주세요</strong>」</i><i>「이 단어를 <strong>잘 모르겠어요</strong>」</i><i>「<strong>오디오북</strong>으로 듣기」</i></div><span style="flex:0 0 11em">K1·K3 대상 <strong>읽는 힘을 기르는 독서 도구</strong></span></div>
     </div>
   </div>
   <div class="pageno">16 / 19</div>
@@ -1159,6 +1166,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
       </div>
+      <div class="impbar"><b>개선 방향</b><span><strong>기질카드를 누르면 열릴 콘텐츠를 채운다.</strong> 기질별 활동과 추천 근거를 붙여, 이미 확보된 <strong>12명의 호기심을 학습으로 넘긴다.</strong></span></div>
     </div>
   </div>
   <div class="pageno">17 / 19</div>
@@ -1172,41 +1180,44 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div>
         <div class="colhead"><span class="ctag ev">지표</span> 활동별 소요 시간 <span class="small">책 읽기 제외 · 1주 분량 · 분</span></div>
-        <div class="vbars even" style="height:14.2em;margin-top:1.1em">
-          <div class="vbar"><b>2.5분</b>
-            <div class="vtrack"><div class="stackbar" style="height:100%"><div class="seg b1" style="height:100%"></div></div></div>
-            <span>어휘 챌린지</span></div>
-          <div class="vbar"><b>2.4분</b>
-            <div class="vtrack"><div class="stackbar" style="height:96%"><div class="seg b2" style="height:100%"></div></div></div>
-            <span>독후퀴즈<br />코어 리딩북</span></div>
-          <div class="vbar"><b>2.1분</b>
-            <div class="vtrack"><div class="stackbar" style="height:84%"><div class="seg b3" style="height:100%"></div></div></div>
-            <span>독후퀴즈<br />교과 스키마북</span></div>
-          <div class="vbar"><b>1.3분</b>
-            <div class="vtrack"><div class="stackbar" style="height:52%"><div class="seg b5" style="height:100%"></div></div></div>
-            <span>나만의 문장 수집<br />K1 전용</span></div>
-        </div>
-        <p class="note plain" style="margin:.8em 0 0">합계 <strong>K1 4종 8.3분</strong> · K3·K7 <strong>3종 6.9분</strong>. 네 활동 모두 <strong>2분 남짓</strong>에 끝난다.</p>
-      </div>
-      <div class="grid2">
-        <div>
-          <div class="colhead"><span class="ctag rd">해석</span> 개수도 적고, 종류는 더 적다</div>
-          <p style="margin:0 0 .5em;font-size:.88em;line-height:1.55;color:var(--ink-2)">네 개 중 <strong>둘이 같은 형식의 독후퀴즈</strong>여서, 형식으로 세면 <strong>K1은 3종·K3와 K7은 2종</strong>에 불과하다.</p>
-          <p style="margin:0;font-size:.88em;line-height:1.55;color:var(--ink-2)">이 구성이 <strong>6개월간 매주 반복</strong>되면 같은 활동을 <strong>스물여섯 번</strong> 하게 된다. 하나를 길게 만드는 것은 답이 아니다 — 스키마북에서 이미 <strong>15~20분에 3명이 포기</strong>했다.</p>
-        </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">개선 방향</span> 주차별로 다른 활동을 배치</div>
-          <div class="weekflow">
-            <div class="wk"><b>1주차</b><span>활동 1</span></div>
-            <div class="wkar">›</div>
-            <div class="wk"><b>2주차</b><span>활동 2</span></div>
-            <div class="wkar">›</div>
-            <div class="wk"><b>3주차</b><span>활동 3</span></div>
-            <div class="wkar">›</div>
-            <div class="wk"><b>4주차</b><span>활동 4</span></div>
+        <div class="hero plain" style="margin-top:.7em">
+          <div>
+            <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
+            <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
           </div>
-          <p class="note blue" style="margin:.75em 0 0">활동을 <strong>주차 단위로 돌려</strong> 매번 새로운 것을 한다는 감각을 유지한다. 개수와 종류를 <strong>동시에</strong> 늘리는 방법이다.</p>
+          <div class="vbars even" style="height:14.6em">
+            <div class="vbar"><b>2.5분</b>
+              <div class="vtrack"><div class="stackbar" style="height:100%"><div class="seg b1" style="height:100%"></div></div></div>
+              <span>어휘 챌린지</span></div>
+            <div class="vbar"><b>2.4분</b>
+              <div class="vtrack"><div class="stackbar" style="height:96%"><div class="seg b2" style="height:100%"></div></div></div>
+              <span>독후퀴즈<br />코어 리딩북</span></div>
+            <div class="vbar"><b>2.1분</b>
+              <div class="vtrack"><div class="stackbar" style="height:84%"><div class="seg b3" style="height:100%"></div></div></div>
+              <span>독후퀴즈<br />교과 스키마북</span></div>
+            <div class="vbar"><b>1.3분</b>
+              <div class="vtrack"><div class="stackbar" style="height:52%"><div class="seg b5" style="height:100%"></div></div></div>
+              <span>나만의 문장 수집<br />K1 전용</span></div>
+          </div>
         </div>
+      </div>
+      <div>
+        <div class="colhead"><span class="ctag rd">해석</span> 개수도 적고, 종류는 더 적다</div>
+        <p style="margin:0 0 .45em;font-size:.88em;line-height:1.55;color:var(--ink-2)">네 활동 모두 <strong>2분 남짓</strong>에 끝나고, 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>K1은 3종·K3와 K7은 2종</strong>에 불과하다.</p>
+        <p style="margin:0;font-size:.88em;line-height:1.55;color:var(--ink-2)">이 구성이 <strong>6개월간 매주 반복</strong>되면 같은 활동을 <strong>스물여섯 번</strong> 하게 된다. 하나를 길게 만드는 것은 답이 아니다 — 스키마북에서 이미 <strong>15~20분에 3명이 포기</strong>했다.</p>
+      </div>
+      <div class="impbar">
+        <b>개선 방향</b>
+        <div class="weekflow" style="flex:1">
+          <div class="wk"><b>1주차</b><span>활동 1</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>2주차</b><span>활동 2</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>3주차</b><span>활동 3</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>4주차</b><span>활동 4</span></div>
+        </div>
+        <span style="flex:0 0 12.5em">주차 단위로 활동을 돌려 <strong>개수와 종류를 동시에</strong> 늘린다.</span>
       </div>
     </div>
   </div>
