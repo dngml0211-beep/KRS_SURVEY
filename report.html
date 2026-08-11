@@ -270,6 +270,20 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   color:var(--accent-strong);background:var(--accent-tint);border:1.5px solid #BBD5FF;
   border-radius:99px;padding:.32em .85em}
 .flow .impflow{margin-bottom:.1em}
+/* 오른쪽 카드 바닥선을 왼쪽 이미지 아래선에 맞춘다 (--fh는 슬라이드별로 지정) */
+.flow.fitimg{align-self:start;height:var(--fh);max-height:100%}
+/* 내부 여백을 줄여 벙벙한 느낌을 없앤다 */
+.flow.tight{padding:.75em .95em}
+.flow.tight .leadsto{margin:.5em 0 .45em}
+.flow.tight .impitems{gap:.45em}
+.flow.tight .impitem{padding:.55em .65em}
+/* 도넛 범례 — 한 줄 배치 */
+.dleg.row{flex-direction:row;justify-content:center;gap:.7em;white-space:nowrap}
+.donuts.md .ring{width:7.5em;height:7.5em}
+.donuts.md .hole b{font-size:1.12em}
+/* 항목이 적은 카드 — 빈 공간을 벌리는 대신 항목 자체를 키운다 */
+.impitems.tall{gap:.7em}
+.impitems.tall .impitem{padding:1.05em .8em}
 /* 문구 변경 전 → 후 (한 줄 흐름) */
 .baline{display:flex;align-items:stretch;gap:.7em;margin-top:.48em;
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.55em;padding:.5em .75em}
@@ -1249,14 +1263,14 @@ ul.clean li::marker{color:var(--ink-4)}
               <img class="shot" src="images/ai_pick_after.jpg" alt="적용 후 AI 추천픽 화면 — 확률 옆에 내 취향 워딩이 붙고 추천 문구가 아이의 취향을 근거로 제시한다" />
               <span class="hilite" style="left:44.4%;top:12.3%;width:43.3%;height:19.4%" data-t="1"></span>
               <span class="hilite below" style="left:43.1%;top:36.6%;width:12.5%;height:7.5%" data-t="2"></span>
-              <span class="hilite" style="left:67.2%;top:38.4%;width:13.0%;height:7.5%"></span>
+              <span class="hilite below" style="left:67.2%;top:38.4%;width:13.0%;height:7.5%" data-t="2"></span>
             </div>
           </div>
           <div class="shotcap"><b class="red">1</b><span>도서 소개를 <strong>추천하는 이유</strong>로 보완한다.</span></div>
           <div class="shotcap"><b class="red">2</b><span><strong>90% 내 취향</strong> — 직관적인 텍스트를 함께 명시한다.</span></div>
         </div>
-        <div class="flow">
-          <div class="colhead"><span class="ctag ev">인식</span> 👍 표시를 무엇으로 이해했나 <span class="small">전체 25명</span></div>
+        <div class="flow fitimg" style="--fh:29.6em">
+          <div class="colhead"><span class="ctag ev">인식</span> 👍 90% 표시를 무엇으로 이해했나 <span class="small">전체 25명</span></div>
           <div class="bars onwhite">
             <div class="bar-row"><div class="blabel">정확히 이해</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#A6C8FC"></div></div><div class="bar-val">5<small>명 · 20%</small></div></div>
             <div class="bar-row"><div class="blabel">부분 이해</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#7DAEFB"></div></div><div class="bar-val">7<small>명 · 28%</small></div></div>
@@ -1297,13 +1311,13 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
-        <div class="flow">
+        <div class="flow fitimg tight" style="--fh:28.7em">
           <div class="colhead"><span class="ctag ev">지표</span> 규칙은 몰라도, 일단 누르고 본다 <span class="small">전체 25명</span></div>
-          <div class="donuts lg" style="justify-content:space-around">
+          <div class="donuts md" style="justify-content:space-around">
             <div class="donut">
               <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>다시 하고 싶다</em></div></div>
               <div class="dname">재참여 의향</div>
-              <div class="dleg">
+              <div class="dleg row">
                 <span><i style="background:var(--accent)"></i>그렇다 21명</span>
                 <span><i style="background:var(--ink-4)"></i>아니다 4명</span>
               </div>
@@ -1311,7 +1325,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="donut">
               <div class="ring" style="--p:64%"><div class="hole"><b>64%</b><em>규칙 이해</em></div></div>
               <div class="dname">별 획득 방법</div>
-              <div class="dleg">
+              <div class="dleg row">
                 <span><i style="background:var(--accent)"></i>이해함 16명</span>
                 <span><i style="background:var(--ink-4)"></i>이해 못함 9명</span>
               </div>
@@ -1356,15 +1370,15 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>표지가 <strong>조금이라도 걸쳐 보이면</strong> 아이는 <strong>아래가 있다는 것을 스스로 알아챈다.</strong></span></div>
         </div>
-        <div class="flow">
+        <div class="flow fitimg tight" style="--fh:28.6em">
           <div class="colhead"><span class="ctag ev">지표</span> 아이는 무엇으로 이 공간을 이해했나 <span class="small">전체 25명</span></div>
-          <div class="bars onwhite">
+          <div class="bars big onwhite">
             <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
             <div class="bar-row"><div class="blabel">화면 아래쪽<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
           <div class="leadsto"><b>▼ 글자가 아니라 '보이는 책'으로 읽는다</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</div>
-          <div class="impitems c1">
+          <div class="impitems c1 tall">
             <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지가 첫 화면에 걸치도록</strong> 배치</span></div></div>
             <div class="impitem"><span class="ico">⬇️</span><div><b>스크롤 어포던스 추가</b><span>아래가 더 있다는 <strong>시각적 신호</strong>를 남긴다</span></div></div>
           </div>
