@@ -152,6 +152,19 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 @media print{.hilite{animation:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.hilite{animation:none;opacity:1}}
 .shotcap b.red{background:#EF4444}
+/* 적용 전 ⇄ 적용 후 교차 페이드 */
+.xfade{position:relative;line-height:0}
+.xf{position:relative;animation:xfA 8s ease-in-out infinite}
+.xf+.xf{position:absolute;inset:0;animation-name:xfB}
+.xf-tag{position:absolute;left:.6em;top:.6em;font-size:.78em;font-weight:800;line-height:1;
+  padding:.42em .7em;border-radius:.4em;color:#fff;background:var(--ink-2);letter-spacing:-0.01em}
+.xf-tag.after{background:var(--accent)}
+@keyframes xfA{0%,43%{opacity:1}50%,93%{opacity:0}100%{opacity:1}}
+@keyframes xfB{0%,43%{opacity:0}50%,93%{opacity:1}100%{opacity:0}}
+@media print{.xf,.xf+.xf{animation:none;opacity:1;position:relative;inset:auto}
+  .xf+.xf{margin-top:.5em}}
+@media (prefers-reduced-motion:reduce){.xf,.xf+.xf{animation:none;opacity:1;position:relative;inset:auto}
+  .xf+.xf{margin-top:.5em}}
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
 .grid2.fill{flex:1;min-height:0}
@@ -908,19 +921,38 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill">
         <div>
-          <div class="colhead"><span class="ctag ev">현재</span> AI 추천픽 화면</div>
-          <img class="shot" src="images/ai_pick.jpg" alt="현재 AI 추천픽 화면 — 추천 도서 위에 좋아할 확률이 숫자로만 표시되고, 추천 문구는 책 내용만 설명한다" />
-          <div class="shotcap"><b>1</b><span>책 위에 <strong>👍90% · 88%</strong>처럼 <strong>숫자만</strong> 붙는다. 무엇에 대한 확률인지 쓰여 있지 않다.</span></div>
-          <div class="shotcap"><b>2</b><span>추천 문구가 <strong>책 내용만 설명</strong>한다. "주인공의 다양한 감정을 따라가다 보면…"</span></div>
+          <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
+          <div class="xfade">
+            <div class="xf">
+              <img class="shot" src="images/ai_pick.jpg" alt="적용 전 AI 추천픽 화면 — 추천 도서 위에 좋아할 확률이 숫자로만 표시되고, 추천 문구는 책 내용만 설명한다" />
+              <span class="xf-tag">적용 전</span>
+            </div>
+            <div class="xf">
+              <img class="shot" src="images/ai_pick_after.jpg" alt="적용 후 AI 추천픽 화면 — 확률 옆에 내 취향 워딩이 붙고, 추천 문구가 아이의 취향을 근거로 제시한다" />
+              <span class="xf-tag after">적용 후</span>
+            </div>
+          </div>
+          <div class="shotcap"><b>1</b><span>확률 옆에 <strong>'내 취향'</strong>이 붙어 <strong>무엇에 대한 숫자인지</strong> 즉시 읽힌다.</span></div>
+          <div class="shotcap"><b>2</b><span>문구가 <strong>책 소개에서 추천 이유로</strong> 바뀐다. "○○○ 님의 <strong>감성적인 취향에 맞는</strong>…"</span></div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag rd">개선</span> 적용 후 <span class="small">목업</span></div>
-          <img class="shot" src="images/ai_pick_after.jpg" alt="개선 후 AI 추천픽 화면 — 확률 옆에 내 취향 워딩이 붙고, 추천 문구가 아이의 취향을 근거로 제시한다" />
-          <div class="shotcap"><b>1</b><span>확률 옆에 <strong>'내 취향'</strong>을 붙여 <strong>무엇에 대한 숫자인지</strong> 즉시 읽히게 한다.</span></div>
-          <div class="shotcap"><b>2</b><span>문구를 <strong>추천 이유 중심</strong>으로. "○○○ 님의 <strong>감성적인 취향에 맞는</strong> 마음이 따뜻해지는 이야기를 추천해요."</span></div>
+          <div class="colhead"><span class="ctag ev">인식</span> 👍 표시를 무엇으로 이해했나 <span class="small">전체 25명</span></div>
+          <table class="vmid">
+            <tr><th style="width:5.5em">인식 수준</th><th style="width:3.5em">인원</th><th>대표 응답</th></tr>
+            <tr class="row-ok"><td><span class="pill plain">정확</span></td><td class="num">5</td><td>"나한테 몇 % 맞는 책인지"</td></tr>
+            <tr class="row-ok"><td><span class="pill plain">부분</span></td><td class="num">7</td><td>"추천해주는 거 같아요"</td></tr>
+            <tr><td><span class="pill plain">미인지</span></td><td class="num">13</td><td>"인기순" · "쪽수" · "모르겠어요"</td></tr>
+          </table>
+          <div class="colhead" style="margin-top:.8em"><span class="ctag rd">개선안</span> 표시와 문구</div>
+          <table class="vmid fixed" style="font-size:.9em">
+            <tr><th style="width:21%">구분</th><th style="width:34%">기존</th><th>변경</th></tr>
+            <tr><td>확률 표시</td><td>👍99%</td><td>👍99% <strong>내 취향</strong></td></tr>
+            <tr><td>70% 미만</td><td>미노출</td><td><strong>👍추천</strong></td></tr>
+            <tr><td>추천 문구</td><td><span class="small">책 중심</span><br />"극한 환경에서 동물들의 생존 전략을 따라가면 호기심이 자극받아요."</td><td><span class="small">추천 이유 중심</span><br />"오늘은 <strong>○○○ 님이 좋아하는</strong> 동물과 자연에 관한 책을 추천해요."</td></tr>
+          </table>
         </div>
       </div>
-      <div class="oneline"><span class="ctag ev" style="flex:0 0 auto">인식</span> <span>👍 표시를 정확히 이해한 아동은 <strong>5명</strong>뿐이고 <strong>13명(52%)</strong>은 <strong>"인기순" · "쪽수"</strong>로 읽었다. 몰라서 비어 있는 게 아니라 <strong>이미 다른 뜻으로 채워져 있어</strong>, 설명을 덧붙이기보다 <strong>표시 자체가 '내 취향'으로 먼저 읽히게</strong> 바꾸는 편이 낫다.</span></div>
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">해석</span> <span>👍를 정확히 이해한 아동은 <strong>5명</strong>뿐이고 <strong>13명(52%)</strong>은 <strong>"인기순" · "쪽수"</strong>로 읽었다. 몰라서 비어 있는 게 아니라 <strong>이미 다른 뜻으로 채워져 있어</strong>, 설명을 덧붙이기보다 <strong>표시 자체가 '내 취향'으로 먼저 읽히게</strong> 바꾸는 편이 낫다.</span></div>
     </div>
   </div>
   <div class="pageno">13 / 19</div>
