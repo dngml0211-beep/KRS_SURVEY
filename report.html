@@ -177,10 +177,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .xf-tag.after{background:var(--accent)}
 @keyframes xfA{0%,43%{opacity:1}50%,93%{opacity:0}100%{opacity:1}}
 @keyframes xfB{0%,43%{opacity:0}50%,93%{opacity:1}100%{opacity:0}}
-@media print{.xf,.xf+.xf{animation:none;opacity:1;position:relative;inset:auto}
-  .xf+.xf{margin-top:.5em}}
-@media (prefers-reduced-motion:reduce){.xf,.xf+.xf{animation:none;opacity:1;position:relative;inset:auto}
-  .xf+.xf{margin-top:.5em}}
+
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
 .grid2.fill{flex:1;min-height:0}
@@ -191,6 +188,17 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 /* 열 안에서 세로 가운데 정렬하되 원본 비율은 그대로 유지 */
 .xfade.fit{flex:0 0 auto;align-self:center;width:100%;max-width:100%}
 .xfade.fit .shot{width:100%;height:auto;display:block}
+/* 적용 전 / 적용 후 전환 탭 */
+.tabs{display:inline-flex;align-self:flex-start;gap:.25em;background:var(--line-2);
+  border:1.5px solid var(--line);border-radius:99px;padding:.25em;margin-bottom:.6em}
+.tab{font:inherit;font-size:.78em;font-weight:800;letter-spacing:-.01em;color:var(--ink-3);
+  background:transparent;border:none;border-radius:99px;padding:.44em 1.1em;cursor:pointer;
+  transition:background .16s,color .16s,box-shadow .16s}
+.tab:hover:not(.is-on){color:var(--ink-2);background:#fff}
+.tab.is-on{color:#fff;background:var(--accent);box-shadow:0 .14em .45em rgba(37,99,235,.3)}
+.tab.is-on.after{background:var(--ok-deep)}
+.xfade.tog .xf{position:relative;display:none;animation:none;inset:auto}
+.xfade.tog .xf.is-on{display:block}
 .actlist{display:flex;flex-direction:column;gap:.5em}
 .actlist.spread{display:grid;grid-auto-rows:1fr;gap:.7em;height:100%}
 .actlist.spread .act{align-content:center}
@@ -245,6 +253,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   margin-bottom:.16em;line-height:1.3}
 .impitem span{display:block;font-size:.78em;line-height:1.42;color:var(--ink-2)}
 .impnote{margin:.6em 0 0;font-size:.8em;line-height:1.5;color:var(--ink-2)}
+.nextline{margin:.45em 0 0;font-size:.82em;font-weight:800;color:var(--accent-strong)}
 /* 개선 방향 — 압축형 */
 .impbox.tight{padding:.62em .9em}
 .impbox.tight>h3{margin-bottom:.48em;font-size:.93em}
@@ -252,9 +261,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .impbox.tight .impitem .ico{font-size:1.3em}
 .impbox.tight .impitem b{font-size:.83em;margin-bottom:.1em}
 .impbox.tight .impitem span{font-size:.76em;line-height:1.38}
-.impflow{display:flex;gap:.45em;flex-wrap:wrap}
-.impflow i{font-style:normal;display:inline-flex;align-items:center;gap:.35em;font-size:.8em;font-weight:800;
-  color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;border-radius:99px;padding:.36em .78em}
+.impflow{display:flex;gap:.4em;flex-wrap:nowrap}
+.impflow i{font-style:normal;display:inline-flex;align-items:center;gap:.3em;font-size:.74em;font-weight:800;
+  white-space:nowrap;color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;
+  border-radius:99px;padding:.36em .7em}
 .impflow i em{font-style:normal;font-size:1.1em;line-height:1}
 /* 인식 → 개선 방향을 한 흐름으로 묶는 카드 */
 .flow{display:flex;flex-direction:column;justify-content:space-between;flex:1;min-height:0;
@@ -262,7 +272,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .flow .colhead{margin-bottom:.5em}
 .leadsto{display:flex;align-items:center;gap:.6em;margin:.85em 0 .6em}
 .leadsto::before,.leadsto::after{content:"";flex:1;height:1.5px;background:#DCE6F5;border-radius:2px}
-.leadsto b{flex:0 0 auto;display:inline-flex;align-items:center;gap:.35em;font-size:.76em;font-weight:800;
+.leadsto b{flex:0 0 auto;display:inline-flex;align-items:center;gap:.35em;font-size:.73em;font-weight:800;white-space:nowrap;
   color:var(--accent-strong);background:var(--accent-tint);border:1.5px solid #BBD5FF;
   border-radius:99px;padding:.32em .85em}
 .flow .impflow{margin-bottom:.1em}
@@ -295,48 +305,34 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .rart span{font-size:3em;line-height:1.15;display:block}
 .rart span:last-child{font-size:2.1em}
 .rtext{font-size:1.12em;font-weight:700;line-height:2;color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
-.rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em;
-  animation:rhl 13s linear infinite;animation-delay:calc(var(--i) * .6s)}
+.rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em}
 @keyframes rhl{
   0%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  4.6%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  4.61%{background:transparent;box-shadow:none}
+  8.3%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  8.31%{background:transparent;box-shadow:none}
   100%{background:transparent;box-shadow:none}
 }
-.rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
-  padding-top:.85em;border-top:1.5px dashed var(--line)}
-.rtools{flex-wrap:nowrap}
-.rtool{display:inline-flex;align-items:center;justify-content:center;gap:.28em;
-  font-size:.66em;font-weight:800;white-space:nowrap;
+.rtools{display:flex;gap:.4em;flex-wrap:nowrap;margin-top:.9em;
+  padding-top:.8em;border-top:1.5px dashed var(--line)}
+.rtool{font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:.28em;
+  font-size:.66em;font-weight:800;white-space:nowrap;cursor:pointer;
   color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;
-  border-radius:99px;padding:.42em .62em;box-shadow:0 .16em 0 #C9DDFB}
+  border-radius:99px;padding:.46em .68em;box-shadow:0 .16em 0 #C9DDFB;
+  transition:background .14s,color .14s,box-shadow .14s,transform .14s}
 .rtool em{font-style:normal;font-size:1.15em;line-height:1}
-.rtool.b1{animation:rp1 13s linear infinite}
-.rtool.b2{animation:rp2 13s linear infinite}
-.rtool.b3{animation:rp3 13s linear infinite}
-@keyframes rp1{
-  0%,53%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
-  54%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
-@keyframes rp2{
-  0%,53%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
-  54%,76%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
-  77%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
-@keyframes rp3{
-  0%,76%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
-  77%,100%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}}
+.rtool:hover:not(.is-on){background:#F5F9FF}
+.rtool.is-on{color:#fff;background:var(--accent);border-color:var(--accent);
+  box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
 /* 버튼을 누르면 나타나는 동작 결과 */
-.rout{position:relative;height:2.5em;margin-top:.55em}
-.ro{position:absolute;inset:0;display:flex;align-items:center;gap:.45em;opacity:0;
-  font-size:.78em;font-weight:700;color:var(--ink-2);
-  background:#F5F9FF;border:1.5px solid #DCE9FC;border-radius:.5em;padding:0 .75em}
-.ro em{font-style:normal;font-size:1.15em;line-height:1}
+.rout{margin-top:.5em}
+.ro{display:none;align-items:center;gap:.4em;
+  font-size:.72em;font-weight:700;line-height:1.4;color:var(--ink-2);
+  background:#F5F9FF;border:1.5px solid #DCE9FC;border-radius:.5em;padding:.55em .75em}
+.ro.is-on{display:flex}
+.ro em{font-style:normal;font-size:1.2em;line-height:1}
 .ro b{color:var(--accent-strong)}
-.ro.o1{animation:ro1 13s linear infinite}
-.ro.o2{animation:ro2 13s linear infinite}
-.ro.o3{animation:ro3 13s linear infinite}
-@keyframes ro1{0%,52%{opacity:1} 54%,100%{opacity:0}}
-@keyframes ro2{0%,52%{opacity:0} 54%,75%{opacity:1} 77%,100%{opacity:0}}
-@keyframes ro3{0%,75%{opacity:0} 77%,100%{opacity:1}}
+/* 낭독 중일 때만 단어가 차례로 밝아짐 */
+.reader.reading .rtext i{animation:rhl 7.2s linear infinite;animation-delay:calc(var(--i) * .6s)}
 .wave{display:flex;align-items:center;gap:.16em;margin-left:.1em}
 .wave s{width:.22em;height:.5em;border-radius:99px;background:var(--accent);display:block;
   animation:wv .9s ease-in-out infinite}
@@ -645,20 +641,18 @@ ul.clean li::marker{color:var(--ink-4)}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
   .rtext i{animation:none !important;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  .rtool,.ro,.wave s{animation:none !important}
+  .wave s{animation:none !important}
+  .reader.reading .rtext i{animation:none !important}
   .mockhero,.mockhero::after,.mockchar,.mockplay i{animation:none !important}
   .mockplay i{width:38%}
-  .rtool.b1{color:#fff;background:#2563EB;border-color:#2563EB}
-  .ro{opacity:0} .ro.o1{opacity:1}
 }
 @media (prefers-reduced-motion:reduce){
   .rtext i{animation:none;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  .rtool,.ro,.wave s{animation:none}
+  .wave s{animation:none}
+  .reader.reading .rtext i{animation:none}
   .mockhero,.mockhero::after,.mockchar,.mockplay i{animation:none}
   .mockplay i{width:38%}
-  .rtool.b1{color:#fff;background:#2563EB;border-color:#2563EB}
-  .ro{opacity:0} .ro.o1{opacity:1}
 }
 </style>
 </head>
@@ -1248,15 +1242,17 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill stretch" style="grid-template-columns:1.3fr 1fr">
         <div>
-          <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
-          <div class="xfade fit">
-            <div class="xf">
+          <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽</div>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab is-on" data-x="0">적용 전</button>
+            <button type="button" class="tab after" data-x="1">적용 후</button>
+          </div>
+          <div class="xfade fit tog">
+            <div class="xf is-on">
               <img class="shot" src="images/ai_pick.jpg" alt="적용 전 AI 추천픽 화면 — 확률이 숫자로만 표시되고 추천 문구는 책 내용만 설명한다" />
-              <span class="xf-tag">적용 전</span>
             </div>
             <div class="xf">
               <img class="shot" src="images/ai_pick_after.jpg" alt="적용 후 AI 추천픽 화면 — 확률 옆에 내 취향 워딩이 붙고 추천 문구가 아이의 취향을 근거로 제시한다" />
-              <span class="xf-tag after">적용 후</span>
               <span class="hilite" style="left:44.4%;top:12.3%;width:43.3%;height:19.4%" data-t="1"></span>
               <span class="hilite below" style="left:43.1%;top:36.6%;width:12.5%;height:7.5%" data-t="2"></span>
               <span class="hilite" style="left:67.2%;top:38.4%;width:13.0%;height:7.5%"></span>
@@ -1276,9 +1272,9 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="leadsto"><b>▼ 절반이 다른 뜻으로 읽었다</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 이 책을 왜 추천하는지까지 말해준다</div>
           <div class="impflow">
-            <i><em>💙</em>👍99% <b>내 취향</b></i>
-            <i><em>🔓</em>70% 미만도 <b>👍추천</b></i>
-            <i><em>🙋</em>추천 문구에 <b>[자녀이름]</b></i>
+            <i>👍99% <b>내 취향</b></i>
+            <i>70% 미만도 <b>👍추천</b></i>
+            <i>추천 문구에 <b>[자녀이름]</b></i>
           </div>
           <div class="baline stack">
             <div class="was"><u>기존 · 책 중심</u><p>주인공의 다양한 감정을 따라가다 보면 자신의 마음을 탐구하는 재미를 느낄 수 있어요</p></div>
@@ -1298,7 +1294,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
     <h2>별빙고는 규칙을 몰라도 가장 다시 하고 싶어 한 공간이다</h2>
     <div class="body">
-      <div class="grid2 fill stretch" style="grid-template-columns:1.42fr 1fr">
+      <div class="grid2 fill stretch" style="grid-template-columns:1.62fr 1fr">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> 별빙고 — 오늘의 도전</div>
           <div class="shotwrap">
@@ -1327,7 +1323,7 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
             </div>
           </div>
-          <div class="leadsto"><b>▼ 규칙이 아니라 '별이 나오는 순간'이 붙잡았다</b></div>
+          <div class="leadsto"><b>▼ 아이를 붙잡은 건 '별이 나오는 순간'</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 설명을 늘리는 대신, 누를 때의 반응을 키운다</div>
           <div class="impitems c1">
             <div class="impitem"><span class="ico">🔊✨</span><div><b>효과음 · 이펙트 추가</b><span>별 획득·빙고 완성 순간에 <strong>소리와 움직임</strong>을 넣는다</span></div></div>
@@ -1350,15 +1346,17 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill stretch" style="grid-template-columns:1.42fr 1fr">
         <div>
-          <div class="colhead"><span class="ctag ev">화면</span> KRS 도서관 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
-          <div class="xfade fit">
-            <div class="xf">
+          <div class="colhead"><span class="ctag ev">화면</span> KRS 도서관</div>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab is-on" data-x="0">적용 전</button>
+            <button type="button" class="tab after" data-x="1">적용 후</button>
+          </div>
+          <div class="xfade fit tog">
+            <div class="xf is-on">
               <img class="shot" src="images/krs_library.jpg" alt="적용 전 KRS 도서관 첫 화면 — 하단 KRS 추천도서 영역은 필터 칩만 보이고 책 표지는 화면 밖에 있다" />
-              <span class="xf-tag">적용 전</span>
             </div>
             <div class="xf">
               <img class="shot" src="images/krs_library2.jpg" alt="적용 후 KRS 도서관 첫 화면 — 하단 추천도서 표지가 화면에 걸쳐 보인다" />
-              <span class="xf-tag after">적용 후</span>
               <span class="hilite" style="left:1.2%;top:94.9%;width:97.6%;height:5.1%" data-t="걸쳐 보이는 표지"></span>
             </div>
           </div>
@@ -1370,7 +1368,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
             <div class="bar-row"><div class="blabel">화면 아래쪽<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
-          <div class="leadsto"><b>▼ 글자가 아니라 '보이는 책'으로 공간을 읽는다</b></div>
+          <div class="leadsto"><b>▼ 글자가 아니라 '보이는 책'으로 읽는다</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</div>
           <div class="impitems c1">
             <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지가 첫 화면에 걸치도록</strong> 배치</span></div></div>
@@ -1408,7 +1406,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch">
         <div>
           <div class="colhead"><span class="ctag rd">도구안</span> 읽기 지원 도구 <span class="small">단어 단위 하이라이팅 · 예시</span></div>
-          <div class="reader" style="font-size:1.3em">
+          <div class="reader reading" style="font-size:1.3em">
             <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
             <div class="rbody">
               <div class="rart"><span>🐻</span><span>💩</span></div>
@@ -1419,14 +1417,14 @@ ul.clean li::marker{color:var(--ink-4)}
                 <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
               </p>
               <div class="rtools">
-                <span class="rtool b1"><em>🔊</em>읽어주세요</span>
-                <span class="rtool b2"><em>❓</em>이 단어를 잘 모르겠어요</span>
-                <span class="rtool b3"><em>🎧</em>오디오북으로 듣기</span>
+                <button type="button" class="rtool is-on" data-r="0"><em>🔊</em>읽어주세요</button>
+                <button type="button" class="rtool" data-r="1"><em>❓</em>이 단어를 잘 모르겠어요</button>
+                <button type="button" class="rtool" data-r="2"><em>🎧</em>오디오북으로 듣기</button>
               </div>
               <div class="rout">
-                <div class="ro o1"><em>🔊</em>읽어주는 속도에 맞춰 <b>단어가 차례로 밝아집니다</b></div>
-                <div class="ro o2"><em>❓</em><b>어슬렁어슬렁</b> — 천천히 걸어 다니는 모습이에요</div>
-                <div class="ro o3"><em>🎧</em><b>오디오북 재생 중</b><span class="wave"><s></s><s></s><s></s><s></s><s></s></span></div>
+                <div class="ro is-on"><em>🔊</em>읽어주는 속도에 맞춰 <b>단어가 차례로 밝아집니다</b></div>
+                <div class="ro"><em>❓</em><b>어슬렁어슬렁</b> — 천천히 걸어 다니는 모습이에요</div>
+                <div class="ro"><em>🎧</em><b>오디오북 재생 중</b><span class="wave"><s></s><s></s><s></s><s></s><s></s></span></div>
               </div>
             </div>
           </div>
@@ -1464,7 +1462,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
     <h2>캐릭터는 아이가 가장 먼저 알아본 요소다</h2>
     <div class="body">
-      <div class="grid2 fill stretch" style="grid-template-columns:1.42fr 1fr">
+      <div class="grid2 fill stretch" style="grid-template-columns:1.62fr 1fr">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 — 기질카드 위치</div>
           <div class="shotwrap">
@@ -1496,8 +1494,9 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="leadsto"><b>▼ 언급한 13명은 전원 긍정, 부정은 한 명도 없었다</b></div>
           <div class="colhead"><span class="ctag rd">해석</span> 진단평가에서 본 캐릭터를 기억한다</div>
           <p style="margin:0 0 .55em;font-size:.87em;line-height:1.5;color:var(--ink-2)">진단평가를 받고 온 아이는 <strong>자기 캐릭터를 바로 알아보고 반가워했다(7명).</strong> 기질카드에 관심이 없던 아이도 <strong>캐릭터만큼은 좋아했다.</strong></p>
-          <div class="impbox tight" style="padding:.6em .85em">
-            <h3 style="margin:0"><em>개선 방향</em> 관심은 확보됐다 — 문제는 눌러도 열릴 것이 없다는 점 <span class="small" style="margin-left:.3em;color:var(--accent-strong)">▶ 다음 장 계속</span></h3>
+          <div class="impbox tight" style="padding:.65em .85em">
+            <h3 style="margin:0"><em>개선 방향</em> 관심은 확보됐다. 문제는 눌러도 열릴 것이 없다는 점</h3>
+            <p class="nextline">▶ 다음 장 계속</p>
           </div>
         </div>
       </div>
@@ -1685,6 +1684,41 @@ ul.clean li::marker{color:var(--ink-4)}
     } else if (k === "End") {
       e.preventDefault(); go(slides.length - 1);
     }
+  });
+
+  /* 적용 전 / 적용 후 전환 */
+  [].forEach.call(document.querySelectorAll(".tabs"), function(bar){
+    var view = bar.parentNode.querySelector(".xfade.tog");
+    if (!view) return;
+    bar.addEventListener("click", function(e){
+      var btn = e.target.closest(".tab");
+      if (!btn || !bar.contains(btn)) return;
+      var i = +btn.getAttribute("data-x");
+      [].forEach.call(bar.querySelectorAll(".tab"), function(b, k){
+        b.classList.toggle("is-on", k === i);
+      });
+      [].forEach.call(view.querySelectorAll(".xf"), function(v, k){
+        v.classList.toggle("is-on", k === i);
+      });
+    });
+  });
+
+  /* 읽기 지원 도구 버튼 */
+  [].forEach.call(document.querySelectorAll(".rtools"), function(bar){
+    var reader = bar.closest(".reader");
+    var outs = reader ? reader.querySelectorAll(".ro") : [];
+    bar.addEventListener("click", function(e){
+      var btn = e.target.closest(".rtool");
+      if (!btn || !bar.contains(btn)) return;
+      var i = +btn.getAttribute("data-r");
+      [].forEach.call(bar.querySelectorAll(".rtool"), function(b, k){
+        b.classList.toggle("is-on", k === i);
+      });
+      [].forEach.call(outs, function(o, k){ o.classList.toggle("is-on", k === i); });
+      /* 낭독 버튼일 때만 단어 하이라이팅을 처음부터 재생 */
+      reader.classList.remove("reading");
+      if (i === 0) { void reader.offsetWidth; reader.classList.add("reading"); }
+    });
   });
 
   window.addEventListener("scroll", updateProgress, { passive: true });
