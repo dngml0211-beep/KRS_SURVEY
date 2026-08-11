@@ -235,6 +235,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .impbox>h3 em{font-style:normal;font-size:.72em;font-weight:800;color:#fff;background:var(--accent);
   padding:.3em .62em;border-radius:.4em;letter-spacing:.01em}
 .impitems{display:grid;grid-template-columns:repeat(4,1fr);gap:.6em}
+.impitems.c1{grid-template-columns:1fr;gap:.45em}
 .impitems.c2{grid-template-columns:repeat(2,1fr)}
 .impitems.c3{grid-template-columns:repeat(3,1fr)}
 .impitem{display:flex;gap:.6em;align-items:flex-start;background:#fff;border:1.5px solid #BBD5FF;
@@ -291,11 +292,11 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .rbody{padding:1em 1.1em 1.1em}
 .rtext{font-size:1.12em;font-weight:700;line-height:2;color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
 .rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em;
-  animation:rhl 7.2s linear infinite;animation-delay:calc(var(--i) * .6s)}
+  animation:rhl 12s linear infinite;animation-delay:calc(var(--i) * .6s)}
 @keyframes rhl{
   0%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  8.3%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  8.31%{background:transparent;box-shadow:none}
+  5%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  5.01%{background:transparent;box-shadow:none}
   100%{background:transparent;box-shadow:none}
 }
 .rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
@@ -1185,7 +1186,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
     <h2>별빙고는 규칙을 몰라도 가장 다시 하고 싶어 한 공간이다</h2>
     <div class="body">
-      <div class="grid2 fill">
+      <div class="grid2 fill stretch">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> 별빙고 — 오늘의 도전</div>
           <div class="shotwrap">
@@ -1194,9 +1195,9 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag rd">지표 · 해석</span> 규칙은 몰라도, 일단 누르고 본다 <span class="small">전체 25명</span></div>
-          <div class="donuts xl" style="justify-content:space-around;margin-top:2.3em">
+        <div class="flow">
+          <div class="colhead"><span class="ctag ev">지표</span> 규칙은 몰라도, 일단 누르고 본다 <span class="small">전체 25명</span></div>
+          <div class="donuts lg" style="justify-content:space-around">
             <div class="donut">
               <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>다시 하고 싶다</em></div></div>
               <div class="dname">재참여 의향</div>
@@ -1214,16 +1215,14 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
             </div>
           </div>
-          <p class="note blue" style="margin:2em 0 0;font-size:.9em;line-height:1.55"><strong>좋아하는 이유가 규칙이 아니었다.</strong> 규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20% 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
-        </div>
-      </div>
-      <div class="impbox tight">
-        <h3><em>개선 방향</em> 규칙 설명을 늘리는 대신, 누를 때의 반응을 키운다</h3>
-        <div class="impitems c2">
-          <div class="impitem"><span class="ico">🔊✨</span><div><b>효과음 · 이펙트 추가</b><span>별 획득·빙고 완성 순간에 <strong>소리와 움직임</strong>을 넣는다</span></div></div>
-          <div class="impitem"><span class="ico">🗓️</span><div><b>시즌성 운영</b><span>월별 <strong>빙고판 배경 교체</strong>로 다시 올 이유를 만든다</span>
-            <div class="seasons"><i class="sp">🌸 봄</i><i class="su">🏖️ 여름</i><i class="au">🍁 가을</i><i class="wi">⛄ 겨울</i></div>
-          </div></div>
+          <div class="leadsto"><b>▼ 규칙이 아니라 '별이 나오는 순간'이 붙잡았다</b></div>
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 설명을 늘리는 대신, 누를 때의 반응을 키운다</div>
+          <div class="impitems c1">
+            <div class="impitem"><span class="ico">🔊✨</span><div><b>효과음 · 이펙트 추가</b><span>별 획득·빙고 완성 순간에 <strong>소리와 움직임</strong>을 넣는다</span></div></div>
+            <div class="impitem"><span class="ico">🗓️</span><div><b>시즌성 운영</b><span>월별 <strong>빙고판 배경 교체</strong>로 다시 올 이유를 만든다</span>
+              <div class="seasons"><i class="sp">🌸 봄</i><i class="su">🏖️ 여름</i><i class="au">🍁 가을</i><i class="wi">⛄ 겨울</i></div>
+            </div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1238,7 +1237,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h2>KRS 도서관 — 하단 도서가 걸쳐 보이는 화면으로</h2>
     <div class="body">
       <div class="grid2 fill stretch">
-        <div class="mid">
+        <div>
           <div class="colhead"><span class="ctag ev">화면</span> KRS 도서관 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
           <div class="xfade fit">
             <div class="xf">
@@ -1253,27 +1252,19 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>표지가 <strong>조금이라도 걸쳐 보이면</strong> 아이는 <strong>아래가 있다는 것을 스스로 알아챈다.</strong></span></div>
         </div>
-        <div class="mid">
+        <div class="flow">
           <div class="colhead"><span class="ctag ev">지표</span> 아이는 무엇으로 이 공간을 이해했나 <span class="small">전체 25명</span></div>
-          <div class="bars big onwhite" style="margin-top:1.3em">
-            <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)의 의미</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
+          <div class="bars onwhite">
+            <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
             <div class="bar-row"><div class="blabel">화면 아래쪽<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
-          <p class="note plain" style="margin:.8em 0 0">레벨 표기로 공간을 이해한 아이는 <strong>2명</strong>뿐이다. <strong>책이 보여서</strong> 도서관임을 안 아이가 <strong>6배 이상</strong> 많다.</p>
-          <div class="colhead" style="margin-top:.9em"><span class="ctag rd">해석</span> 아이는 글자가 아니라 책으로 공간을 읽는다</div>
-          <p style="margin:0 0 .55em;font-size:.88em;line-height:1.55;color:var(--ink-2)">상단 <strong>레벨 표기는 거의 전달되지 않았고</strong>, 대신 <strong>눈앞에 보이는 책</strong>으로 공간을 알아챘다. 게다가 <strong>아래쪽에 재미있는 책이 많이 보인다</strong>며 추천 자체를 반긴 아이들이 있었다. <strong>보이기만 하면 긍정으로 이어진다</strong>는 뜻이다.</p>
-          <div class="quotes">
-            <div class="quote blue"><span class="who">김조* K1</span>레벨은 인지 못하나 <strong>읽고 싶은 책은 많이 보인다</strong>고 함. 아는 책이 나오니 반가워함</div>
-            <div class="quote blue"><span class="who">곽재* K7</span><strong>스크롤이 되는 것은 얘기해줘야 알고</strong>, 책이 많다는 것에 대해 좋아함</div>
+          <div class="leadsto"><b>▼ 글자가 아니라 '보이는 책'으로 공간을 읽는다</b></div>
+          <div class="colhead"><span class="ctag rd">개선 방향</span> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</div>
+          <div class="impitems c1">
+            <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지가 첫 화면에 걸치도록</strong> 배치</span></div></div>
+            <div class="impitem"><span class="ico">⬇️</span><div><b>스크롤 어포던스 추가</b><span>아래가 더 있다는 <strong>시각적 신호</strong>를 남긴다</span></div></div>
+            <div class="impitem"><span class="ico">🔁</span><div><b>상단까지 일관 적용</b><span><strong>상단 걸쳐 보이는 UI</strong>까지 같은 방식으로 확대</span></div></div>
           </div>
-        </div>
-      </div>
-      <div class="impbox tight">
-        <h3><em>개선 방향</em> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</h3>
-        <div class="impitems c3">
-          <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지가 첫 화면에 걸치도록</strong> 배치</span></div></div>
-          <div class="impitem"><span class="ico">⬇️</span><div><b>스크롤 어포던스 추가</b><span>아래가 더 있다는 <strong>시각적 신호</strong>를 남긴다</span></div></div>
-          <div class="impitem"><span class="ico">🔁</span><div><b>상단까지 일관 적용</b><span><strong>상단 걸쳐 보이는 UI</strong>까지 같은 방식으로 확대</span></div></div>
         </div>
       </div>
     </div>
@@ -1304,16 +1295,19 @@ ul.clean li::marker{color:var(--ink-4)}
     <h2>저연령 읽기 지원 — 대신 읽어주기가 아니라 '읽는 힘'을 기르는 쪽으로</h2>
     <div class="body">
       <div class="grid2 fill stretch">
-        <div class="mid">
+        <div>
           <div class="colhead"><span class="ctag rd">도구안</span> 읽기 지원 도구 <span class="small">단어 단위 하이라이팅 · 예시</span></div>
-          <div class="reader" style="font-size:1.16em">
+          <div class="reader" style="font-size:1.42em">
             <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
             <div class="rbody">
               <p class="rtext" style="margin:0">
                 <i style="--i:0" class="pk">꼬불꼬불</i> <i style="--i:1">숲길에</i> <i style="--i:2">수북수북</i>
                 <i style="--i:3">누구</i> <i style="--i:4">똥?</i><br />
                 <i style="--i:5">뿌지직</i> <i style="--i:6">큰</i> <i style="--i:7">똥</i>
-                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
+                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i><br />
+                <i style="--i:11">꾸불꾸불</i> <i style="--i:12">숲길에</i> <i style="--i:13">큼직큼직</i>
+                <i style="--i:14">누구</i> <i style="--i:15">똥?</i><br />
+                <i style="--i:16">앗,</i> <i style="--i:17">사자다!</i> <i style="--i:18">도망가자!</i>
               </p>
               <div class="rtools">
                 <span class="rtool on"><em>🔊</em>읽어주세요</span>
@@ -1324,7 +1318,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="rcap">읽어주는 속도에 맞춰 <strong>단어가 차례로 밝아진다.</strong> 막힌 단어만 짚어 물을 수도 있다.</p>
         </div>
-        <div class="mid">
+        <div>
           <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
           <div class="vbars even" style="height:15.5em;margin-top:1.2em">
             <div class="vbar">
