@@ -279,9 +279,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .baline .now p{margin:0;font-size:.8em;line-height:1.42;color:var(--ink);font-weight:700}
 .baline .arw{flex:0 0 auto;display:flex;align-items:center;font-size:1.1em;font-weight:800;color:var(--accent)}
 /* 막대 아래 참고 응답 */
-.subnote{margin:.3em 0 0 7.9em;font-size:.78em;line-height:1.55;color:var(--ink-3)}
-.subnote b{display:block;font-weight:700}
-.subnote b::before{content:"ㄴ ";color:var(--ink-4)}
+.subnote{margin:.35em 0 0 7.9em;font-size:.78em;line-height:1.5;font-weight:700;color:var(--ink-3)}
+.subnote::before{content:"ㄴ ";color:var(--ink-4)}
 /* 읽기 도구 목업 */
 .reader{background:#fff;border:2px solid var(--line);border-radius:.8em;overflow:hidden;
   box-shadow:0 .35em 1.1em rgba(15,23,42,.10)}
@@ -292,20 +291,51 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .rbody{padding:1em 1.1em 1.1em}
 .rtext{font-size:1.12em;font-weight:700;line-height:2;color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
 .rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em;
-  animation:rhl 12s linear infinite;animation-delay:calc(var(--i) * .6s)}
+  animation:rhl 18s linear infinite;animation-delay:calc(var(--i) * .6s)}
 @keyframes rhl{
   0%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  5%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
-  5.01%{background:transparent;box-shadow:none}
+  3.33%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  3.34%{background:transparent;box-shadow:none}
   100%{background:transparent;box-shadow:none}
 }
 .rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
   padding-top:.85em;border-top:1.5px dashed var(--line)}
 .rtool{display:inline-flex;align-items:center;gap:.38em;font-size:.78em;font-weight:800;
-  color:var(--accent-strong);background:#F5F9FF;border:1.5px solid #BBD5FF;
-  border-radius:99px;padding:.45em .8em}
-.rtool.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+  color:var(--accent-strong);background:#fff;border:1.5px solid #BBD5FF;
+  border-radius:99px;padding:.45em .85em;box-shadow:0 .18em 0 #C9DDFB}
 .rtool em{font-style:normal;font-size:1.15em;line-height:1}
+.rtool.b1{animation:rp1 18s linear infinite}
+.rtool.b2{animation:rp2 18s linear infinite}
+.rtool.b3{animation:rp3 18s linear infinite}
+@keyframes rp1{
+  0%,64.9%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
+  65%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
+@keyframes rp2{
+  0%,64.9%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
+  65%,82.9%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}
+  83%,100%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}}
+@keyframes rp3{
+  0%,82.9%{color:var(--accent-strong);background:#fff;border-color:#BBD5FF;box-shadow:0 .18em 0 #C9DDFB;transform:none}
+  83%,100%{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 .06em 0 #1E40AF;transform:translateY(.1em)}}
+/* 버튼을 누르면 나타나는 동작 결과 */
+.rout{position:relative;height:2.5em;margin-top:.55em}
+.ro{position:absolute;inset:0;display:flex;align-items:center;gap:.45em;opacity:0;
+  font-size:.78em;font-weight:700;color:var(--ink-2);
+  background:#F5F9FF;border:1.5px solid #DCE9FC;border-radius:.5em;padding:0 .75em}
+.ro em{font-style:normal;font-size:1.15em;line-height:1}
+.ro b{color:var(--accent-strong)}
+.ro.o1{animation:ro1 18s linear infinite}
+.ro.o2{animation:ro2 18s linear infinite}
+.ro.o3{animation:ro3 18s linear infinite}
+@keyframes ro1{0%,63%{opacity:1} 65%,100%{opacity:0}}
+@keyframes ro2{0%,63%{opacity:0} 65%,81%{opacity:1} 83%,100%{opacity:0}}
+@keyframes ro3{0%,81%{opacity:0} 83%,100%{opacity:1}}
+.wave{display:flex;align-items:center;gap:.16em;margin-left:.1em}
+.wave s{width:.22em;height:.5em;border-radius:99px;background:var(--accent);display:block;
+  animation:wv .9s ease-in-out infinite}
+.wave s:nth-child(2){animation-delay:.12s} .wave s:nth-child(3){animation-delay:.24s}
+.wave s:nth-child(4){animation-delay:.36s} .wave s:nth-child(5){animation-delay:.48s}
+@keyframes wv{0%,100%{height:.42em} 50%{height:1.15em}}
 .rcap{margin:.6em 0 0;font-size:.78em;line-height:1.5;color:var(--ink-3);text-align:center}
 
 /* 기질카드 연결 콘텐츠 목업 */
@@ -547,10 +577,16 @@ ul.clean li::marker{color:var(--ink-4)}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
   .rtext i{animation:none !important;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  .rtool,.ro,.wave s{animation:none !important}
+  .rtool.b1{color:#fff;background:#2563EB;border-color:#2563EB}
+  .ro{opacity:0} .ro.o1{opacity:1}
 }
 @media (prefers-reduced-motion:reduce){
   .rtext i{animation:none;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  .rtool,.ro,.wave s{animation:none}
+  .rtool.b1{color:#fff;background:#2563EB;border-color:#2563EB}
+  .ro{opacity:0} .ro.o1{opacity:1}
 }
 </style>
 </head>
@@ -1136,7 +1172,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 전 적용 · AI 추천픽</span>
     <h2>AI 추천픽 — 추천 표시와 문구를 '내 취향' 중심으로</h2>
     <div class="body">
-      <div class="grid2 fill stretch" style="grid-template-columns:1.18fr 1fr">
+      <div class="grid2 fill stretch" style="grid-template-columns:1.3fr 1fr">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
           <div class="xfade fit">
@@ -1147,11 +1183,13 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="xf">
               <img class="shot" src="images/ai_pick_after.jpg" alt="적용 후 AI 추천픽 화면 — 확률 옆에 내 취향 워딩이 붙고 추천 문구가 아이의 취향을 근거로 제시한다" />
               <span class="xf-tag after">적용 후</span>
-              <span class="hilite" style="left:44.4%;top:12.3%;width:43.3%;height:19.4%"></span>
-              <span class="hilite" style="left:43.1%;top:36.6%;width:12.5%;height:7.5%"></span>
+              <span class="hilite" style="left:44.4%;top:12.3%;width:43.3%;height:19.4%" data-t="1"></span>
+              <span class="hilite below" style="left:43.1%;top:36.6%;width:12.5%;height:7.5%" data-t="2"></span>
               <span class="hilite" style="left:67.2%;top:38.4%;width:13.0%;height:7.5%"></span>
             </div>
           </div>
+          <div class="shotcap"><b class="red">1</b><span>도서 소개를 <strong>추천하는 이유</strong>로 보완한다.</span></div>
+          <div class="shotcap"><b class="red">2</b><span><strong>90% 내 취향</strong> — 직관적인 텍스트를 함께 명시한다.</span></div>
         </div>
         <div class="flow">
           <div class="colhead"><span class="ctag ev">인식</span> 👍 표시를 무엇으로 이해했나 <span class="small">전체 25명</span></div>
@@ -1159,7 +1197,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="bar-row"><div class="blabel">정확히 이해</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#A6C8FC"></div></div><div class="bar-val">5<small>명 · 20%</small></div></div>
             <div class="bar-row"><div class="blabel">부분 이해</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#7DAEFB"></div></div><div class="bar-val">7<small>명 · 28%</small></div></div>
             <div class="bar-row"><div class="blabel">다른 뜻으로 이해</div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
-            <p class="subnote"><b>"사람들이 좋아요 해둔 거"</b><b>"총 책의 쪽수"</b><b>"인기순"</b></p>
+            <p class="subnote">"사람들이 좋아요 해둔 거" / "총 책의 쪽수" / "인기순"</p>
           </div>
           <div class="leadsto"><b>▼ 절반이 다른 뜻으로 읽었다</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 이 책을 왜 추천하는지까지 말해준다</div>
@@ -1297,7 +1335,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch">
         <div>
           <div class="colhead"><span class="ctag rd">도구안</span> 읽기 지원 도구 <span class="small">단어 단위 하이라이팅 · 예시</span></div>
-          <div class="reader" style="font-size:1.42em">
+          <div class="reader" style="font-size:1.3em">
             <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
             <div class="rbody">
               <p class="rtext" style="margin:0">
@@ -1310,13 +1348,18 @@ ul.clean li::marker{color:var(--ink-4)}
                 <i style="--i:16">앗,</i> <i style="--i:17">사자다!</i> <i style="--i:18">도망가자!</i>
               </p>
               <div class="rtools">
-                <span class="rtool on"><em>🔊</em>읽어주세요</span>
-                <span class="rtool"><em>❓</em>이 단어를 잘 모르겠어요</span>
-                <span class="rtool"><em>🎧</em>오디오북으로 듣기</span>
+                <span class="rtool b1"><em>🔊</em>읽어주세요</span>
+                <span class="rtool b2"><em>❓</em>이 단어를 잘 모르겠어요</span>
+                <span class="rtool b3"><em>🎧</em>오디오북으로 듣기</span>
+              </div>
+              <div class="rout">
+                <div class="ro o1"><em>🔊</em>읽어주는 속도에 맞춰 <b>단어가 차례로 밝아집니다</b></div>
+                <div class="ro o2"><em>❓</em><b>어슬렁어슬렁</b> — 천천히 걸어 다니는 모습이에요</div>
+                <div class="ro o3"><em>🎧</em><b>오디오북 재생 중</b><span class="wave"><s></s><s></s><s></s><s></s><s></s></span></div>
               </div>
             </div>
           </div>
-          <p class="rcap">읽어주는 속도에 맞춰 <strong>단어가 차례로 밝아진다.</strong> 막힌 단어만 짚어 물을 수도 있다.</p>
+          <p class="rcap">세 버튼 모두 <strong>아이가 직접 눌러 쓰는 도구</strong>다.</p>
         </div>
         <div>
           <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
@@ -1350,7 +1393,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h2>캐릭터는 아이가 가장 먼저 알아본 요소다</h2>
     <div class="body">
       <div class="grid2 fill stretch">
-        <div class="mid">
+        <div>
           <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 — 기질카드 위치</div>
           <div class="shotwrap">
             <img class="shot" src="images/ai_pick.jpg" alt="AI 추천픽 화면 — 왼쪽 기질카드(직관적 행동파) 영역을 빨간 테두리로 강조 표시" />
@@ -1358,23 +1401,34 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="shotcap key"><b class="red">1</b><span>진단평가 결과로 만들어지는 <strong>기질카드</strong>다. 아이들이 <strong>가장 먼저 알아본 요소</strong>다.</span></div>
         </div>
-        <div class="mid">
-          <div class="colhead"><span class="ctag ev">지표</span> 아이는 캐릭터를 좋아한다고 말했다 <span class="small">전체 25명</span></div>
-          <div class="funnel" style="margin-top:1.2em">
-            <div class="fstep"><div class="fbar" style="width:68%;background:#1D4ED8">기질카드·캐릭터에 반응</div><div class="fval">17<small>명 · 68%</small></div></div>
-            <div class="fstep"><div class="fbar" style="width:52%;background:#2563EB">캐릭터가 예쁘다·귀엽다고 직접 말함</div><div class="fval">13<small>명 · 52%</small></div></div>
-            <div class="fstep"><div class="fbar" style="width:28%;background:#4B8DF8">진단평가에서 본 <b>자기 카드</b>를 기억함</div><div class="fval">7<small>명 · 28%</small></div></div>
+        <div class="flow">
+          <div class="colhead"><span class="ctag ev">지표</span> 캐릭터에 대한 반응 <span class="small">전체 25명</span></div>
+          <div class="donuts lg" style="justify-content:space-around">
+            <div class="donut">
+              <div class="ring" style="--p:68%"><div class="hole"><b>68%</b><em>반응함</em></div></div>
+              <div class="dname">기질카드 · 캐릭터</div>
+              <div class="dleg">
+                <span><i style="background:var(--accent)"></i>반응함 17명</span>
+                <span><i style="background:var(--ink-4)"></i>반응 없음 8명</span>
+              </div>
+            </div>
+            <div class="donut">
+              <div class="ring" style="--p:52%"><div class="hole"><b>52%</b><em>좋다고 말함</em></div></div>
+              <div class="dname">캐릭터 선호</div>
+              <div class="dleg">
+                <span><i style="background:var(--accent)"></i>예쁘다·귀엽다 13명</span>
+                <span><i style="background:var(--ink-4)"></i>언급 없음 12명</span>
+              </div>
+            </div>
           </div>
-          <p class="note plain" style="margin:1em 0 0">캐릭터를 직접 언급한 <strong>13명은 전원 긍정</strong>이었다. <strong>부정적으로 말한 아이는 한 명도 없다.</strong></p>
-          <div class="colhead" style="margin-top:1.2em"><span class="ctag rd">해석</span> 진단평가에서 본 캐릭터를 기억한다</div>
-          <p style="margin:0 0 .6em;font-size:.89em;line-height:1.55;color:var(--ink-2)">진단평가를 받고 온 아이는 화면에서 <strong>자기 캐릭터를 바로 알아보고 반가워했다.</strong> 기질카드에 크게 관심이 없던 아이도 <strong>캐릭터만큼은 좋아했다.</strong> <strong>캐릭터가 진단 결과와 학습 화면을 잇는 고리</strong>로 이미 작동하고 있다.</p>
-          <div class="quotes">
-            <div class="quote blue"><span class="who">조서* K3</span><strong>흥미는 크지 않았지만, 캐릭터 좋아함</strong></div>
-            <div class="quote blue"><span class="who">김가* K1</span><strong>진단검사를 하지 않아서 큰 흥미가 없음</strong> — 다만 캐릭터는 좋아함</div>
+          <div class="leadsto"><b>▼ 언급한 13명은 전원 긍정, 부정은 한 명도 없었다</b></div>
+          <div class="colhead"><span class="ctag rd">해석</span> 진단평가에서 본 캐릭터를 기억한다</div>
+          <p style="margin:0 0 .55em;font-size:.87em;line-height:1.5;color:var(--ink-2)">진단평가를 받고 온 아이는 <strong>자기 캐릭터를 바로 알아보고 반가워했다(7명).</strong> 기질카드에 관심이 없던 아이도 <strong>캐릭터만큼은 좋아했다.</strong></p>
+          <div class="impbox tight" style="padding:.6em .85em">
+            <h3 style="margin:0"><em>개선 방향</em> 관심은 확보됐다 — 문제는 눌러도 열릴 것이 없다는 점 <span class="small" style="margin-left:.3em;color:var(--accent-strong)">▶ 다음 장 계속</span></h3>
           </div>
         </div>
       </div>
-      <div class="impbar"><b>다음 장</b><span>여기까지 <strong>관심은 이미 확보되었다.</strong> 문제는 <strong>이 카드를 눌렀을 때 열릴 것이 없다</strong>는 점이다.</span></div>
     </div>
   </div>
   <div class="pageno">19 / 22</div>
