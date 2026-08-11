@@ -138,6 +138,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .quote.blue{background:var(--accent-tint);border-left-color:var(--accent)}
 .note.blue{color:var(--accent-strong);background:var(--accent-tint)}
 .note.plain{color:var(--ink-2);background:var(--line-2)}
+.shot{width:100%;display:block;border-radius:.55em;border:1.5px solid var(--line);background:var(--line-2)}
+.shotcap{display:flex;gap:.5em;align-items:flex-start;margin-top:.55em;font-size:.82em;line-height:1.45;color:var(--ink-2)}
+.shotcap b{flex:0 0 auto;display:flex;align-items:center;justify-content:center;min-width:1.5em;height:1.5em;
+  border-radius:.35em;background:var(--accent);color:#fff;font-size:.8em;font-weight:800}
 .seg.b1,.seg.b2,.seg.b3,.seg.b4,.seg.b5{color:#fff}
 .seg.b5{color:var(--ink-2)}
 .grid2.fill{flex:1;min-height:0}
@@ -937,8 +941,15 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill">
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 재참여 의향과 규칙 이해의 격차 <span class="small">전체 25명</span></div>
-          <div class="donuts lg" style="justify-content:space-around;margin-top:1.1em">
+          <div class="colhead"><span class="ctag ev">화면</span> 별빙고 — 오늘의 도전</div>
+          <img class="shot" src="images/bingo.jpg" alt="별빙고 화면 — 3×3 빙고판에서 칸을 누르면 별이 나오고 세 칸이 이어지면 빙고가 완성된다" />
+          <div class="shotcap"><b>1</b><span>빙고판 한 칸을 누르면 <strong>별이 나온다.</strong> 세 칸이 이어지면 빙고 완성.</span></div>
+          <div class="shotcap"><b>2</b><span>티켓 1장으로 1회 참여하며, 판을 모두 완성하면 <strong>별 20개</strong>를 추가로 받는다.</span></div>
+          <div class="shotcap"><b>3</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. 이 순간에 소리와 움직임이 없다.</span></div>
+        </div>
+        <div>
+          <div class="colhead"><span class="ctag ev">지표</span> 재참여 의향과 규칙 이해 <span class="small">전체 25명</span></div>
+          <div class="donuts" style="justify-content:space-around;margin-top:.5em">
             <div class="donut">
               <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>다시 하고 싶다</em></div></div>
               <div class="dname">재참여 의향</div>
@@ -956,18 +967,13 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
             </div>
           </div>
-          <p class="note blue" style="margin:.9em 0 0">두 수치의 차이가 <strong>20%p</strong>다. <strong>규칙을 모르는 채로 다시 하고 싶다고 답한 아이가 있다</strong>는 뜻이다.</p>
-        </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">근거</span> 관찰 기록</div>
+          <div class="colhead" style="margin-top:.85em"><span class="ctag rd">해석</span> 좋아하는 이유가 규칙이 아니었다</div>
+          <p style="margin:0 0 .5em;font-size:.87em;line-height:1.5;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20%p 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
           <div class="quotes">
             <div class="quote blue"><span class="who">오*현 K7</span>별 더 받아서 좋아요. <strong>재밌어서 책 더 읽을 것 같아요.</strong></div>
-            <div class="quote blue"><span class="who">강*서 K1</span>빙고게임을 잘 모르고 <strong>짝맞추기 퍼즐 게임으로 인식</strong>함 — 설명 후 이해함</div>
-            <div class="quote blue"><span class="who">김*담 K3</span>흥미 없어 해서 설명해줌</div>
+            <div class="quote blue"><span class="who">강*서 K1</span>빙고게임을 잘 모르고 <strong>짝맞추기 퍼즐 게임으로 인식</strong>함</div>
           </div>
-          <div class="colhead" style="margin-top:.85em"><span class="ctag rd">해석</span> 좋아하는 이유가 규칙이 아니었다</div>
-          <p style="margin:0 0 .5em;font-size:.87em;line-height:1.5;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 쌓이고 판이 뒤집히는 순간</strong>이다. 설명을 늘려도 이 감각은 늘지 않는다.</p>
-          <p class="note blue" style="margin:0">그래서 <strong>규칙 안내보다 이펙트가 먼저</strong>다. 이미 확보된 호감을 <strong>다음 회차 복귀로 잇는 가장 값싼 수단</strong>이며, 화면 로직 변경 없이 오픈 전 반영이 가능하다.</p>
+          <p class="note blue" style="margin:.7em 0 0">그래서 <strong>규칙 안내보다 이펙트가 먼저</strong>다. 화면 로직 변경 없이 오픈 전 반영이 가능하다.</p>
         </div>
       </div>
     </div>
