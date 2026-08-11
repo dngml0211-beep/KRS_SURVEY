@@ -241,6 +241,70 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   margin-bottom:.16em;line-height:1.3}
 .impitem span{display:block;font-size:.78em;line-height:1.42;color:var(--ink-2)}
 .impnote{margin:.6em 0 0;font-size:.8em;line-height:1.5;color:var(--ink-2)}
+/* 읽기 도구 목업 */
+.reader{background:#fff;border:2px solid var(--line);border-radius:.8em;overflow:hidden;
+  box-shadow:0 .35em 1.1em rgba(15,23,42,.10)}
+.rbar{display:flex;align-items:center;gap:.45em;background:var(--line-2);
+  border-bottom:1.5px solid var(--line);padding:.5em .8em}
+.rbar b{margin-left:.35em;font-size:.76em;font-weight:800;color:var(--ink-3)}
+.rbar s{width:.5em;height:.5em;border-radius:50%;background:var(--ink-4);display:block}
+.rbody{padding:1em 1.1em 1.1em}
+.rtext{font-size:1.12em;font-weight:700;line-height:2;color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
+.rtext i{font-style:normal;border-radius:.3em;padding:.1em .16em;
+  animation:rhl 7.2s linear infinite;animation-delay:calc(var(--i) * .6s)}
+@keyframes rhl{
+  0%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  8.3%{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  8.31%{background:transparent;box-shadow:none}
+  100%{background:transparent;box-shadow:none}
+}
+.rtools{display:flex;gap:.45em;flex-wrap:wrap;margin-top:1em;
+  padding-top:.85em;border-top:1.5px dashed var(--line)}
+.rtool{display:inline-flex;align-items:center;gap:.38em;font-size:.78em;font-weight:800;
+  color:var(--accent-strong);background:#F5F9FF;border:1.5px solid #BBD5FF;
+  border-radius:99px;padding:.45em .8em}
+.rtool.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.rtool em{font-style:normal;font-size:1.15em;line-height:1}
+.rcap{margin:.6em 0 0;font-size:.78em;line-height:1.5;color:var(--ink-3);text-align:center}
+
+/* 기질카드 연결 콘텐츠 목업 */
+.mock{background:#0F172A;border-radius:.8em;overflow:hidden;box-shadow:0 .35em 1.1em rgba(15,23,42,.22)}
+.mockbar{display:flex;align-items:center;gap:.45em;background:#1E293B;padding:.5em .8em}
+.mockbar s{width:.5em;height:.5em;border-radius:50%;background:#475569;display:block}
+.mockbar b{margin-left:.35em;font-size:.74em;font-weight:800;color:#94A3B8}
+.mockhero{display:flex;align-items:center;gap:.85em;padding:.9em 1em;
+  background:linear-gradient(120deg,#1E3A8A 0%,#2563EB 60%,#3B82F6 100%)}
+.mockchar{flex:0 0 auto;width:3.1em;height:3.1em;border-radius:.7em;background:rgba(255,255,255,.18);
+  border:2px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;font-size:1.6em}
+.mockhero u{display:block;text-decoration:none;font-size:.68em;font-weight:800;letter-spacing:.06em;
+  color:#BFDBFE;margin-bottom:.15em}
+.mockhero strong{display:block;font-size:.98em;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.18em}
+.mockhero span{display:block;font-size:.72em;font-weight:700;color:#DBEAFE}
+.eplist{padding:.7em .8em .8em;display:flex;flex-direction:column;gap:.42em}
+.ep{display:flex;align-items:center;gap:.7em;background:#1E293B;border:1.5px solid #334155;
+  border-radius:.5em;padding:.5em .7em}
+.ep.now{background:#1D3A6E;border-color:#3B82F6}
+.ep>b{flex:0 0 auto;font-size:.74em;font-weight:800;color:#94A3B8;min-width:2.1em}
+.ep.now>b{color:#93C5FD}
+.ep>div{flex:1;min-width:0}
+.ep strong{display:block;font-size:.8em;font-weight:800;color:#E2E8F0;line-height:1.3}
+.ep.now strong{color:#fff}
+.ep span{display:block;font-size:.7em;font-weight:700;color:#94A3B8;margin-top:.1em}
+.ep.now span{color:#BFDBFE}
+.ep>i{flex:0 0 auto;font-style:normal;font-size:.72em;font-weight:800;
+  border-radius:99px;padding:.3em .62em;white-space:nowrap}
+.ep>i.play{color:#0F172A;background:#93C5FD}
+.ep>i.lock{color:#94A3B8;background:#334155}
+
+/* 퍼널 */
+.funnel{display:flex;flex-direction:column;gap:.5em}
+.fstep{display:flex;align-items:center;gap:.7em}
+.fstep .fbar{height:2.5em;border-radius:.4em;display:flex;align-items:center;
+  padding:0 .7em;font-size:.8em;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden}
+.fstep .fval{flex:0 0 auto;font-size:.84em;font-weight:800;color:var(--ink)}
+.fstep .fval small{font-weight:700;color:var(--ink-3);margin-left:.25em}
+.fdrop{font-size:.72em;font-weight:800;color:var(--ink-4);padding-left:.5em}
+
 /* 시즌 테마 스트립 */
 .seasons{display:flex;gap:.5em;margin-top:.6em}
 .seasons i{flex:1;font-style:normal;display:flex;align-items:center;justify-content:center;gap:.42em;
@@ -437,6 +501,12 @@ ul.clean li::marker{color:var(--ink-4)}
     break-after:page;break-inside:avoid;page-break-after:always}
   .slide:last-child{break-after:auto;page-break-after:auto}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  .rtext i{animation:none !important;background:transparent;box-shadow:none}
+  .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+}
+@media (prefers-reduced-motion:reduce){
+  .rtext i{animation:none;background:transparent;box-shadow:none}
+  .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
 }
 </style>
 </head>
@@ -451,7 +521,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h1>KRS 플랫폼 2차 파일럿<br />유저테스트 결과보고서</h1>
     <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">1 / 21</div>
+  <div class="pageno">1 / 22</div>
 </section>
 
 <!-- 2. 조사 개요 (대시보드) -->
@@ -541,7 +611,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">2 / 21</div>
+  <div class="pageno">2 / 22</div>
 </section>
 
 <!-- 3. 검증 가설 -->
@@ -598,7 +668,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <p class="small" style="margin:0">각 가설의 판정은 위 <strong>검증 방법에 정의된 지표</strong>로만 산출하였다. H6은 <strong>도서관의 공간 목적 인지</strong> 기준으로 최신화된 가설을 적용하였다. 지표별 측정 결과는 11페이지 종합 판정에 정리하였다.</p>
     </div>
   </div>
-  <div class="pageno">3 / 21</div>
+  <div class="pageno">3 / 22</div>
 </section>
 
 <!-- 4. 종합 요약 -->
@@ -648,7 +718,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">4 / 21</div>
+  <div class="pageno">4 / 22</div>
 </section>
 
 <!-- 5. H1 -->
@@ -691,7 +761,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">5 / 21</div>
+  <div class="pageno">5 / 22</div>
 </section>
 
 <!-- 6. H2 -->
@@ -733,7 +803,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">6 / 21</div>
+  <div class="pageno">6 / 22</div>
 </section>
 
 <!-- 7. H3 -->
@@ -774,7 +844,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">7 / 21</div>
+  <div class="pageno">7 / 22</div>
 </section>
 
 <!-- 8. H4 -->
@@ -816,7 +886,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">8 / 21</div>
+  <div class="pageno">8 / 22</div>
 </section>
 
 <!-- 9. H5 -->
@@ -859,7 +929,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">9 / 21</div>
+  <div class="pageno">9 / 22</div>
 </section>
 
 <!-- 10. H6 -->
@@ -901,7 +971,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">10 / 21</div>
+  <div class="pageno">10 / 22</div>
 </section>
 
 <!-- 11. 종합 판정 -->
@@ -931,7 +1001,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">11 / 21</div>
+  <div class="pageno">11 / 22</div>
 </section>
 
 <!-- 12. 인사이트 총괄 -->
@@ -939,7 +1009,7 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner">
     <span class="eyebrow">인사이트</span>
     <h2>관찰 결과에서 도출된 실행 항목 6건</h2>
-    <p class="lead">화면 수정만으로 대응 가능한 <strong>오픈 전 적용 3건</strong>과, 별도 설계·개발이 필요한 <strong>오픈 후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 14~20페이지에 정리하였다.</p>
+    <p class="lead">화면 수정만으로 대응 가능한 <strong>오픈 전 적용 3건</strong>과, 별도 설계·개발이 필요한 <strong>오픈 후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 14~21페이지에 정리하였다.</p>
     <div class="body">
       <div class="grid2 fill">
         <div>
@@ -969,7 +1039,7 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">오픈 후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 18~20p</span></div>
+          <div class="colhead"><span class="ctag ev">오픈 후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 18~21p</span></div>
           <div class="actlist spread">
             <div class="act later">
               <div class="n">1</div>
@@ -981,14 +1051,14 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="act later">
               <div class="n">2</div>
               <div>
-                <h3>AI 추천픽 기질카드에 연결 페이지 제공 <span class="small">→ 19p</span></h3>
+                <h3>AI 추천픽 기질카드에 연결 페이지 제공 <span class="small">→ 19~20p</span></h3>
                 <p><strong>17명(68%)</strong>이 기질카드·캐릭터에 반응했고 <strong>누르면 활동이 시작될 것</strong>으로 기대했으나, 눌러도 연결되는 화면이 없다.</p>
               </div>
             </div>
             <div class="act later">
               <div class="n">3</div>
               <div>
-                <h3>목차 활동 다양화 <span class="small">→ 20p</span></h3>
+                <h3>목차 활동 다양화 <span class="small">→ 21p</span></h3>
                 <p>책 읽기를 빼면 활동은 <strong>4종 · 6.9분</strong>(K1 8.3분)뿐이고, 그중 둘은 같은 독후퀴즈다. <strong>주차별로 다른 활동</strong>을 배치해 개수와 다양성을 함께 확보한다.</p>
               </div>
             </div>
@@ -998,7 +1068,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">구분 기준</span> <span><strong>오픈 전 3건</strong>은 화면의 표현·배치 조정이므로 이번 개발 회차에 반영 가능하다. <strong>오픈 후 3건</strong>은 기능 신설과 커리큘럼 재편이 따르므로 <strong>별도 일정과 리소스 검토</strong>가 필요하다.</span></div>
     </div>
   </div>
-  <div class="pageno">12 / 21</div>
+  <div class="pageno">12 / 22</div>
 </section>
 
 <!-- 13. 간지 — 오픈 전 적용 -->
@@ -1013,7 +1083,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>KRS 도서관</i>
     </div>
   </div>
-  <div class="pageno">13 / 21</div>
+  <div class="pageno">13 / 22</div>
 </section>
 
 <!-- 14. 오픈 전 1 - AI 추천픽 -->
@@ -1070,7 +1140,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">14 / 21</div>
+  <div class="pageno">14 / 22</div>
 </section>
 
 <!-- 15. 오픈 전 2 - 별빙고 -->
@@ -1127,7 +1197,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">15 / 21</div>
+  <div class="pageno">15 / 22</div>
 </section>
 
 <!-- 16. 오픈 전 3 - KRS 도서관 -->
@@ -1177,7 +1247,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">16 / 21</div>
+  <div class="pageno">16 / 22</div>
 </section>
 
 <!-- 17. 간지 — 오픈 후 고도화 -->
@@ -1192,7 +1262,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>목차 활동 다양화</i>
     </div>
   </div>
-  <div class="pageno">17 / 21</div>
+  <div class="pageno">17 / 22</div>
 </section>
 
 <!-- 18. 오픈 후 1 - TTS 읽기 지원 -->
@@ -1204,8 +1274,28 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="grid2 fill stretch">
         <div class="mid">
-          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 읽기에서 걸린 아동 <span class="small">단위 : 명</span></div>
-          <div class="vbars even" style="height:12.2em;margin-top:1.1em">
+          <div class="colhead"><span class="ctag rd">도구안</span> 읽기 지원 도구 <span class="small">단어 단위 하이라이팅 · 예시</span></div>
+          <div class="reader">
+            <div class="rbar"><s></s><s></s><s></s><b>코어 리딩북 · 곰 똥을 찾아라</b></div>
+            <div class="rbody">
+              <p class="rtext" style="margin:0">
+                <i style="--i:0" class="pk">꼬불꼬불</i> <i style="--i:1">숲길에</i> <i style="--i:2">수북수북</i>
+                <i style="--i:3">누구</i> <i style="--i:4">똥?</i><br />
+                <i style="--i:5">뿌지직</i> <i style="--i:6">큰</i> <i style="--i:7">똥</i>
+                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
+              </p>
+              <div class="rtools">
+                <span class="rtool on"><em>🔊</em>읽어주세요</span>
+                <span class="rtool"><em>❓</em>이 단어를 잘 모르겠어요</span>
+                <span class="rtool"><em>🎧</em>오디오북으로 듣기</span>
+              </div>
+            </div>
+          </div>
+          <p class="rcap">읽어주는 속도에 맞춰 <strong>단어가 차례로 밝아진다.</strong> 막힌 단어만 짚어 물을 수도 있다.</p>
+        </div>
+        <div class="mid">
+          <div class="colhead"><span class="ctag ev">지표</span> 읽기에서 걸린 아동 <span class="small">K1·K3 18명</span></div>
+          <div class="vbars even" style="height:10.4em;margin-top:.9em">
             <div class="vbar"><b>3</b>
               <div class="vtrack"><div class="stackbar" style="height:37.5%"><div class="seg b1" style="height:100%"></div></div></div>
               <span>걸림</span></div>
@@ -1220,30 +1310,31 @@ ul.clean li::marker{color:var(--ink-4)}
               <span>자력</span></div>
           </div>
           <div class="lvrow"><span>K1 7명 중 3명 · 43%</span><span>K3 11명 중 3명 · 27%</span></div>
-          <p class="note plain" style="margin:.75em 0 0">걸린 인원은 <strong>둘 다 3명</strong>이지만, K1은 <strong>7명 중 3명</strong>이라 비중이 훨씬 크다.</p>
-          <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:1.3em">
+          <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:1.1em">
             <div class="tile"><div class="k">어른이 대신 읽어줌</div><div class="v">4<small>명</small></div><div class="s">K1 2 · K3 2</div></div>
             <div class="tile" style="background:#FEECEC"><div class="k" style="color:#B42318">아이가 먼저 도움 요청</div><div class="v" style="color:#B42318">0<small>명</small></div><div class="s">전원 어른이 먼저 개입</div></div>
           </div>
-        </div>
-        <div class="mid">
-          <div class="colhead"><span class="ctag rd">해석</span> 읽어주는 사람이 없으면 부모가 그 자리를 대신한다</div>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.55;color:var(--ink-2)">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 진도 전체가 멈추는 문제다.</p>
-          <p style="margin:0 0 .6em;font-size:.9em;line-height:1.55;color:var(--ink-2)">이번엔 그 자리를 <strong>관찰자</strong>가 메웠다. 집에서는 <strong>부모</strong>다. 매 회차 부모를 불러야 학습이 굴러가면, <strong>리텐션이 먼저 무너진다.</strong></p>
-          <p class="note blue" style="margin:.2em 0 0">필요한 것은 대신 읽어주는 사람이 아니라 <strong>막힌 단어만 짚어 물을 수 있는 장치</strong>다. 그래야 아이가 <strong>혼자 다음 활동까지</strong> 간다.</p>
+          <p class="note blue" style="margin:1em 0 0">읽기에서 막히면 <strong>그 뒤 활동이 전부 열리지 않는다.</strong> 이번엔 관찰자가 메웠지만 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되고, 그때 <strong>리텐션이 먼저 무너진다.</strong></p>
         </div>
       </div>
-      <div class="impbar"><b>개선 방향</b><div class="impchips"><i>「이 단어를 <strong>읽어주세요</strong>」</i><i>「이 단어를 <strong>잘 모르겠어요</strong>」</i><i>「<strong>오디오북</strong>으로 듣기」</i></div><span style="flex:0 0 11em">K1·K3 대상 <strong>읽는 힘을 기르는 독서 도구</strong></span></div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 대신 읽어주는 사람이 아니라, 혼자 넘어갈 수 있는 도구를 준다</h3>
+        <div class="impitems c3">
+          <div class="impitem"><span class="ico">🔊</span><div><b>읽어주세요</b><span>단어 단위로 <strong>따라 읽어주며 하이라이팅</strong>한다</span></div></div>
+          <div class="impitem"><span class="ico">❓</span><div><b>이 단어를 잘 모르겠어요</b><span>막힌 <strong>단어만 짚어</strong> 뜻을 물을 수 있게 한다</span></div></div>
+          <div class="impitem"><span class="ico">🎧</span><div><b>오디오북으로 듣기</b><span>읽기가 어려운 날에도 <strong>진도가 멈추지 않게</strong> 한다</span></div></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pageno">18 / 21</div>
+  <div class="pageno">18 / 22</div>
 </section>
 
-<!-- 19. 오픈 후 2 - 기질카드 연결 -->
+<!-- 19. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
 <section class="slide">
   <div class="inner">
-    <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
-    <h2>AI 추천픽 — 누르면 활동이 시작되는 기질카드로</h2>
+    <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
+    <h2>캐릭터는 아이를 화면 맨 아래까지 데려왔다</h2>
     <div class="body">
       <div class="grid2 fill stretch">
         <div class="mid">
@@ -1252,39 +1343,90 @@ ul.clean li::marker{color:var(--ink-4)}
             <img class="shot" src="images/ai_pick.jpg" alt="AI 추천픽 화면 — 왼쪽 기질카드(직관적 행동파) 영역을 빨간 테두리로 강조 표시" />
             <span class="hilite" style="left:5.7%;top:24.4%;width:29.6%;height:57.6%" data-t="기질카드"></span>
           </div>
-          <div class="shotcap"><b class="red">1</b><span>빨간 표시가 <strong>기질카드</strong>다. 진단 결과로 만들어지며 아이들이 <strong>가장 궁금해한 요소</strong>다.</span></div>
-          <div class="shotcap"><b class="red">2</b><span><strong>17명</strong>이 카드에 반응했지만 <strong>눌러도 아무 화면도 열리지 않는다.</strong></span></div>
-          <div class="shotcap"><b class="red">3</b><span>여기에 <strong>연결 페이지</strong>를 붙이면 이미 생긴 관심이 그대로 학습으로 이어진다.</span></div>
+          <div class="shotcap key"><b class="red">1</b><span>진단평가 결과로 만들어지는 <strong>기질카드</strong>다. 아이들이 <strong>가장 먼저 알아본 요소</strong>다.</span></div>
         </div>
         <div class="mid">
-          <div class="colhead"><span class="ctag ev">지표</span> AI 추천픽에서 아이가 반응한 대상 <span class="small">전체 25명</span></div>
-          <div class="tstack" style="width:100%;height:3.4em;margin-top:1.1em">
-            <i class="b1" style="width:68%">기질카드·캐릭터 17</i>
-            <i class="b3" style="width:8%">2</i>
-            <i class="b5" style="width:24%">반응 없음 6</i>
+          <div class="colhead"><span class="ctag ev">지표</span> 아이는 어디까지 왔나 <span class="small">전체 25명</span></div>
+          <div class="funnel" style="margin-top:1.1em">
+            <div class="fstep"><div class="fbar" style="width:88%;background:#1D4ED8">AI 추천픽 영역까지 스스로 도달</div><div class="fval">22<small>명 · 88%</small></div></div>
+            <div class="fstep"><div class="fbar" style="width:68%;background:#2563EB">기질카드·캐릭터에 반응</div><div class="fval">17<small>명 · 68%</small></div></div>
+            <div class="fstep"><div class="fbar" style="width:52%;background:#4B8DF8">캐릭터가 예쁘다·귀엽다고 말함</div><div class="fval">13<small>명 · 52%</small></div></div>
+            <div class="fstep"><div class="fbar" style="width:28%;background:#7DAEFB">진단평가에서 본 <b>자기 카드</b>를 알아봄</div><div class="fval">7<small>명 · 28%</small></div></div>
           </div>
-          <div class="agelegend" style="margin-top:.6em">
-            <span><i style="background:#1D4ED8"></i>기질카드·캐릭터에 반응 17명</span>
-            <span><i style="background:#4B8DF8"></i>추천된 책에만 반응 2명</span>
-            <span><i style="background:#A6C8FC"></i>반응 없음 6명</span>
-          </div>
-          <p class="note plain" style="margin:.8em 0 0">어떤 형태로든 반응한 아동이 <strong>19명(76%)</strong>이다. 그중 <strong>13명(52%)은 캐릭터를 직접 언급</strong>했고 <strong>전원 긍정</strong>이었다.</p>
-          <div class="colhead" style="margin-top:1em"><span class="ctag rd">해석</span> 캐릭터는 알아보는데, 눌러도 아무 일이 없다</div>
-          <p style="margin:0 0 .6em;font-size:.89em;line-height:1.55;color:var(--ink-2)">아이는 <strong>'기질'이나 'K7' 같은 말은 알아듣지 못했다.</strong> 그런데 <strong>진단평가에서 본 캐릭터는 알아봤다.</strong> 기질카드에 시큰둥했던 아이도 캐릭터는 좋아했다. 좋아한 이유는 <strong>캐릭터가 예뻐서</strong>, 그리고 <strong>누르면 활동이 시작될 것 같아서</strong>였다 — 뒤쪽은 <strong>정확히 맞는 기대</strong>인데 눌러도 아무 일도 일어나지 않는다.</p>
+          <p class="note plain" style="margin:.9em 0 0">화면 맨 아래까지 스스로 내려온 <strong>22명</strong> 중 <strong>17명이 기질카드에서 멈춰 반응</strong>했다. 캐릭터를 언급한 <strong>13명은 전원 긍정</strong>이었다.</p>
+          <div class="colhead" style="margin-top:1.1em"><span class="ctag rd">해석</span> 말은 못 알아들어도 캐릭터는 알아본다</div>
+          <p style="margin:0 0 .6em;font-size:.89em;line-height:1.55;color:var(--ink-2)">아이는 <strong>'기질'이나 'K7' 같은 말은 알아듣지 못했다.</strong> 그런데 <strong>진단평가에서 본 캐릭터는 알아봤다.</strong> 기질카드에 시큰둥했던 아이도 캐릭터만큼은 좋아했다. <strong>캐릭터가 진단 결과와 화면을 잇는 고리</strong>다.</p>
           <div class="quotes">
             <div class="quote blue"><span class="who">조서* K3</span><strong>흥미는 크지 않았지만, 캐릭터 좋아함</strong></div>
             <div class="quote blue"><span class="who">김가* K1</span><strong>진단검사를 하지 않아서 큰 흥미가 없음</strong> — 다만 캐릭터는 좋아함</div>
           </div>
-          <p class="note blue" style="margin:.7em 0 0"><strong>캐릭터가 진단 결과와 화면을 잇는 고리</strong>다. 진단을 받고 온 아이는 자기 카드로 알아봤고(<strong>8명</strong>), 받지 않은 아이는 흥미가 없었다.</p>
         </div>
       </div>
-      <div class="impbar"><b>개선 방향</b><span><strong>기질카드를 누르면 열릴 콘텐츠를 채운다.</strong> 기질별 활동과 추천 근거를 붙여, 이미 확보된 <strong>17명의 관심을 학습으로 넘긴다.</strong></span></div>
+      <div class="impbar"><b>다음 장</b><span>여기까지 <strong>관심은 이미 확보되었다.</strong> 문제는 <strong>이 카드를 눌렀을 때 열릴 것이 없다</strong>는 점이다.</span></div>
     </div>
   </div>
-  <div class="pageno">19 / 21</div>
+  <div class="pageno">19 / 22</div>
 </section>
 
-<!-- 20. 오픈 후 3 - 목차 활동 다양화 -->
+<!-- 20. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
+<section class="slide">
+  <div class="inner">
+    <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
+    <h2>누르면 열리는 콘텐츠를 붙인다</h2>
+    <div class="body">
+      <div class="grid2 fill stretch">
+        <div class="mid">
+          <div class="colhead"><span class="ctag rd">콘텐츠안</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
+          <div class="mock">
+            <div class="mockbar"><s></s><s></s><s></s><b>기질카드 · 나만의 공간</b></div>
+            <div class="mockhero">
+              <div class="mockchar">🐯</div>
+              <div>
+                <u>직관적 행동파</u>
+                <strong>먼저 부딪혀 보는 너를 위한 이야기</strong>
+                <span>진단평가 결과로 만들어진 나만의 공간</span>
+              </div>
+            </div>
+            <div class="eplist">
+              <div class="ep now"><b>1화</b><div><strong>겁 없이 첫발 내딛기</strong><span>지금 바로 볼 수 있어요</span></div><i class="play">▶ 미리보기</i></div>
+              <div class="ep"><b>2화</b><div><strong>실수해도 괜찮아</strong><span>2026년 11월 1일 공개 예정</span></div><i class="lock">🔒</i></div>
+              <div class="ep"><b>3화</b><div><strong>끝까지 해내는 힘</strong><span>2026년 12월 1일 공개 예정</span></div><i class="lock">🔒</i></div>
+            </div>
+          </div>
+          <p class="rcap"><strong>1화는 지금 열고</strong>, 다음 화는 <strong>공개 예정으로 남겨</strong> 다시 올 이유를 만든다.</p>
+        </div>
+        <div class="mid">
+          <div class="colhead"><span class="ctag rd">해석</span> 맞는 기대를 해놓고 아무 일도 일어나지 않았다</div>
+          <div class="actlist" style="margin-top:.3em">
+            <div class="act later"><div class="n">1</div><div>
+              <h3>아이는 이미 정확히 기대했다</h3>
+              <p>카드를 좋아한 이유는 <strong>예뻐서</strong>, 그리고 <strong>누르면 활동이 시작될 것 같아서</strong>였다. 뒤쪽은 <strong>맞는 기대</strong>다.</p>
+            </div></div>
+            <div class="act later"><div class="n">2</div><div>
+              <h3>그런데 눌러도 열리는 것이 없다</h3>
+              <p><strong>17명의 관심</strong>이 카드 앞에서 그대로 멈췄다. 관심을 만드는 단계는 이미 통과했다.</p>
+            </div></div>
+            <div class="act later"><div class="n">3</div><div>
+              <h3>진단을 받고 온 아이만 자기 카드를 알아봤다</h3>
+              <p><strong>7명</strong>이 진단평가 캐릭터를 알아봤고, 받지 않은 아이는 흥미가 없었다. <strong>진단과 학습을 잇는 고리</strong>다.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 이미 확보된 관심을 학습으로 넘긴다</h3>
+        <div class="impitems c3">
+          <div class="impitem"><span class="ico">🎬</span><div><b>1화 즉시 공개</b><span>누르면 <strong>바로 볼 수 있는 콘텐츠</strong>를 하나 둔다</span></div></div>
+          <div class="impitem"><span class="ico">🗓️</span><div><b>다음 화 공개 예정</b><span>월 단위 공개 일정으로 <strong>다시 올 이유</strong>를 만든다</span></div></div>
+          <div class="impitem"><span class="ico">🧭</span><div><b>기질별 활동·추천 근거</b><span>왜 이 카드가 나왔는지 <strong>진단 결과와 연결</strong>해 보여준다</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">20 / 22</div>
+</section>
+
+<!-- 21. 오픈 후 3 - 목차 활동 다양화 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 학습 분량 · 활동 다양화</span>
@@ -1297,7 +1439,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="vnum">8.3<span style="font-size:.45em">분</span></div>
             <div class="vsub">K1 4종 합계<br />K3·K7은 3종 6.9분</div>
           </div>
-          <div class="vbars even" style="height:14.6em">
+          <div class="vbars even" style="height:7.4em">
             <div class="vbar"><b>2.5분</b>
               <div class="vtrack"><div class="stackbar" style="height:100%"><div class="seg b1" style="height:100%"></div></div></div>
               <span>어휘 챌린지</span></div>
@@ -1313,35 +1455,48 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
         </div>
       </div>
-      <div>
-        <div class="colhead"><span class="ctag rd">해석</span> 개수도 적고, 종류는 더 적다</div>
-        <p style="margin:0 0 .45em;font-size:.88em;line-height:1.55;color:var(--ink-2)">네 활동 모두 <strong>2분 남짓</strong>에 끝나고, 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>K1은 3종·K3와 K7은 2종</strong>에 불과하다.</p>
-        <p style="margin:0;font-size:.88em;line-height:1.55;color:var(--ink-2)">이 구성이 <strong>6개월간 매주 반복</strong>되면 같은 활동을 <strong>스물여섯 번</strong> 하게 된다. 하나를 길게 만드는 것은 답이 아니다 — 스키마북에서 이미 <strong>15~20분에 3명이 포기</strong>했다.</p>
-      </div>
-      <div class="impbar">
-        <b>개선 방향</b>
-        <div class="weekflow" style="flex:1">
-          <div class="wk"><b>1주차</b><span>활동 1</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>2주차</b><span>활동 2</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>3주차</b><span>활동 3</span></div>
-          <div class="wkar">›</div>
-          <div class="wk"><b>4주차</b><span>활동 4</span></div>
+      <div class="grid2">
+        <div>
+          <div class="colhead"><span class="ctag ev">근거</span> 활동은 보상으로 작동하고 있다</div>
+          <div class="tiles" style="grid-template-columns:1fr 1fr">
+            <div class="tile" style="background:var(--ok-tint)"><div class="k" style="color:var(--ok-deep)">책을 읽어서 활동을<br />더 하고 싶다</div><div class="v" style="color:var(--ok-deep)">21<small>명 · 84%</small></div><div class="s">책 읽기 → 활동 개방을 보상으로 인지</div></div>
+            <div class="tile"><div class="k">활동 형식 종류<br /><span class="small">독후퀴즈 2개는 같은 형식</span></div><div class="v">3<small>종</small></div><div class="s">K3·K7은 2종</div></div>
+          </div>
         </div>
-        <span style="flex:0 0 12.5em">주차 단위로 활동을 돌려 <strong>개수와 종류를 동시에</strong> 늘린다.</span>
+        <div>
+          <div class="colhead"><span class="ctag ev">근거</span> 아이가 직접 꼽은 재미있어 보이는 활동 <span class="small">전체 25명</span></div>
+          <div class="bars onwhite" style="margin-top:.2em">
+            <div class="bar-row"><div class="blabel">별빙고</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:#1D4ED8"></div></div><div class="bar-val">8<small>명</small></div></div>
+            <div class="bar-row"><div class="blabel">책 읽기</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#4B8DF8"></div></div><div class="bar-val">7<small>명</small></div></div>
+            <div class="bar-row"><div class="blabel">어휘 챌린지 ·<br />나만의 문장 수집</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#7DAEFB"></div></div><div class="bar-val">4<small>명</small></div></div>
+            <div class="bar-row"><div class="blabel">독후퀴즈</div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명</small></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 하나를 길게 만들지 않고, 주차별로 종류를 늘린다</h3>
+        <div class="weekflow">
+          <div class="wk"><b>1주차</b><span>어휘 챌린지</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>2주차</b><span>나만의 문장 수집</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>3주차</b><span>신규 활동</span></div>
+          <div class="wkar">›</div>
+          <div class="wk"><b>4주차</b><span>신규 활동</span></div>
+        </div>
+        <p class="impnote">같은 활동을 <strong>26주 반복</strong>하지 않도록 주차 단위로 돌리고, 아이가 직접 꼽은 <strong>어휘 챌린지·나만의 문장 수집</strong> 계열부터 늘린다.</p>
       </div>
     </div>
   </div>
-  <div class="pageno">20 / 21</div>
+  <div class="pageno">21 / 22</div>
 </section>
 
-<!-- 21. 실행 항목 종합 -->
+<!-- 22. 실행 항목 종합 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">종합</span>
-    <h2>구조는 검증되었고, 남은 과제는 '읽기'와 '의미 전달'이다</h2>
-    <p class="lead">가설 <strong>6건 중 5건 충족</strong>. 아이들은 설명 없이 시작해 순서대로 완주했다. 실패한 곳은 흐름이 아니라 <strong>두 지점</strong>에 몰려 있으며, 도출된 실행 항목 6건도 모두 이 두 지점을 향한다.</p>
+    <h2>아이들이 스스로 끝까지 해냈습니다</h2>
+    <p class="lead">3일 동안 <strong>25명의 아이</strong>가 KRS를 처음 만났고, <strong>가설 6건 중 5건이 충족</strong>되었습니다. 설명 없이 시작해 순서대로 완주했고, 무엇보다 <strong>다시 하고 싶다고 말했습니다.</strong> 남은 과제도 무엇을 해야 할지 분명해졌습니다.</p>
     <div class="body">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(9.6em,auto);gap:.9em;margin:.5em 0 .8em">
         <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">1</div><div>
@@ -1349,38 +1504,28 @@ ul.clean li::marker{color:var(--ink-4)}
           <p>자발적 시작 <strong>92%</strong> · 순서 완주 <strong>84%</strong> · 스스로 스크롤 <strong>88%</strong>. 길 모양 화면을 아이가 그대로 따라 내려갔다.</p>
         </div></div>
         <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">2</div><div>
-          <h3>막히는 곳은 '읽기' 한 지점이다</h3>
-          <p>중단 <strong>11명 중 8명</strong>이 읽기·말하기에서 멈췄고, K1·K3는 <strong>18명 중 6명</strong>이 읽기에서 걸렸다.</p>
+          <h3>아이가 좋아하는 지점을 찾았다</h3>
+          <p>별빙고 재참여 의향 <strong>84%</strong>, 기질카드 반응 <strong>17명</strong>. 무엇을 키워야 하는지가 분명해졌다.</p>
         </div></div>
         <div class="act" style="align-content:center;padding:1.2em 1.05em"><div class="n">3</div><div>
-          <h3>기능은 있으나 뜻이 읽히지 않는다</h3>
-          <p>👍 표시를 <strong>52%가 다른 뜻</strong>으로 읽었고, 기질카드는 <strong>17명이 반응했으나</strong> 갈 곳이 없다.</p>
+          <h3>고쳐야 할 곳도 분명해졌다</h3>
+          <p><strong>읽기</strong>와 <strong>의미 전달</strong> 두 지점이다. 실행 항목 <strong>6건</strong>이 모두 여기를 향한다.</p>
         </div></div>
       </div>
-      <div class="grid2">
-        <div>
-          <div class="colhead"><span class="ctag rd">우선순위</span> 가장 먼저 손댈 곳은 읽기다</div>
-          <p style="margin:0 0 .55em;font-size:.88em;line-height:1.55;color:var(--ink-2)">오픈 전 <strong>3건</strong>(추천 표시·별빙고 이펙트·도서관 스크롤)은 화면 표현 조정이라 <strong>이번 회차에 반영</strong>한다.</p>
-          <p style="margin:0;font-size:.88em;line-height:1.55;color:var(--ink-2)">오픈 후 <strong>3건</strong> 중에서는 <strong>읽기 지원이 1순위</strong>다. 나머지 둘은 경험을 넓히는 일이지만, 읽기는 <strong>막히면 진도 전체가 멈추고 부모를 불러야 하는</strong> 문제이기 때문이다. <strong>리텐션에 직접 걸린 유일한 항목</strong>이다.</p>
+      <div class="grid2 eq">
+        <div class="panel hl">
+          <h3>오픈 전까지 이렇게 하겠습니다</h3>
+          <p style="margin:0;font-size:.88em;line-height:1.6;color:var(--ink-2)">화면 표현만 조정하면 되는 <strong>3건</strong>(추천 표시·별빙고 이펙트·도서관 스크롤)은 <strong>이번 개발 회차에 반영</strong>합니다. 오픈 후 <strong>3건</strong> 중에서는 <strong>읽기 지원이 1순위</strong>입니다. 막히면 진도 전체가 멈추고 부모를 불러야 하는, <strong>리텐션에 직접 걸린 유일한 항목</strong>이기 때문입니다.</p>
         </div>
-        <div>
-          <div class="colhead"><span class="ctag ev">다음 검증</span> 이번 파일럿이 답하지 못한 것</div>
-          <div class="actlist">
-            <div class="act later"><div class="n">1</div><div>
-              <h3>재방문 기준의 추천 클릭률</h3>
-              <p>이번 44%는 <strong>하루 2권을 끝낸 자리</strong>에서 측정되었다. <strong>다음 날 다시 들어와 누르는지</strong>로 다시 재야 한다.</p>
-            </div></div>
-            <div class="act later"><div class="n">2</div><div>
-              <h3>주차별 활동 다양화의 실제 효과</h3>
-              <p>1회차 관찰로는 <strong>반복에 따른 지루함</strong>을 측정할 수 없다. <strong>다회차 추적</strong>이 필요하다.</p>
-            </div></div>
-          </div>
+        <div class="panel">
+          <h3>다음 파일럿에서 이어서 보겠습니다</h3>
+          <p style="margin:0;font-size:.88em;line-height:1.6;color:var(--ink-2)">추천 클릭률 <strong>44%</strong>는 하루 2권을 끝낸 자리에서 잰 값이라, <strong>다음 날 다시 들어와 누르는지</strong>로 다시 재야 합니다. 주차별 활동 다양화의 효과도 <strong>1회차 관찰로는 알 수 없어</strong> 다회차 추적이 필요합니다.</p>
         </div>
       </div>
-      <div class="oneline" style="margin-top:.6em"><span class="ctag rd" style="flex:0 0 auto">판정</span> <span><strong>충족 5건</strong> — H1 자발적 시작 <strong>92%</strong> · H2 흐름 유지 <strong>84%</strong> · H3 기능 목적 이해 <strong>88%</strong> · H5 별빙고 동기 <strong>84%</strong> · H6 공간 목적 이해 <strong>52%</strong> &nbsp;|&nbsp; <strong>보완 필요 1건</strong> — H4 AI 추천 탐색 <strong>44%</strong>(기준 50%)</span></div>
+      <div class="impbar" style="margin-top:.7em"><b>마무리</b><span>파일럿은 <strong>구조가 맞다</strong>는 확인과 <strong>무엇을 고칠지</strong>를 함께 남겼습니다. 남은 기간 동안 <strong>오픈 전 3건을 확실히 반영</strong>하고, 아이가 <strong>혼자서도 끝까지 갈 수 있는 KRS</strong>로 오픈까지 잘 마무리하겠습니다.</span></div>
     </div>
   </div>
-  <div class="pageno">21 / 21</div>
+  <div class="pageno">22 / 22</div>
 </section>
 
 
