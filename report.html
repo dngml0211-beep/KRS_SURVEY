@@ -184,6 +184,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .grid2.fill.stretch{align-items:stretch}
 .grid2.fill.stretch>div{display:flex;flex-direction:column;min-height:0}
 .grid2.fill.stretch>div.mid{justify-content:center}
+/* 이미지가 열 높이를 넘지 않도록 축소 */
+.xfade.fit{flex:1;min-height:0;align-self:center;max-width:100%}
+.xfade.fit .xf{height:100%}
+.xfade.fit .shot{width:100%;height:100%;object-fit:fill;display:block}
 .actlist{display:flex;flex-direction:column;gap:.5em}
 .actlist.spread{display:grid;grid-auto-rows:1fr;gap:.7em;height:100%}
 .actlist.spread .act{align-content:center}
@@ -219,6 +223,59 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .impchips{display:flex;gap:.5em;flex-wrap:wrap;flex:1}
 .impchips i{font-style:normal;font-size:.85em;font-weight:800;color:var(--accent-strong);
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.45em;padding:.42em .72em;white-space:nowrap}
+
+/* 개선 방향 — 강조형 */
+.impbox{background:var(--accent-tint);border:2.5px solid #9EC3FF;border-radius:.75em;
+  padding:.9em 1.1em;box-shadow:0 .28em 1em rgba(37,99,235,.13)}
+.impbox>h3{margin:0 0 .65em;font-size:1.02em;font-weight:800;color:var(--accent-strong);
+  display:flex;align-items:center;gap:.5em;letter-spacing:-.015em}
+.impbox>h3 em{font-style:normal;font-size:.72em;font-weight:800;color:#fff;background:var(--accent);
+  padding:.3em .62em;border-radius:.4em;letter-spacing:.01em}
+.impitems{display:grid;grid-template-columns:repeat(4,1fr);gap:.6em}
+.impitems.c2{grid-template-columns:repeat(2,1fr)}
+.impitems.c3{grid-template-columns:repeat(3,1fr)}
+.impitem{display:flex;gap:.6em;align-items:flex-start;background:#fff;border:1.5px solid #BBD5FF;
+  border-radius:.55em;padding:.62em .7em}
+.impitem .ico{flex:0 0 auto;font-size:1.45em;line-height:1.15}
+.impitem b{display:block;font-size:.85em;font-weight:800;color:var(--accent-strong);
+  margin-bottom:.16em;line-height:1.3}
+.impitem span{display:block;font-size:.78em;line-height:1.42;color:var(--ink-2)}
+.impnote{margin:.6em 0 0;font-size:.8em;line-height:1.5;color:var(--ink-2)}
+/* 시즌 테마 스트립 */
+.seasons{display:flex;gap:.5em;margin-top:.6em}
+.seasons i{flex:1;font-style:normal;display:flex;align-items:center;justify-content:center;gap:.42em;
+  font-size:.82em;font-weight:800;color:var(--ink-2);background:#fff;
+  border:1.5px solid var(--line);border-radius:.5em;padding:.48em .5em}
+.seasons i span{font-size:1.3em;line-height:1}
+.seasons i.sp{background:#FFF4F8;border-color:#F8CFE0}
+.seasons i.su{background:#F0FAFF;border-color:#B6E3FB}
+.seasons i.au{background:#FFF7ED;border-color:#FBD6A6}
+.seasons i.wi{background:#F5F8FF;border-color:#C7D8F5}
+/* 문구 변경 전/후 */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:.5em;margin-top:.6em}
+.ba>div{background:#fff;border:1.5px solid var(--line);border-radius:.5em;padding:.55em .7em}
+.ba>div.after{border-color:#9EC3FF;background:#F5F9FF}
+.ba u{display:block;text-decoration:none;font-size:.72em;font-weight:800;color:var(--ink-3);margin-bottom:.22em}
+.ba>div.after u{color:var(--accent-strong)}
+.ba p{margin:0;font-size:.79em;line-height:1.45;color:var(--ink-2)}
+
+/* 간지(섹션 표지) */
+.divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
+.divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
+.dvkicker{display:inline-flex;align-items:center;gap:.55em;align-self:flex-start;
+  font-size:.85em;font-weight:800;letter-spacing:.02em;color:#fff;background:var(--accent);
+  padding:.45em .9em;border-radius:99px;margin-bottom:1.5em}
+.divider.late .dvkicker{background:var(--ink-2)}
+.dvtitle{font-size:2.9em;font-weight:800;letter-spacing:-.045em;line-height:1.22;margin:0 0 .45em}
+.dvsub{margin:0;font-size:1.08em;font-weight:700;line-height:1.55;color:var(--ink-2);max-width:30em}
+.dvchips{display:flex;gap:.6em;flex-wrap:wrap;margin-top:2.3em}
+.dvchips i{font-style:normal;display:flex;align-items:center;gap:.5em;font-size:.92em;font-weight:800;
+  color:var(--accent-strong);background:#fff;border:2px solid #BBD5FF;border-radius:99px;padding:.55em 1.1em}
+.divider.late .dvchips i{color:var(--ink);border-color:var(--line)}
+.dvchips i b{font-size:.85em;font-weight:800;color:#fff;background:var(--accent);
+  width:1.6em;height:1.6em;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.divider.late .dvchips i b{background:var(--ink-3)}
+
 /* 주차별 활동 롤링 */
 .weekflow{display:flex;align-items:stretch;gap:.5em}
 .wk{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3em;
@@ -327,6 +384,8 @@ tr.row-ok td{background:#FAFEFC} tr.row-todo td{background:#FFFCF5}
 
 /* ---------- blocks ---------- */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1em;align-items:start}
+.grid2.eq{align-items:stretch}
+.grid2.eq>.panel{display:flex;flex-direction:column}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8em}
 .panel{background:var(--line-2);border-radius:.6em;padding:.9em 1.05em}
 .panel h3{color:var(--ink-2);display:flex;align-items:center;gap:.45em}
@@ -392,7 +451,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h1>KRS 플랫폼 2차 파일럿<br />유저테스트 결과보고서</h1>
     <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">1 / 19</div>
+  <div class="pageno">1 / 21</div>
 </section>
 
 <!-- 2. 조사 개요 (대시보드) -->
@@ -482,7 +541,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">2 / 19</div>
+  <div class="pageno">2 / 21</div>
 </section>
 
 <!-- 3. 검증 가설 -->
@@ -539,7 +598,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <p class="small" style="margin:0">각 가설의 판정은 위 <strong>검증 방법에 정의된 지표</strong>로만 산출하였다. H6은 <strong>도서관의 공간 목적 인지</strong> 기준으로 최신화된 가설을 적용하였다. 지표별 측정 결과는 11페이지 종합 판정에 정리하였다.</p>
     </div>
   </div>
-  <div class="pageno">3 / 19</div>
+  <div class="pageno">3 / 21</div>
 </section>
 
 <!-- 4. 종합 요약 -->
@@ -589,7 +648,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">4 / 19</div>
+  <div class="pageno">4 / 21</div>
 </section>
 
 <!-- 5. H1 -->
@@ -632,7 +691,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">5 / 19</div>
+  <div class="pageno">5 / 21</div>
 </section>
 
 <!-- 6. H2 -->
@@ -674,7 +733,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">6 / 19</div>
+  <div class="pageno">6 / 21</div>
 </section>
 
 <!-- 7. H3 -->
@@ -715,7 +774,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">7 / 19</div>
+  <div class="pageno">7 / 21</div>
 </section>
 
 <!-- 8. H4 -->
@@ -757,7 +816,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">8 / 19</div>
+  <div class="pageno">8 / 21</div>
 </section>
 
 <!-- 9. H5 -->
@@ -800,7 +859,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">9 / 19</div>
+  <div class="pageno">9 / 21</div>
 </section>
 
 <!-- 10. H6 -->
@@ -842,7 +901,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">10 / 19</div>
+  <div class="pageno">10 / 21</div>
 </section>
 
 <!-- 11. 종합 판정 -->
@@ -860,10 +919,10 @@ ul.clean li::marker{color:var(--ink-4)}
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H5</span> 별빙고 동기</div></td><td>별빙고 보상은 학습 동기를 높여 커리큘럼 참여를 지속시킬 수 있다</td><td>50%</td><td class="num">84% <span class="small">21/25</span></td><td><span class="pill ok">충족</span></td></tr>
         <tr class="row-ok"><td><div class="hcell"><span class="hno ok">H6</span> 도서관 이해</div></td><td>KRS 도서관이 책을 만나는 공간임을 알고, 레벨 맞춤 도서 추천을 이해한다</td><td>50%</td><td class="num">52% <span class="small">13/25</span></td><td><span class="pill ok">충족</span></td></tr>
       </table>
-      <div class="grid2" style="margin-top:.3em">
+      <div class="grid2 eq" style="margin-top:.3em">
         <div class="panel ok">
           <h3>검증 결과</h3>
-          <p style="margin:0;font-size:.92em;line-height:1.55;color:var(--ink-2)">핵심 질문 <strong>"스스로 완주할 수 있는가"에 그렇다고 답할 수 있다.</strong> 시작·순서·기능 이용·보상 반응 네 축이 모두 기준을 넘었다.</p>
+          <p style="margin:0;font-size:.92em;line-height:1.55;color:var(--ink-2)">핵심 질문 <strong>"스스로 완주할 수 있는가"에 그렇다고 답할 수 있다.</strong> 시작·순서·기능 이용·보상 반응 <strong>네 축이 모두 기준을 넘었다.</strong> 특히 <strong>시작 92%·기능 이해 88%</strong>로, 아이가 어른의 개입 없이 첫 화면에서 마지막 활동까지 도달하는 데 <strong>구조적인 장애물은 발견되지 않았다.</strong></p>
         </div>
         <div class="panel todo">
           <h3>보완 과제</h3>
@@ -872,7 +931,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">11 / 19</div>
+  <div class="pageno">11 / 21</div>
 </section>
 
 <!-- 12. 인사이트 총괄 -->
@@ -880,56 +939,56 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="inner">
     <span class="eyebrow">인사이트</span>
     <h2>관찰 결과에서 도출된 실행 항목 6건</h2>
-    <p class="lead">화면 수정만으로 대응 가능한 <strong>오픈 전 적용 3건</strong>과, 별도 설계·개발이 필요한 <strong>오픈 후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 13~18페이지에 정리하였다.</p>
+    <p class="lead">화면 수정만으로 대응 가능한 <strong>오픈 전 적용 3건</strong>과, 별도 설계·개발이 필요한 <strong>오픈 후 고도화 3건</strong>으로 구분하였다. 상세 근거는 이어지는 14~20페이지에 정리하였다.</p>
     <div class="body">
       <div class="grid2 fill">
         <div>
-          <div class="colhead"><span class="ctag rd">오픈 전 적용</span> 화면 수정 범위 3건 <span class="small">→ 13~15p</span></div>
+          <div class="colhead"><span class="ctag rd">오픈 전 적용</span> 화면 수정 범위 3건 <span class="small">→ 14~16p</span></div>
           <div class="actlist spread">
             <div class="act">
               <div class="n">1</div>
               <div>
-                <h3>AI 추천픽 — 추천 표시와 문구를 '내 취향' 중심으로 <span class="small">→ 13p</span></h3>
+                <h3>AI 추천픽 — 추천 표시와 문구를 '내 취향' 중심으로 <span class="small">→ 14p</span></h3>
                 <p><strong>👍99%</strong>를 인기순·쪽수로 이해한 아동이 5명이다. 표시에 <strong>'내 취향'</strong> 워딩을 붙이고 추천 문구를 <strong>추천 이유 중심</strong>으로 바꾼다.</p>
               </div>
             </div>
             <div class="act">
               <div class="n">2</div>
               <div>
-                <h3>별빙고 — 효과음 등 이펙트 추가 <span class="small">→ 14p</span></h3>
+                <h3>별빙고 — 효과음 등 이펙트 추가 <span class="small">→ 15p</span></h3>
                 <p>재참여 의향 <strong>21명(84%)</strong>으로 가장 높은데 별 획득 방법 이해는 <strong>64%</strong>다. 규칙 설명보다 <strong>반응을 키우는 쪽</strong>이 효과가 크다.</p>
               </div>
             </div>
             <div class="act">
               <div class="n">3</div>
               <div>
-                <h3>KRS 도서관 — 스크롤 사용성 보강 <span class="small">→ 15p</span></h3>
+                <h3>KRS 도서관 — 스크롤 사용성 보강 <span class="small">→ 16p</span></h3>
                 <p>첫 화면에서 바로 실행한 아동이 <strong>12명</strong>이다. <strong>하단 도서가 걸쳐 보여야</strong> 아래가 있다는 것을 인지한다.</p>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">오픈 후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 16~18p</span></div>
+          <div class="colhead"><span class="ctag ev">오픈 후 고도화</span> 설계·개발 동반 3건 <span class="small">→ 18~20p</span></div>
           <div class="actlist spread">
             <div class="act later">
               <div class="n">1</div>
               <div>
-                <h3>K1·K3 대상 읽기 도움 요청과 오디오북 추가 <span class="small">→ 16p</span></h3>
+                <h3>K1·K3 대상 읽기 도움 요청과 오디오북 추가 <span class="small">→ 18p</span></h3>
                 <p>K1·K3 <strong>18명 중 6명</strong>이 읽기에서 걸렸고 <strong>스스로 도움을 청한 아이는 0명</strong>이다. 집에서는 <strong>부모가 그 자리를 대신</strong>하게 되어 리텐션 위험으로 이어진다.</p>
               </div>
             </div>
             <div class="act later">
               <div class="n">2</div>
               <div>
-                <h3>AI 추천픽 기질카드에 연결 페이지 제공 <span class="small">→ 17p</span></h3>
+                <h3>AI 추천픽 기질카드에 연결 페이지 제공 <span class="small">→ 19p</span></h3>
                 <p><strong>17명(68%)</strong>이 기질카드·캐릭터에 반응했고 <strong>누르면 활동이 시작될 것</strong>으로 기대했으나, 눌러도 연결되는 화면이 없다.</p>
               </div>
             </div>
             <div class="act later">
               <div class="n">3</div>
               <div>
-                <h3>목차 활동 다양화 <span class="small">→ 18p</span></h3>
+                <h3>목차 활동 다양화 <span class="small">→ 20p</span></h3>
                 <p>책 읽기를 빼면 활동은 <strong>4종 · 6.9분</strong>(K1 8.3분)뿐이고, 그중 둘은 같은 독후퀴즈다. <strong>주차별로 다른 활동</strong>을 배치해 개수와 다양성을 함께 확보한다.</p>
               </div>
             </div>
@@ -939,10 +998,25 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">구분 기준</span> <span><strong>오픈 전 3건</strong>은 화면의 표현·배치 조정이므로 이번 개발 회차에 반영 가능하다. <strong>오픈 후 3건</strong>은 기능 신설과 커리큘럼 재편이 따르므로 <strong>별도 일정과 리소스 검토</strong>가 필요하다.</span></div>
     </div>
   </div>
-  <div class="pageno">12 / 19</div>
+  <div class="pageno">12 / 21</div>
 </section>
 
-<!-- 13. 오픈 전 1 - AI 추천픽 -->
+<!-- 13. 간지 — 오픈 전 적용 -->
+<section class="slide">
+  <div class="inner divider">
+    <span class="dvkicker">오픈 전 적용 · 3건</span>
+    <h2 class="dvtitle">화면 수정만으로<br />바로 반영할 수 있는 것</h2>
+    <p class="dvsub">기능을 새로 만들지 않고 <strong>표현과 배치</strong>만 조정하는 범위다. 이번 개발 회차에 그대로 반영할 수 있다.</p>
+    <div class="dvchips">
+      <i><b>1</b>AI 추천픽</i>
+      <i><b>2</b>별빙고</i>
+      <i><b>3</b>KRS 도서관</i>
+    </div>
+  </div>
+  <div class="pageno">13 / 21</div>
+</section>
+
+<!-- 14. 오픈 전 1 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 전 적용 · AI 추천픽</span>
@@ -951,7 +1025,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> AI 추천픽 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
-          <div class="xfade">
+          <div class="xfade fit" style="aspect-ratio:1020/631">
             <div class="xf">
               <img class="shot" src="images/ai_pick.jpg" alt="적용 전 AI 추천픽 화면 — 확률이 숫자로만 표시되고 추천 문구는 책 내용만 설명한다" />
               <span class="xf-tag">적용 전</span>
@@ -974,22 +1048,32 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="bar-row"><div class="blabel">부분 이해</div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#7DAEFB"></div></div><div class="bar-val">7<small>명 · 28%</small></div></div>
             <div class="bar-row"><div class="blabel">다른 뜻으로 이해</div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
-          <div class="colhead" style="margin-top:1.1em"><span class="ctag ev">상세 응답</span> "이 👍는 뭘 의미하는 것 같아요?"</div>
-          <table class="vmid fixed" style="font-size:.9em">
-            <tr><th style="width:27%">인식 수준</th><th>아이들의 답</th></tr>
-            <tr><td><strong>정확히 이해</strong><br /><span class="small">5명</span></td><td>"나한테 <strong>몇 % 맞는</strong> 책인지" · "내가 <strong>좋아할 거라고</strong> 알려주는 것" · "내가 <strong>좋아하는 만큼</strong> 표현해주는 것"</td></tr>
-            <tr><td>부분 이해<br /><span class="small">7명</span></td><td>"추천해주는 거 같아요" · "나한테 추천하는 책" · "책이 재밌어보인다는 표시"</td></tr>
-            <tr class="row-todo"><td><strong>다른 뜻으로 이해</strong><br /><span class="small">13명</span></td><td>"<strong>사람들이 좋아요 해둔 거</strong>" · "<strong>인기순</strong>" · "<strong>총 책의 쪽수</strong>" · "어려운 정도를 나타내는 것" · "모르겠어요"</td></tr>
-          </table>
+          <div class="colhead" style="margin-top:1.5em"><span class="ctag ev">사례</span> '다른 뜻으로 이해'한 아이들의 답 <span class="small">13명</span></div>
+          <div class="quotes">
+            <div class="quote todo"><span class="who">김가* K1</span>"<strong>사람들이 좋아요 해둔 거</strong>" — 다른 사람의 인기 표시로 이해함</div>
+            <div class="quote todo"><span class="who">정우* K3</span>"<strong>총 책의 쪽수</strong>" — 숫자를 분량 정보로 이해함</div>
+          </div>
         </div>
       </div>
-      <div class="impbar"><b>개선 방향</b><div class="impchips"><i>👍99% <strong>내 취향</strong> 워딩 부여</i><i>70% 미만도 <strong>👍추천</strong>으로 노출</i><i>추천 문구를 <strong>추천 이유 중심</strong>으로</i></div></div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 이 책을 왜 너에게 권하는지까지 말해준다</h3>
+        <div class="impitems">
+          <div class="impitem"><span class="ico">💙</span><div><b>'내 취향' 워딩 부여</b><span>👍99% → 👍99% 내 취향</span></div></div>
+          <div class="impitem"><span class="ico">🔓</span><div><b>70% 미만도 노출</b><span>미노출 → 👍추천</span></div></div>
+          <div class="impitem"><span class="ico">🙋</span><div><b>자녀 이름 호명</b><span>추천 문구에 [자녀이름] 추가</span></div></div>
+          <div class="impitem"><span class="ico">💬</span><div><b>추천 이유 중심 문구</b><span>책 설명 → 왜 너에게 맞는지</span></div></div>
+        </div>
+        <div class="ba">
+          <div><u>기존 · 책 중심</u><p>주인공의 다양한 감정을 따라가다 보면 자신의 마음을 탐구하는 재미를 느낄 수 있어요</p></div>
+          <div class="after"><u>변경 · 추천 이유 중심</u><p><strong>김웅진 님</strong>의 <strong>감성적인 취향</strong>에 맞는 마음이 따뜻해지는 이야기를 추천해요</p></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pageno">13 / 19</div>
+  <div class="pageno">14 / 21</div>
 </section>
 
-<!-- 14. 오픈 전 2 - 별빙고 -->
+<!-- 15. 오픈 전 2 - 별빙고 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
@@ -1028,13 +1112,25 @@ ul.clean li::marker{color:var(--ink-4)}
           <p style="margin:0;font-size:.9em;line-height:1.55;color:var(--ink-2)">규칙을 정확히 안 아이는 <strong>16명뿐인데 21명이 다시 하고 싶다</strong>고 했다. <strong>20% 차이</strong>만큼은 규칙을 모르는 채로 좋아한 것이다. 아이를 붙잡은 것은 규칙이 아니라 <strong>별이 나오는 순간</strong>이며, 설명을 늘려도 이 감각은 늘지 않는다.</p>
         </div>
       </div>
-      <div class="impbar"><b>개선 방향</b><span><strong>별 획득·빙고 완성 시점에 효과음 등 이펙트를 추가</strong>한다. 규칙 안내를 늘리는 것보다 <strong>누를 때의 반응을 키우는 편</strong>이 이미 확보된 호감을 다음 회차 복귀로 잇는 데 유리하며, 화면 로직 변경 없이 오픈 전 반영이 가능하다.</span></div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 규칙 설명을 늘리는 대신, 누를 때의 반응을 키운다</h3>
+        <div class="impitems c2">
+          <div class="impitem"><span class="ico">🔊✨</span><div><b>효과음 · 이펙트 추가</b><span>별 획득과 빙고 완성 시점에 <strong>소리와 움직임</strong>을 넣어 아이가 반응한 그 순간을 키운다</span></div></div>
+          <div class="impitem"><span class="ico">🗓️</span><div><b>시즌성 운영</b><span>월별로 <strong>빙고판 배경을 교체</strong>해 다음 달에 다시 열어볼 이유를 만든다</span></div></div>
+        </div>
+        <div class="seasons">
+          <i class="sp"><span>🌸</span>봄 테마</i>
+          <i class="su"><span>🏖️</span>여름 테마</i>
+          <i class="au"><span>🍁</span>가을 테마</i>
+          <i class="wi"><span>⛄</span>겨울 테마</i>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pageno">14 / 19</div>
+  <div class="pageno">15 / 21</div>
 </section>
 
-<!-- 15. 오픈 전 3 - KRS 도서관 -->
+<!-- 16. 오픈 전 3 - KRS 도서관 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 오픈 전 적용 · KRS 도서관</span>
@@ -1043,7 +1139,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch">
         <div class="mid">
           <div class="colhead"><span class="ctag ev">화면</span> KRS 도서관 <span class="small">적용 전 ⇄ 적용 후 자동 전환</span></div>
-          <div class="xfade">
+          <div class="xfade fit" style="aspect-ratio:1020/632">
             <div class="xf">
               <img class="shot" src="images/krs_library.jpg" alt="적용 전 KRS 도서관 첫 화면 — 하단 KRS 추천도서 영역은 필터 칩만 보이고 책 표지는 화면 밖에 있다" />
               <span class="xf-tag">적용 전</span>
@@ -1064,20 +1160,42 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="note plain" style="margin:.8em 0 0">레벨 표기로 공간을 이해한 아이는 <strong>2명</strong>뿐이다. <strong>책이 보여서</strong> 도서관임을 안 아이가 <strong>6배 이상</strong> 많다.</p>
           <div class="colhead" style="margin-top:.9em"><span class="ctag rd">해석</span> 아이는 글자가 아니라 책으로 공간을 읽는다</div>
-          <p style="margin:0 0 .55em;font-size:.88em;line-height:1.55;color:var(--ink-2)">상단의 <strong>레벨 표기는 거의 전달되지 않았다.</strong> 대신 <strong>눈앞에 책이 많이 보인다</strong>는 것으로 도서관임을 알아챘다. 그렇다면 <strong>책이 더 보일수록 이 공간은 더 잘 이해된다.</strong></p>
+          <p style="margin:0 0 .55em;font-size:.88em;line-height:1.55;color:var(--ink-2)">상단 <strong>레벨 표기는 거의 전달되지 않았고</strong>, 대신 <strong>눈앞에 보이는 책</strong>으로 공간을 알아챘다. 게다가 <strong>아래쪽에 재미있는 책이 많이 보인다</strong>며 추천 자체를 반긴 아이들이 있었다. <strong>보이기만 하면 긍정으로 이어진다</strong>는 뜻이다.</p>
           <div class="quotes">
-            <div class="quote blue"><span class="who">오수* K7</span>K7이 뭔지 몰라 단계 맞춤 도서관 인지 못함. 단 <strong>하단 책리스트는 나한테 추천되는 도서라고 대답함</strong></div>
+            <div class="quote blue"><span class="who">김조* K1</span>레벨은 인지 못하나 <strong>읽고 싶은 책은 많이 보인다</strong>고 함. 아는 책이 나오니 반가워함</div>
             <div class="quote blue"><span class="who">곽재* K7</span><strong>스크롤이 되는 것은 얘기해줘야 알고</strong>, 책이 많다는 것에 대해 좋아함</div>
           </div>
         </div>
       </div>
-      <div class="impbar"><b>개선 방향</b><span><strong>하단 추천도서 표지가 화면에 걸쳐 보이도록</strong> 배치한다. 안내 문구를 넣는 대신 <strong>이미 작동한 단서(걸쳐 보이는 책)</strong>를 모든 화면에 일관되게 적용하는 수준의 조정이다.</span></div>
+      <div class="impbox">
+        <h3><em>개선 방향</em> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</h3>
+        <div class="impitems c3">
+          <div class="impitem"><span class="ico">📚</span><div><b>하단 표지 걸쳐 보이기</b><span>추천도서 <strong>표지 일부가 첫 화면에 걸치도록</strong> 배치를 조정한다</span></div></div>
+          <div class="impitem"><span class="ico">⬇️</span><div><b>스크롤 어포던스 추가</b><span>아래로 이어진다는 <strong>시각적 신호</strong>를 화면에 남긴다</span></div></div>
+          <div class="impitem"><span class="ico">🔁</span><div><b>상단까지 일관 적용</b><span>이미 작동한 단서를 <strong>상단 걸쳐 보이는 UI</strong>에도 확대 적용한다</span></div></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pageno">15 / 19</div>
+  <div class="pageno">16 / 21</div>
 </section>
 
-<!-- 16. 오픈 후 1 - TTS 읽기 지원 -->
+<!-- 17. 간지 — 오픈 후 고도화 -->
+<section class="slide">
+  <div class="inner divider late">
+    <span class="dvkicker">오픈 후 고도화 · 3건</span>
+    <h2 class="dvtitle">설계와 개발이<br />함께 따라가야 하는 것</h2>
+    <p class="dvsub">기능 신설과 커리큘럼 재편이 뒤따른다. <strong>별도 일정과 리소스 검토</strong>가 전제되어야 하는 과제다.</p>
+    <div class="dvchips">
+      <i><b>1</b>저연령 읽기 지원</i>
+      <i><b>2</b>기질카드 연결</i>
+      <i><b>3</b>목차 활동 다양화</i>
+    </div>
+  </div>
+  <div class="pageno">17 / 21</div>
+</section>
+
+<!-- 18. 오픈 후 1 - TTS 읽기 지원 -->
 <section class="slide">
   <div class="inner">
     <div class="seclead"><i></i>오픈 후 고도화 · 설계·개발 동반 3건</div>
@@ -1118,10 +1236,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="impbar"><b>개선 방향</b><div class="impchips"><i>「이 단어를 <strong>읽어주세요</strong>」</i><i>「이 단어를 <strong>잘 모르겠어요</strong>」</i><i>「<strong>오디오북</strong>으로 듣기」</i></div><span style="flex:0 0 11em">K1·K3 대상 <strong>읽는 힘을 기르는 독서 도구</strong></span></div>
     </div>
   </div>
-  <div class="pageno">16 / 19</div>
+  <div class="pageno">18 / 21</div>
 </section>
 
-<!-- 17. 오픈 후 2 - 기질카드 연결 -->
+<!-- 19. 오픈 후 2 - 기질카드 연결 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
@@ -1163,10 +1281,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="impbar"><b>개선 방향</b><span><strong>기질카드를 누르면 열릴 콘텐츠를 채운다.</strong> 기질별 활동과 추천 근거를 붙여, 이미 확보된 <strong>17명의 관심을 학습으로 넘긴다.</strong></span></div>
     </div>
   </div>
-  <div class="pageno">17 / 19</div>
+  <div class="pageno">19 / 21</div>
 </section>
 
-<!-- 18. 오픈 후 3 - 목차 활동 다양화 -->
+<!-- 20. 오픈 후 3 - 목차 활동 다양화 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 학습 분량 · 활동 다양화</span>
@@ -1215,10 +1333,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">18 / 19</div>
+  <div class="pageno">20 / 21</div>
 </section>
 
-<!-- 19. 실행 항목 종합 -->
+<!-- 21. 실행 항목 종합 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">종합</span>
@@ -1262,7 +1380,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline" style="margin-top:.6em"><span class="ctag rd" style="flex:0 0 auto">판정</span> <span><strong>충족 5건</strong> — H1 자발적 시작 <strong>92%</strong> · H2 흐름 유지 <strong>84%</strong> · H3 기능 목적 이해 <strong>88%</strong> · H5 별빙고 동기 <strong>84%</strong> · H6 공간 목적 이해 <strong>52%</strong> &nbsp;|&nbsp; <strong>보완 필요 1건</strong> — H4 AI 추천 탐색 <strong>44%</strong>(기준 50%)</span></div>
     </div>
   </div>
-  <div class="pageno">19 / 19</div>
+  <div class="pageno">21 / 21</div>
 </section>
 
 
