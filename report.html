@@ -475,11 +475,14 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stbar i{position:absolute;left:0;bottom:-.22em;height:.24em;border-radius:99px;background:var(--accent)}
 .stbar s{flex:0 0 auto;text-decoration:none;font-size:.79em;font-weight:800;color:var(--accent-strong)}
-.hardset{display:flex;flex-wrap:wrap;gap:.35em;margin-top:.5em}
-.hd{display:inline-flex;align-items:center;gap:.32em;font-size:.82em;font-weight:700;color:var(--ink-2);
-  background:#FFF8E8;border:1.5px solid #F0DFB0;border-radius:99px;padding:.44em .85em}
-.hd u{text-decoration:none;font-size:.86em;font-weight:800;color:#9A5B12}
-.hd b{font-weight:800;color:#9A5B12}
+.hardset{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin-top:.6em}
+.hg{background:#FFF8E8;border:1.5px solid #F0DFB0;border-radius:.6em;padding:.75em .8em}
+.hg>u{display:block;text-decoration:none;font-size:.82em;font-weight:800;color:#9A5B12;margin-bottom:.55em}
+.hg>u span{color:#B98A3E;font-weight:700;margin-left:.2em}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:.4em;
+  font-size:.78em;font-weight:700;color:var(--ink-2);line-height:1.35;margin-bottom:.34em}
+.hd:last-child{margin-bottom:0}
+.hd b{flex:0 0 auto;font-weight:800;color:#9A5B12}
 .donuts.sm .ring{width:6.6em;height:6.6em}
 .donuts.sm .hole b{font-size:1.05em}
 .donuts.sm .dname{font-size:.76em}
@@ -1402,11 +1405,20 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <div class="colhead" style="margin-top:.9em"><span class="ctag ev">지표</span> 어려웠다고 꼽힌 이야기 <span class="small">복수 선택 · 5명만 응답</span></div>
           <div class="hardset">
-            <span class="hd"><u>K1</u>누구 똥? <b>1</b></span>
-            <span class="hd"><u>K1</u>숲속의 하루 <b>1</b></span>
-            <span class="hd"><u>K3</u>쓰레기의 변신 <b>2</b></span>
-            <span class="hd"><u>K3</u>문해력 놀이터 <b>1</b></span>
-            <span class="hd"><u>K7</u>연기가 솔솔 <b>1</b></span>
+            <div class="hg">
+              <u>K1 <span>2건</span></u>
+              <span class="hd">누구 똥? <b>1</b></span>
+              <span class="hd">숲속의 하루 <b>1</b></span>
+            </div>
+            <div class="hg">
+              <u>K3 <span>3건</span></u>
+              <span class="hd">쓰레기의 변신 <b>2</b></span>
+              <span class="hd">문해력 놀이터 <b>1</b></span>
+            </div>
+            <div class="hg">
+              <u>K7 <span>1건</span></u>
+              <span class="hd">연기가 솔솔 <b>1</b></span>
+            </div>
           </div>
         </div>
         <div>
