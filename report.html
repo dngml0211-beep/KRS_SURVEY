@@ -470,6 +470,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
 .divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
+.divider.survey{background:linear-gradient(150deg,#FFFFFF 0%,#F4FBF7 50%,#E2F3EA 100%)}
+.divider.survey .dvkicker{background:var(--ok-deep)}
+.divider.survey .dvchips i{color:var(--ok-deep);border-color:#B7E0CB}
+.divider.survey .dvchips i b{background:var(--ok-deep)}
 .dvkicker{display:inline-flex;align-items:center;gap:.55em;align-self:flex-start;
   font-size:.85em;font-weight:800;letter-spacing:.02em;color:#fff;background:var(--accent);
   padding:.45em .9em;border-radius:99px;margin-bottom:1.5em}
@@ -696,7 +700,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h1>KRS 플랫폼 2차 파일럿<br />유저테스트 결과보고서</h1>
     <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">1 / 24</div>
+  <div class="pageno">1 / 25</div>
 </section>
 
 <!-- 2. 조사 개요 (대시보드) -->
@@ -786,7 +790,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">2 / 24</div>
+  <div class="pageno">2 / 25</div>
 </section>
 
 <!-- 3. 검증 가설 -->
@@ -843,7 +847,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <p class="small" style="margin:0">각 가설의 판정은 위 <strong>검증 방법에 정의된 지표</strong>로만 산출하였다. H6은 <strong>도서관의 공간 목적 인지</strong> 기준으로 최신화된 가설을 적용하였다. 지표별 측정 결과는 11페이지 종합 판정에 정리하였다.</p>
     </div>
   </div>
-  <div class="pageno">3 / 24</div>
+  <div class="pageno">3 / 25</div>
 </section>
 
 <!-- 4. 종합 요약 -->
@@ -893,7 +897,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">4 / 24</div>
+  <div class="pageno">4 / 25</div>
 </section>
 
 <!-- 5. H1 -->
@@ -936,7 +940,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">5 / 24</div>
+  <div class="pageno">5 / 25</div>
 </section>
 
 <!-- 6. H2 -->
@@ -978,7 +982,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">6 / 24</div>
+  <div class="pageno">6 / 25</div>
 </section>
 
 <!-- 7. H3 -->
@@ -1019,7 +1023,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">7 / 24</div>
+  <div class="pageno">7 / 25</div>
 </section>
 
 <!-- 8. H4 -->
@@ -1061,7 +1065,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">8 / 24</div>
+  <div class="pageno">8 / 25</div>
 </section>
 
 <!-- 9. H5 -->
@@ -1106,7 +1110,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">9 / 24</div>
+  <div class="pageno">9 / 25</div>
 </section>
 
 <!-- 10. H6 -->
@@ -1148,7 +1152,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">10 / 24</div>
+  <div class="pageno">10 / 25</div>
 </section>
 
 <!-- 11. 종합 판정 -->
@@ -1178,7 +1182,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">11 / 24</div>
+  <div class="pageno">11 / 25</div>
 </section>
 
 <!-- ===== [보류] 인사이트 총괄 페이지 — 필요 시 아래 주석을 해제하세요 =====
@@ -1251,7 +1255,22 @@ ul.clean li::marker{color:var(--ink-4)}
 
 ===== [보류] 끝 ===== -->
 
-<!-- 12. 아이 설문 1 - 전체 경험 -->
+<!-- 12. 간지 — 아이 설문 -->
+<section class="slide">
+  <div class="inner divider survey">
+    <span class="dvkicker">아이 설문 · 3장</span>
+    <h2 class="dvtitle">관찰이 아니라<br />아이가 직접 답했습니다</h2>
+    <p class="dvsub">세션 직후 태블릿으로 진행한 설문 — <strong>25명 전원 응답</strong> · 14문항</p>
+    <div class="dvchips">
+      <i><b>1</b>전체 경험</i>
+      <i><b>2</b>콘텐츠 난이도</i>
+      <i><b>3</b>선호 활동과 동기</i>
+    </div>
+  </div>
+  <div class="pageno">12 / 25</div>
+</section>
+
+<!-- 13. 아이 설문 1 - 전체 경험 -->
 <section class="slide">
   <div class="inner">
     <div class="seclead"><i></i>아이 직접 응답 · 세션 직후 태블릿 설문 25명 전원</div>
@@ -1311,10 +1330,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>만족 <strong>84%</strong>에 비해 재방문은 <strong>64%</strong>로 낮고, 분량은 <strong>부족(9명)이 많음(4명)의 2배</strong>다. 재방문 의향은 <strong>레벨이 낮을수록 낮다</strong>(K1 43% · K7 86%).</span></div>
     </div>
   </div>
-  <div class="pageno">12 / 24</div>
+  <div class="pageno">13 / 25</div>
 </section>
 
-<!-- 13. 아이 설문 2 - 콘텐츠 난이도 -->
+<!-- 14. 아이 설문 2 - 콘텐츠 난이도 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ②</span>
@@ -1368,10 +1387,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>퀴즈를 <strong>어렵다고 답한 아이는 0명</strong>이고 최고 레벨 <strong>K7도 4명이 쉽다</strong>고 했다. 반면 <strong>혼자 읽기만 레벨 격차</strong>가 뚜렷하다(K1 57% · K7 86%).</span></div>
     </div>
   </div>
-  <div class="pageno">13 / 24</div>
+  <div class="pageno">14 / 25</div>
 </section>
 
-<!-- 14. 아이 설문 3 - 선호 활동 -->
+<!-- 15. 아이 설문 3 - 선호 활동 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ③</span>
@@ -1414,10 +1433,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>상위 두 활동은 <strong>별빙고(14명)</strong>와 <strong>어휘 챌린지(11명)</strong>다. <strong>K1만 나만의 문장 수집이 1위</strong>이며, 재독 동기는 <strong>72%</strong>다.</span></div>
     </div>
   </div>
-  <div class="pageno">14 / 24</div>
+  <div class="pageno">15 / 25</div>
 </section>
 
-<!-- 15. 간지 — 오픈 전 적용 -->
+<!-- 16. 간지 — 오픈 전 적용 -->
 <section class="slide">
   <div class="inner divider">
     <span class="dvkicker">오픈 전 적용 · 3건</span>
@@ -1429,10 +1448,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>KRS 도서관</i>
     </div>
   </div>
-  <div class="pageno">15 / 24</div>
+  <div class="pageno">16 / 25</div>
 </section>
 
-<!-- 16. 오픈 전 1 - AI 추천픽 -->
+<!-- 17. 오픈 전 1 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 전 적용 · AI 추천픽</span>
@@ -1483,10 +1502,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">16 / 24</div>
+  <div class="pageno">17 / 25</div>
 </section>
 
-<!-- 17. 오픈 전 2 - 별빙고 -->
+<!-- 18. 오픈 전 2 - 별빙고 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
@@ -1533,10 +1552,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">17 / 24</div>
+  <div class="pageno">18 / 25</div>
 </section>
 
-<!-- 18. 오픈 전 3 - KRS 도서관 -->
+<!-- 19. 오픈 전 3 - KRS 도서관 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 오픈 전 적용 · KRS 도서관</span>
@@ -1576,10 +1595,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">18 / 24</div>
+  <div class="pageno">19 / 25</div>
 </section>
 
-<!-- 19. 간지 — 오픈 후 고도화 -->
+<!-- 20. 간지 — 오픈 후 고도화 -->
 <section class="slide">
   <div class="inner divider late">
     <span class="dvkicker">오픈 후 고도화 · 3건</span>
@@ -1591,10 +1610,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>목차 활동 다양화</i>
     </div>
   </div>
-  <div class="pageno">19 / 24</div>
+  <div class="pageno">20 / 25</div>
 </section>
 
-<!-- 20. 오픈 후 1 - TTS 읽기 지원 -->
+<!-- 21. 오픈 후 1 - TTS 읽기 지원 -->
 <section class="slide">
   <div class="inner">
     <div class="seclead"><i></i>오픈 후 고도화 · 설계·개발 동반 3건</div>
@@ -1651,10 +1670,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">20 / 24</div>
+  <div class="pageno">21 / 25</div>
 </section>
 
-<!-- 21. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
+<!-- 22. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
@@ -1700,10 +1719,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">21 / 24</div>
+  <div class="pageno">22 / 25</div>
 </section>
 
-<!-- 22. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
+<!-- 23. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
@@ -1750,10 +1769,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">22 / 24</div>
+  <div class="pageno">23 / 25</div>
 </section>
 
-<!-- 23. 오픈 후 3 - 목차 활동 다양화 -->
+<!-- 24. 오픈 후 3 - 목차 활동 다양화 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 학습 분량 · 활동 다양화</span>
@@ -1821,10 +1840,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">23 / 24</div>
+  <div class="pageno">24 / 25</div>
 </section>
 
-<!-- 24. 종합 -->
+<!-- 25. 종합 -->
 <section class="slide">
   <div class="inner closing">
     <span class="dvkicker">KRS 플랫폼 2차 파일럿 · 마무리</span>
@@ -1842,7 +1861,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <p class="clsign">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br /><strong>오픈까지 잘 마무리하겠습니다.</strong></p>
     <div class="clfoot">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">24 / 24</div>
+  <div class="pageno">25 / 25</div>
 </section>
 
 
