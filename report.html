@@ -368,7 +368,9 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .mockbar{display:flex;align-items:center;gap:.45em;background:#1E293B;padding:.5em .8em}
 .mockbar s{width:.5em;height:.5em;border-radius:50%;background:#475569;display:block}
 .mockbar b{margin-left:.35em;font-size:.74em;font-weight:800;color:#94A3B8}
-.mockhero{position:relative;overflow:hidden;display:flex;align-items:center;gap:.85em;padding:.9em 1em;
+.mockbody{display:grid;grid-template-columns:1.02fr 1fr}
+.mockhero{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
+  gap:.5em;padding:1.3em 1.05em 1.5em;
   background:linear-gradient(120deg,#1E3A8A 0%,#2563EB 35%,#3B82F6 55%,#1E40AF 100%);
   background-size:230% 100%;animation:heroPan 14s ease-in-out infinite}
 @keyframes heroPan{0%,100%{background-position:0% 50%} 50%{background-position:100% 50%}}
@@ -384,28 +386,33 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .mockplay i{display:block;height:100%;width:0;background:#93C5FD;border-radius:0 99px 99px 0;
   animation:playbar 14s linear infinite}
 @keyframes playbar{0%{width:0} 92%,100%{width:100%}}
-.mockchar{position:relative;z-index:1;flex:0 0 auto;width:3.1em;height:3.1em;border-radius:.7em;
+.mockchar{position:relative;z-index:1;align-self:flex-start;width:3em;height:3em;border-radius:.7em;
   background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.45);
-  display:flex;align-items:center;justify-content:center;font-size:1.6em;
+  display:flex;align-items:center;justify-content:center;font-size:1.55em;
   animation:charBob 3.6s ease-in-out infinite}
 @keyframes charBob{0%,100%{transform:translateY(0) rotate(-2.5deg)} 50%{transform:translateY(-.14em) rotate(2.5deg)}}
 .mockhero u{display:block;text-decoration:none;font-size:.68em;font-weight:800;letter-spacing:.06em;
-  color:#BFDBFE;margin-bottom:.15em}
-.mockhero strong{display:block;font-size:.98em;font-weight:800;color:#fff;line-height:1.3;margin-bottom:.18em}
-.mockhero span{display:block;font-size:.72em;font-weight:700;color:#DBEAFE}
-.eplist{padding:.7em .8em .8em;display:flex;flex-direction:column;gap:.42em}
-.ep{display:flex;align-items:center;gap:.7em;background:#1E293B;border:1.5px solid #334155;
-  border-radius:.5em;padding:.5em .7em}
+  color:#BFDBFE;margin-bottom:.18em}
+.mockhero strong{display:block;font-size:.95em;font-weight:800;color:#fff;line-height:1.32;margin-bottom:.24em}
+.mockhero span{display:block;font-size:.7em;font-weight:700;color:#DBEAFE;line-height:1.4}
+.mockcta{position:relative;z-index:1;align-self:flex-start;display:inline-flex !important;
+  align-items:center;margin-top:.55em;font-size:.72em !important;font-weight:800;
+  color:#0F172A !important;background:#93C5FD;border-radius:99px;padding:.42em .85em;
+  box-shadow:0 .16em 0 rgba(15,23,42,.3)}
+.eplist{padding:.95em .85em 1.05em;display:flex;flex-direction:column;gap:.44em;background:#0F172A}
+.eptitle{font-size:.68em;font-weight:800;letter-spacing:.06em;color:#64748B;margin-bottom:.1em}
+.ep{display:flex;align-items:center;gap:.55em;background:#1E293B;border:1.5px solid #334155;
+  border-radius:.5em;padding:.45em .6em}
 .ep.now{background:#1D3A6E;border-color:#3B82F6}
-.ep>b{flex:0 0 auto;font-size:.74em;font-weight:800;color:#94A3B8;min-width:2.1em}
+.ep>b{flex:0 0 auto;font-size:.7em;font-weight:800;color:#94A3B8;min-width:1.9em}
 .ep.now>b{color:#93C5FD}
 .ep>div{flex:1;min-width:0}
-.ep strong{display:block;font-size:.8em;font-weight:800;color:#E2E8F0;line-height:1.3}
+.ep strong{display:block;font-size:.75em;font-weight:800;color:#E2E8F0;line-height:1.3}
 .ep.now strong{color:#fff}
-.ep span{display:block;font-size:.7em;font-weight:700;color:#94A3B8;margin-top:.1em}
+.ep span{display:block;font-size:.66em;font-weight:700;color:#94A3B8;margin-top:.08em}
 .ep.now span{color:#BFDBFE}
-.ep>i{flex:0 0 auto;font-style:normal;font-size:.72em;font-weight:800;
-  border-radius:99px;padding:.3em .62em;white-space:nowrap}
+.ep>i{flex:0 0 auto;font-style:normal;font-size:.68em;font-weight:800;
+  border-radius:99px;padding:.26em .5em;white-space:nowrap}
 .ep>i.play{color:#0F172A;background:#93C5FD}
 .ep>i.lock{color:#94A3B8;background:#334155}
 
@@ -689,7 +696,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h1>KRS 플랫폼 2차 파일럿<br />유저테스트 결과보고서</h1>
     <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">1 / 22</div>
+  <div class="pageno">1 / 21</div>
 </section>
 
 <!-- 2. 조사 개요 (대시보드) -->
@@ -779,7 +786,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">2 / 22</div>
+  <div class="pageno">2 / 21</div>
 </section>
 
 <!-- 3. 검증 가설 -->
@@ -836,7 +843,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <p class="small" style="margin:0">각 가설의 판정은 위 <strong>검증 방법에 정의된 지표</strong>로만 산출하였다. H6은 <strong>도서관의 공간 목적 인지</strong> 기준으로 최신화된 가설을 적용하였다. 지표별 측정 결과는 11페이지 종합 판정에 정리하였다.</p>
     </div>
   </div>
-  <div class="pageno">3 / 22</div>
+  <div class="pageno">3 / 21</div>
 </section>
 
 <!-- 4. 종합 요약 -->
@@ -886,7 +893,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">4 / 22</div>
+  <div class="pageno">4 / 21</div>
 </section>
 
 <!-- 5. H1 -->
@@ -929,7 +936,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">5 / 22</div>
+  <div class="pageno">5 / 21</div>
 </section>
 
 <!-- 6. H2 -->
@@ -971,7 +978,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">6 / 22</div>
+  <div class="pageno">6 / 21</div>
 </section>
 
 <!-- 7. H3 -->
@@ -1012,7 +1019,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">7 / 22</div>
+  <div class="pageno">7 / 21</div>
 </section>
 
 <!-- 8. H4 -->
@@ -1037,10 +1044,10 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag ev">근거</span> 코어북을 언제 읽었는가 × 추천 도서 클릭</div>
           <table class="vmid">
             <tr><th>코어북 독서 시점</th><th class="num" style="width:4.6em">인원</th><th class="num" style="width:6em">추천도서<br />클릭</th><th class="num" style="width:4.6em">비율</th></tr>
-            <tr class="row-ok"><td>미리 읽고 옴<br /><span class="small">현장에서는 1권만 읽음</span></td><td class="num">5명</td><td class="num">4명</td><td class="num"><strong>80%</strong></td></tr>
+            <tr class="row-ok"><td>미리 읽고 옴</td><td class="num">5명</td><td class="num">4명</td><td class="num"><strong>80%</strong></td></tr>
             <tr class="row-todo"><td>현장에서 처음 읽음<br /><span class="small">2권을 연달아 읽음</span></td><td class="num">20명</td><td class="num">7명</td><td class="num"><strong>35%</strong></td></tr>
           </table>
-          <p class="note plain" style="margin:.7em 0 0">같은 화면을 보고도 <strong>클릭률이 2.3배 갈렸다.</strong> 차이를 만든 것은 추천의 설득력이 아니라 <strong>그 자리에서 읽은 책이 1권이냐 2권이냐</strong>였다.</p>
+          <p class="note plain" style="margin:.7em 0 0">같은 화면을 보고도 <strong>클릭률이 2.3배 갈렸다.</strong> 미리 읽고 온 아이도 <strong>훑어보기는 했지만</strong>, 차이를 만든 것은 <strong>그 자리에서 10~20분을 읽고 난 뒤 또 한 권을 펼칠 여력</strong>이었다.</p>
         </div>
         <div>
           <div class="colhead"><span class="ctag rd">해석</span> 거부가 아니라 체력의 문제였다</div>
@@ -1054,7 +1061,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">8 / 22</div>
+  <div class="pageno">8 / 21</div>
 </section>
 
 <!-- 9. H5 -->
@@ -1099,7 +1106,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">9 / 22</div>
+  <div class="pageno">9 / 21</div>
 </section>
 
 <!-- 10. H6 -->
@@ -1141,7 +1148,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">10 / 22</div>
+  <div class="pageno">10 / 21</div>
 </section>
 
 <!-- 11. 종합 판정 -->
@@ -1171,10 +1178,11 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">11 / 22</div>
+  <div class="pageno">11 / 21</div>
 </section>
 
-<!-- 12. 인사이트 총괄 -->
+<!-- ===== [보류] 인사이트 총괄 페이지 — 필요 시 아래 주석을 해제하세요 =====
+<!~~ 12. 인사이트 총괄 ~~>
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">인사이트</span>
@@ -1238,10 +1246,12 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">구분 기준</span> <span><strong>오픈 전 3건</strong>은 화면의 표현·배치 조정이므로 이번 개발 회차에 반영 가능하다. <strong>오픈 후 3건</strong>은 기능 신설과 커리큘럼 재편이 따르므로 <strong>별도 일정과 리소스 검토</strong>가 필요하다.</span></div>
     </div>
   </div>
-  <div class="pageno">12 / 22</div>
+  <div class="pageno">12 / 21</div>
 </section>
 
-<!-- 13. 간지 — 오픈 전 적용 -->
+===== [보류] 끝 ===== -->
+
+<!-- 12. 간지 — 오픈 전 적용 -->
 <section class="slide">
   <div class="inner divider">
     <span class="dvkicker">오픈 전 적용 · 3건</span>
@@ -1253,10 +1263,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>KRS 도서관</i>
     </div>
   </div>
-  <div class="pageno">13 / 22</div>
+  <div class="pageno">12 / 21</div>
 </section>
 
-<!-- 14. 오픈 전 1 - AI 추천픽 -->
+<!-- 13. 오픈 전 1 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 전 적용 · AI 추천픽</span>
@@ -1307,10 +1317,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">14 / 22</div>
+  <div class="pageno">13 / 21</div>
 </section>
 
-<!-- 15. 오픈 전 2 - 별빙고 -->
+<!-- 14. 오픈 전 2 - 별빙고 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
@@ -1357,10 +1367,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">15 / 22</div>
+  <div class="pageno">14 / 21</div>
 </section>
 
-<!-- 16. 오픈 전 3 - KRS 도서관 -->
+<!-- 15. 오픈 전 3 - KRS 도서관 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 오픈 전 적용 · KRS 도서관</span>
@@ -1400,10 +1410,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">16 / 22</div>
+  <div class="pageno">15 / 21</div>
 </section>
 
-<!-- 17. 간지 — 오픈 후 고도화 -->
+<!-- 16. 간지 — 오픈 후 고도화 -->
 <section class="slide">
   <div class="inner divider late">
     <span class="dvkicker">오픈 후 고도화 · 3건</span>
@@ -1415,10 +1425,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>목차 활동 다양화</i>
     </div>
   </div>
-  <div class="pageno">17 / 22</div>
+  <div class="pageno">16 / 21</div>
 </section>
 
-<!-- 18. 오픈 후 1 - TTS 읽기 지원 -->
+<!-- 17. 오픈 후 1 - TTS 읽기 지원 -->
 <section class="slide">
   <div class="inner">
     <div class="seclead"><i></i>오픈 후 고도화 · 설계·개발 동반 3건</div>
@@ -1475,10 +1485,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">18 / 22</div>
+  <div class="pageno">17 / 21</div>
 </section>
 
-<!-- 19. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
+<!-- 18. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
@@ -1524,10 +1534,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">19 / 22</div>
+  <div class="pageno">18 / 21</div>
 </section>
 
-<!-- 20. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
+<!-- 19. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
@@ -1538,19 +1548,24 @@ ul.clean li::marker{color:var(--ink-4)}
           <div class="colhead"><span class="ctag rd">예시</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
           <div class="mock">
             <div class="mockbar"><s></s><s></s><s></s><b>기질카드 · 나만의 공간</b></div>
-            <div class="mockhero">
-              <div class="mockchar">🐯</div>
-              <div>
-                <u>직관적 행동파</u>
-                <strong>먼저 부딪혀 보는 너를 위한 이야기</strong>
-                <span>진단평가 결과로 만들어진 나만의 공간</span>
+            <div class="mockbody">
+              <div class="mockhero">
+                <div class="mockchar">🐯</div>
+                <div>
+                  <u>직관적 행동파</u>
+                  <strong>먼저 부딪혀 보는<br />너를 위한 이야기</strong>
+                  <span>진단평가 결과로 만들어진 나만의 공간</span>
+                </div>
+                <span class="mockcta">▶ 1화 미리보기</span>
+                <div class="mockplay"><i></i></div>
               </div>
-              <div class="mockplay"><i></i></div>
-            </div>
-            <div class="eplist">
-              <div class="ep now"><b>1화</b><div><strong>겁 없이 첫발 내딛기</strong><span>지금 바로 볼 수 있어요</span></div><i class="play">▶ 미리보기</i></div>
-              <div class="ep"><b>2화</b><div><strong>실수해도 괜찮아</strong><span>2026년 11월 1일 공개 예정</span></div><i class="lock">🔒</i></div>
-              <div class="ep"><b>3화</b><div><strong>끝까지 해내는 힘</strong><span>2026년 12월 1일 공개 예정</span></div><i class="lock">🔒</i></div>
+              <div class="eplist">
+                <div class="eptitle">전체 회차</div>
+                <div class="ep now"><b>1화</b><div><strong>겁 없이 첫발 내딛기</strong><span>지금 바로 볼 수 있어요</span></div><i class="play">▶</i></div>
+                <div class="ep"><b>2화</b><div><strong>실수해도 괜찮아</strong><span>2026년 11월 1일 공개</span></div><i class="lock">🔒</i></div>
+                <div class="ep"><b>3화</b><div><strong>끝까지 해내는 힘</strong><span>2026년 12월 1일 공개</span></div><i class="lock">🔒</i></div>
+                <div class="ep"><b>4화</b><div><strong>다음 이야기</strong><span>2027년 1월 공개</span></div><i class="lock">🔒</i></div>
+              </div>
             </div>
           </div>
           <p class="rcap"><strong>1화는 지금 열고</strong>, 다음 화는 <strong>공개 예정으로 남겨</strong> 다시 올 이유를 만든다.</p>
@@ -1569,10 +1584,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">20 / 22</div>
+  <div class="pageno">19 / 21</div>
 </section>
 
-<!-- 21. 오픈 후 3 - 목차 활동 다양화 -->
+<!-- 20. 오픈 후 3 - 목차 활동 다양화 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 학습 분량 · 활동 다양화</span>
@@ -1640,10 +1655,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">21 / 22</div>
+  <div class="pageno">20 / 21</div>
 </section>
 
-<!-- 22. 종합 -->
+<!-- 21. 종합 -->
 <section class="slide">
   <div class="inner closing">
     <span class="dvkicker">KRS 플랫폼 2차 파일럿 · 마무리</span>
@@ -1661,7 +1676,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <p class="clsign">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br /><strong>오픈까지 잘 마무리하겠습니다.</strong></p>
     <div class="clfoot">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">22 / 22</div>
+  <div class="pageno">21 / 21</div>
 </section>
 
 
