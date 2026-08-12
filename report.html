@@ -500,8 +500,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   border-radius:.35em;padding:.28em .55em;letter-spacing:.01em}
 .qhead span{font-size:.86em;font-weight:800;color:var(--ink);line-height:1.4;word-break:keep-all}
 .qring{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;margin:.2em 0 .5em}
-.qring .ring{width:8.4em;height:8.4em}
-.qring .hole b{font-size:1.2em}
+.qring .ring{width:11.8em;height:11.8em}
+.ring.seg3{background:conic-gradient(#1D4ED8 0 var(--a),#A6C8FC var(--a) var(--b),#E5E8EB var(--b) 100%)}
+.qring .hole b{font-size:1.45em}
+.qring .hole em{font-size:.6em}
 .qleg{display:flex;flex-direction:column;gap:.3em;font-size:.76em;font-weight:700;color:var(--ink-2)}
 .qleg span{display:flex;align-items:center;gap:.4em}
 .qleg i{flex:0 0 auto;width:.7em;height:.7em;border-radius:.18em;display:block}
@@ -1358,34 +1360,34 @@ ul.clean li::marker{color:var(--ink-4)}
         <div class="qcard">
           <div class="qhead"><b>Q1</b><span>오늘 이야기도 읽고 여러 활동도<br />해봤는데, 어땠어요?</span></div>
           <div class="qring">
-            <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>재미있었어요</em></div></div>
+            <div class="ring seg3" style="--a:84%;--b:96%"><div class="hole"><b>84%</b><em>재미있었어요</em></div></div>
           </div>
           <div class="qleg">
-            <span><i style="background:var(--accent)"></i>재미있었어요 <b>21명</b></span>
+            <span><i style="background:#1D4ED8"></i>재미있었어요 <b>21명</b></span>
             <span><i style="background:#A6C8FC"></i>그냥 그랬어요 <b>3명</b></span>
-            <span><i style="background:var(--line)"></i>재미없었어요 <b>1명</b></span>
-          </div>
-        </div>
-        <div class="qcard">
-          <div class="qhead"><b>Q3</b><span>오늘 한 활동처럼<br />또 해보고 싶나요?</span></div>
-          <div class="qring">
-            <div class="ring" style="--p:64%"><div class="hole"><b>64%</b><em>하고 싶어요</em></div></div>
-          </div>
-          <div class="qleg">
-            <span><i style="background:var(--accent)"></i>하고 싶어요 <b>16명</b></span>
-            <span><i style="background:#A6C8FC"></i>잘 모르겠어요 <b>6명</b></span>
-            <span><i style="background:var(--line)"></i>하고 싶지 않아요 <b>3명</b></span>
+            <span><i style="background:#E5E8EB"></i>재미없었어요 <b>1명</b></span>
           </div>
         </div>
         <div class="qcard">
           <div class="qhead"><b>Q2</b><span>오늘 한 활동은 많다고 느꼈나요,<br />적다고 느꼈나요?</span></div>
           <div class="qring">
-            <div class="ring" style="--p:48%"><div class="hole"><b>48%</b><em>딱 좋았어요</em></div></div>
+            <div class="ring seg3" style="--a:48%;--b:84%"><div class="hole"><b>48%</b><em>딱 좋았어요</em></div></div>
           </div>
           <div class="qleg">
-            <span><i style="background:var(--accent)"></i>딱 좋았어요 <b>12명</b></span>
-            <span><i style="background:#F0B429"></i>조금 부족했어요 <b>9명</b></span>
-            <span><i style="background:var(--line)"></i>너무 많았어요 <b>4명</b></span>
+            <span><i style="background:#1D4ED8"></i>딱 좋았어요 <b>12명</b></span>
+            <span><i style="background:#A6C8FC"></i>조금 부족했어요 <b>9명</b></span>
+            <span><i style="background:#E5E8EB"></i>너무 많았어요 <b>4명</b></span>
+          </div>
+        </div>
+        <div class="qcard">
+          <div class="qhead"><b>Q3</b><span>오늘 한 활동처럼<br />또 해보고 싶나요?</span></div>
+          <div class="qring">
+            <div class="ring seg3" style="--a:64%;--b:88%"><div class="hole"><b>64%</b><em>하고 싶어요</em></div></div>
+          </div>
+          <div class="qleg">
+            <span><i style="background:#1D4ED8"></i>하고 싶어요 <b>16명</b></span>
+            <span><i style="background:#A6C8FC"></i>잘 모르겠어요 <b>6명</b></span>
+            <span><i style="background:#E5E8EB"></i>하고 싶지 않아요 <b>3명</b></span>
           </div>
         </div>
       </div>
@@ -1418,25 +1420,25 @@ ul.clean li::marker{color:var(--ink-4)}
         <div class="lvgrp">
           <div class="colhead"><span class="ctag ev">지표</span> 레벨별 재방문 의향 <span class="small">하고 싶어요</span><span class="gapchip">K1 → K7 <b>43%p</b></span></div>
           <div class="trow"><div class="tlab"><b class="lvb lv1">K1</b><span>7명</span></div>
-            <div class="tstack"><i style="width:43%;background:#2563EB">하고 싶어요 3명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2명</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
+            <div class="tstack"><i style="width:43%;background:#1D4ED8">하고 싶어요 3명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2명</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
             <div class="tval">43%</div></div>
           <div class="trow"><div class="tlab"><b class="lvb lv3">K3</b><span>11명</span></div>
-            <div class="tstack"><i style="width:64%;background:#2563EB">하고 싶어요 7명</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3명</i><i style="width:9%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
+            <div class="tstack"><i style="width:64%;background:#1D4ED8">하고 싶어요 7명</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3명</i><i style="width:9%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">64%</div></div>
           <div class="trow"><div class="tlab"><b class="lvb lv7">K7</b><span>7명</span></div>
-            <div class="tstack"><i style="width:86%;background:#2563EB">하고 싶어요 6명</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1명</i></div>
+            <div class="tstack"><i style="width:86%;background:#1D4ED8">하고 싶어요 6명</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1명</i></div>
             <div class="tval">86%</div></div>
         </div>
         <div class="lvgrp">
           <div class="colhead"><span class="ctag ev">지표</span> 레벨별 분량 체감 <span class="small">딱 좋았어요</span><span class="gapchip">K1 → K7 <b>14%p</b></span></div>
           <div class="trow"><div class="tlab"><b class="lvb lv1">K1</b><span>7명</span></div>
-            <div class="tstack"><i style="width:43%;background:#4B8DF8">딱 좋았어요 3명</i><i style="width:43%;background:#F0B429">조금 부족 3명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
+            <div class="tstack"><i style="width:43%;background:#1D4ED8">딱 좋았어요 3명</i><i style="width:43%;background:#A6C8FC;color:var(--ink-2)">조금 부족 3명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">43%</div></div>
           <div class="trow"><div class="tlab"><b class="lvb lv3">K3</b><span>11명</span></div>
-            <div class="tstack"><i style="width:45%;background:#4B8DF8">딱 좋았어요 5명</i><i style="width:37%;background:#F0B429">조금 부족 4명</i><i style="width:18%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
+            <div class="tstack"><i style="width:45%;background:#1D4ED8">딱 좋았어요 5명</i><i style="width:37%;background:#A6C8FC;color:var(--ink-2)">조금 부족 4명</i><i style="width:18%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
             <div class="tval">45%</div></div>
           <div class="trow"><div class="tlab"><b class="lvb lv7">K7</b><span>7명</span></div>
-            <div class="tstack"><i style="width:57%;background:#4B8DF8">딱 좋았어요 4명</i><i style="width:29%;background:#F0B429">조금 부족 2명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
+            <div class="tstack"><i style="width:57%;background:#1D4ED8">딱 좋았어요 4명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">조금 부족 2명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">57%</div></div>
         </div>
       </div>
@@ -1664,7 +1666,7 @@ ul.clean li::marker{color:var(--ink-4)}
             </div>
             <div class="xf">
               <img class="shot" src="images/bingo2.jpg" alt="적용 후 별빙고 화면 — 빙고판 배경에 시즌 테마가 적용되고 별 획득 시점에 이펙트가 더해진다" />
-              <span class="hilite" style="left:21.1%;top:23.5%;width:51.1%;height:47.4%" data-t="빙고판 배경 + 테마변경"></span>
+              <span class="hilite" style="left:0.7%;top:1.1%;width:98.6%;height:97.8%" data-t="빙고판 배경 + 테마변경"></span>
             </div>
           </div>
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
