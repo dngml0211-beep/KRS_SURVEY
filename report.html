@@ -506,11 +506,25 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .qleg span{display:flex;align-items:center;gap:.4em}
 .qleg i{flex:0 0 auto;width:.7em;height:.7em;border-radius:.18em;display:block}
 .qleg b{margin-left:auto;font-weight:800;color:var(--ink)}
-/* 레벨별 3단 (전폭 막대) */
-.lvset{display:flex;flex-direction:column;gap:.9em;flex:1;min-height:0}
-.lvgrp{display:flex;flex-direction:column}
-.lvgrp .colhead{margin-bottom:.45em}
-.lvgrp .trow{margin-bottom:.4em}
+/* 레벨별 3단 */
+.lvset{display:flex;flex-direction:column;gap:.7em;flex:1;min-height:0}
+.lvgrp{display:flex;flex-direction:column;max-width:78%}
+.lvgrp .colhead{margin-bottom:.4em}
+.lvgrp .trow{margin-bottom:.4em;grid-template-columns:6.4em 1fr 4.2em}
+.lvgrp .trow:last-child{margin-bottom:0}
+.lvgrp .tlab{display:flex;align-items:center;gap:.45em;text-align:left}
+/* 레벨 배지 — 낮을수록 옅고 높을수록 진하게 */
+.lvb{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  min-width:2.5em;padding:.24em .5em;border-radius:.4em;
+  font-size:.86em;font-weight:800;letter-spacing:.01em;color:#fff}
+.lvb.lv1{background:#A6C8FC;color:#1E3A8A}
+.lvb.lv3{background:#4B8DF8}
+.lvb.lv7{background:#1D4ED8}
+.lvgrp .tlab span{font-size:.82em;font-weight:700;color:var(--ink-3)}
+/* 레벨 간 격차 칩 */
+.gapchip{margin-left:auto;flex:0 0 auto;font-size:.72em;font-weight:700;color:var(--ink-3);
+  background:var(--line-2);border:1.5px solid var(--line);border-radius:99px;padding:.26em .7em}
+.gapchip b{font-weight:800;color:var(--accent-strong);margin-left:.15em}
 
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
@@ -1390,39 +1404,39 @@ ul.clean li::marker{color:var(--ink-4)}
     <div class="body">
       <div class="lvset">
         <div class="lvgrp">
-          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 만족도 <span class="small">재미있었어요</span></div>
-          <div class="trow"><div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:71%;background:#1D4ED8">재미있었어요 5명</i><i style="width:15%;background:#A6C8FC;color:var(--ink-2)">1</i><i style="width:14%;background:#E5E8EB"></i></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 만족도 <span class="small">재미있었어요</span><span class="gapchip">K1 → K7 <b>29%p</b></span></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv1">K1</b><span>7명</span></div>
+            <div class="tstack"><i style="width:71%;background:#1D4ED8">재미있었어요 5명</i><i style="width:15%;background:#A6C8FC;color:var(--ink-2)">1명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">71%</div></div>
-          <div class="trow"><div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack"><i style="width:82%;background:#1D4ED8">재미있었어요 9명</i><i style="width:18%;background:#A6C8FC;color:var(--ink-2)">2</i></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv3">K3</b><span>11명</span></div>
+            <div class="tstack"><i style="width:82%;background:#1D4ED8">재미있었어요 9명</i><i style="width:18%;background:#A6C8FC;color:var(--ink-2)">2명</i></div>
             <div class="tval">82%</div></div>
-          <div class="trow" style="margin-bottom:0"><div class="tlab">K7 <span class="small">7명</span></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv7">K7</b><span>7명</span></div>
             <div class="tstack"><i style="width:100%;background:#1D4ED8">재미있었어요 7명 · 전원</i></div>
             <div class="tval">100%</div></div>
         </div>
         <div class="lvgrp">
-          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 재방문 의향 <span class="small">하고 싶어요</span></div>
-          <div class="trow"><div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:43%;background:#2563EB">하고 싶어요 3명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2</i></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 재방문 의향 <span class="small">하고 싶어요</span><span class="gapchip">K1 → K7 <b>43%p</b></span></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv1">K1</b><span>7명</span></div>
+            <div class="tstack"><i style="width:43%;background:#2563EB">하고 싶어요 3명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2명</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
             <div class="tval">43%</div></div>
-          <div class="trow"><div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack"><i style="width:64%;background:#2563EB">하고 싶어요 7명</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3</i><i style="width:9%;background:#E5E8EB"></i></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv3">K3</b><span>11명</span></div>
+            <div class="tstack"><i style="width:64%;background:#2563EB">하고 싶어요 7명</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3명</i><i style="width:9%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">64%</div></div>
-          <div class="trow" style="margin-bottom:0"><div class="tlab">K7 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:86%;background:#2563EB">하고 싶어요 6명</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1</i></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv7">K7</b><span>7명</span></div>
+            <div class="tstack"><i style="width:86%;background:#2563EB">하고 싶어요 6명</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1명</i></div>
             <div class="tval">86%</div></div>
         </div>
         <div class="lvgrp">
-          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 분량 체감 <span class="small">딱 좋았어요</span></div>
-          <div class="trow"><div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:43%;background:#4B8DF8">딱 좋았어요 3명</i><i style="width:43%;background:#F0B429">조금 부족 3명</i><i style="width:14%;background:#E5E8EB"></i></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 분량 체감 <span class="small">딱 좋았어요</span><span class="gapchip">K1 → K7 <b>14%p</b></span></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv1">K1</b><span>7명</span></div>
+            <div class="tstack"><i style="width:43%;background:#4B8DF8">딱 좋았어요 3명</i><i style="width:43%;background:#F0B429">조금 부족 3명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">43%</div></div>
-          <div class="trow"><div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack"><i style="width:45%;background:#4B8DF8">딱 좋았어요 5명</i><i style="width:37%;background:#F0B429">조금 부족 4명</i><i style="width:18%;background:#E5E8EB;color:var(--ink-3)">2</i></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv3">K3</b><span>11명</span></div>
+            <div class="tstack"><i style="width:45%;background:#4B8DF8">딱 좋았어요 5명</i><i style="width:37%;background:#F0B429">조금 부족 4명</i><i style="width:18%;background:#E5E8EB;color:var(--ink-3)">2명</i></div>
             <div class="tval">45%</div></div>
-          <div class="trow" style="margin-bottom:0"><div class="tlab">K7 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:57%;background:#4B8DF8">딱 좋았어요 4명</i><i style="width:29%;background:#F0B429">조금 부족 2명</i><i style="width:14%;background:#E5E8EB"></i></div>
+          <div class="trow"><div class="tlab"><b class="lvb lv7">K7</b><span>7명</span></div>
+            <div class="tstack"><i style="width:57%;background:#4B8DF8">딱 좋았어요 4명</i><i style="width:29%;background:#F0B429">조금 부족 2명</i><i style="width:14%;background:#E5E8EB;color:var(--ink-3)">1명</i></div>
             <div class="tval">57%</div></div>
         </div>
       </div>
