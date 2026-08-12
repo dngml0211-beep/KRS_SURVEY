@@ -467,6 +467,25 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .clsign strong{color:var(--accent-strong)}
 .clfoot{margin-top:1.6em;text-align:center;font-size:.85em;font-weight:700;color:var(--ink-3)}
 
+/* 레벨별 이야기 선호 */
+.storyset{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin-top:.7em}
+.stg{background:var(--line-2);border:1.5px solid var(--line);border-radius:.6em;padding:.9em .8em}
+.stg>u{display:block;text-decoration:none;font-size:.82em;font-weight:800;color:var(--accent-strong);margin-bottom:.75em}
+.stg>u span{color:var(--ink-3);font-weight:700;margin-left:.2em}
+.stbar{position:relative;display:flex;align-items:center;gap:.3em;margin-bottom:.72em}
+.stbar b{flex:1;min-width:0;font-size:.79em;font-weight:700;color:var(--ink-2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stbar i{position:absolute;left:0;bottom:-.22em;height:.24em;border-radius:99px;background:var(--accent)}
+.stbar s{flex:0 0 auto;text-decoration:none;font-size:.79em;font-weight:800;color:var(--accent-strong)}
+.hardset{display:flex;flex-wrap:wrap;gap:.35em;margin-top:.5em}
+.hd{display:inline-flex;align-items:center;gap:.32em;font-size:.82em;font-weight:700;color:var(--ink-2);
+  background:#FFF8E8;border:1.5px solid #F0DFB0;border-radius:99px;padding:.44em .85em}
+.hd u{text-decoration:none;font-size:.86em;font-weight:800;color:#9A5B12}
+.hd b{font-weight:800;color:#9A5B12}
+.donuts.sm .ring{width:6.6em;height:6.6em}
+.donuts.sm .hole b{font-size:1.05em}
+.donuts.sm .dname{font-size:.76em}
+
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
 .divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
@@ -1333,58 +1352,77 @@ ul.clean li::marker{color:var(--ink-4)}
   <div class="pageno">13 / 25</div>
 </section>
 
-<!-- 14. 아이 설문 2 - 콘텐츠 난이도 -->
+<!-- 14. 아이 설문 2 - 코어 리딩북과 난이도 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ②</span>
-    <h2>콘텐츠 난이도 <span class="small" style="font-weight:700">— 혼자 읽기 · 퀴즈 · 읽기 미션</span></h2>
+    <h2>코어 리딩북과 난이도 <span class="small" style="font-weight:700">— 이야기 선호 · 퀴즈 · 삽화</span></h2>
     <div class="body">
-      <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
-        <div class="kpit hl"><div class="k">혼자 읽기 자립</div><div class="v">72<small>%</small></div><div class="s">충분했어요 18명</div></div>
-        <div class="kpit"><div class="k">퀴즈 쉬웠다</div><div class="v">72<small>%</small></div><div class="s">어려웠다 0명</div></div>
-        <div class="kpit"><div class="k">읽기 미션 도움</div><div class="v">72<small>%</small></div><div class="s">도움 됐어요 18명</div></div>
-        <div class="kpit"><div class="k">삽화 선호</div><div class="v">84<small>%</small></div><div class="s">좋았어요 21명</div></div>
-      </div>
-      <div class="grid2 fill stretch" style="margin-top:.2em">
+      <div class="grid2 fill stretch">
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 혼자서 읽을 수 있었나 <span class="small">레벨별</span></div>
-          <div class="trow lg" style="margin-top:.8em;margin-bottom:.9em">
-            <div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack" style="height:3.6em"><i style="width:57%;background:#1D4ED8">충분했어요 4</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">도움 2</i><i style="width:14%;background:#EF4444">1</i></div>
-            <div class="tval">57%</div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 가장 재밌던 이야기 <span class="small">1인 1개</span></div>
+          <div class="storyset">
+            <div class="stg">
+              <u>K1 <span>7명</span></u>
+              <div class="stbar"><b>숲속의 하루</b><i style="width:43%"></i><s>3</s></div>
+              <div class="stbar"><b>오르락내리락</b><i style="width:29%"></i><s>2</s></div>
+              <div class="stbar"><b>나무가 쿨쿨</b><i style="width:14%"></i><s>1</s></div>
+              <div class="stbar"><b>누구 똥?</b><i style="width:14%"></i><s>1</s></div>
+            </div>
+            <div class="stg">
+              <u>K3 <span>11명</span></u>
+              <div class="stbar"><b>용기 사탕</b><i style="width:55%"></i><s>6</s></div>
+              <div class="stbar"><b>달팽이가 나타났어요!</b><i style="width:18%"></i><s>2</s></div>
+              <div class="stbar"><b>쓰레기의 변신</b><i style="width:9%"></i><s>1</s></div>
+              <div class="stbar"><b>문해력 놀이터</b><i style="width:9%"></i><s>1</s></div>
+            </div>
+            <div class="stg">
+              <u>K7 <span>7명</span></u>
+              <div class="stbar"><b>페르세우스의 모험</b><i style="width:43%"></i><s>3</s></div>
+              <div class="stbar"><b>빙글빙글 지폐</b><i style="width:29%"></i><s>2</s></div>
+              <div class="stbar"><b>강물 위의 초능력자</b><i style="width:14%"></i><s>1</s></div>
+              <div class="stbar"><b>수상한 곰팡이</b><i style="width:14%"></i><s>1</s></div>
+            </div>
           </div>
-          <div class="trow lg" style="margin-bottom:.9em">
-            <div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack" style="height:3.6em"><i style="width:73%;background:#1D4ED8">충분했어요 8</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">도움 3</i></div>
-            <div class="tval">73%</div>
+          <div class="colhead" style="margin-top:.9em"><span class="ctag ev">지표</span> 어려웠다고 꼽힌 이야기 <span class="small">복수 선택 · 5명만 응답</span></div>
+          <div class="hardset">
+            <span class="hd"><u>K1</u>누구 똥? <b>1</b></span>
+            <span class="hd"><u>K1</u>숲속의 하루 <b>1</b></span>
+            <span class="hd"><u>K3</u>쓰레기의 변신 <b>2</b></span>
+            <span class="hd"><u>K3</u>문해력 놀이터 <b>1</b></span>
+            <span class="hd"><u>K7</u>연기가 솔솔 <b>1</b></span>
           </div>
-          <div class="trow lg" style="margin-bottom:.2em">
-            <div class="tlab">K7 <span class="small">7명</span></div>
-            <div class="tstack" style="height:3.6em"><i style="width:86%;background:#1D4ED8">충분했어요 6</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1</i></div>
-            <div class="tval">86%</div>
-          </div>
-          <p class="note plain" style="margin:1em 0 0"><strong>많이 어려웠다</strong>는 응답은 <strong>K1 1명</strong>뿐이다. 자립도는 레벨을 그대로 따라간다.</p>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 독후 퀴즈 난이도 <span class="small">전체 25명</span></div>
-          <div class="trow" style="margin-top:.7em;margin-bottom:.2em">
-            <div class="tlab">전체</div>
-            <div class="tstack"><i style="width:72%;background:#1D4ED8">쉬웠어요 18</i><i style="width:28%;background:#A6C8FC;color:var(--ink-2)">보통 7</i></div>
-            <div class="tval">0<small style="font-weight:700;color:var(--ink-3)">어려움</small></div>
+          <div class="colhead"><span class="ctag ev">지표</span> 독후 퀴즈 난이도 <span class="small">레벨별 · 쉬웠어요 비율</span></div>
+          <div class="donuts sm" style="justify-content:space-around;margin-top:.7em">
+            <div class="donut">
+              <div class="ring" style="--p:86%"><div class="hole"><b>86%</b><em>쉬웠어요</em></div></div>
+              <div class="dname">K1 <span class="small">6/7명</span></div>
+            </div>
+            <div class="donut">
+              <div class="ring" style="--p:73%"><div class="hole"><b>73%</b><em>쉬웠어요</em></div></div>
+              <div class="dname">K3 <span class="small">8/11명</span></div>
+            </div>
+            <div class="donut">
+              <div class="ring" style="--p:57%"><div class="hole"><b>57%</b><em>쉬웠어요</em></div></div>
+              <div class="dname">K7 <span class="small">4/7명</span></div>
+            </div>
           </div>
-          <div class="bars onwhite" style="margin-top:.7em">
-            <div class="bar-row"><div class="blabel">K1 쉬웠어요</div><div class="bar-track"><div class="bar-fill" style="width:86%;background:#7DAEFB"></div></div><div class="bar-val">6<small>/7명</small></div></div>
-            <div class="bar-row"><div class="blabel">K3 쉬웠어요</div><div class="bar-track"><div class="bar-fill" style="width:73%;background:#7DAEFB"></div></div><div class="bar-val">8<small>/11명</small></div></div>
-            <div class="bar-row"><div class="blabel">K7 쉬웠어요</div><div class="bar-track"><div class="bar-fill" style="width:57%;background:#7DAEFB"></div></div><div class="bar-val">4<small>/7명</small></div></div>
-          </div>
-          <div class="colhead" style="margin-top:1.1em"><span class="ctag ev">지표</span> 읽기 미션과 삽화 <span class="small">전체 25명</span></div>
-          <div class="bars onwhite" style="margin-top:.5em">
-            <div class="bar-row"><div class="blabel">읽기 미션이<br />도움 됐어요</div><div class="bar-track"><div class="bar-fill" style="width:72%;background:#2563EB"></div></div><div class="bar-val">18<small>명 · 72%</small></div></div>
-            <div class="bar-row"><div class="blabel">삽화가<br />좋았어요</div><div class="bar-track"><div class="bar-fill" style="width:84%;background:#2563EB"></div></div><div class="bar-val">21<small>명 · 84%</small></div></div>
+          <p class="note plain" style="margin:.8em 0 0">전 레벨을 통틀어 <strong>어려웠다는 응답은 0명</strong>이다. 레벨이 올라갈수록 쉽다는 답만 줄어든다.</p>
+          <div class="colhead" style="margin-top:1.1em"><span class="ctag ev">지표</span> 삽화 선호 <span class="small">전체 25명</span></div>
+          <div class="donuts sm" style="justify-content:center;margin-top:.7em">
+            <div class="donut">
+              <div class="ring" style="--p:84%"><div class="hole"><b>84%</b><em>좋았어요</em></div></div>
+              <div class="dname">책 속 그림</div>
+              <div class="dleg row">
+                <span><i style="background:var(--accent)"></i>좋았어요 21명</span>
+                <span><i style="background:var(--ink-4)"></i>그 외 4명</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>퀴즈를 <strong>어렵다고 답한 아이는 0명</strong>이고 최고 레벨 <strong>K7도 4명이 쉽다</strong>고 했다. 반면 <strong>혼자 읽기만 레벨 격차</strong>가 뚜렷하다(K1 57% · K7 86%).</span></div>
     </div>
   </div>
   <div class="pageno">14 / 25</div>
@@ -1430,7 +1468,6 @@ ul.clean li::marker{color:var(--ink-4)}
           <p class="note plain" style="margin:.9em 0 0">주관식 <strong>어려웠던 점</strong>은 25명 중 <strong>5명만 언급</strong>했고, 그중 <strong>3명이 읽기</strong>를 꼽았다.</p>
         </div>
       </div>
-      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>상위 두 활동은 <strong>별빙고(14명)</strong>와 <strong>어휘 챌린지(11명)</strong>다. <strong>K1만 나만의 문장 수집이 1위</strong>이며, 재독 동기는 <strong>72%</strong>다.</span></div>
     </div>
   </div>
   <div class="pageno">15 / 25</div>
@@ -1514,9 +1551,18 @@ ul.clean li::marker{color:var(--ink-4)}
       <div class="grid2 fill stretch" style="grid-template-columns:1.62fr 1fr">
         <div>
           <div class="colhead"><span class="ctag ev">화면</span> 별빙고 — 오늘의 도전</div>
-          <div class="shotwrap">
-            <img class="shot" src="images/bingo.jpg" alt="별빙고 화면 — 손가락이 가리키는 칸을 누르면 별이 나온다" />
-            <span class="hilite" style="left:40.3%;top:24.0%;width:15.0%;height:24.3%" data-t="별이 나오는 순간"></span>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab is-on" data-x="0">적용 전</button>
+            <button type="button" class="tab after" data-x="1">적용 후</button>
+          </div>
+          <div class="xfade fit tog">
+            <div class="xf is-on">
+              <img class="shot" src="images/bingo.jpg" alt="적용 전 별빙고 화면 — 칸을 눌러도 소리와 움직임이 없다" />
+              <span class="hilite" style="left:40.3%;top:24.0%;width:15.0%;height:24.3%" data-t="별이 나오는 순간"></span>
+            </div>
+            <div class="xf">
+              <img class="shot" src="images/bingo_after.jpg" alt="적용 후 별빙고 화면 — 별 획득 시점에 효과음과 이펙트가 더해진다" />
+            </div>
           </div>
           <div class="shotcap key"><b class="red">1</b><span>아이가 반응한 지점은 <strong>칸을 눌러 별이 나오는 순간</strong>이다. <strong>이 순간에 소리와 움직임이 없다.</strong></span></div>
         </div>
