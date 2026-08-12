@@ -357,6 +357,9 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .ro.is-on{display:flex}
 .ro em{font-style:normal;font-size:1.2em;line-height:1}
 .ro b{color:var(--accent-strong)}
+.ro b.hl{color:var(--ink);background:#C6F0A0;box-shadow:0 .12em 0 #86C95F;border-radius:.3em;padding:.06em .24em}
+/* ❓ 도구를 눌렀을 때 — 설명 대상 낱말에 연두색 형광펜 */
+.reader.ask .rtext i.ask{background:#C6F0A0;box-shadow:0 .12em 0 #86C95F;animation:none}
 /* 낭독 중일 때만 단어가 차례로 밝아짐 */
 .reader.reading .rtext i{animation:rhl 7.2s linear infinite;animation-delay:calc(var(--i) * .6s)}
 .wave{display:flex;align-items:center;gap:.16em;margin-left:.1em}
@@ -512,7 +515,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .lvset{display:flex;flex-direction:column;gap:.7em;flex:1;min-height:0}
 .lvgrp{display:flex;flex-direction:column}
 .lvgrp .colhead{margin-bottom:.4em}
-.lvgrp .trow{margin-bottom:.4em;grid-template-columns:6.6em 1fr 4.4em}
+/* 지표 헤더보다 한 단 안쪽으로 — K1·K3·K7이 헤더에 딸린 항목임을 보이게 */
+.lvgrp .trow{margin-bottom:.4em;grid-template-columns:6.6em 1fr 4.4em;padding-left:1.15em}
 .lvgrp .trow:last-child{margin-bottom:0}
 .lvgrp .tlab{display:flex;align-items:center;gap:.45em;text-align:left}
 /* 레벨 배지 — 낮을수록 옅고 높을수록 진하게 */
@@ -766,6 +770,7 @@ ul.clean li::marker{color:var(--ink-4)}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
   .rtext i{animation:none !important;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  .reader.ask .rtext i.ask{background:#C6F0A0;box-shadow:0 .12em 0 #86C95F}
   .wave s{animation:none !important}
   .reader.reading .rtext i{animation:none !important}
   .mockhero,.mockhero::after,.mockchar,.mockplay i{animation:none !important}
@@ -774,6 +779,7 @@ ul.clean li::marker{color:var(--ink-4)}
 @media (prefers-reduced-motion:reduce){
   .rtext i{animation:none;background:transparent;box-shadow:none}
   .rtext i.pk{background:#FFDE7A;box-shadow:0 .12em 0 #F0B429}
+  .reader.ask .rtext i.ask{background:#C6F0A0;box-shadow:0 .12em 0 #86C95F}
   .wave s{animation:none}
   .reader.reading .rtext i{animation:none}
   .mockhero,.mockhero::after,.mockchar,.mockplay i{animation:none}
@@ -1414,7 +1420,7 @@ ul.clean li::marker{color:var(--ink-4)}
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ①</span>
-    <h2>레벨별로 나눠 보면 <span class="small" style="font-weight:700">— 어릴수록 세 지표가 모두 낮아진다</span></h2>
+    <h2>레벨별로 나눠 보면 <span class="small" style="font-weight:700">— 연령이 어릴수록 만족도가 낮아진다</span></h2>
     <p class="lead">같은 세션을 겪고도 <strong>레벨에 따라 답이 갈렸다.</strong> 만족도·재방문 의향·분량 체감 <strong>세 지표 모두 K1이 가장 낮고 K7이 가장 높다.</strong></p>
     <div class="body">
       <div class="lvset">
@@ -1745,7 +1751,7 @@ ul.clean li::marker{color:var(--ink-4)}
             </div>
             <div class="xf">
               <img class="shot" src="images/krs_library2.jpg" alt="적용 후 KRS 도서관 첫 화면 — 하단 추천도서 표지가 화면에 걸쳐 보인다" />
-              <span class="hilite" style="left:1.2%;top:94.9%;width:97.6%;height:5.1%" data-t="걸쳐 보이는 표지"></span>
+              <span class="hilite" style="left:1.2%;top:86.8%;width:97.6%;height:12.9%" data-t="걸쳐 보이는 표지"></span>
             </div>
           </div>
           <div class="shotcap key"><b class="red">1</b><span>표지가 <strong>조금이라도 걸쳐 보이면</strong> 아이는 <strong>아래가 있다는 것을 스스로 알아챈다.</strong></span></div>
@@ -1801,7 +1807,7 @@ ul.clean li::marker{color:var(--ink-4)}
                 <i style="--i:0" class="pk">꼬불꼬불</i> <i style="--i:1">숲길에</i> <i style="--i:2">수북수북</i>
                 <i style="--i:3">누구</i> <i style="--i:4">똥?</i><br />
                 <i style="--i:5">뿌지직</i> <i style="--i:6">큰</i> <i style="--i:7">똥</i>
-                <i style="--i:8">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
+                <i style="--i:8" class="ask">어슬렁어슬렁</i> <i style="--i:9">곰</i> <i style="--i:10">똥!</i>
               </p>
               <div class="rtools">
                 <button type="button" class="rtool is-on" data-r="0"><em>🔊</em>읽어주세요</button>
@@ -1810,7 +1816,7 @@ ul.clean li::marker{color:var(--ink-4)}
               </div>
               <div class="rout">
                 <div class="ro is-on"><em>🔊</em>읽어주는 속도에 맞춰 <b>단어가 차례로 밝아집니다</b></div>
-                <div class="ro"><em>❓</em><b>어슬렁어슬렁</b> — 천천히 걸어 다니는 모습이에요</div>
+                <div class="ro"><em>❓</em><b class="hl">어슬렁어슬렁</b> — 천천히 걸어 다니는 모습이에요</div>
                 <div class="ro"><em>🎧</em><b>오디오북 재생 중</b><span class="wave"><s></s><s></s><s></s><s></s><s></s></span></div>
               </div>
             </div>
@@ -2133,6 +2139,8 @@ ul.clean li::marker{color:var(--ink-4)}
       /* 낭독 버튼일 때만 단어 하이라이팅을 처음부터 재생 */
       reader.classList.remove("reading");
       if (i === 0) { void reader.offsetWidth; reader.classList.add("reading"); }
+      /* ❓ 버튼일 때만 본문의 해당 낱말에 형광펜 */
+      reader.classList.toggle("ask", i === 1);
     });
   });
 
