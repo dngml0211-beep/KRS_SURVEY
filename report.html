@@ -487,6 +487,23 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .donuts.sm .hole b{font-size:1.05em}
 .donuts.sm .dname{font-size:.76em}
 
+/* 아이 설문 — 질문 카드 */
+.qset{display:flex;flex-direction:column;gap:.75em;flex:1;min-height:0;justify-content:center}
+.qcard{background:#fff;border:1.5px solid var(--line);border-radius:.7em;padding:.85em 1em}
+.qhead{display:flex;align-items:flex-start;gap:.55em;margin-bottom:.6em}
+.qhead b{flex:0 0 auto;font-size:.72em;font-weight:800;color:#fff;background:var(--accent);
+  border-radius:.35em;padding:.28em .55em;letter-spacing:.01em}
+.qhead span{font-size:.92em;font-weight:800;color:var(--ink);line-height:1.35;word-break:keep-all}
+.qnum{display:flex;align-items:baseline;gap:.45em;margin-bottom:.5em}
+.qnum em{font-style:normal;font-size:1.15em;line-height:1}
+.qnum b{font-size:1.55em;font-weight:800;letter-spacing:-.04em;color:var(--accent-strong);line-height:1}
+.qnum u{text-decoration:none;font-size:.8em;font-weight:700;color:var(--ink-3)}
+.qleg{display:flex;gap:.9em;flex-wrap:wrap;margin-top:.45em;font-size:.74em;font-weight:700;color:var(--ink-2)}
+.qleg span{display:flex;align-items:center;gap:.32em}
+.qleg i{width:.65em;height:.65em;border-radius:.18em;display:block}
+/* 레벨별 3열 */
+.grid3lv{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3em;flex:1;min-height:0;align-content:center}
+
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
 .divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
@@ -738,7 +755,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <h1>KRS 플랫폼 2차 파일럿<br />유저테스트 결과보고서</h1>
     <div class="sig">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">1 / 24</div>
+  <div class="pageno">1 / 25</div>
 </section>
 
 <!-- 2. 조사 개요 (대시보드) -->
@@ -828,7 +845,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">2 / 24</div>
+  <div class="pageno">2 / 25</div>
 </section>
 
 <!-- 3. 검증 가설 -->
@@ -885,7 +902,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <p class="small" style="margin:0">각 가설의 판정은 위 <strong>검증 방법에 정의된 지표</strong>로만 산출하였다. H6은 <strong>도서관의 공간 목적 인지</strong> 기준으로 최신화된 가설을 적용하였다. 지표별 측정 결과는 11페이지 종합 판정에 정리하였다.</p>
     </div>
   </div>
-  <div class="pageno">3 / 24</div>
+  <div class="pageno">3 / 25</div>
 </section>
 
 <!-- 4. 종합 요약 -->
@@ -935,7 +952,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">4 / 24</div>
+  <div class="pageno">4 / 25</div>
 </section>
 
 <!-- 5. H1 -->
@@ -978,7 +995,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">5 / 24</div>
+  <div class="pageno">5 / 25</div>
 </section>
 
 <!-- 6. H2 -->
@@ -1020,7 +1037,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">6 / 24</div>
+  <div class="pageno">6 / 25</div>
 </section>
 
 <!-- 7. H3 -->
@@ -1061,7 +1078,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">7 / 24</div>
+  <div class="pageno">7 / 25</div>
 </section>
 
 <!-- 8. H4 -->
@@ -1103,7 +1120,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">8 / 24</div>
+  <div class="pageno">8 / 25</div>
 </section>
 
 <!-- 9. H5 -->
@@ -1148,7 +1165,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">9 / 24</div>
+  <div class="pageno">9 / 25</div>
 </section>
 
 <!-- 10. H6 -->
@@ -1190,7 +1207,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">10 / 24</div>
+  <div class="pageno">10 / 25</div>
 </section>
 
 <!-- 11. 종합 판정 -->
@@ -1220,7 +1237,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">11 / 24</div>
+  <div class="pageno">11 / 25</div>
 </section>
 
 <!-- ===== [보류] 인사이트 총괄 페이지 — 필요 시 아래 주석을 해제하세요 =====
@@ -1305,7 +1322,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>선호 활동과 동기</i>
     </div>
   </div>
-  <div class="pageno">12 / 24</div>
+  <div class="pageno">12 / 25</div>
 </section>
 
 <!-- 13. 아이 설문 1 - 전체 경험 -->
@@ -1315,63 +1332,101 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow">아이 설문 ①</span>
     <h2>전체 경험 <span class="small" style="font-weight:700">— 만족도 · 재방문 · 분량</span></h2>
     <div class="body">
-      <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
-        <div class="kpit hl"><div class="k">전체 만족</div><div class="v">84<small>%</small></div><div class="s">재미있었어요 21명</div></div>
-        <div class="kpit"><div class="k">재방문 의향</div><div class="v">64<small>%</small></div><div class="s">하고 싶어요 16명</div></div>
-        <div class="kpit"><div class="k">분량 적정</div><div class="v">48<small>%</small></div><div class="s">딱 좋았어요 12명</div></div>
-        <div class="kpit"><div class="k">분량 부족</div><div class="v">36<small>%</small></div><div class="s">많다는 답의 2배</div></div>
+      <div class="qset">
+        <div class="qcard">
+          <div class="qhead"><b>Q1</b><span>오늘 이야기도 읽고 여러 활동도 해봤는데, 어땠어요?</span></div>
+          <div class="qnum"><em>😄</em><b>84%</b><u>재미있었어요 21명</u></div>
+          <div class="tstack" style="height:2.9em"><i style="width:84%;background:#1D4ED8">재미있었어요 21</i><i style="width:12%;background:#A6C8FC;color:var(--ink-2)">3</i><i style="width:4%;background:#E5E8EB"></i></div>
+          <div class="qleg"><span><i style="background:#1D4ED8"></i>재미있었어요 21</span><span><i style="background:#A6C8FC"></i>그냥 그랬어요 3</span><span><i style="background:#E5E8EB"></i>재미없었어요 1</span></div>
+        </div>
+        <div class="qcard">
+          <div class="qhead"><b>Q3</b><span>오늘 한 활동처럼 또 해보고 싶나요?</span></div>
+          <div class="qnum"><em>🔁</em><b>64%</b><u>하고 싶어요 16명</u></div>
+          <div class="tstack" style="height:2.9em"><i style="width:64%;background:#2563EB">하고 싶어요 16</i><i style="width:24%;background:#A6C8FC;color:var(--ink-2)">모름 6</i><i style="width:12%;background:#E5E8EB;color:var(--ink-3)">3</i></div>
+          <div class="qleg"><span><i style="background:#2563EB"></i>하고 싶어요 16</span><span><i style="background:#A6C8FC"></i>잘 모르겠어요 6</span><span><i style="background:#E5E8EB"></i>하고 싶지 않아요 3</span></div>
+        </div>
+        <div class="qcard">
+          <div class="qhead"><b>Q2</b><span>오늘 한 활동은 많다고 느꼈나요, 적다고 느꼈나요?</span></div>
+          <div class="qnum"><em>⚖️</em><b>48%</b><u>딱 좋았어요 12명</u></div>
+          <div class="tstack" style="height:2.9em"><i style="width:48%;background:#4B8DF8">딱 좋았어요 12</i><i style="width:36%;background:#F0B429">부족 9</i><i style="width:16%;background:#E5E8EB;color:var(--ink-3)">많음 4</i></div>
+          <div class="qleg"><span><i style="background:#4B8DF8"></i>딱 좋았어요 12</span><span><i style="background:#F0B429"></i>조금 부족했어요 9</span><span><i style="background:#E5E8EB"></i>너무 많았어요 4</span></div>
+        </div>
       </div>
-      <div class="grid2 fill stretch" style="margin-top:.2em">
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>재미있었다는 답은 <strong>84%</strong>인데 또 하고 싶다는 <strong>64%</strong>로 <strong>20%p 낮다.</strong> 분량은 <strong>부족(9명)이 많음(4명)의 2배</strong>로, 오늘 분량은 과하지 않았다.</span></div>
+    </div>
+  </div>
+  <div class="pageno">13 / 25</div>
+</section>
+
+<!-- 14. 아이 설문 1-2 - 레벨별 -->
+<section class="slide">
+  <div class="inner">
+    <span class="eyebrow">아이 설문 ①</span>
+    <h2>레벨별로 나눠 보면 <span class="small" style="font-weight:700">— 어릴수록 낮아진다</span></h2>
+    <div class="body">
+      <div class="grid3lv">
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 응답 분포 <span class="small">전체 25명</span></div>
-          <div class="trow lg" style="margin-top:.9em;margin-bottom:1.3em">
-            <div class="tlab">전체 만족도</div>
-            <div class="tstack" style="height:4.2em"><i style="width:84%;background:#1D4ED8">재미있었어요 21</i><i style="width:12%;background:#A6C8FC;color:var(--ink-2)">3</i><i style="width:4%;background:#E5E8EB"></i></div>
-            <div class="tval">84%</div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 만족도 <span class="small">재미있었어요</span></div>
+          <div class="trow lg" style="margin-top:.6em;margin-bottom:.55em">
+            <div class="tlab">K1 <span class="small">7명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:71%;background:#1D4ED8">5명</i><i style="width:15%;background:#A6C8FC;color:var(--ink-2)">1</i><i style="width:14%;background:#E5E8EB"></i></div>
+            <div class="tval">71%</div>
           </div>
-          <div class="trow lg" style="margin-bottom:1.3em">
-            <div class="tlab">재방문 의향</div>
-            <div class="tstack" style="height:4.2em"><i style="width:64%;background:#2563EB">하고 싶어요 16</i><i style="width:24%;background:#A6C8FC;color:var(--ink-2)">모름 6</i><i style="width:12%;background:#E5E8EB;color:var(--ink-3)">3</i></div>
+          <div class="trow lg" style="margin-bottom:.55em">
+            <div class="tlab">K3 <span class="small">11명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:82%;background:#1D4ED8">9명</i><i style="width:18%;background:#A6C8FC;color:var(--ink-2)">2</i></div>
+            <div class="tval">82%</div>
+          </div>
+          <div class="trow lg" style="margin-bottom:.2em">
+            <div class="tlab">K7 <span class="small">7명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:100%;background:#1D4ED8">7명 · 전원</i></div>
+            <div class="tval">100%</div>
+          </div>
+        </div>
+        <div>
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 재방문 의향 <span class="small">하고 싶어요</span></div>
+          <div class="trow lg" style="margin-top:.6em;margin-bottom:.55em">
+            <div class="tlab">K1 <span class="small">7명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:43%;background:#2563EB">3명</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2</i></div>
+            <div class="tval">43%</div>
+          </div>
+          <div class="trow lg" style="margin-bottom:.55em">
+            <div class="tlab">K3 <span class="small">11명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:64%;background:#2563EB">7명</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3</i><i style="width:9%;background:#E5E8EB"></i></div>
             <div class="tval">64%</div>
           </div>
           <div class="trow lg" style="margin-bottom:.2em">
-            <div class="tlab">분량 체감</div>
-            <div class="tstack" style="height:4.2em"><i style="width:48%;background:#4B8DF8">딱 좋았어요 12</i><i style="width:36%;background:#F0B429">부족 9</i><i style="width:16%;background:#E5E8EB;color:var(--ink-3)">많음 4</i></div>
-            <div class="tval">48%</div>
+            <div class="tlab">K7 <span class="small">7명</span></div>
+            <div class="tstack" style="height:3.2em"><i style="width:86%;background:#2563EB">6명</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1</i></div>
+            <div class="tval">86%</div>
           </div>
         </div>
         <div>
-          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 재방문 의향 <span class="small">하고 싶어요 기준</span></div>
-          <div class="trow" style="margin-top:.7em;margin-bottom:.5em">
+          <div class="colhead"><span class="ctag ev">지표</span> 레벨별 분량 체감 <span class="small">딱 좋았어요</span></div>
+          <div class="trow lg" style="margin-top:.6em;margin-bottom:.55em">
             <div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:43%;background:#1D4ED8">3</i><i style="width:29%;background:#A6C8FC;color:var(--ink-2)">모름 2</i><i style="width:28%;background:#E5E8EB;color:var(--ink-3)">2</i></div>
+            <div class="tstack" style="height:3.2em"><i style="width:43%;background:#4B8DF8">3명</i><i style="width:43%;background:#F0B429">부족 3</i><i style="width:14%;background:#E5E8EB"></i></div>
             <div class="tval">43%</div>
           </div>
-          <div class="trow" style="margin-bottom:.5em">
+          <div class="trow lg" style="margin-bottom:.55em">
             <div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack"><i style="width:64%;background:#1D4ED8">하고 싶어요 7</i><i style="width:27%;background:#A6C8FC;color:var(--ink-2)">모름 3</i><i style="width:9%;background:#E5E8EB"></i></div>
-            <div class="tval">64%</div>
+            <div class="tstack" style="height:3.2em"><i style="width:45%;background:#4B8DF8">5명</i><i style="width:37%;background:#F0B429">부족 4</i><i style="width:18%;background:#E5E8EB;color:var(--ink-3)">2</i></div>
+            <div class="tval">45%</div>
           </div>
-          <div class="trow" style="margin-bottom:.2em">
+          <div class="trow lg" style="margin-bottom:.2em">
             <div class="tlab">K7 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:86%;background:#1D4ED8">하고 싶어요 6</i><i style="width:14%;background:#A6C8FC;color:var(--ink-2)">1</i></div>
-            <div class="tval">86%</div>
-          </div>
-          <div class="colhead" style="margin-top:1.2em"><span class="ctag ev">지표</span> 레벨별 분량 체감 <span class="small">딱 좋았어요 기준</span></div>
-          <div class="bars onwhite" style="margin-top:.5em">
-            <div class="bar-row"><div class="blabel">K1 <span class="small">7명</span></div><div class="bar-track"><div class="bar-fill" style="width:43%;background:#4B8DF8"></div></div><div class="bar-val">3<small>명 · 43%</small></div></div>
-            <div class="bar-row"><div class="blabel">K3 <span class="small">11명</span></div><div class="bar-track"><div class="bar-fill" style="width:45%;background:#4B8DF8"></div></div><div class="bar-val">5<small>명 · 45%</small></div></div>
-            <div class="bar-row"><div class="blabel">K7 <span class="small">7명</span></div><div class="bar-track"><div class="bar-fill" style="width:57%;background:#4B8DF8"></div></div><div class="bar-val">4<small>명 · 57%</small></div></div>
+            <div class="tstack" style="height:3.2em"><i style="width:57%;background:#4B8DF8">4명</i><i style="width:29%;background:#F0B429">부족 2</i><i style="width:14%;background:#E5E8EB"></i></div>
+            <div class="tval">57%</div>
           </div>
         </div>
       </div>
-      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>만족 <strong>84%</strong>에 비해 재방문은 <strong>64%</strong>로 낮고, 분량은 <strong>부족(9명)이 많음(4명)의 2배</strong>다. 재방문 의향은 <strong>레벨이 낮을수록 낮다</strong>(K1 43% · K7 86%).</span></div>
+      <div class="oneline"><span class="ctag rd" style="flex:0 0 auto">요약</span> <span>세 지표 모두 <strong>레벨이 낮을수록 낮다.</strong> 특히 재방문 의향은 <strong>K1 43% vs K7 86%</strong>로 두 배 차이다. 만족도는 <strong>K7 전원</strong>이 재미있었다고 답했다.</span></div>
     </div>
   </div>
-  <div class="pageno">13 / 24</div>
+  <div class="pageno">14 / 25</div>
 </section>
 
-<!-- 14. 아이 설문 2 - 코어 리딩북과 난이도 -->
+<!-- 15. 아이 설문 2 - 코어 리딩북과 난이도 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ②</span>
@@ -1453,10 +1508,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">14 / 24</div>
+  <div class="pageno">15 / 25</div>
 </section>
 
-<!-- 15. 아이 설문 3 - 선호 활동 -->
+<!-- 16. 아이 설문 3 - 선호 활동 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow">아이 설문 ③</span>
@@ -1498,10 +1553,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">15 / 24</div>
+  <div class="pageno">16 / 25</div>
 </section>
 
-<!-- 16. 간지 — 오픈 전 적용 -->
+<!-- 17. 간지 — 오픈 전 적용 -->
 <section class="slide">
   <div class="inner divider">
     <span class="dvkicker">오픈 전 적용 · 3건</span>
@@ -1513,10 +1568,10 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>3</b>KRS 도서관</i>
     </div>
   </div>
-  <div class="pageno">16 / 24</div>
+  <div class="pageno">17 / 25</div>
 </section>
 
-<!-- 17. 오픈 전 1 - AI 추천픽 -->
+<!-- 18. 오픈 전 1 - AI 추천픽 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">1</span> 오픈 전 적용 · AI 추천픽</span>
@@ -1567,10 +1622,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">17 / 24</div>
+  <div class="pageno">18 / 25</div>
 </section>
 
-<!-- 18. 오픈 전 2 - 별빙고 -->
+<!-- 19. 오픈 전 2 - 별빙고 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> 오픈 전 적용 · 별빙고</span>
@@ -1626,10 +1681,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">18 / 24</div>
+  <div class="pageno">19 / 25</div>
 </section>
 
-<!-- 19. 오픈 전 3 - KRS 도서관 -->
+<!-- 20. 오픈 전 3 - KRS 도서관 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">3</span> 오픈 전 적용 · KRS 도서관</span>
@@ -1669,25 +1724,24 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">19 / 24</div>
+  <div class="pageno">20 / 25</div>
 </section>
 
-<!-- 20. 간지 — 오픈 후 고도화 -->
+<!-- 21. 간지 — 오픈 후 고도화 -->
 <section class="slide">
   <div class="inner divider late">
-    <span class="dvkicker">오픈 후 고도화 · 3건</span>
+    <span class="dvkicker">오픈 후 고도화 · 2건</span>
     <h2 class="dvtitle">오래 가는 서비스로<br />키워 갑니다</h2>
     <p class="dvsub">기능 신설과 커리큘럼 재편 — <strong>일정과 리소스를 확보해 순차 적용</strong></p>
     <div class="dvchips">
       <i><b>1</b>저연령 읽기 지원</i>
       <i><b>2</b>기질카드 연결</i>
-      <i><b>3</b>목차 활동 다양화</i>
     </div>
   </div>
-  <div class="pageno">20 / 24</div>
+  <div class="pageno">21 / 25</div>
 </section>
 
-<!-- 21. 오픈 후 1 - TTS 읽기 지원 -->
+<!-- 22. 오픈 후 1 - TTS 읽기 지원 -->
 <section class="slide">
   <div class="inner">
     <div class="seclead"><i></i>오픈 후 고도화 · 설계·개발 동반 3건</div>
@@ -1744,10 +1798,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">21 / 24</div>
+  <div class="pageno">22 / 25</div>
 </section>
 
-<!-- 22. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
+<!-- 23. 오픈 후 2-1 - 기질카드 캐릭터 반응 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 캐릭터 반응</span>
@@ -1793,10 +1847,10 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">22 / 24</div>
+  <div class="pageno">23 / 25</div>
 </section>
 
-<!-- 23. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
+<!-- 24. 오픈 후 2-2 - 기질카드 연결 콘텐츠 -->
 <section class="slide">
   <div class="inner">
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
@@ -1845,7 +1899,7 @@ ul.clean li::marker{color:var(--ink-4)}
       </div>
     </div>
   </div>
-  <div class="pageno">23 / 24</div>
+  <div class="pageno">24 / 25</div>
 </section>
 
 <!-- ===== [보류] 목차 활동 다양화 페이지 — 필요 시 아래 주석을 해제하세요 =====
@@ -1924,7 +1978,7 @@ ul.clean li::marker{color:var(--ink-4)}
 
 ===== [보류] 목차 활동 끝 ===== -->
 
-<!-- 24. 종합 -->
+<!-- 25. 종합 -->
 <section class="slide">
   <div class="inner closing">
     <span class="dvkicker">KRS 플랫폼 2차 파일럿 · 마무리</span>
@@ -1942,7 +1996,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <p class="clsign">아이가 혼자서도 끝까지 갈 수 있는 KRS로<br /><strong>오픈까지 잘 마무리하겠습니다.</strong></p>
     <div class="clfoot">IT혁신본부 · 2026년 8월</div>
   </div>
-  <div class="pageno">24 / 24</div>
+  <div class="pageno">25 / 25</div>
 </section>
 
 
