@@ -368,38 +368,36 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .mockbar{display:flex;align-items:center;gap:.45em;background:#1E293B;padding:.5em .8em}
 .mockbar s{width:.5em;height:.5em;border-radius:50%;background:#475569;display:block}
 .mockbar b{margin-left:.35em;font-size:.74em;font-weight:800;color:#94A3B8}
-.mockbody{display:grid;grid-template-columns:1.02fr 1fr}
+.mockbody{display:grid;grid-template-columns:2.5fr 1fr}
 .mockhero{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
-  gap:.7em;padding:2.75em 1.3em 2.95em;
+  gap:.7em;padding:.95em 1em 1.1em;
   background:linear-gradient(120deg,#1E3A8A 0%,#2563EB 35%,#3B82F6 55%,#1E40AF 100%);
   background-size:230% 100%;animation:heroPan 14s ease-in-out infinite}
 @keyframes heroPan{0%,100%{background-position:0% 50%} 50%{background-position:100% 50%}}
 /* 화면을 훑고 지나가는 은은한 반사광 */
 .mockhero::after{content:"";position:absolute;top:-60%;left:-35%;width:26%;height:220%;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.20),transparent);
-  transform:rotate(14deg);animation:heroSheen 7s ease-in-out infinite;pointer-events:none;z-index:2}
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent);
+  transform:rotate(14deg);animation:heroSheen 7s ease-in-out infinite;pointer-events:none;z-index:3}
 @keyframes heroSheen{0%{left:-35%} 55%,100%{left:125%}}
-.mockhero>div{position:relative;z-index:1}
-/* 예고편 재생 진행 바 */
-.mockhero>.mockplay{position:absolute;left:0;right:0;bottom:0;height:.22em;
-  background:rgba(255,255,255,.16);z-index:3}
-.mockplay i{display:block;height:100%;width:0;background:#93C5FD;border-radius:0 99px 99px 0;
-  animation:playbar 14s linear infinite}
-@keyframes playbar{0%{width:0} 92%,100%{width:100%}}
-.mockchar{position:relative;z-index:1;align-self:flex-start;width:3em;height:3em;border-radius:.7em;
-  background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.45);
-  display:flex;align-items:center;justify-content:center;font-size:1.55em;
-  animation:charBob 3.6s ease-in-out infinite}
-@keyframes charBob{0%,100%{transform:translateY(0) rotate(-2.5deg)} 50%{transform:translateY(-.14em) rotate(2.5deg)}}
-.mockhero u{display:block;text-decoration:none;font-size:.68em;font-weight:800;letter-spacing:.06em;
+/* 예고편 영상 */
+.mockvid{position:relative;z-index:2;border-radius:.5em;overflow:hidden;background:#0B1220;line-height:0;
+  aspect-ratio:16/9;box-shadow:0 .3em .9em rgba(0,0,0,.3)}
+.mockvid video{width:100%;height:100%;object-fit:cover;display:block;background:#0B1220}
+.mvplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:inline-flex;align-items:center;gap:.42em;font:inherit;font-size:.8em;font-weight:800;
+  color:#0F172A;background:rgba(255,255,255,.94);border:none;border-radius:99px;
+  padding:.55em 1.1em;cursor:pointer;white-space:nowrap;
+  box-shadow:0 .3em .9em rgba(0,0,0,.4);transition:background .15s,transform .15s}
+.mvplay span{font-size:1.05em;line-height:1}
+.mvplay:hover{background:#fff;transform:translate(-50%,-50%) scale(1.04)}
+.mockvid.playing .mvplay{display:none}
+/* 예고편 설명 */
+.mockmeta{position:relative;z-index:2}
+.mockmeta u{display:block;text-decoration:none;font-size:.68em;font-weight:800;letter-spacing:.06em;
   color:#BFDBFE;margin-bottom:.18em}
-.mockhero strong{display:block;font-size:.95em;font-weight:800;color:#fff;line-height:1.32;margin-bottom:.24em}
-.mockhero span{display:block;font-size:.7em;font-weight:700;color:#DBEAFE;line-height:1.4}
-.mockcta{position:relative;z-index:1;align-self:flex-start;display:inline-flex !important;
-  align-items:center;margin-top:.55em;font-size:.72em !important;font-weight:800;
-  color:#0F172A !important;background:#93C5FD;border-radius:99px;padding:.42em .85em;
-  box-shadow:0 .16em 0 rgba(15,23,42,.3)}
-.eplist{padding:1.95em 1.05em 2.05em;display:flex;flex-direction:column;gap:.55em;background:#0F172A}
+.mockmeta strong{display:block;font-size:.95em;font-weight:800;color:#fff;line-height:1.32;margin-bottom:.24em}
+.mockmeta span{display:block;font-size:.7em;font-weight:700;color:#DBEAFE;line-height:1.4}
+.eplist{padding:1em .8em 1.05em;display:flex;flex-direction:column;gap:.55em;background:#0F172A}
 .eptitle{font-size:.68em;font-weight:800;letter-spacing:.06em;color:#64748B;margin-bottom:.1em}
 .ep{display:flex;align-items:center;gap:.55em;background:#1E293B;border:1.5px solid #334155;
   border-radius:.5em;padding:.45em .6em}
@@ -1785,14 +1783,15 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="mockbar"><s></s><s></s><s></s><b>기질카드 · 나만의 공간</b></div>
             <div class="mockbody">
               <div class="mockhero">
-                <div class="mockchar">🐯</div>
-                <div>
+                <div class="mockvid">
+                  <video class="mv" src="images/tai.mp4" poster="images/tai.jpg" preload="metadata" playsinline></video>
+                  <button type="button" class="mvplay"><span>▶</span>1화 미리보기</button>
+                </div>
+                <div class="mockmeta">
                   <u>직관적 행동파</u>
-                  <strong>먼저 부딪혀 보는<br />너를 위한 이야기</strong>
+                  <strong>먼저 부딪혀 보는 너를 위한 이야기</strong>
                   <span>진단평가 결과로 만들어진 나만의 공간</span>
                 </div>
-                <span class="mockcta">▶ 1화 미리보기</span>
-                <div class="mockplay"><i></i></div>
               </div>
               <div class="eplist">
                 <div class="eptitle">전체 회차</div>
@@ -1983,6 +1982,23 @@ ul.clean li::marker{color:var(--ink-4)}
       [].forEach.call(view.querySelectorAll(".xf"), function(v, k){
         v.classList.toggle("is-on", k === i);
       });
+    });
+  });
+
+  /* 예고편 영상 재생 */
+  [].forEach.call(document.querySelectorAll(".mvplay"), function(btn){
+    var wrap = btn.parentNode, v = wrap.querySelector("video");
+    if (!v) return;
+    btn.addEventListener("click", function(){
+      wrap.classList.add("playing");
+      v.controls = true;
+      var p = v.play();
+      if (p && p.catch) p.catch(function(){ wrap.classList.remove("playing"); });
+    });
+    v.addEventListener("ended", function(){
+      wrap.classList.remove("playing");
+      v.controls = false;
+      v.currentTime = 0;
     });
   });
 
