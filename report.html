@@ -517,6 +517,19 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .sf.swap.add{color:var(--ok-deep);border-color:var(--ok);box-shadow:0 0 0 .18em rgba(18,184,134,.12)}
 .sf.swap.add i{color:var(--ok-deep)}
 .sfar{flex:0 0 auto;font-size:1em;font-weight:800;color:var(--ink-4)}
+/* 잠김 → 오픈 → 보상 흐름 */
+.lockflow{display:flex;align-items:stretch;gap:.4em;margin-bottom:.85em}
+.lf{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.12em;
+  text-align:center;background:var(--line-2);border:1.5px solid var(--line);border-radius:.6em;padding:.7em .4em}
+.lf em{font-style:normal;font-size:1.5em;line-height:1.1}
+.lf b{font-size:.8em;font-weight:800;color:var(--ink-2);word-break:keep-all;line-height:1.3}
+.lf u{text-decoration:none;font-size:.68em;font-weight:700;color:var(--ink-3);word-break:keep-all;line-height:1.3}
+.lf.open{background:#F5F9FF;border-color:#BBD5FF}
+.lf.open b{color:var(--accent-strong)}
+.lf.reward{background:var(--ok-tint);border-color:#B7E0CB}
+.lf.reward b{color:var(--ok-deep)}
+.lf.reward u{color:var(--ok-deep);font-weight:800}
+.lfar{flex:0 0 auto;display:flex;align-items:center;font-size:1em;font-weight:800;color:var(--ink-4)}
 /* 주차별 활동 카드 */
 .wklabel{display:flex;align-items:center;gap:.5em;margin:.7em 0 .5em;
   font-size:.86em;font-weight:800;color:var(--ink);line-height:1.3}
@@ -526,7 +539,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .wkc u{text-decoration:none;font-size:.7em;font-weight:800;letter-spacing:.03em;color:var(--accent-strong)}
 .wkc span{font-size:1.7em;line-height:1.15}
 .wkc b{font-size:.82em;font-weight:800;color:var(--ink);word-break:keep-all;line-height:1.3}
-.wkc.w2{background:#F7FBFF} .wkc.w3{background:#F4F9FF} .wkc.w4{background:#EFF6FF}
+.wkc.w1{background:#FAFCFF} .wkc.w2{background:#F7FBFF}
+.wkc.w3{background:#F4F9FF} .wkc.w4{background:#EFF6FF}
 /* 주차별 활동 롤링 */
 .weekflow{display:flex;align-items:stretch;gap:.5em}
 .wk{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3em;
@@ -1853,21 +1867,13 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="note plain" style="margin:.6em 0 0">네 활동 모두 <strong>2분 남짓</strong>이고 그중 <strong>둘은 같은 형식의 독후퀴즈</strong>다. 형식으로 세면 <strong>3종</strong>뿐이다.</p>
           <div class="colhead" style="margin-top:1.1em"><span class="ctag ev">근거</span> 활동은 이미 보상으로 작동하고 있다 <span class="small">전체 25명</span></div>
-          <p class="note blue" style="margin:.55em 0 .8em">책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다.</strong> 「책을 읽어서 빙고를 더 하고 싶은가」에 <strong>21명(84%)</strong>이 그렇다고 답했다.</p>
-          <div class="trow" style="margin-bottom:.45em">
-            <div class="tlab">K1 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:86%;background:#1D4ED8">그렇다 6명</i><i style="width:14%;background:#E5E8EB"></i></div>
-            <div class="tval">86%</div>
-          </div>
-          <div class="trow" style="margin-bottom:.45em">
-            <div class="tlab">K3 <span class="small">11명</span></div>
-            <div class="tstack"><i style="width:73%;background:#1D4ED8">그렇다 8명</i><i style="width:27%;background:#E5E8EB;color:var(--ink-3)">3명</i></div>
-            <div class="tval">73%</div>
-          </div>
-          <div class="trow" style="margin-bottom:.2em">
-            <div class="tlab">K7 <span class="small">7명</span></div>
-            <div class="tstack"><i style="width:100%;background:#1D4ED8">그렇다 7명 · 전원</i></div>
-            <div class="tval">100%</div>
+          <p class="note blue" style="margin:.55em 0 .95em">책을 읽어야 활동이 열리는 구조를 아이는 <strong>보상으로 받아들였다.</strong></p>
+          <div class="lockflow">
+            <span class="lf"><em>🔒</em><b>잠김</b><u>읽기 전</u></span>
+            <span class="lfar">→</span>
+            <span class="lf open"><em>🔓</em><b>오픈</b><u>책을 다 읽으면</u></span>
+            <span class="lfar">→</span>
+            <span class="lf reward"><em>🎁</em><b>보상으로 인지</b><u>21명 · 84%</u></span>
           </div>
           <p class="note plain" style="margin:.75em 0 0">보상 구조는 <strong>전 레벨에서 작동</strong>한다. 문제는 <strong>그 보상을 여는 활동이 3종뿐</strong>이라는 점이다.</p>
         </div>
@@ -1889,14 +1895,13 @@ ul.clean li::marker{color:var(--ink-4)}
             <span class="sfar">›</span>
             <span class="sf swap">어휘 챌린지<i>유형 다양하게</i></span>
           </div>
-          <div class="wklabel"><span class="ctag ev">예시</span> 신규 목차에 넣을 활동 <span class="small">현재 없는 것으로만 구성</span></div>
+          <div class="wklabel"><span class="ctag ev">예시</span> 신규 목차에 넣을 활동</div>
           <div class="wkroll">
             <div class="wkc w1"><u>1주차</u><span>🔎</span><b>문장 보물찾기</b></div>
             <div class="wkc w2"><u>2주차</u><span>🏆</span><b>독서 골든벨</b></div>
             <div class="wkc w3"><u>3주차</u><span>🗺️</span><b>이야기 지도 그리기</b></div>
             <div class="wkc w4"><u>4주차</u><span>🎭</span><b>인물 카드 만들기</b></div>
           </div>
-          <p class="impnote"><strong>26주 반복</strong>을 피해 <strong>한 칸만 주차별로 교체</strong>한다. 앞뒤 흐름은 그대로 두므로 개발 부담이 작다.</p>
         </div>
       </div>
     </div>
