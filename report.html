@@ -370,7 +370,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .mockbar b{margin-left:.35em;font-size:.74em;font-weight:800;color:#94A3B8}
 .mockbody{display:grid;grid-template-columns:1.02fr 1fr}
 .mockhero{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
-  gap:.5em;padding:1.3em 1.05em 1.5em;
+  gap:.7em;padding:2.75em 1.3em 2.95em;
   background:linear-gradient(120deg,#1E3A8A 0%,#2563EB 35%,#3B82F6 55%,#1E40AF 100%);
   background-size:230% 100%;animation:heroPan 14s ease-in-out infinite}
 @keyframes heroPan{0%,100%{background-position:0% 50%} 50%{background-position:100% 50%}}
@@ -399,7 +399,7 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   align-items:center;margin-top:.55em;font-size:.72em !important;font-weight:800;
   color:#0F172A !important;background:#93C5FD;border-radius:99px;padding:.42em .85em;
   box-shadow:0 .16em 0 rgba(15,23,42,.3)}
-.eplist{padding:.95em .85em 1.05em;display:flex;flex-direction:column;gap:.44em;background:#0F172A}
+.eplist{padding:1.95em 1.05em 2.05em;display:flex;flex-direction:column;gap:.55em;background:#0F172A}
 .eptitle{font-size:.68em;font-weight:800;letter-spacing:.06em;color:#64748B;margin-bottom:.1em}
 .ep{display:flex;align-items:center;gap:.55em;background:#1E293B;border:1.5px solid #334155;
   border-radius:.5em;padding:.45em .6em}
@@ -516,6 +516,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
   border:2px dashed var(--accent);box-shadow:0 0 0 .18em rgba(59,130,246,.12)}
 .sf.swap i{display:block;font-style:normal;font-size:.78em;font-weight:800;
   color:var(--accent);margin-top:.15em}
+.sf.swap.add{color:var(--ok-deep);border-color:var(--ok);box-shadow:0 0 0 .18em rgba(18,184,134,.12)}
+.sf.swap.add i{color:var(--ok-deep)}
 .sfar{flex:0 0 auto;font-size:1em;font-weight:800;color:var(--ink-4)}
 /* 주차별 활동 카드 */
 .wkroll{display:grid;grid-template-columns:repeat(2,1fr);gap:.55em}
@@ -1628,8 +1630,8 @@ ul.clean li::marker{color:var(--ink-4)}
         <div class="flow fitimg tight" style="--fh:33.2em">
           <div class="colhead"><span class="ctag ev">지표</span> 아이는 무엇으로 이 공간을 이해했나 <span class="small">전체 25명</span></div>
           <div class="bars onwhite wideplot">
-            <div class="bar-row"><div class="blabel">화면 위쪽<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
-            <div class="bar-row"><div class="blabel">화면 아래쪽<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
+            <div class="bar-row"><div class="blabel">화면 위 — 커리큘럼 영역<br /><span class="small">레벨 표기(K1·K7)</span></div><div class="bar-track"><div class="bar-fill" style="width:8%;background:#A6C8FC"></div></div><div class="bar-val">2<small>명 · 8%</small></div></div>
+            <div class="bar-row"><div class="blabel">화면 아래 — 도서 목록 영역<br /><span class="small">눈에 보이는 책</span></div><div class="bar-track"><div class="bar-fill" style="width:52%;background:#1D4ED8"></div></div><div class="bar-val">13<small>명 · 52%</small></div></div>
           </div>
           <div class="leadsto"><b>▼ 글자가 아니라 '보이는 책'으로 읽는다</b></div>
           <div class="colhead"><span class="ctag rd">개선 방향</span> 아래에 무엇이 더 있는지 화면이 스스로 알려준다</div>
@@ -1774,7 +1776,7 @@ ul.clean li::marker{color:var(--ink-4)}
     <span class="eyebrow later"><span class="hno" style="width:1.6em;height:1.6em;font-size:.85em">2</span> AI 추천픽 · 기질카드 연결</span>
     <h2>누르면 열리는 콘텐츠를 붙인다</h2>
     <div class="body">
-      <div class="grid2 fill stretch">
+      <div class="grid2 fill stretch" style="grid-template-columns:1.62fr 1fr">
         <div>
           <div class="colhead"><span class="ctag rd">예시</span> 기질카드를 눌렀을 때 열릴 화면 <span class="small">예시</span></div>
           <div class="mock">
@@ -1796,6 +1798,7 @@ ul.clean li::marker{color:var(--ink-4)}
                 <div class="ep"><b>2화</b><div><strong>실수해도 괜찮아</strong><span>2026년 11월 1일 공개</span></div><i class="lock">🔒</i></div>
                 <div class="ep"><b>3화</b><div><strong>끝까지 해내는 힘</strong><span>2026년 12월 1일 공개</span></div><i class="lock">🔒</i></div>
                 <div class="ep"><b>4화</b><div><strong>다음 이야기</strong><span>2027년 1월 공개</span></div><i class="lock">🔒</i></div>
+                <div class="ep"><b>5화</b><div><strong>계속 이어집니다</strong><span>2027년 2월 공개</span></div><i class="lock">🔒</i></div>
               </div>
             </div>
           </div>
@@ -1866,6 +1869,8 @@ ul.clean li::marker{color:var(--ink-4)}
             <span class="sfar">›</span>
             <span class="sf swap">나만의 문장 수집<i>이 자리를 교체</i></span>
             <span class="sfar">›</span>
+            <span class="sf swap add">목차 활동 추가<i>신규 슬롯</i></span>
+            <span class="sfar">›</span>
             <span class="sf">독후 퀴즈</span>
           </div>
           <div class="slotflow">
@@ -1873,7 +1878,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <span class="sfar">›</span>
             <span class="sf">독후 퀴즈</span>
             <span class="sfar">›</span>
-            <span class="sf swap">어휘 챌린지<i>이 자리를 교체</i></span>
+            <span class="sf swap">어휘 챌린지<i>유형 다양하게</i></span>
           </div>
           <div class="wkroll">
             <div class="wkc w1"><u>1주차</u><span>📓</span><b>나만의 문장 수집</b></div>
