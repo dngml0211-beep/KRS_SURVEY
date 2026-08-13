@@ -554,6 +554,8 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .pkrow.top .pkn{color:var(--ink);font-weight:800}
 .pkrow.top .pkbar i{background:#1D4ED8}
 .pkrow.top .pkv{color:var(--accent-strong)}
+/* 선택 0회 — 값이 없는 것이 아니라 0임을 흐린 톤으로 표시 */
+.pkrow.zero .pkn,.pkrow.zero .pkv{color:var(--ink-4)}
 
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
@@ -1589,6 +1591,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="pkrow"><span class="pkn">별빙고 도전</span><span class="pkbar"><i style="width:67%"></i></span><span class="pkv">2<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">교과 스키마북 읽기</span><span class="pkbar"><i style="width:67%"></i></span><span class="pkv">2<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">어휘 챌린지</span><span class="pkbar"><i style="width:67%"></i></span><span class="pkv">2<small>명</small></span></div>
+            <div class="pkrow zero"><span class="pkn">코어 리딩북 읽기</span><span class="pkbar"><i style="width:0"></i></span><span class="pkv">0<small>명</small></span></div>
           </div>
           <div class="pkgrp">
             <div class="pkhead"><b>K3</b><span>11명 · 20회 선택</span></div>
@@ -1596,6 +1599,7 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="pkrow"><span class="pkn">어휘 챌린지</span><span class="pkbar"><i style="width:75%"></i></span><span class="pkv">6<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">코어 리딩북 읽기</span><span class="pkbar"><i style="width:63%"></i></span><span class="pkv">5<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">교과 스키마북 읽기</span><span class="pkbar"><i style="width:13%"></i></span><span class="pkv">1<small>명</small></span></div>
+            <div class="pkrow zero"><span class="pkn">독후 퀴즈 풀기</span><span class="pkbar"><i style="width:0"></i></span><span class="pkv">0<small>명</small></span></div>
           </div>
           <div class="pkgrp">
             <div class="pkhead"><b>K7</b><span>7명 · 10회 선택</span></div>
@@ -1603,9 +1607,10 @@ ul.clean li::marker{color:var(--ink-4)}
             <div class="pkrow"><span class="pkn">어휘 챌린지</span><span class="pkbar"><i style="width:75%"></i></span><span class="pkv">3<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">교과 스키마북 읽기</span><span class="pkbar"><i style="width:50%"></i></span><span class="pkv">2<small>명</small></span></div>
             <div class="pkrow"><span class="pkn">코어 리딩북 읽기</span><span class="pkbar"><i style="width:25%"></i></span><span class="pkv">1<small>명</small></span></div>
+            <div class="pkrow zero"><span class="pkn">독후 퀴즈 풀기</span><span class="pkbar"><i style="width:0"></i></span><span class="pkv">0<small>명</small></span></div>
           </div>
           </div>
-          <p class="note plain" style="margin:.7em 0 0"><strong>K1만 1순위가 다르다.</strong> K1은 <strong>나만의 문장 수집</strong>, K3·K7은 <strong>별빙고</strong>가 1순위다. K1은 표가 고르게 흩어져 <strong>뚜렷한 선호가 아직 없다.</strong></p>
+          <p class="note plain" style="margin:.7em 0 0">나만의 문장 수집은 K1에서만 적용한 활동으로, 이번 파일럿에서 K3·K7은 진행하지 못했다.</p>
         </div>
       </div>
     </div>
