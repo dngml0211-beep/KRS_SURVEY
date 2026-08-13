@@ -560,6 +560,10 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 /* 간지(섹션 표지) */
 .divider{justify-content:center;background:linear-gradient(150deg,#FFFFFF 0%,#F4F8FF 50%,#E6EFFF 100%)}
 .divider.late{background:linear-gradient(150deg,#FFFFFF 0%,#F6F8FA 50%,#E9EDF3 100%)}
+/* 간지 오른쪽 여백에 넣는 화면 이미지 */
+.divider .dvshot{position:absolute;right:5.2cqw;top:50%;transform:translateY(-50%);
+  width:36em;border-radius:.8em;border:1.5px solid var(--line);background:#fff;
+  box-shadow:0 .55em 1.7em rgba(15,23,42,.13);display:block}
 .divider.survey{background:linear-gradient(150deg,#FFFFFF 0%,#F4FBF7 50%,#E2F3EA 100%)}
 .divider.survey .dvkicker{background:var(--ok-deep)}
 .divider.survey .dvchips i{color:var(--ok-deep);border-color:#B7E0CB}
@@ -1376,6 +1380,7 @@ ul.clean li::marker{color:var(--ink-4)}
       <i><b>2</b>콘텐츠 난이도</i>
       <i><b>3</b>선호 활동과 동기</i>
     </div>
+    <img class="dvshot" src="images/user.jpg" alt="아이용 설문 첫 화면 — 이름·나이·진행한 레벨을 입력하고 시작하는 화면" />
   </div>
   <div class="pageno">12 / 25</div>
 </section>
