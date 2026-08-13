@@ -302,6 +302,16 @@ h3{font-size:1em;font-weight:800;margin:0 0 .5em}
 .hero.tightnum{grid-template-columns:8.8em 1fr;gap:.9em}
 /* 막대 위에 붙는 수치가 상자 밖으로 나가지 않도록 축 위쪽을 비워둔다 (막대 높이 약 34% 축소) */
 .vbars.lab3 .vtrack{padding-top:1.9em}
+/* 관찰 → 시사점 — 한눈에 들어오도록 대비를 준 블록 */
+.findbox{background:var(--accent-tint);border:2px solid #9EC3FF;border-radius:.65em;
+  padding:.8em .9em;box-shadow:0 .22em .75em rgba(37,99,235,.12)}
+.findbox p{display:flex;align-items:center;gap:.5em;margin:0;
+  font-size:.92em;font-weight:700;line-height:1.4;color:var(--ink-2)}
+.findbox p em{font-style:normal;font-size:1.45em;line-height:1;flex:0 0 auto}
+.findbox p strong{color:var(--ink)}
+.findbox p.on{font-size:1.05em;font-weight:800;color:var(--accent-strong)}
+.findbox p.on strong{color:var(--accent-strong)}
+.findbox .fxar{margin:.34em 0 .34em .5em;font-size:1.1em;font-weight:800;line-height:1;color:var(--accent)}
 /* 문구 변경 전 → 후 (한 줄 흐름) */
 .baline{display:flex;align-items:stretch;gap:.7em;margin-top:.48em;
   background:#fff;border:1.5px solid #BBD5FF;border-radius:.55em;padding:.5em .75em}
@@ -1933,13 +1943,13 @@ ul.clean li::marker{color:var(--ink-4)}
           </div>
           <p class="rcap"><strong>1화는 지금 열고</strong>, 다음 화는 <strong>공개 예정으로 남겨</strong> 다시 올 이유를 만든다.</p>
         </div>
-        <div class="flow" style="flex:0 0 auto;align-self:flex-start;justify-content:flex-start">
+        <div class="flow fitimg" style="--fh:28.6em;padding:1.1em 1.15em">
           <div class="colhead"><span class="ctag rd">해석</span> 기대는 맞았지만, 아직 아무 일도 일어나지 않는다</div>
           <p style="margin:0 0 .5em;font-size:.87em;line-height:1.5;color:var(--ink-2)">카드를 좋아한 이유는 <strong>예뻐서</strong>, 그리고 <strong>누르면 활동이 시작될 것 같아서</strong>였다. 뒤쪽은 <strong>맞는 기대</strong>인데, 아직 열릴 화면이 없어 <strong>17명의 관심이 카드 앞에서 멈춰 있다.</strong></p>
-          <div class="baline">
-            <div class="was"><p>직관적 행동파 아이들 이해도 낮음</p></div>
-            <div class="arw">→</div>
-            <div class="now"><p>영상으로 이해</p></div>
+          <div class="findbox">
+            <p><em>📖</em>직관적 행동파 아이들 <strong>이해도 낮음</strong></p>
+            <div class="fxar">↓</div>
+            <p class="on"><em>🎬</em>영상으로 이해</p>
           </div>
           <div class="leadsto"><b>▼ 남은 일은 열릴 것을 채우는 것뿐</b></div>
           <div class="colhead"><span class="ctag rd">확장 방향</span> 기질 캐릭터를 책과 연결된 연속 이야기로 확장한다</div>
@@ -2038,7 +2048,7 @@ ul.clean li::marker{color:var(--ink-4)}
 <!-- 25. 종합 -->
 <section class="slide">
   <div class="inner closing">
-    <p class="clsign" style="margin:0;font-size:1.9em;line-height:1.7">아이들이 스스로 시작하고 끝까지 수행할 수 있음을 확인했습니다.<br />확인된 개선사항을 오픈 전까지 충실히 반영하여, <strong>안정적인 KRS 오픈을 완성하겠습니다.</strong></p>
+    <p class="clsign" style="margin:0;font-size:1.9em;line-height:1.7">아이들이 스스로 시작하고 끝까지 수행할 수 있음을 확인했습니다.<br />확인된 개선사항을 오픈 전까지 충실히 반영하여,<br /><strong>안정적인 KRS 오픈을 완성하겠습니다.</strong></p>
   </div>
   <div class="pageno">25 / 25</div>
 </section>
